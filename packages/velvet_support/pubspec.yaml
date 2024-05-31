@@ -1,0 +1,9 @@
+name: velvet_support
+description: "Provide support classes for the everyday work. Porting of some Laravel utilities to Dart."
+version: 0.0.1
+
+environment:
+  sdk: ">=3.2.6 <4.0.0"
+
+dev_dependencies:
+  test: ^1.25.5

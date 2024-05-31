@@ -1,0 +1,7 @@
+builders:
+  bootstrap_autoloader_builder:
+    import: "package:dede_gen/builder.dart"
+    builder_factories: ["bootstrapAutoloaderBuilder"]
+    build_extensions: { "lib/$lib$": ["lib/bootstrap.dede.dart"] }
+    auto_apply: root_package
+    build_to: source

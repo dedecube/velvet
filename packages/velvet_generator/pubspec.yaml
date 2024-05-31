@@ -1,0 +1,15 @@
+name: velvet_generator
+description: "The code generator for the Velvet framework."
+version: 0.0.1
+
+environment:
+  sdk: ">=3.2.6 <4.0.0"
+
+dependencies:
+  analyzer: ^6.4.1
+  build: ^2.4.1
+  build_config: ^1.1.1
+  merging_builder: ^0.2.7
+  quote_buffer: ^0.2.6
+  source_gen: ^1.5.0
+  velvet_annotation: ^0.0.1
