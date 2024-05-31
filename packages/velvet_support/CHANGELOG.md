@@ -1,3 +1,7 @@
+## 0.0.1-dev.3
+
+ - **FIX**: usage of library in test.
+
 ## 0.0.1-dev.2
 
  - **FIX**: rename velvet_support library file and library name.

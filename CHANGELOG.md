@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`velvet_support` - `v0.0.1-dev.3`](#velvet_support---v001-dev3)
+
+---
+
+#### `velvet_support` - `v0.0.1-dev.3`
+
+ - **FIX**: usage of library in test.
+
+
+## 2024-05-31
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`velvet_support` - `v0.0.1-dev.2`](#velvet_support---v001-dev2)
 
 ---
