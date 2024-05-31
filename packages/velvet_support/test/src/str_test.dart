@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'package:velvet_support/support.dart';
+import 'package:velvet_support/velvet_support.dart';
 
 void main() {
   test('after', () {
