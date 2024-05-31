@@ -27,7 +27,6 @@ migrate_working_dir/
 **/doc/api/
 .dart_tool/
 build/
-*.g.dart
 
 # Melos
 pubspec_overrides.yaml
