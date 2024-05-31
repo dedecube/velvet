@@ -13,4 +13,6 @@ dependencies:
   merging_builder: ^0.2.7
   quote_buffer: ^0.2.6
   source_gen: ^1.5.0
+
+dev_dependencies:
   velvet_annotation: ^0.0.1-dev.1
