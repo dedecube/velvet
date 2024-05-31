@@ -83,8 +83,11 @@ class Str {
     return value.contains(search);
   }
 
-  static bool containsAny(String value, List<String> needles,
-      [bool ignoreCase = false]) {
+  static bool containsAny(
+    String value,
+    List<String> needles, [
+    bool ignoreCase = false,
+  ]) {
     if (ignoreCase) {
       value = lower(value);
       needles = needles.map((needle) => lower(needle)).toList();
@@ -93,8 +96,11 @@ class Str {
     return needles.any((needle) => value.contains(needle));
   }
 
-  static bool containsAll(String value, List<String> needles,
-      [bool ignoreCase = false]) {
+  static bool containsAll(
+    String value,
+    List<String> needles, [
+    bool ignoreCase = false,
+  ]) {
     if (ignoreCase) {
       value = lower(value);
       needles = needles.map((needle) => lower(needle)).toList();
@@ -114,8 +120,12 @@ class Str {
     return needles.any((needle) => value.endsWith(needle));
   }
 
-  static String excerpt(String value,
-      [String phrase = '', int radius = 100, String omission = '...']) {
+  static String excerpt(
+    String value, [
+    String phrase = '',
+    int radius = 100,
+    String omission = '...',
+  ]) {
     if (value.isEmpty) {
       return '';
     }
@@ -175,9 +185,11 @@ class Str {
     if (!isLower(value)) {
       value = upperWords(value).replaceAll(RegExp(r'\s+'), '');
 
-      value = lower(value.replaceAllMapped(RegExp(r'(.)(?=[A-Z])'), (match) {
-        return '${match.group(1)}$delimiter';
-      }));
+      value = lower(
+        value.replaceAllMapped(RegExp(r'(.)(?=[A-Z])'), (match) {
+          return '${match.group(1)}$delimiter';
+        }),
+      );
     }
 
     return value;

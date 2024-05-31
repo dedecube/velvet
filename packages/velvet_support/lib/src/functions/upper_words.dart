@@ -8,7 +8,7 @@
 /// print(upperWords('hello world')); // Hello World
 /// print(upperWords('hello_world', '_')); // Hello World
 /// ```
-String upperWords(String input, [String separator = " \t\r\n\f\v"]) {
+String upperWords(String input, [String separator = ' \t\r\n\f\v']) {
   List<String> words = input.split(RegExp('[$separator]'));
   StringBuffer result = StringBuffer();
 

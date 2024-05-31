@@ -1,9 +1,9 @@
 import 'str.dart';
 
 class Stringable {
-  final String value;
-
   Stringable(this.value);
+
+  final String value;
 
   Stringable after(String search) {
     return Stringable(Str.after(value, search));
