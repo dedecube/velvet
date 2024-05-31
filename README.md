@@ -29,12 +29,12 @@ Then, add the following dependencies to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  velvet: ^0.1.0
+  velvet_framework: ^0.0.1
 
 dev_dependencies:
-  velvet_annotations: ^0.1.0
-  velvet_generator: ^0.1.0
-  velvet_lints: ^0.1.0
+  velvet_annotations: ^0.0.1
+  velvet_generator: ^0.0.1
+  velvet_lints: ^0.0.1
 ```
 
 Finally, run the following command to generate the necessary code for your Velvet application:

@@ -447,7 +447,7 @@ packages:
       path: "../velvet_annotation"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.1-dev.0"
   watcher:
     dependency: transitive
     description:

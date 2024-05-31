@@ -1,8 +1,7 @@
 name: velvet_lints
 description: Recommended lints for Flutter apps, packages, and plugins to encourage good coding practices.
-repository: https://github.com/flutter/packages/tree/main/packages/flutter_lints
-issue_tracker: https://github.com/flutter/flutter/issues?q=is%3Aissue+is%3Aopen+label%3A%22p%3A+flutter_lints%22
 version: 0.0.1-dev.0
+homepage: "https://github.com/dedecube/velvet/packages/velvet_lints"
 
 environment:
   sdk: ">=3.2.6 <4.0.0"
