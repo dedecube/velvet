@@ -1,0 +1,7 @@
+name: velvet
+repository: https://github.com/dedecube/velvet
+sdkPath: .fvm/flutter_sdk
+
+packages:
+  - examples/*
+  - packages/*

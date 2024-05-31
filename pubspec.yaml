@@ -1,0 +1,16 @@
+name: velvet_workspace
+
+environment:
+  sdk: ">=3.2.6 <4.0.0"
+
+dev_dependencies:
+  custom_lint: ^0.6.4
+  flutter_lints: ^4.0.0
+  lints: ^4.0.0
+  melos: ^5.3.0
+  riverpod_lint: ^2.3.10
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter: null

@@ -1,0 +1,38 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit",
+    "source.fixAll": "explicit"
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/*.g.dart": true,
+    "**/.fvm": true,
+    "**/.dart_tool": true,
+    "**/.idea": true,
+    "**/build": true,
+    "**/.flutter-plugins": true,
+    "**/.flutter-plugins-dependencies": true,
+    "**/*.iml": true,
+    "**/pubspec_overrides.yaml": true,
+    "custom_lint.log": true
+  },
+  "search.exclude": {
+    "/.fvm": true,
+    "/.dart_tool": true,
+    "/.idea": true,
+    "/build": true
+  },
+  "files.watcherExclude": {
+    "/.fvm": true,
+    "/.dart_tool": true,
+    "/.idea": true,
+    "/build": true,
+    "**/fastlane": true
+  },
+  "dart.flutterSdkPath": ".fvm/versions/3.19.5"
+}

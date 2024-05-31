@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+        "blaugold.melos-code",
+        "dart-code.flutter",
+        "mikestead.dotenv",
+        "exodiusstudios.comment-anchors",
+        "mhutchie.git-graph",
+        "dart-code.dart-code",
+        "jeroen-meijer.pubspec-assist",
+        "pucelle.run-on-save"
+    ]
+}
