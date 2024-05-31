@@ -1,3 +1,7 @@
+## 0.0.1-dev.2
+
+ - **FIX**: rename velvet_support library file and library name.
+
 ## 0.0.1-dev.1
 
  - **REFACTOR**: apply lint rules in velvet_support.
