@@ -1,6 +1,6 @@
 name: velvet_support
 description: "Provide support classes for the everyday work. Porting of some Laravel utilities to Dart."
-version: 0.0.1-dev.0
+version: 0.0.1-dev.1
 homepage: "https://github.com/dedecube/velvet/packages/velvet_support"
 
 
