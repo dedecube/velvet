@@ -37,7 +37,7 @@ class KernelAppWidget extends HookConsumerWidget {
       stream: translator.localeStream,
       builder: (context, locale) {
         return MaterialApp.router(
-          routerConfig: router,
+          routerConfig: router.requireValue,
           debugShowCheckedModeBanner: false,
           localizationsDelegates: translator.delegates(),
           supportedLocales: translator.supportedLocales,
