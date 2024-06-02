@@ -31,7 +31,6 @@ dev_dependencies:
     sdk: flutter
   go_router_builder: ^2.6.0
   riverpod_generator: ^2.4.0
-  riverpod_lint: ^2.3.10
   theme_tailor: ^3.0.1
 
 flutter: null
