@@ -8,7 +8,6 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
-  envied: ^0.5.4+1
   flutter:
     sdk: flutter
   flutter_hooks: ^0.20.5
