@@ -9,8 +9,6 @@ part 'wireframe_dark.g.dart';
 class WireframeDark extends _$WireframeDark implements ThemeDefinitionContract {
   @override
   ThemeDefinition build() {
-    const secondary = Color.fromARGB(255, 195, 0, 255);
-
     return ThemeDefinition(
       primary50: const Color(0xFFF6FAFE),
       primary100: const Color(0xFFDCE4E9),
