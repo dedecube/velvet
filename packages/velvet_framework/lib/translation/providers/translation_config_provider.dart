@@ -3,7 +3,7 @@ import 'package:velvet_framework/translation/contracts/translation_config_contra
 
 part 'translation_config_provider.g.dart';
 
-@Riverpod(dependencies: [])
+@Riverpod(keepAlive: true, dependencies: [])
 TranslationConfigContract translationConfig(TranslationConfigRef ref) {
   throw UnimplementedError();
 }

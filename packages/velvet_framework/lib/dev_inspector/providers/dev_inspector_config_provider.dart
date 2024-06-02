@@ -3,7 +3,7 @@ import 'package:velvet_framework/dev_inspector/contracts/dev_inspector_config_co
 
 part 'dev_inspector_config_provider.g.dart';
 
-@Riverpod(dependencies: [])
+@Riverpod(keepAlive: true, dependencies: [])
 DevInspectorConfigContract devInspectorConfig(DevInspectorConfigRef ref) {
   throw UnimplementedError();
 }
