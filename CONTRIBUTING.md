@@ -30,6 +30,6 @@ If you encounter any issues or bugs while using Velvet, please report them on ou
 
 ## Contact
 
-If you have any questions or need further assistance, you can reach out to us on our official Velvet Discord server or by email at velvet@example.com.
+If you have any questions or need further assistance, you can reach out by email at info@dedecube.com.
 
 We appreciate your contributions and look forward to working with you to make Velvet even better!
