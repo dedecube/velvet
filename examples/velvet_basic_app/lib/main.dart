@@ -1,33 +1,14 @@
-import 'package:flutter/material.dart';
-import 'package:velvet_framework/velvet_framework.dart';
-
-class RouterConfig extends RouterConfigContract {
-  @override
-  String get initialPath => '/';
-
-  @override
-  RouterPageTransitionEnum get defaultPageTransition =>
-      RouterPageTransitionEnum.fade;
-
-  @override
-  bool get doesPrefererBusinessLogicViews => true;
-}
+import 'package:velvet_basic_app/config/dev_inspector_config.dart';
+import 'package:velvet_basic_app/config/router_config.dart';
+import 'package:velvet_basic_app/config/translation_config.dart';
+import 'package:velvet_basic_app/router.dart';
+import 'package:velvet_framework/velvet_framework.dart' hide router;
 
 void main() {
   Kernel()
-    ..bindAsync(routerProvider, (ref) async {
-      return GoRouter(routes: [
-        GoRoute(
-            path: '/',
-            builder: (context, state) {
-              return Scaffold(
-                body: Center(
-                  child: Text('Home'),
-                ),
-              );
-            }),
-      ]);
-    })
+    ..bindAsync(routerProvider, (ref) async => router)
     ..bind(routerConfigProvider, (ref) => RouterConfig())
+    ..bind(devInspectorConfigProvider, (ref) => DevInspectorConfig())
+    ..bind(translationConfigProvider, (ref) => TranslationConfig())
     ..run();
 }
