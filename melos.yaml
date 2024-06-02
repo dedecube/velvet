@@ -2,6 +2,12 @@ name: velvet
 repository: https://github.com/dedecube/velvet
 sdkPath: .fvm/flutter_sdk
 
+command:
+  version:
+    hooks:
+      pre: cd ./packages/velvet_framework && dart pub run build_runner build --delete-conflicting-outputs
+
 packages:
   - examples/*
   - packages/*
+
