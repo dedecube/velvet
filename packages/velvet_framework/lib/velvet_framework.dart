@@ -53,10 +53,13 @@ export 'package:velvet_framework/router/providers/router_provider.dart';
 
 /// Store
 
+export 'package:velvet_framework/store/adapters/shared_preferences_simple_store.dart';
 export 'package:velvet_framework/store/contracts/store_cleaner_adapter_contract.dart';
+export 'package:velvet_framework/store/contracts/store_contract.dart';
 export 'package:velvet_framework/store/contracts/store_simple_adapter_contract.dart';
 export 'package:velvet_framework/store/providers/store_provider.dart';
 export 'package:velvet_framework/store/storable.dart';
+export 'package:velvet_framework/store/store.dart';
 
 /// Talker
 
