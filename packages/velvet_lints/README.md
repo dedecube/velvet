@@ -1,20 +1,18 @@
-# Velvel Lints
+# Velvel Lints
 
 This package provides a set of lints for the Velvet projects.
 
-## Installation
+Behinds the scenes, it mixs the following lints:
+- dart core lints
+- dart recommended lints
+- flutter lints
+- riverpod lints
+- some pyramide lints (see the .yaml file for more details)
 
-Add the following to your `pubspec.yaml`:
+## Contributing
 
-```yaml
-dev_dependencies:
-  velvet_lints: ^0.1.0
-```
+If you would like to contribute to Velvet, please read the [contributing guidelines](../../CONTRIBUTING.md) before submitting a pull request.
 
-## Usage
+## License
 
-Add the following to your `analysis_options.yaml`:
-
-```yaml
-include: package:velvet_lints/flutter.yaml
-```
+Velvet is released under the [MIT License](LICENSE).

@@ -20,3 +20,12 @@ Velvet is built around the following core principles:
 - **Scalability**: Velvet is designed to be scalable, allowing you to build applications of any size and complexity. Whether you are building a small prototype or a large production application, Velvet provides the tools you need to succeed.
  
 - **Reliability**: Velvet is built with reliability in mind, with a strong emphasis on stability and robustness. It is designed to be reliable and dependable, ensuring that your applications work as expected in all situations.
+
+
+## Contributing
+
+If you would like to contribute to Velvet, please read the [contributing guidelines](../../CONTRIBUTING.md) before submitting a pull request.
+
+## License
+
+Velvet is released under the [MIT License](LICENSE).

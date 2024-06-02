@@ -1,16 +1,4 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-# Support
+# Velvet Support
 
 A porting of Laravel Support package to Dart.
 
@@ -26,21 +14,6 @@ The main goal of this package is to provide a set of utilities that are present 
 - **Speed up development**: Using this package can help to speed up the development process, avoiding to re-implement the same utilities in Dart from scratch.
 - **Readability**: This package can help to make a more readable code, using the same utilities that you are familiar with.
 - **Avoid bugs**: Each feature of this package will be tested to ensure that it works as expected. This can help to avoid bugs and unexpected behaviors that can be present in custom implementations.
-
-## Installation
-
->[!WARNING] 
-> This package is not yet published on pub.dev, so you need to install it from GitHub.
-
-### Using github
-Add this to your `pubspec.yaml` file:
-
-```yaml
-dependencies:
-  support:
-    git:
-      url: git://github.com/dedecube/dart-support.git
-```
 
 ## Features
 
@@ -161,59 +134,10 @@ The definition is currently a work in progress, so it can be incomplete or not u
 - [ ] Add a LICENSE file
 - [ ] Add a CHANGELOG.md file
 
-## Usage
-
-The usage of each implemented utility is similar to Laravel's Support package.
-Please refer to Laravel's documentation for more information:
-- Str utilities: [https://laravel.com/docs/11.x/strings](https://laravel.com/docs/11.x/strings)
-
-Some examples to use the Str utilities:
-
-```dart
-import 'package:velvet_support/support.dart';
-
-void main() {
-  // Example of using the Str::camel method
-  print(Str.camel('hello_world')); // Output: helloWorld
-
-  // Example of using the Str::kebab method
-  print(Str.kebab('helloWorld')); // Output: hello-world
-
-  // Example of using the Str::snake method
-  print(Str.snake('helloWorld')); // Output: hello_world
-
-  // Example of using the Str::studly method
-  print(Str.studly('hello_world')); // Output: HelloWorld
-
-  // Example of using the Str::upper method
-  print(Str.upper('helloWorld')); // Output: HELLOWORLD
-
-  // Example of using the Str::lower method
-  print(Str.lower('helloWorld')); // Output: helloworld
-}
-```
-
-Some examples to use the Stringable utilities:
-
-```dart
-import 'package:velvet_support/support.dart';
-
-void main() {
-  var phrase = 'My name is: Daniele.';
-
-  var name = Str.of(phrase)
-    .after('My name is: ')
-    .before('.')
-    .toString(); // Output: Daniele
-}
-```
-
 ## Contributing
 
-This package is a work in progress, so any contribution is welcome.
-
-If you want to contribute, please open an issue or a pull request.
+If you would like to contribute to Velvet, please read the [contributing guidelines](../../CONTRIBUTING.md) before submitting a pull request.
 
 ## License
 
-This package is licensed under the MIT license.
+Velvet is released under the [MIT License](LICENSE).
