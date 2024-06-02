@@ -7,9 +7,9 @@ library velvet_framework;
 /// and makes it easier to use the framework
 
 export 'package:envied/envied.dart';
+export 'package:flutter_riverpod/flutter_riverpod.dart';
 export 'package:go_router/go_router.dart';
 export 'package:hooks_riverpod/hooks_riverpod.dart';
-export 'package:riverpod/riverpod.dart';
 export 'package:velvet_framework/dev_inspector/adapters/dev_inspector_talker_adapter.dart';
 
 /// DevInspector
