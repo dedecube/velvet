@@ -1,18 +1,15 @@
 name: velvet_basic_app
-description: "A basic app that uses the Velvet Framework."
-publish_to: "none" # Remove this line if you wish to publish to pub.dev
-
+description: "A new Flutter project."
+publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ">=3.3.3 <4.0.0"
+  sdk: '>=3.3.3 <4.0.0'
 
 dependencies:
-  velvet_framework: ^0.0.1-dev.2
+  velvet_framework: ^0.0.1-dev.1
   flutter:
     sdk: flutter
-
-  cupertino_icons: ^1.0.6
 
 dev_dependencies:
   flutter_test:
