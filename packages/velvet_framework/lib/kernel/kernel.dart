@@ -44,6 +44,28 @@ class Kernel {
   ///  ..run();
   /// ```
   void bind<T>(
+    Provider<T> original,
+    Create<T, ProviderRef<T>> create,
+  ) {
+    _throwIfRunning();
+
+    _riverpodOvverides.add(original.overrideWith(create));
+  }
+
+  /// Bind a new provider to the list of providers.
+  /// This will override the original provider with the new one.
+  ///
+  /// Useful for replace a service with another one for more scalable implementations or testing.
+  ///
+  /// Internally, this method uses Riverpod's [overrideWith] method.
+  ///
+  /// ```dart
+  /// Kernel()
+  ///  ..bind(firebaseProvider, (ref) => FirebaseService())
+  ///  // ... other configurations
+  ///  ..run();
+  /// ```
+  void bindAsync<T>(
     FutureProvider<T> original,
     Create<FutureOr<T>, FutureProviderRef<T>> create,
   ) {
