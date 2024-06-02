@@ -7,7 +7,7 @@ part of 'dev_inspector_config_provider.dart';
 // **************************************************************************
 
 String _$devInspectorConfigHash() =>
-    r'91444fbce741ac094939ecb827543f7d41eb094a';
+    r'4345f488f5ec7dff39efca18618d433c7ecc671d';
 
 /// See also [devInspectorConfig].
 @ProviderFor(devInspectorConfig)
