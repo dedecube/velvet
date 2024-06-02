@@ -6,7 +6,7 @@ part of 'wireframe_light.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$wireframeLightHash() => r'303c385df5c55c68fead02363353fa83c9330467';
+String _$wireframeLightHash() => r'488a5982a2ae02e4c2e3a9ed796031cc25d0b41a';
 
 /// See also [WireframeLight].
 @ProviderFor(WireframeLight)
