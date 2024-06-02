@@ -8,7 +8,7 @@ environment:
   sdk: ">=3.3.3 <4.0.0"
 
 dependencies:
-  velvet_framework: ^0.0.1-dev.1
+  velvet_framework: ^0.0.1-dev.2
   flutter:
     sdk: flutter
 
@@ -18,7 +18,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  velvet_lints: ^0.0.1-dev.1
+  velvet_lints: ^0.0.1-dev.2
 
 flutter:
   uses-material-design: true

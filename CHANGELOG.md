@@ -3,6 +3,61 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-06-02
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`velvet_annotation` - `v0.0.1-dev.2`](#velvet_annotation---v001-dev2)
+ - [`velvet_framework` - `v0.0.1-dev.2`](#velvet_framework---v001-dev2)
+ - [`velvet_generator` - `v0.0.1-dev.2`](#velvet_generator---v001-dev2)
+ - [`velvet_lints` - `v0.0.1-dev.2`](#velvet_lints---v001-dev2)
+ - [`velvet_support` - `v0.0.1-dev.4`](#velvet_support---v001-dev4)
+
+---
+
+#### `velvet_annotation` - `v0.0.1-dev.2`
+
+ - **DOCS**: clean README.md and add Contributing and License. ([e1bb86b9](https://github.com/dedecube/velvet/commit/e1bb86b97abc8723af091b479e991709e4c3240c))
+ - **DOCS**: fix homepage and description and add topics. ([50af3365](https://github.com/dedecube/velvet/commit/50af3365a69a738b614833b7ab1d798306ad1c70))
+ - **DOCS**: add example. ([94fce6fe](https://github.com/dedecube/velvet/commit/94fce6feaf29edc67fcc3330bc2fba7c6e9ba9b4))
+
+#### `velvet_framework` - `v0.0.1-dev.2`
+
+ - **REVERT**: remove color_shade deps. ([bb75ebb3](https://github.com/dedecube/velvet/commit/bb75ebb35396620ee70bc1a8f37131365db5ad34))
+ - **FIX**: remove .flutter-plugins files. ([d055060c](https://github.com/dedecube/velvet/commit/d055060cfc802268e8bb005b2085d3eb78cdf336))
+ - **FIX**: routerProvider returns Future. ([6761069c](https://github.com/dedecube/velvet/commit/6761069c2f32ae58ad50491356be4ddb611b2ce5))
+ - **DOCS**: clean README.md and add Contributing and License. ([e1bb86b9](https://github.com/dedecube/velvet/commit/e1bb86b97abc8723af091b479e991709e4c3240c))
+ - **DOCS**: add example. ([94fce6fe](https://github.com/dedecube/velvet/commit/94fce6feaf29edc67fcc3330bc2fba7c6e9ba9b4))
+ - **DOCS**: update description. ([a07f129c](https://github.com/dedecube/velvet/commit/a07f129c5b8b6186d60a287083a326594d2c40e6))
+
+#### `velvet_generator` - `v0.0.1-dev.2`
+
+ - **FIX**: build_extensions now uses .velvet.dart as output. ([97a741bd](https://github.com/dedecube/velvet/commit/97a741bdab22d3daae3106f5e1e9ded53f4b9106))
+ - **DOCS**: clean README.md and add Contributing and License. ([e1bb86b9](https://github.com/dedecube/velvet/commit/e1bb86b97abc8723af091b479e991709e4c3240c))
+ - **DOCS**: fix homepage and description and add topics. ([50af3365](https://github.com/dedecube/velvet/commit/50af3365a69a738b614833b7ab1d798306ad1c70))
+ - **DOCS**: add example. ([94fce6fe](https://github.com/dedecube/velvet/commit/94fce6feaf29edc67fcc3330bc2fba7c6e9ba9b4))
+
+#### `velvet_lints` - `v0.0.1-dev.2`
+
+ - **DOCS**: clean README.md and add Contributing and License. ([e1bb86b9](https://github.com/dedecube/velvet/commit/e1bb86b97abc8723af091b479e991709e4c3240c))
+ - **DOCS**: fix homepage and description and add topics. ([50af3365](https://github.com/dedecube/velvet/commit/50af3365a69a738b614833b7ab1d798306ad1c70))
+ - **DOCS**: add example. ([94fce6fe](https://github.com/dedecube/velvet/commit/94fce6feaf29edc67fcc3330bc2fba7c6e9ba9b4))
+
+#### `velvet_support` - `v0.0.1-dev.4`
+
+ - **DOCS**: clean README.md and add Contributing and License. ([e1bb86b9](https://github.com/dedecube/velvet/commit/e1bb86b97abc8723af091b479e991709e4c3240c))
+ - **DOCS**: fix homepage and description and add topics. ([50af3365](https://github.com/dedecube/velvet/commit/50af3365a69a738b614833b7ab1d798306ad1c70))
+ - **DOCS**: add example. ([94fce6fe](https://github.com/dedecube/velvet/commit/94fce6feaf29edc67fcc3330bc2fba7c6e9ba9b4))
+
+
 ## 2024-05-31
 
 ### Changes
