@@ -6,14 +6,14 @@ library velvet_framework;
 /// This prevents the need to import each package individually
 /// and makes it easier to use the framework
 
-export 'package:envied/envied.dart';
+export 'package:flutter_hooks/flutter_hooks.dart';
 export 'package:flutter_riverpod/flutter_riverpod.dart';
 export 'package:go_router/go_router.dart';
 export 'package:hooks_riverpod/hooks_riverpod.dart';
-export 'package:velvet_framework/dev_inspector/adapters/dev_inspector_talker_adapter.dart';
 
 /// DevInspector
 
+export 'package:velvet_framework/dev_inspector/adapters/dev_inspector_talker_adapter.dart';
 export 'package:velvet_framework/dev_inspector/contracts/dev_inspector_adapter_contract.dart';
 export 'package:velvet_framework/dev_inspector/contracts/dev_inspector_config_contract.dart';
 export 'package:velvet_framework/dev_inspector/dev_inspector.dart';
@@ -57,9 +57,9 @@ export 'package:velvet_framework/store/adapters/shared_preferences_simple_store.
 export 'package:velvet_framework/store/contracts/store_cleaner_adapter_contract.dart';
 export 'package:velvet_framework/store/contracts/store_contract.dart';
 export 'package:velvet_framework/store/contracts/store_simple_adapter_contract.dart';
-export 'package:velvet_framework/store/providers/store_provider.dart';
+export 'package:velvet_framework/store/providers/store_provider.dart'
+    hide store;
 export 'package:velvet_framework/store/storable.dart';
-export 'package:velvet_framework/store/store.dart';
 
 /// Talker
 
