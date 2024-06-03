@@ -8,8 +8,8 @@ environment:
 
 dependencies:
   custom_lint: ^0.6.4
-  flutter_lints: ^4.0.0
-  lints: ^4.0.0
+  flutter_lints: ^3.0.0
+  pyramid_lint: ^2.0.0
   riverpod_lint: ^2.3.10
   # Code is not allowed in this package. Do not add any dependencies or dev_dependencies.
 
