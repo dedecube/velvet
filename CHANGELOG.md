@@ -15,6 +15,32 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`velvet_framework` - `v0.0.1-dev.5`](#velvet_framework---v001-dev5)
+ - [`velvet_generator` - `v0.0.1-dev.3`](#velvet_generator---v001-dev3)
+
+---
+
+#### `velvet_framework` - `v0.0.1-dev.5`
+
+ - **REVERT**: remove vendor exports. ([976cfea9](https://github.com/dedecube/velvet/commit/976cfea93f3ad08251b72b839f3881cad557befd))
+
+#### `velvet_generator` - `v0.0.1-dev.3`
+
+ - **FIX**: set right import file in build.yaml. ([7759307d](https://github.com/dedecube/velvet/commit/7759307d76e31cbb2de95237d44a21f000061841))
+
+
+## 2024-06-03
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`velvet_framework` - `v0.0.1-dev.4`](#velvet_framework---v001-dev4)
 
 ---

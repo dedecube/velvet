@@ -1,3 +1,7 @@
+## 0.0.1-dev.3
+
+ - **FIX**: set right import file in build.yaml. ([7759307d](https://github.com/dedecube/velvet/commit/7759307d76e31cbb2de95237d44a21f000061841))
+
 ## 0.0.1-dev.2
 
  - **FIX**: build_extensions now uses .velvet.dart as output. ([97a741bd](https://github.com/dedecube/velvet/commit/97a741bdab22d3daae3106f5e1e9ded53f4b9106))
