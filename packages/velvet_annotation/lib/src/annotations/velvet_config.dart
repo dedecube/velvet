@@ -1,5 +1,7 @@
-class VelvetConfig {
-  const VelvetConfig();
-}
+import 'package:riverpod/riverpod.dart';
 
-const velvetConfig = VelvetConfig();
+class VelvetConfig<T> {
+  const VelvetConfig({required this.provider});
+
+  final T Function(ProviderRef<T> ref) provider;
+}

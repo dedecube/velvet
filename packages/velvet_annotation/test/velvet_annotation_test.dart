@@ -1,3 +1,4 @@
+import 'package:riverpod/riverpod.dart';
 import 'package:test/test.dart';
 import 'package:velvet_annotation/velvet_annotation.dart';
 
@@ -13,12 +14,9 @@ void main() {
   });
 
   test('can instanciate VelvetConfig', () {
-    final instance = VelvetConfig();
-    expect(instance, isNotNull);
-  });
+    final fakeProvider = Provider((ref) => 'fake');
+    final instance = VelvetConfig(provider: (ref) => fakeProvider);
 
-  test('is instance of VelvetConfig', () {
-    final instance = velvetConfig;
-    expect(instance, isA<VelvetConfig>());
+    expect(instance, isNotNull);
   });
 }
