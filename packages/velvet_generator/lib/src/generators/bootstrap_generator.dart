@@ -5,20 +5,17 @@ import 'package:build/build.dart' show BuildStep;
 import 'package:merging_builder/merging_builder.dart';
 import 'package:source_gen/source_gen.dart' show ConstantReader;
 import 'package:velvet_annotation/velvet_annotation.dart';
+import 'package:velvet_support/velvet_support.dart';
 
 /// Reads a field element of type [List<String] and generates the merged content.
 class BootstrapAutoloaderGenerator
     extends MergingGenerator<List<String>, VelvetBootstrap> {
-  /// Portion of source code included at the top of the generated file.
-  /// Should be specified as header when constructing the merging builder.
   static String get header {
-    return '/// Autoloaded bootstrap functions.';
+    return '// Autoloaded bootstrap functions.';
   }
 
-  /// Portion of source code included at the very bottom of the generated file.
-  /// Should be specified as [footer] when constructing the merging builder.
   static String get footer {
-    return '/// End of autoloaded bootstrap functions';
+    return '// End of autoloaded bootstrap functions';
   }
 
   @override
@@ -40,7 +37,6 @@ class BootstrapAutoloaderGenerator
     return <String>['Could not found any function'];
   }
 
-  /// Returns the merged content.
   @override
   FutureOr<String> generateMergedContent(Stream<List<String>> stream) async {
     final b = StringBuffer();
@@ -49,10 +45,9 @@ class BootstrapAutoloaderGenerator
     b.writeln('import \'dart:async\';');
     b.writeln('import \'package:flutter_riverpod/flutter_riverpod.dart\';');
 
-    // Iterate over stream:
     await for (final names in stream) {
       for (var name in names) {
-        var fileName = convertToSnakeCase(name);
+        var fileName = Str.snake(name);
 
         b.writeln('import \'./bootstrap/$fileName.dart\';');
       }
@@ -60,10 +55,10 @@ class BootstrapAutoloaderGenerator
       allBootstrap.add(names);
     }
 
-    b.writeln('typedef Create<T, R extends Ref> = T Function(R ref);');
+    b.writeln('typedef BootstrapCreate<T, R extends Ref> = T Function(R ref);');
     b.writeln('');
     b.writeln(
-      'final List<Create<FutureOr, FutureProviderRef>> bootstrapFunctions = [',
+      'final List<BootstrapCreate<FutureOr, FutureProviderRef>> bootstrapFunctions = [',
     );
 
     for (var names in allBootstrap) {
@@ -75,11 +70,5 @@ class BootstrapAutoloaderGenerator
     b.writeln('];');
 
     return b.toString();
-  }
-
-  String convertToSnakeCase(String input) {
-    return input.replaceAllMapped(RegExp(r'[A-Z]'), (match) {
-      return '_${match.group(0)?.toLowerCase()}';
-    });
   }
 }

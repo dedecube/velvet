@@ -1,7 +1,14 @@
 builders:
   bootstrap_autoloader_builder:
-    import: "package:velvet_generator/builder.dart"
+    import: "package:velvet_generator/builders/bootstrap_builder.dart"
     builder_factories: ["bootstrapAutoloaderBuilder"]
     build_extensions: { "lib/$lib$": ["lib/bootstrap.velvet.dart"] }
+    auto_apply: root_package
+    build_to: source
+
+  config_autoloader_builder:
+    import: "package:velvet_generator/builders/config_builder.dart"
+    builder_factories: ["configAutoloaderBuilder"]
+    build_extensions: { "lib/$lib$": ["lib/config.velvet.dart"] }
     auto_apply: root_package
     build_to: source
