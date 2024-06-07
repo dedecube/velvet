@@ -1,3 +1,7 @@
+## 0.0.1-dev.4
+
+ - **FEAT**: add provider to VelvetConfig annotation. ([c0d14888](https://github.com/dedecube/velvet/commit/c0d14888fc1b3f13301cdd9ad0b4476d5d630c34))
+
 ## 0.0.1-dev.3
 
  - **FEAT**: add VelvetConfig annotation. ([6d070a41](https://github.com/dedecube/velvet/commit/6d070a4123bdaf1c8893134fecfadb93b321ab83))

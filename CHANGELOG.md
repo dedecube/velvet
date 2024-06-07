@@ -15,6 +15,34 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`velvet_annotation` - `v0.0.1-dev.4`](#velvet_annotation---v001-dev4)
+ - [`velvet_generator` - `v0.0.1-dev.5`](#velvet_generator---v001-dev5)
+
+---
+
+#### `velvet_annotation` - `v0.0.1-dev.4`
+
+ - **FEAT**: add provider to VelvetConfig annotation. ([c0d14888](https://github.com/dedecube/velvet/commit/c0d14888fc1b3f13301cdd9ad0b4476d5d630c34))
+
+#### `velvet_generator` - `v0.0.1-dev.5`
+
+ - **FIX**: MergingBuilder generic type. ([58d41eb9](https://github.com/dedecube/velvet/commit/58d41eb9eb592fed64960d494c3949bcba0a0f03))
+ - **FIX**: config_generator export. ([6f9fea57](https://github.com/dedecube/velvet/commit/6f9fea5712a585ede51efea212d24af5b832a527))
+ - **FEAT**: config generator now work with provider, so that can use with kernel.bind. ([0de2c455](https://github.com/dedecube/velvet/commit/0de2c45507a0fecfe348f4d628916b1899add277))
+
+
+## 2024-06-07
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`velvet_annotation` - `v0.0.1-dev.3`](#velvet_annotation---v001-dev3)
  - [`velvet_generator` - `v0.0.1-dev.4`](#velvet_generator---v001-dev4)
 

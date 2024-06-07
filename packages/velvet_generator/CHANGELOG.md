@@ -1,3 +1,9 @@
+## 0.0.1-dev.5
+
+ - **FIX**: MergingBuilder generic type. ([58d41eb9](https://github.com/dedecube/velvet/commit/58d41eb9eb592fed64960d494c3949bcba0a0f03))
+ - **FIX**: config_generator export. ([6f9fea57](https://github.com/dedecube/velvet/commit/6f9fea5712a585ede51efea212d24af5b832a527))
+ - **FEAT**: config generator now work with provider, so that can use with kernel.bind. ([0de2c455](https://github.com/dedecube/velvet/commit/0de2c45507a0fecfe348f4d628916b1899add277))
+
 ## 0.0.1-dev.4
 
  - **REFACTOR**: move and rename builders and generators files. ([3264afc2](https://github.com/dedecube/velvet/commit/3264afc2a46813c1b1e77157cec1b21872588f43))
