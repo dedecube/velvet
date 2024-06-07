@@ -11,4 +11,14 @@ void main() {
     final instance = velvetBootstrap;
     expect(instance, isA<VelvetBootstrap>());
   });
+
+  test('can instanciate VelvetConfig', () {
+    final instance = VelvetConfig();
+    expect(instance, isNotNull);
+  });
+
+  test('is instance of VelvetConfig', () {
+    final instance = velvetConfig;
+    expect(instance, isA<VelvetConfig>());
+  });
 }
