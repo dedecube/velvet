@@ -1,3 +1,8 @@
+## 0.0.1-dev.4
+
+ - **REFACTOR**: move and rename builders and generators files. ([3264afc2](https://github.com/dedecube/velvet/commit/3264afc2a46813c1b1e77157cec1b21872588f43))
+ - **FEAT**: add generator and builder for VelvetConfig. ([6dc32712](https://github.com/dedecube/velvet/commit/6dc32712c2519842a470a9787d9b139938d4c4ec))
+
 ## 0.0.1-dev.3
 
  - **FIX**: set right import file in build.yaml. ([7759307d](https://github.com/dedecube/velvet/commit/7759307d76e31cbb2de95237d44a21f000061841))

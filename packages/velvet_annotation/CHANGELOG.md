@@ -1,3 +1,7 @@
+## 0.0.1-dev.3
+
+ - **FEAT**: add VelvetConfig annotation. ([6d070a41](https://github.com/dedecube/velvet/commit/6d070a4123bdaf1c8893134fecfadb93b321ab83))
+
 ## 0.0.1-dev.2
 
  - **DOCS**: clean README.md and add Contributing and License. ([e1bb86b9](https://github.com/dedecube/velvet/commit/e1bb86b97abc8723af091b479e991709e4c3240c))

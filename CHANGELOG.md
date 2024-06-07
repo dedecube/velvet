@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-06-07
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`velvet_annotation` - `v0.0.1-dev.3`](#velvet_annotation---v001-dev3)
+ - [`velvet_generator` - `v0.0.1-dev.4`](#velvet_generator---v001-dev4)
+
+---
+
+#### `velvet_annotation` - `v0.0.1-dev.3`
+
+ - **FEAT**: add VelvetConfig annotation. ([6d070a41](https://github.com/dedecube/velvet/commit/6d070a4123bdaf1c8893134fecfadb93b321ab83))
+
+#### `velvet_generator` - `v0.0.1-dev.4`
+
+ - **REFACTOR**: move and rename builders and generators files. ([3264afc2](https://github.com/dedecube/velvet/commit/3264afc2a46813c1b1e77157cec1b21872588f43))
+ - **FEAT**: add generator and builder for VelvetConfig. ([6dc32712](https://github.com/dedecube/velvet/commit/6dc32712c2519842a470a9787d9b139938d4c4ec))
+
+
 ## 2024-06-03
 
 ### Changes
