@@ -8,4 +8,4 @@ export 'src/builders/config_builder.dart';
 /// Generators
 
 export 'src/generators/bootstrap_generator.dart';
-export 'src/generators/config_gererator.dart';
+export 'src/generators/config_generator.dart';
