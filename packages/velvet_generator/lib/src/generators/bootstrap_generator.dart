@@ -43,7 +43,8 @@ class BootstrapAutoloaderGenerator
     final allBootstrap = <List<String>>[];
 
     b.writeln('import \'dart:async\';');
-    b.writeln('import \'package:flutter_riverpod/flutter_riverpod.dart\';');
+    b.writeln('// ignore: depend_on_referenced_packages');
+    b.writeln('import \'package:riverpod/riverpod.dart\';');
 
     await for (final names in stream) {
       for (var name in names) {
