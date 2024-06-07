@@ -1,6 +1,6 @@
 import 'package:build/build.dart';
 import 'package:merging_builder/merging_builder.dart';
-import 'package:velvet_generator/src/generators/config_gererator.dart';
+import 'package:velvet_generator/src/generators/config_generator.dart';
 
 Builder configAutoloaderBuilder(BuilderOptions options) {
   final defaultOptions = BuilderOptions({
@@ -13,7 +13,7 @@ Builder configAutoloaderBuilder(BuilderOptions options) {
 
   options = defaultOptions.overrideWith(options);
 
-  return MergingBuilder<List<String>, LibDir>(
+  return MergingBuilder<List<ConfigValue>, LibDir>(
     generator: ConfigAutoloaderGenerator(),
     inputFiles: options.config['input_files'],
     outputFile: options.config['output_file'],
