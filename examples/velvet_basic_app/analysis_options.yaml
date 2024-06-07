@@ -1,4 +1,0 @@
-include: package:velvel_lints/flutter.yaml
-
-linter:
-  rules:
