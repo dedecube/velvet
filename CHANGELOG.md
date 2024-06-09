@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-06-09
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`velvet_framework` - `v0.0.1-dev.6`](#velvet_framework---v001-dev6)
+
+---
+
+#### `velvet_framework` - `v0.0.1-dev.6`
+
+ - **FEAT**: add client wrap around dio. ([a0963daf](https://github.com/dedecube/velvet/commit/a0963daf4c4d51989e9b961ca7904b10ea5c3e4d))
+
+
 ## 2024-06-07
 
 ### Changes
