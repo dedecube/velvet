@@ -1,5 +1,22 @@
 library velvet_framework;
 
+/// Client
+
+export 'package:velvet_framework/client/client.dart';
+export 'package:velvet_framework/client/client_bad_response_handler.dart';
+export 'package:velvet_framework/client/client_config.dart';
+export 'package:velvet_framework/client/client_exception_handler.dart';
+export 'package:velvet_framework/client/client_response.dart';
+export 'package:velvet_framework/client/contracts/client_bad_response_handler_contract.dart';
+export 'package:velvet_framework/client/contracts/client_exception_handler_contract.dart';
+export 'package:velvet_framework/client/contracts/client_request_contract.dart';
+export 'package:velvet_framework/client/contracts/client_request_custom_handling_contract.dart';
+export 'package:velvet_framework/client/contracts/client_request_list_contract.dart';
+export 'package:velvet_framework/client/contracts/client_response_mapper_contract.dart';
+export 'package:velvet_framework/client/enums/client_request_method_enum.dart';
+export 'package:velvet_framework/client/exceptions/client_request_exception.dart';
+export 'package:velvet_framework/client/exceptions/client_response_parse_exception.dart';
+
 /// DevInspector
 
 export 'package:velvet_framework/dev_inspector/adapters/dev_inspector_talker_adapter.dart';
