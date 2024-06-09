@@ -15,6 +15,28 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`velvet_framework` - `v0.0.1-dev.7`](#velvet_framework---v001-dev7)
+
+---
+
+#### `velvet_framework` - `v0.0.1-dev.7`
+
+ - **REVERT**: remove unuseful ClientResponseListMapper mixin. ([3cf3361b](https://github.com/dedecube/velvet/commit/3cf3361bdc3a346957b3ad686798994a8df10760))
+ - **FEAT**: add export of client. ([62969d17](https://github.com/dedecube/velvet/commit/62969d17df174be56f9f9ec494ac7f18d38b18c7))
+
+
+## 2024-06-09
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`velvet_framework` - `v0.0.1-dev.6`](#velvet_framework---v001-dev6)
 
 ---
