@@ -1,22 +1,5 @@
 library velvet_framework;
 
-/// Client
-
-export 'package:velvet_framework/client/client.dart';
-export 'package:velvet_framework/client/client_bad_response_handler.dart';
-export 'package:velvet_framework/client/client_config.dart';
-export 'package:velvet_framework/client/client_exception_handler.dart';
-export 'package:velvet_framework/client/client_response.dart';
-export 'package:velvet_framework/client/contracts/client_bad_response_handler_contract.dart';
-export 'package:velvet_framework/client/contracts/client_exception_handler_contract.dart';
-export 'package:velvet_framework/client/contracts/client_request_contract.dart';
-export 'package:velvet_framework/client/contracts/client_request_custom_handling_contract.dart';
-export 'package:velvet_framework/client/contracts/client_request_list_contract.dart';
-export 'package:velvet_framework/client/contracts/client_response_mapper_contract.dart';
-export 'package:velvet_framework/client/enums/client_request_method_enum.dart';
-export 'package:velvet_framework/client/exceptions/client_request_exception.dart';
-export 'package:velvet_framework/client/exceptions/client_response_parse_exception.dart';
-
 /// DevInspector
 
 export 'package:velvet_framework/dev_inspector/adapters/dev_inspector_talker_adapter.dart';
@@ -31,6 +14,43 @@ export 'package:velvet_framework/dev_inspector/providers/dev_inspector_provider.
 
 export 'package:velvet_framework/hooks/use_post_build_callback/use_post_build_callback.dart';
 export 'package:velvet_framework/hooks/use_provider/use_provider.dart';
+
+/// Http
+
+export 'package:velvet_framework/http/contracts/http_request_bad_response_handler.dart';
+export 'package:velvet_framework/http/contracts/http_exception_handler_contract.dart';
+export 'package:velvet_framework/http/contracts/http_request_contract.dart';
+export 'package:velvet_framework/http/contracts/http_request_map_contract.dart';
+export 'package:velvet_framework/http/contracts/http_response_mapper_contract.dart';
+export 'package:velvet_framework/http/contracts/http_request_custom_handling_contract.dart';
+export 'package:velvet_framework/http/contracts/http_request_list_contract.dart';
+export 'package:velvet_framework/http/enums/http_request_method_enum.dart';
+export 'package:velvet_framework/http/http_exception_handler.dart';
+export 'package:velvet_framework/http/exceptions/http_request/canceled_http_request_exception.dart';
+export 'package:velvet_framework/http/exceptions/http_request/unknown_http_request_exception.dart';
+export 'package:velvet_framework/http/exceptions/http_request/4xx/413_payload_too_large_http_request_exception.dart';
+export 'package:velvet_framework/http/exceptions/http_request/4xx/409_conflict_http_request_exception.dart';
+export 'package:velvet_framework/http/exceptions/http_request/4xx/422_unprocessable_content_http_request_exception.dart';
+export 'package:velvet_framework/http/exceptions/http_request/4xx/403_forbidden_http_request_exception.dart';
+export 'package:velvet_framework/http/exceptions/http_request/4xx/400_bad_http_request_exception.dart';
+export 'package:velvet_framework/http/exceptions/http_request/4xx/410_gone_http_request_exception.dart';
+export 'package:velvet_framework/http/exceptions/http_request/4xx/401_unauthorized_http_request_exception.dart';
+export 'package:velvet_framework/http/exceptions/http_request/4xx/429_too_many_requests_http_request_exception.dart';
+export 'package:velvet_framework/http/exceptions/http_request/4xx/406_not_accetable_http_request_exception.dart';
+export 'package:velvet_framework/http/exceptions/http_request/4xx/402_payment_required_http_request_exception.dart';
+export 'package:velvet_framework/http/exceptions/http_request/4xx/405_method_not_allowed_http_request_exception.dart';
+export 'package:velvet_framework/http/exceptions/http_request/4xx/404_not_found_http_request_exception.dart';
+export 'package:velvet_framework/http/exceptions/http_request/connection_timeout_http_request_exception.dart';
+export 'package:velvet_framework/http/exceptions/http_request/send_timeout_http_request_exception.dart';
+export 'package:velvet_framework/http/exceptions/http_request/receive_timeout_http_request_exception.dart';
+export 'package:velvet_framework/http/exceptions/http_request/http_request_exception.dart';
+export 'package:velvet_framework/http/exceptions/http_request/bad_certificate_http_request_exception.dart';
+export 'package:velvet_framework/http/exceptions/http_request/5xx/502_bad_gateway_http_request_exception.dart';
+export 'package:velvet_framework/http/exceptions/http_request/5xx/500_internal_server_error_http_request_exception.dart';
+export 'package:velvet_framework/http/exceptions/http_response_parse_exception.dart';
+export 'package:velvet_framework/http/http_response.dart';
+export 'package:velvet_framework/http/http_config.dart';
+export 'package:velvet_framework/http/http.dart';
 
 /// Kernel
 

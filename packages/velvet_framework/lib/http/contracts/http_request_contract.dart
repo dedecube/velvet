@@ -1,13 +1,16 @@
-import 'package:velvet_framework/client/contracts/client_response_mapper_contract.dart';
-import 'package:velvet_framework/client/enums/client_request_method_enum.dart';
+import 'package:velvet_framework/http/contracts/http_response_mapper_contract.dart';
+import 'package:velvet_framework/http/enums/http_request_method_enum.dart';
 
-abstract class ClientRequestContract<ResponseReturnType, RawResponseRootType>
+abstract class HttpRequestContract<ResponseReturnType, RawResponseRootType>
     implements
-        ClientResponseMapperContract<ResponseReturnType, RawResponseRootType> {
+        HttpResponseMapperContract<ResponseReturnType, RawResponseRootType> {
+  /// The path parameters for current request.
   Map<String, dynamic>? get pathParameters => null;
 
+  /// The query parameters for current request.
   Map<String, dynamic>? get queryParameters => null;
 
+  /// The body of the request.
   Map<String, dynamic>? get body => null;
 
   /// The raw path of the API.
@@ -34,5 +37,5 @@ abstract class ClientRequestContract<ResponseReturnType, RawResponseRootType>
   Map<String, dynamic>? get headers => null;
 
   /// The method of the request.
-  ClientRequestMethodEnum get method;
+  HttpRequestMethodEnum get method;
 }

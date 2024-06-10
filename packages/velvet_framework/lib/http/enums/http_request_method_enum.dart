@@ -1,4 +1,4 @@
-enum ClientRequestMethodEnum {
+enum HttpRequestMethodEnum {
   get,
   post,
   put,

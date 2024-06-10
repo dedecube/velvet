@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:velvet_framework/client/contracts/client_request_contract.dart';
+import 'package:velvet_framework/velvet_framework.dart';
 
 /// The response from the client.
 ///
@@ -8,10 +8,10 @@ import 'package:velvet_framework/client/contracts/client_request_contract.dart';
 ///
 /// The [ResponseReturnType] is the type of the object that the response will be converted to.
 /// The [RawResponseRootType] is the type of the root object of the response.
-class ClientResponse<ResponseReturnType, RawResponseRootType> {
-  const ClientResponse({
+class HttpResponse<ResponseReturnType, RawResponseRootType> {
+  const HttpResponse({
     required this.dioResponse,
-    required this.clientRequest,
+    required this.httpRequest,
   });
 
   /// The original dio response.
@@ -22,11 +22,15 @@ class ClientResponse<ResponseReturnType, RawResponseRootType> {
   /// The client request that was made.
   ///
   /// Internally used for mapping the response to the desired object.
-  final ClientRequestContract<ResponseReturnType, RawResponseRootType>
-      clientRequest;
+  final HttpRequestContract<ResponseReturnType, RawResponseRootType>
+      httpRequest;
 
   /// Convert the response to the desired object.
   ResponseReturnType toObject() {
-    return clientRequest.fromResponse(dioResponse);
+    try {
+      return httpRequest.fromResponse(dioResponse);
+    } catch (exception) {
+      throw HttpResponseParseException();
+    }
   }
 }
