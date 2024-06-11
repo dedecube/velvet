@@ -89,7 +89,7 @@ class HttpExceptionHandler implements HttpExceptionHandlerContract {
 
     if (httpRequest is HttpRequestBadResponseHandlerContract) {
       final toThrow = (httpRequest as HttpRequestBadResponseHandlerContract)
-          .handleBadResponse(dioException.response!);
+          .handleBadResponse(dioException, httpRequest, dioException.response!);
 
       if (toThrow != null) {
         return toThrow;
