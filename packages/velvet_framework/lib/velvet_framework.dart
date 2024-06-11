@@ -1,5 +1,13 @@
 library velvet_framework;
 
+/// Vendor
+/// 
+/// This is the vendor library that contains all the dependencies that are used in the framework.
+export 'package:dio/dio.dart';
+export 'package:flutter_hooks/flutter_hooks.dart';
+export 'package:hooks_riverpod/hooks_riverpod.dart'; // internally exports flutter_riverpod and riverpod
+export 'package:go_router/go_router.dart';
+
 /// DevInspector
 
 export 'package:velvet_framework/dev_inspector/adapters/dev_inspector_talker_adapter.dart';
