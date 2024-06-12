@@ -8,10 +8,10 @@ environment:
 
 dependencies:
    # we will use analyzer for inspecting Dart files
-  analyzer:
-  analyzer_plugin:
+  analyzer: ^6.4.1
+  analyzer_plugin: ^0.11.3
   # custom_lint_builder will give us tools for writing lints
-  custom_lint_builder:
+  custom_lint_builder: ^0.6.4
 
 topics:
   - lints
