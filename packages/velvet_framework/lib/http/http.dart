@@ -1,10 +1,16 @@
 import 'package:dio/dio.dart';
+import 'package:velvet_framework/http/contracts/http_exception_handler_contract.dart';
+import 'package:velvet_framework/http/contracts/http_request_contract.dart';
+import 'package:velvet_framework/http/contracts/http_request_custom_handling_contract.dart';
+import 'package:velvet_framework/http/enums/http_request_method_enum.dart';
 import 'package:velvet_framework/http/exceptions/http_request/http_request_exception.dart';
-import 'package:velvet_framework/velvet_framework.dart';
+import 'package:velvet_framework/http/http_config.dart';
+import 'package:velvet_framework/http/http_exception_handler.dart';
+import 'package:velvet_framework/http/http_response.dart';
 
 class Http {
   Http(HttpConfig config)
-      : _instance = Dio(
+      : _dioInstance = Dio(
           BaseOptions(
             baseUrl: config.baseURL,
             headers: {
@@ -15,7 +21,9 @@ class Http {
         );
 
   /// The instance of the Dio client.
-  final Dio _instance;
+  final Dio _dioInstance;
+
+  get dioInstance => _dioInstance;
 
   /// The default exception handler.
   ///
@@ -70,10 +78,10 @@ class Http {
     if (httpRequest is HttpRequestCustomHandlingContract) {
       return (httpRequest as HttpRequestCustomHandlingContract<
               ResponseReturnType, RawResponseRootType>)
-          .handle(_instance, requestOptions);
+          .handle(_dioInstance, requestOptions);
     }
 
-    final response = await _instance.request<RawResponseRootType>(
+    final response = await _dioInstance.request<RawResponseRootType>(
       httpRequest.path,
       data: httpRequest.body,
       queryParameters: httpRequest.queryParameters,
