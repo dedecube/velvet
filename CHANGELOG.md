@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-06-12
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`velvet_custom_lints` - `v0.0.1-dev.1`](#velvet_custom_lints---v001-dev1)
+ - [`velvet_framework` - `v0.0.1-dev.10`](#velvet_framework---v001-dev10)
+
+---
+
+#### `velvet_custom_lints` - `v0.0.1-dev.1`
+
+ - **FEAT**: add velvet_custom_lints package. ([f182bbc5](https://github.com/dedecube/velvet/commit/f182bbc53caefef7bd569be6de3947b7d5815bec))
+
+#### `velvet_framework` - `v0.0.1-dev.10`
+
+ - **FIX**: fallback dioException message on HttpRequestException. ([b5479317](https://github.com/dedecube/velvet/commit/b5479317e93edca764192067fff13dde3baac81b))
+ - **FEAT**: add dioInstance getter on Http. ([7c33bdaa](https://github.com/dedecube/velvet/commit/7c33bdaa95b8253ad143c537af79a7dd8ca9f7ad))
+
+
 ## 2024-06-11
 
 ### Changes

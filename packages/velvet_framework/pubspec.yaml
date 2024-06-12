@@ -1,10 +1,10 @@
 name: velvet_framework
 description: A framework for building Flutter applications based on Riverpod and GoRouter.
-version: 0.0.1-dev.9
+version: 0.0.1-dev.10
 homepage: https://github.com/dedecube/velvet/tree/main/packages/velvet_framework
 
 environment:
-  sdk: ">=3.3.3 <4.0.0"
+  sdk: ">=3.2.6 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
@@ -30,6 +30,12 @@ dev_dependencies:
     sdk: flutter
   riverpod_generator: ^2.4.0
   theme_tailor: ^3.0.1
+
+  # Mandatory dependencies for make custom_lint work in monorepo
+  custom_lint: ^0.6.4
+  flutter_lints: ^4.0.0
+  pyramid_lint: ^2.0.0
+  riverpod_lint: ^2.3.10
 
 flutter: null
 
