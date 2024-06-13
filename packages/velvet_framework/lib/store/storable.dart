@@ -73,6 +73,10 @@ abstract class Storable<T> {
 
   Future<void> set(T data);
 
+  Future<void> remove() async {
+    return store().simple.remove(key);
+  }
+
   StoreContract store() {
     return ProviderScope.containerOf(KernelWidget.resolutionKey.currentContext!)
         .read(storeProvider)
