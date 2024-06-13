@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:velvet_framework/velvet_framework.dart';
+import 'package:velvet_framework/http/contracts/http_request_contract.dart';
+import 'package:velvet_framework/http/exceptions/http_response_parse_exception.dart';
 
 /// The response from the client.
 ///

@@ -9,7 +9,7 @@ class _VelvetCustomLints extends PluginBase {
   // Lint rules
   @override
   List<LintRule> getLintRules(CustomLintConfigs configs) => [
-        OneClassPerFile(),
+        const OneClassPerFile(),
       ];
 
   // Assists

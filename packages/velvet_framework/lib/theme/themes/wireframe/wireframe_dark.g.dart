@@ -6,7 +6,7 @@ part of 'wireframe_dark.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$wireframeDarkHash() => r'67d733ae81c4933879f2e9055c432e5f33e8eb8b';
+String _$wireframeDarkHash() => r'a18b2d233d17adae09f7018c5e94e595fd261d63';
 
 /// See also [WireframeDark].
 @ProviderFor(WireframeDark)

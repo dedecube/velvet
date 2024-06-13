@@ -66,7 +66,7 @@ class ConfigAutoloaderGenerator
     await for (final streamItem in stream) {
       for (var config in streamItem) {
         var fileName = Str.snake(config.name);
-        var import = 'package:' + config.import.replaceAll('/lib', '');
+        var import = 'package:${config.import.replaceAll('/lib', '')}';
 
         b.writeln('import \'./config/$fileName.dart\';');
         b.writeln('import \'$import\';');

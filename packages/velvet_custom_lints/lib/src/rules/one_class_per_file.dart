@@ -2,7 +2,7 @@ import 'package:analyzer/error/listener.dart';
 import 'package:custom_lint_builder/custom_lint_builder.dart';
 
 class OneClassPerFile extends DartLintRule {
-  OneClassPerFile() : super(code: _code);
+  const OneClassPerFile() : super(code: _code);
 
   // Lint rule metadata
   static const _code = LintCode(

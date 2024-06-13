@@ -75,6 +75,7 @@ class HttpExceptionHandler implements HttpExceptionHandlerContract {
     }
   }
 
+  @override
   HttpRequestException handleBadResponse(
     HttpRequestContract httpRequest,
     DioException dioException,

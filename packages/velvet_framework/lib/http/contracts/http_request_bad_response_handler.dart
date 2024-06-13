@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:velvet_framework/velvet_framework.dart';
+import 'package:velvet_framework/http/contracts/http_request_contract.dart';
+import 'package:velvet_framework/http/exceptions/http_request/http_request_exception.dart';
 
 abstract interface class HttpRequestBadResponseHandlerContract {
   /// Handle the bad response.
