@@ -34,5 +34,8 @@
     "/build": true,
     "**/fastlane": true
   },
-  "dart.flutterSdkPath": ".fvm/versions/3.19.5"
+  "dart.flutterSdkPath": ".fvm/versions/3.22.1",
+  "dart.sdkPath": ".fvm/versions/3.22.1",
+  "dart.runPubGetOnNestedProjects": "none",
+  "dart.runPubGetOnPubspecChanges": "never"
 }
