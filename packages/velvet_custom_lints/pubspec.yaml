@@ -1,17 +1,15 @@
 name: velvet_custom_lints
 description: Custom lints for the Velvet projects. It will help to maintain the code quality.
-version: 0.0.1-dev.1
+version: 0.0.1-dev.2
 homepage: https://github.com/dedecube/velvet/tree/main/packages/velvet_custom_lints
 
 environment:
   sdk: ">=3.2.6 <4.0.0"
 
 dependencies:
-   # we will use analyzer for inspecting Dart files
-  analyzer: ^6.4.1
-  analyzer_plugin: ^0.11.3
-  # custom_lint_builder will give us tools for writing lints
-  custom_lint_builder: ^0.6.4
+  analyzer:
+  analyzer_plugin:
+  custom_lint_builder:
 
 topics:
   - lints

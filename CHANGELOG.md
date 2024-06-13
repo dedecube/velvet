@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-06-13
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`velvet_custom_lints` - `v0.0.1-dev.2`](#velvet_custom_lints---v001-dev2)
+ - [`velvet_framework` - `v0.0.1-dev.11`](#velvet_framework---v001-dev11)
+
+---
+
+#### `velvet_custom_lints` - `v0.0.1-dev.2`
+
+ - **FIX**: remove custom_lints from topics in pubspec because invalid char. ([1a799b54](https://github.com/dedecube/velvet/commit/1a799b542000911181a201c2c1f217fe6966e4f9))
+
+#### `velvet_framework` - `v0.0.1-dev.11`
+
+ - **FEAT**: add useInputState and useFormState. ([1e30f25b](https://github.com/dedecube/velvet/commit/1e30f25bee5e3aecf2580ed2abadf758d3e5994e))
+ - **FEAT**: add remove in Storable class. ([2808d678](https://github.com/dedecube/velvet/commit/2808d6786166434785b2555fabbfdab05d13df3a))
+
+
 ## 2024-06-12
 
 ### Changes
