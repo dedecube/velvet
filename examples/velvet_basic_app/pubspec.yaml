@@ -1,6 +1,6 @@
 name: velvet_basic_app
 description: "A new Flutter project."
-publish_to: 'none'
+publish_to: "none"
 version: 1.0.0+1
 
 environment:
@@ -19,7 +19,6 @@ dev_dependencies:
   velvet_generator: ^0.0.1-dev.5
 
   # Mandatory dependencies for make custom_lint work in monorepo
-  custom_lint: ^0.6.4
   flutter_lints: ^4.0.0
   pyramid_lint: ^2.0.0
   riverpod_lint: ^2.3.10

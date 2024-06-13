@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:velvet_framework/velvet_framework.dart';
 
 final router = GoRouter(
   routes: [

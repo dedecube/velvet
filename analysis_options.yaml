@@ -4,7 +4,6 @@ linter:
   rules:
     - always_put_control_body_on_new_line
     - prefer_single_quotes
-    - sort_pub_dependencies
     - use_enums
     - use_is_even_rather_than_modulo
     - require_trailing_commas
@@ -15,13 +14,13 @@ linter:
 analyzer:
   plugins:
     - custom_lint
-
-custom_lint:
   exclude:
     - "**.freezed.dart"
     - "**.g.dart"
     - "**.tailor.dart"
     - "**.velvet.dart"
+
+custom_lint:
   rules:
     # Pyramid Lint - https://docs.page/charlescyt/pyramid_lint
     # Commented rules are intentionally disabled but they will be kept here for future reference
