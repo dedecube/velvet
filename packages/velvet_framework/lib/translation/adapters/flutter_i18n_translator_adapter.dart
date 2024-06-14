@@ -11,7 +11,7 @@ class FlutterI18nTranslationAdapter extends TranslatorAdapterContract {
     return FlutterI18nDelegate(
       translationLoader: FileTranslationLoader(
         useCountryCode: false,
-        basePath: 'assets/flutter_i18n',
+        basePath: 'assets/translation',
         fallbackFile: config.fallbackLocale.languageCode,
       ),
       missingTranslationHandler: (key, locale) {
