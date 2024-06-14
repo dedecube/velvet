@@ -6,11 +6,15 @@ import 'package:velvet_framework/translation/contracts/translation_config_contra
 import 'package:velvet_framework/translation/contracts/translator_adapter_contract.dart';
 
 class Translator {
-  Translator(this.config, this.adapter);
+  Translator(
+    this.config,
+    this.adapter,
+  ) : currentLocale = config.defaultLocale;
+
   final TranslatorAdapterContract adapter;
   final TranslationConfigContract config;
 
-  Locale currentLocale = const Locale('en');
+  Locale currentLocale;
 
   final _localeStream = StreamController<Locale?>.broadcast();
 
