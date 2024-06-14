@@ -5,10 +5,10 @@ import 'package:velvet_framework/velvet_framework.dart';
 @VelvetConfig(provider: translationConfig)
 class TranslationConfig extends TranslationConfigContract {
   @override
-  Locale get defaultLocale => const Locale('en');
+  Locale get defaultLocale => const Locale('it');
 
   @override
-  Locale get fallbackLocale => const Locale('it');
+  Locale get fallbackLocale => const Locale('en');
 
   @override
   List<Locale> get supportedLocales => [const Locale('en'), const Locale('it')];
