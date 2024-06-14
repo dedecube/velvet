@@ -37,5 +37,20 @@
   "dart.flutterSdkPath": ".fvm/versions/3.22.1",
   "dart.sdkPath": ".fvm/versions/3.22.1",
   "dart.runPubGetOnNestedProjects": "none",
-  "dart.runPubGetOnPubspecChanges": "never"
+  "dart.runPubGetOnPubspecChanges": "never",
+  "runOnSave.commands": [
+    {
+      "globMatch": "**/assets/**",
+      "command": "flutter.hotReload",
+      "runIn": "vscode"
+    }
+  ],
+  "[json]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace",
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false
+  }
 }
