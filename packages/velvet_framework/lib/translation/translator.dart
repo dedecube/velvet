@@ -4,17 +4,25 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:velvet_framework/translation/contracts/translation_config_contract.dart';
 import 'package:velvet_framework/translation/contracts/translator_adapter_contract.dart';
+import 'package:velvet_framework/translation/exceptions/locale_not_available_exception.dart';
+import 'package:velvet_framework/translation/storables/locale_storable.dart';
 
 class Translator {
   Translator(
     this.config,
     this.adapter,
-  ) : currentLocale = config.defaultLocale;
+  ) {
+    currentLocale = config.defaultLocale;
+
+    if (config.shouldUseOperatingSystemLocale) {
+      _loadFromOS();
+    }
+  }
 
   final TranslatorAdapterContract adapter;
   final TranslationConfigContract config;
 
-  Locale currentLocale;
+  late Locale currentLocale;
 
   final _localeStream = StreamController<Locale?>.broadcast();
 
@@ -22,13 +30,24 @@ class Translator {
 
   setLocale(BuildContext context, Locale locale) {
     if (!config.supportedLocales.contains(locale)) {
-      throw Exception('Locale not registered');
+      throw LocaleNotAvailableException(locale);
     }
 
     currentLocale = locale;
     _localeStream.add(locale);
 
+    LocaleStorable().set(locale.languageCode);
     adapter.refresh(context, locale);
+  }
+
+  // Load the locale from the operating system
+  // Here we can't use the setLocale because no context is available.
+  _loadFromOS() {
+    var locale = WidgetsBinding.instance.window.locale;
+
+    if (config.supportedLocales.contains(locale)) {
+      currentLocale = locale;
+    }
   }
 
   List<LocalizationsDelegate> delegates() {

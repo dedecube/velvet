@@ -11,4 +11,7 @@ abstract class TranslationConfigContract {
 
   /// The list of supported locales for translations.
   List<Locale> get supportedLocales;
+
+  /// Whether to use the operating system locale as the default locale.
+  bool get shouldUseOperatingSystemLocale;
 }
