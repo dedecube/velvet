@@ -6,7 +6,7 @@ class OneClassPerFile extends DartLintRule {
 
   // Lint rule metadata
   static const _code = LintCode(
-    name: 'one_class_per_file',
+    name: 'velvet_one_class_per_file',
     problemMessage: 'Only one class allowed per file',
   );
 
