@@ -3,7 +3,6 @@ import 'package:analyzer/error/listener.dart';
 import 'package:custom_lint_builder/custom_lint_builder.dart';
 
 class AvoidStringLiteralsInsideTextWidget extends DartLintRule {
-  /// Default const constructor
   const AvoidStringLiteralsInsideTextWidget() : super(code: _code);
 
   static const _code = LintCode(
@@ -26,7 +25,6 @@ class AvoidStringLiteralsInsideTextWidget extends DartLintRule {
         final firstArgument = node.argumentList.arguments.first;
 
         if (firstArgument is StringLiteral) {
-          // ignore: deprecated_member_use
           reporter.reportErrorForNode(code, firstArgument);
         }
       }

@@ -1,69 +1,10 @@
-import 'dart:async';
-import 'dart:convert';
 import 'dart:io';
 
 import 'package:analyzer/dart/ast/ast.dart';
 import 'package:analyzer/error/listener.dart';
 import 'package:custom_lint_builder/custom_lint_builder.dart';
+import 'package:velvet_custom_lints/src/helpers/json_loader.dart';
 import 'package:yaml/yaml.dart';
-
-class JsonLoader {
-  JsonLoader(this.jsonFiles);
-
-  final List<String> jsonFiles;
-
-  final StreamController<void> _onChangeController = StreamController<void>();
-
-  Stream<void> get onChange => _onChangeController.stream;
-
-  Map<String, dynamic> _loadJsonFile(String filePath) {
-    final file = File(filePath);
-
-    if (!file.existsSync()) {
-      return {};
-    }
-
-    final contents = file.readAsStringSync();
-
-    return jsonDecode(contents);
-  }
-
-  Map<String, dynamic> loadAllKeys() {
-    final Map<String, dynamic> allKeys = {};
-
-    for (final filePath in jsonFiles) {
-      final absolutePath = _resolvePath(filePath);
-      final jsonMap = _loadJsonFile(absolutePath);
-      allKeys.addAll(jsonMap);
-    }
-
-    return allKeys;
-  }
-
-  String _resolvePath(String relativePath) {
-    return File(relativePath).absolute.path;
-  }
-
-  bool containsKey(Map<String, dynamic> jsonMap, String key) {
-    final parts = key.split('.');
-    var current = jsonMap;
-    for (final part in parts) {
-      if (current.containsKey(part)) {
-        final value = current[part];
-        if (value is Map<String, dynamic>) {
-          current = value;
-        } else if (value is String && part == parts.last) {
-          return true;
-        } else {
-          return false;
-        }
-      } else {
-        return false;
-      }
-    }
-    return true;
-  }
-}
 
 class CheckTranslationKeyExists extends DartLintRule {
   CheckTranslationKeyExists(CustomLintConfigs configs, {super.code = _code}) {
@@ -82,9 +23,6 @@ class CheckTranslationKeyExists extends DartLintRule {
   }
 
   late final Map<String, List<String>> _jsonFiles;
-
-  @override
-  List<String> get filesToAnalyze => const ['**.dart'];
 
   static const _code = LintCode(
     name: 'velvet_check_translation_key_does_exist',
@@ -137,7 +75,6 @@ class CheckTranslationKeyExists extends DartLintRule {
       final key = arguments[0] as StringLiteral;
 
       if (!jsonLoader.containsKey(translationKeys, key.stringValue!)) {
-        // ignore: deprecated_member_use
         reporter.reportErrorForNode(code, node, [locale]);
       }
     }
