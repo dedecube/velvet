@@ -43,6 +43,11 @@
       "globMatch": "**/assets/**",
       "command": "flutter.hotReload",
       "runIn": "vscode"
+    },
+    {
+      "globMatch": "**/lib/**",
+      "command": "npx vscode-generate-index-standalone packages/velvet_framework/lib/",
+      "runIn": "terminal"
     }
   ],
   "[json]": {
