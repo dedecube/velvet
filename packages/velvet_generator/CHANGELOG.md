@@ -1,3 +1,7 @@
+## 0.0.1-dev.6
+
+ - **REFACTOR**: move ConfigValue to seperated file. ([a11bc687](https://github.com/dedecube/velvet/commit/a11bc6875b7299d47f872c181743ed53074b34f2))
+
 ## 0.0.1-dev.5
 
  - **FIX**: MergingBuilder generic type. ([58d41eb9](https://github.com/dedecube/velvet/commit/58d41eb9eb592fed64960d494c3949bcba0a0f03))
