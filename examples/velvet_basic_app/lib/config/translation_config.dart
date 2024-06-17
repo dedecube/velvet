@@ -11,5 +11,11 @@ class TranslationConfig extends TranslationConfigContract {
   Locale get fallbackLocale => const Locale('en');
 
   @override
-  List<Locale> get supportedLocales => [const Locale('en'), const Locale('it')];
+  List<Locale> get supportedLocales => [
+        const Locale('en'),
+        const Locale('it'),
+      ];
+
+  @override
+  bool get shouldUseOperatingSystemLocale => true;
 }

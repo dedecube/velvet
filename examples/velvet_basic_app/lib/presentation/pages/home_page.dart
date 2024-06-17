@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:velvet_framework/velvet_framework.dart';
 
-class Page extends HookConsumerWidget {
-  const Page({super.key});
+class HomePage extends HookConsumerWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -23,7 +23,7 @@ class Page extends HookConsumerWidget {
                   localeSwitcher(const Locale('en'));
                 }
               },
-              child: const Text('Change locale'),
+              child: Text(context.translate('home.switch')),
             ),
           ],
         ),
@@ -31,14 +31,3 @@ class Page extends HookConsumerWidget {
     );
   }
 }
-
-final router = GoRouter(
-  routes: [
-    GoRoute(
-      path: '/',
-      builder: (context, state) {
-        return const Page();
-      },
-    ),
-  ],
-);
