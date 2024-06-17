@@ -11,14 +11,14 @@ import 'package:velvet_framework/store/providers/store_provider.dart';
 /// class OnboardingStorable extends Storable<bool> {
 ///   @override
 ///   Future<bool?> get({bool? defaultValue}) async {
-///     return store()
+///     return store
 ///       .simple
 ///       .getBool(key, defaultValue: defaultValue);
 ///   }
 ///
 ///   @override
 ///   Future<void> set(bool data) async {
-///     return store()
+///     return store
 ///       .simple
 ///       .setBool(key, data);
 ///   }
@@ -67,6 +67,8 @@ import 'package:velvet_framework/store/providers/store_provider.dart';
 /// }
 /// ```
 abstract class Storable<T> {
+  StoreContract? _store;
+
   get key => T.toString();
 
   Future<T?> get({T? defaultValue});
@@ -74,10 +76,20 @@ abstract class Storable<T> {
   Future<void> set(T data);
 
   Future<void> remove() async {
-    return store().simple.remove(key);
+    return store.simple.remove(key);
   }
 
-  StoreContract store() {
+  Storable usingStore(StoreContract store) {
+    _store = store;
+
+    return this;
+  }
+
+  StoreContract get store {
+    if (_store != null) {
+      return _store!;
+    }
+
     return ProviderScope.containerOf(KernelWidget.resolutionKey.currentContext!)
         .read(storeProvider)
         .requireValue;
