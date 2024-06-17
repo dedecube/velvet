@@ -7,6 +7,7 @@
     "mhutchie.git-graph",
     "dart-code.dart-code",
     "jeroen-meijer.pubspec-assist",
-    "pucelle.run-on-save"
+    "pucelle.run-on-save",
+    "jayfong.generate-index"
   ]
 }
