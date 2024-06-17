@@ -7,15 +7,7 @@ import 'package:source_gen/source_gen.dart' show ConstantReader;
 import 'package:velvet_annotation/velvet_annotation.dart';
 import 'package:velvet_support/velvet_support.dart';
 
-class ConfigValue {
-  ConfigValue({
-    required this.name,
-    required this.import,
-  });
-
-  final String name;
-  final String import;
-}
+part '_config_value.dart';
 
 class ConfigAutoloaderGenerator
     extends MergingGenerator<List<ConfigValue>, VelvetConfig> {
