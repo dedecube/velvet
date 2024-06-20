@@ -1,3 +1,7 @@
+## 0.0.1-dev.4
+
+ - **FIX**: add dependency_overrides for meta package. ([86bd4060](https://github.com/dedecube/velvet/commit/86bd406012f83bcd49d735bc612fe1c42474c58a))
+
 ## 0.0.1-dev.3
 
  - **REFACTOR**: create a JsonLoader class and remove unuseful comments. ([11c81bd0](https://github.com/dedecube/velvet/commit/11c81bd0be19b1ef51d4e1cab9b56b557fa2b95b))

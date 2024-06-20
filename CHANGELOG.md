@@ -15,6 +15,54 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`velvet_annotation` - `v0.0.1-dev.6`](#velvet_annotation---v001-dev6)
+ - [`velvet_custom_lints` - `v0.0.1-dev.4`](#velvet_custom_lints---v001-dev4)
+ - [`velvet_framework` - `v0.0.1-dev.14`](#velvet_framework---v001-dev14)
+ - [`velvet_generator` - `v0.0.1-dev.9`](#velvet_generator---v001-dev9)
+ - [`velvet_support` - `v0.0.1-dev.5`](#velvet_support---v001-dev5)
+ - [`velvet_lints` - `v0.0.1-dev.3`](#velvet_lints---v001-dev3)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `velvet_lints` - `v0.0.1-dev.3`
+
+---
+
+#### `velvet_annotation` - `v0.0.1-dev.6`
+
+ - **FIX**: add dependency_overrides for meta package. ([86bd4060](https://github.com/dedecube/velvet/commit/86bd406012f83bcd49d735bc612fe1c42474c58a))
+
+#### `velvet_custom_lints` - `v0.0.1-dev.4`
+
+ - **FIX**: add dependency_overrides for meta package. ([86bd4060](https://github.com/dedecube/velvet/commit/86bd406012f83bcd49d735bc612fe1c42474c58a))
+
+#### `velvet_framework` - `v0.0.1-dev.14`
+
+ - **FIX**: add dependency_overrides for meta package. ([86bd4060](https://github.com/dedecube/velvet/commit/86bd406012f83bcd49d735bc612fe1c42474c58a))
+
+#### `velvet_generator` - `v0.0.1-dev.9`
+
+ - **FIX**: add dependency_overrides for meta package. ([86bd4060](https://github.com/dedecube/velvet/commit/86bd406012f83bcd49d735bc612fe1c42474c58a))
+
+#### `velvet_support` - `v0.0.1-dev.5`
+
+ - **FIX**: add dependency_overrides for meta package. ([86bd4060](https://github.com/dedecube/velvet/commit/86bd406012f83bcd49d735bc612fe1c42474c58a))
+
+
+## 2024-06-20
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`velvet_generator` - `v0.0.1-dev.8`](#velvet_generator---v001-dev8)
 
 ---

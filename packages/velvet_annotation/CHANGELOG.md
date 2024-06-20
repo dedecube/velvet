@@ -1,3 +1,7 @@
+## 0.0.1-dev.6
+
+ - **FIX**: add dependency_overrides for meta package. ([86bd4060](https://github.com/dedecube/velvet/commit/86bd406012f83bcd49d735bc612fe1c42474c58a))
+
 ## 0.0.1-dev.5
 
  - **FEAT**: remove config autoloader and introduce a more generic and reusable autoloader generator. ([9b74d6fc](https://github.com/dedecube/velvet/commit/9b74d6fc816179594869520a5de75b207cdf44f3))

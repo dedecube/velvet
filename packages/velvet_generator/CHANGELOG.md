@@ -1,3 +1,7 @@
+## 0.0.1-dev.9
+
+ - **FIX**: add dependency_overrides for meta package. ([86bd4060](https://github.com/dedecube/velvet/commit/86bd406012f83bcd49d735bc612fe1c42474c58a))
+
 ## 0.0.1-dev.8
 
 ## 0.0.1-dev.7
