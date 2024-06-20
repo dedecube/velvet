@@ -5,7 +5,14 @@ targets:
       source_gen|combining_builder:
         options:
           ignore_for_file:
-            - "type=lint"
+            - lines_longer_than_80_chars
+            # Only for the JSON literal output file
+            - text_direction_code_point_in_literal
+            # Too much work in generated code
+            - inference_failure_on_function_invocation
+            # Need to update sourcegen_helper to generate List/Map with the right type params
+            - inference_failure_on_collection_literal
+
       json_serializable:
         generate_for:
           - example/*
@@ -17,39 +24,26 @@ targets:
           - test/literal/*
           - test/supported_types/*
           - tool/readme/*
+
       json_serializable|_field_matrix_builder:
         generate_for:
           - test/field_matrix_test.dart
+
       json_serializable|_test_builder:
         generate_for:
           - test/default_value/default_value.dart
           - test/generic_files/generic_class.dart
           - test/integration/json_test_example.dart
           - test/kitchen_sink/kitchen_sink.dart
+
       json_serializable|_type_builder:
         generate_for:
           - test/supported_types/input.dart
+
       json_serializable|_type_test_builder:
         generate_for:
           - test/supported_types/type_test.dart
-      riverpod_generator:
-        enabled: true
-        generate_for:
-          exclude:
-            - test
-            - example
-          include:
-            - test/integration/*
-            - test/integration/**/*
-      freezed:
-        enabled: true
-        generate_for:
-          exclude:
-            - test
-            - example
-          include:
-            - test/integration/*
-            - test/integration/**/*
+
 builders:
   _test_builder:
     import: "tool/test_builder.dart"
@@ -63,6 +57,7 @@ builders:
         - .g_explicit_to_json.dart
     build_to: source
     runs_before: ["json_serializable"]
+
   _type_builder:
     import: "tool/test_type_builder.dart"
     builder_factories: ["typeBuilder"]
@@ -86,6 +81,7 @@ builders:
         - .type_uri.dart
     build_to: source
     runs_before: ["json_serializable"]
+
   _type_test_builder:
     import: "tool/test_type_builder.dart"
     builder_factories: ["typeTestBuilder"]
@@ -108,6 +104,7 @@ builders:
         - .uri_test.dart
     build_to: source
     runs_before: ["json_serializable"]
+
   _field_matrix_builder:
     import: "tool/field_matrix_builder.dart"
     builder_factories: ["builder"]
@@ -115,59 +112,19 @@ builders:
       .dart: [.field_matrix.dart]
     build_to: source
     runs_before: ["json_serializable"]
+
   _readme_builder:
     import: "tool/readme_builder.dart"
     builder_factories: ["readmeBuilder"]
-    build_extensions:
-      "tool/readme/readme_template.md": ["README.md"]
+    build_extensions: { "tool/readme/readme_template.md": ["README.md"] }
     build_to: source
     auto_apply: root_package
     required_inputs: [".dart"]
+
   json_serializable:
     import: "package:json_serializable/builder.dart"
     builder_factories: ["jsonSerializable"]
-    build_extensions:
-      ".dart": ["json_serializable.g.part"]
+    build_extensions: { ".dart": ["json_serializable.g.part"] }
     auto_apply: dependents
     build_to: cache
-    applies_builders: ["source_gen|combining_builder"]
-  riverpod_generator:
-    import: "package:riverpod_generator/builder.dart"
-    builder_factories: ["riverpodBuilder"]
-    build_extensions:
-      ".dart": [".riverpod.g.part"]
-    auto_apply: dependents
-    build_to: cache
-    applies_builders: ["source_gen|combining_builder"]
-  go_router_builder:
-    import: "package:go_router_builder/go_router_builder.dart"
-    builder_factories: ["goRouterBuilder"]
-    build_extensions:
-      ".dart": ["go_router.g.part"]
-    auto_apply: dependents
-    build_to: cache
-    applies_builders: ["source_gen|combining_builder"]
-  freezed:
-    import: "package:freezed/builder.dart"
-    builder_factories: ["freezed"]
-    build_extensions:
-      ".dart": [".freezed.dart"]
-    auto_apply: dependents
-    build_to: source
-    runs_before: ["json_serializable|json_serializable"]
-  bootstrap_autoloader_builder:
-    import: "package:velvet_generator/src/builders/bootstrap_builder.dart"
-    builder_factories: ["bootstrapAutoloaderBuilder"]
-    build_extensions:
-      "lib/$lib$": ["lib/bootstrap.velvet.dart"]
-    auto_apply: root_package
-    build_to: source
-  autoloader_builder:
-    target: ":velvet_annotation"
-    import: "package:velvet_generator/src/builders/autoloader_builder.dart"
-    builder_factories: ["autoloaderBuilder"]
-    build_extensions:
-      ".dart": [".velvet.dart"]
-    auto_apply: dependents
-    build_to: source
     applies_builders: ["source_gen|combining_builder"]

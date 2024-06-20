@@ -1,0 +1,16 @@
+builders:
+  bootstrap_autoloader_builder:
+    import: "package:velvet_generator/src/builders/bootstrap_builder.dart"
+    builder_factories: ["bootstrapAutoloaderBuilder"]
+    build_extensions: { "lib/$lib$": ["lib/bootstrap.velvet.dart"] }
+    auto_apply: root_package
+    build_to: source
+
+  autoloader_builder:
+    target: ":velvet_annotation"
+    import: "package:velvet_generator/src/builders/autoloader_builder.dart"
+    builder_factories: ["autoloaderBuilder"]
+    build_extensions: { ".dart": [".velvet.dart"] }
+    auto_apply: dependents
+    build_to: source
+    applies_builders: ["source_gen|combining_builder"]
