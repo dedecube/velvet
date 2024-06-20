@@ -71,7 +71,7 @@ class CheckTranslationKeyExists extends DartLintRule {
 
     final arguments = node.argumentList.arguments;
 
-    if (arguments.isNotEmpty) {
+    if (arguments.isNotEmpty && arguments[0] is StringLiteral) {
       final key = arguments[0] as StringLiteral;
 
       if (!jsonLoader.containsKey(translationKeys, key.stringValue!)) {
