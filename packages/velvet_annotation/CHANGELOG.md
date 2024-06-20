@@ -1,3 +1,7 @@
+## 0.0.1-dev.5
+
+ - **FEAT**: remove config autoloader and introduce a more generic and reusable autoloader generator. ([9b74d6fc](https://github.com/dedecube/velvet/commit/9b74d6fc816179594869520a5de75b207cdf44f3))
+
 ## 0.0.1-dev.4
 
  - **FEAT**: add provider to VelvetConfig annotation. ([c0d14888](https://github.com/dedecube/velvet/commit/c0d14888fc1b3f13301cdd9ad0b4476d5d630c34))

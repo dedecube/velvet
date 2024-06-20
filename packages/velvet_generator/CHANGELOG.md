@@ -1,3 +1,9 @@
+## 0.0.1-dev.7
+
+ - **FEAT**: wrap build.yaml from vendor. ([433f3300](https://github.com/dedecube/velvet/commit/433f33006579d5e05212f48bda9df33dc3282864))
+ - **FEAT**: remove config autoloader and introduce a more generic and reusable autoloader generator. ([9b74d6fc](https://github.com/dedecube/velvet/commit/9b74d6fc816179594869520a5de75b207cdf44f3))
+ - **DOCS**: specify that generator also wrap vendor build.yaml files. ([50d4f2e9](https://github.com/dedecube/velvet/commit/50d4f2e95594673b6aa8648207e94d4fbfcd4db0))
+
 ## 0.0.1-dev.6
 
  - **REFACTOR**: move ConfigValue to seperated file. ([a11bc687](https://github.com/dedecube/velvet/commit/a11bc6875b7299d47f872c181743ed53074b34f2))

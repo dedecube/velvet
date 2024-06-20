@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-06-20
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`velvet_annotation` - `v0.0.1-dev.5`](#velvet_annotation---v001-dev5)
+ - [`velvet_framework` - `v0.0.1-dev.13`](#velvet_framework---v001-dev13)
+ - [`velvet_generator` - `v0.0.1-dev.7`](#velvet_generator---v001-dev7)
+
+---
+
+#### `velvet_annotation` - `v0.0.1-dev.5`
+
+ - **FEAT**: remove config autoloader and introduce a more generic and reusable autoloader generator. ([9b74d6fc](https://github.com/dedecube/velvet/commit/9b74d6fc816179594869520a5de75b207cdf44f3))
+
+#### `velvet_framework` - `v0.0.1-dev.13`
+
+ - **REFACTOR**: move BaseRoute transition logic to specific mixin. ([d7258811](https://github.com/dedecube/velvet/commit/d7258811ae9b0b488ed054ffded1e7fa28322275))
+ - **FEAT**: add core with base Config class. ([db98887a](https://github.com/dedecube/velvet/commit/db98887a448c5e4a4d0b50d8214d7cbb4e3a0241))
+
+#### `velvet_generator` - `v0.0.1-dev.7`
+
+ - **FEAT**: wrap build.yaml from vendor. ([433f3300](https://github.com/dedecube/velvet/commit/433f33006579d5e05212f48bda9df33dc3282864))
+ - **FEAT**: remove config autoloader and introduce a more generic and reusable autoloader generator. ([9b74d6fc](https://github.com/dedecube/velvet/commit/9b74d6fc816179594869520a5de75b207cdf44f3))
+ - **DOCS**: specify that generator also wrap vendor build.yaml files. ([50d4f2e9](https://github.com/dedecube/velvet/commit/50d4f2e95594673b6aa8648207e94d4fbfcd4db0))
+
+
 ## 2024-06-17
 
 ### Changes
