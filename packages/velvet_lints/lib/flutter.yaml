@@ -15,13 +15,13 @@ linter:
 analyzer:
   plugins:
     - custom_lint
-
-custom_lint:
   exclude:
     - "**.freezed.dart"
     - "**.g.dart"
     - "**.tailor.dart"
-    - "**.dede.dart"
+    - "**.velvet.dart"
+
+custom_lint:
   rules:
     # Pyramid Lint - https://docs.page/charlescyt/pyramid_lint
     # Commented rules are intentionally disabled but they will be kept here for future reference
