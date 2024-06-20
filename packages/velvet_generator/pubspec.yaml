@@ -19,6 +19,7 @@ dependencies:
   json_serializable: ^6.8.0
   merging_builder: ^0.2.7
   quote_buffer: ^0.2.6
+  riverpod_generator: ^2.4.0
   source_gen: ^1.5.0
   velvet_annotation: ^0.0.1-dev.5
   velvet_support: ^0.0.1-dev.4
