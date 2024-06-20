@@ -7,10 +7,13 @@ environment:
   sdk: ">=3.2.6 <4.0.0"
 
 dependencies:
-  analyzer:
-  analyzer_plugin:
-  custom_lint_builder:
-  yaml: ^3.1.2
+  analyzer: ^6.5.0
+  analyzer_plugin: ^0.11.2
+  custom_lint_builder: ^0.6.0
+  yaml: ^3.1.1
+
+dependency_overrides:
+  meta: ^1.14.0
 
 topics:
   - lints
