@@ -15,6 +15,25 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`velvet_generator` - `v0.0.1-dev.8`](#velvet_generator---v001-dev8)
+
+---
+
+#### `velvet_generator` - `v0.0.1-dev.8`
+
+
+## 2024-06-20
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`velvet_annotation` - `v0.0.1-dev.5`](#velvet_annotation---v001-dev5)
  - [`velvet_framework` - `v0.0.1-dev.13`](#velvet_framework---v001-dev13)
  - [`velvet_generator` - `v0.0.1-dev.7`](#velvet_generator---v001-dev7)
