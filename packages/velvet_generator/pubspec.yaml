@@ -16,7 +16,6 @@ dependencies:
   freezed: ^2.5.2
   glob: ^2.1.2
   go_router_builder: ^2.7.0
-  json_serializable: ^6.8.0
   merging_builder: ^0.2.7
   quote_buffer: ^0.2.6
   riverpod_generator: ^2.4.0
