@@ -1,3 +1,7 @@
+## 0.0.1-dev.6
+
+ - **FIX**: prevent errors from check_translation_key_exists when PropertyAccessImpl found instead of StringLiteral. ([5749a283](https://github.com/dedecube/velvet/commit/5749a283a2b879aae95f4d3cb6d4dff6e4b17188))
+
 ## 0.0.1-dev.5
 
  - **FIX**: remove meta from dependencies_overrides and downgrade analyzer to ^6.4.1. ([15750a93](https://github.com/dedecube/velvet/commit/15750a9384db9f0c49bf4b5c3bc8d8d66740a8f9))

@@ -1,6 +1,6 @@
 name: velvet_custom_lints
 description: Custom lints for the Velvet projects. It will help to maintain the code quality.
-version: 0.0.1-dev.5
+version: 0.0.1-dev.6
 homepage: https://github.com/dedecube/velvet/tree/main/packages/velvet_custom_lints
 
 environment:
