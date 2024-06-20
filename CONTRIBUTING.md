@@ -10,10 +10,22 @@ To get started with contributing to Velvet, please follow these steps:
 2. Clone your forked repository to your local machine.
 3. Create a new branch for your changes.
 4. Make your desired changes to the codebase.
-5. Test your changes thoroughly.
-6. Commit your changes with descriptive commit messages.
-7. Push your changes to your forked repository.
-8. Submit a pull request to the main Velvet repository.
+5. Commit your changes with descriptive commit messages following the Conventional Commit standard.
+6. Push your changes to your forked repository.
+7. Submit a pull request to the main Velvet repository.
+
+## Developing
+
+1. Use fvm to manage the Flutter SDK version: `fvm use`.
+2. Install melos globally: `dart pub global activate melos`.
+3. Install dependencies: `melos bootstrap`.
+
+## Helpful Commands using Pfy
+
+1. velvet:framework:watch
+2. velvet:framework:generate-index
+3. velvet:basic_app:watch
+4. velvet:generator:compose-build
 
 ## Code Style
 
