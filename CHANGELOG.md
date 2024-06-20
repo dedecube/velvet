@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`velvet_generator` - `v0.0.1-dev.11`](#velvet_generator---v001-dev11)
+
+---
+
+#### `velvet_generator` - `v0.0.1-dev.11`
+
+ - **FIX**: remove json_serializable. ([473c3f48](https://github.com/dedecube/velvet/commit/473c3f48b847d9747e2892744b18cb71424967f2))
+
+
+## 2024-06-20
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`velvet_custom_lints` - `v0.0.1-dev.6`](#velvet_custom_lints---v001-dev6)
  - [`velvet_lints` - `v0.0.1-dev.5`](#velvet_lints---v001-dev5)
 

@@ -1,3 +1,7 @@
+## 0.0.1-dev.11
+
+ - **FIX**: remove json_serializable. ([473c3f48](https://github.com/dedecube/velvet/commit/473c3f48b847d9747e2892744b18cb71424967f2))
+
 ## 0.0.1-dev.10
 
  - **FIX**: remove meta from dependencies_overrides and downgrade analyzer to ^6.4.1. ([15750a93](https://github.com/dedecube/velvet/commit/15750a9384db9f0c49bf4b5c3bc8d8d66740a8f9))
