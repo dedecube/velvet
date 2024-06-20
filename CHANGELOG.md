@@ -15,6 +15,54 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`velvet_annotation` - `v0.0.1-dev.7`](#velvet_annotation---v001-dev7)
+ - [`velvet_custom_lints` - `v0.0.1-dev.5`](#velvet_custom_lints---v001-dev5)
+ - [`velvet_framework` - `v0.0.1-dev.15`](#velvet_framework---v001-dev15)
+ - [`velvet_generator` - `v0.0.1-dev.10`](#velvet_generator---v001-dev10)
+ - [`velvet_support` - `v0.0.1-dev.6`](#velvet_support---v001-dev6)
+ - [`velvet_lints` - `v0.0.1-dev.4`](#velvet_lints---v001-dev4)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `velvet_lints` - `v0.0.1-dev.4`
+
+---
+
+#### `velvet_annotation` - `v0.0.1-dev.7`
+
+ - **FIX**: remove meta from dependencies_overrides and downgrade analyzer to ^6.4.1. ([15750a93](https://github.com/dedecube/velvet/commit/15750a9384db9f0c49bf4b5c3bc8d8d66740a8f9))
+
+#### `velvet_custom_lints` - `v0.0.1-dev.5`
+
+ - **FIX**: remove meta from dependencies_overrides and downgrade analyzer to ^6.4.1. ([15750a93](https://github.com/dedecube/velvet/commit/15750a9384db9f0c49bf4b5c3bc8d8d66740a8f9))
+
+#### `velvet_framework` - `v0.0.1-dev.15`
+
+ - **FIX**: remove meta from dependencies_overrides and downgrade analyzer to ^6.4.1. ([15750a93](https://github.com/dedecube/velvet/commit/15750a9384db9f0c49bf4b5c3bc8d8d66740a8f9))
+
+#### `velvet_generator` - `v0.0.1-dev.10`
+
+ - **FIX**: remove meta from dependencies_overrides and downgrade analyzer to ^6.4.1. ([15750a93](https://github.com/dedecube/velvet/commit/15750a9384db9f0c49bf4b5c3bc8d8d66740a8f9))
+
+#### `velvet_support` - `v0.0.1-dev.6`
+
+ - **FIX**: remove meta from dependencies_overrides and downgrade analyzer to ^6.4.1. ([15750a93](https://github.com/dedecube/velvet/commit/15750a9384db9f0c49bf4b5c3bc8d8d66740a8f9))
+
+
+## 2024-06-20
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`velvet_annotation` - `v0.0.1-dev.6`](#velvet_annotation---v001-dev6)
  - [`velvet_custom_lints` - `v0.0.1-dev.4`](#velvet_custom_lints---v001-dev4)
  - [`velvet_framework` - `v0.0.1-dev.14`](#velvet_framework---v001-dev14)

@@ -1,6 +1,6 @@
 name: velvet_lints
 description: Recommended lints for Velvet apps, packages, and plugins to encourage good coding practices.
-version: 0.0.1-dev.3
+version: 0.0.1-dev.4
 homepage: https://github.com/dedecube/velvet/tree/main/packages/velvet_lints
 
 environment:
@@ -11,7 +11,7 @@ dependencies:
   flutter_lints: ^3.0.0
   pyramid_lint: ^2.0.0
   riverpod_lint: ^2.3.10
-  velvet_custom_lints: ^0.0.1-dev.4
+  velvet_custom_lints: ^0.0.1-dev.5
 
 topics:
   - lints
