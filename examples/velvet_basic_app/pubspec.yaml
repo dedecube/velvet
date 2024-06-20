@@ -24,7 +24,6 @@ dev_dependencies:
   pyramid_lint: ^2.0.0
   riverpod_lint: ^2.3.10
   velvet_custom_lints: ^0.0.1-dev.3
-  go_router_builder: ^2.7.0
 
 flutter:
   uses-material-design: true
