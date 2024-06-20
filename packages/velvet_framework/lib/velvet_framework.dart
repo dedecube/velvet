@@ -14,6 +14,7 @@ export 'package:hooks_riverpod/hooks_riverpod.dart'; // internally exports flutt
 /// This is the core library of the framework that contains all the necessary classes and utilities to build a Flutter application.
 
 // @index('./**/exports.dart', f => `export '${f.path}.dart';`)
+export './core/exports.dart';
 export './dev_inspector/exports.dart';
 export './hooks/exports.dart';
 export './http/exports.dart';
