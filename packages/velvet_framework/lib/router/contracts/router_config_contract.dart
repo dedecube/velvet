@@ -1,7 +1,7 @@
-import 'package:velvet_framework/router/enums/router_page_transition_enum.dart';
+import 'package:velvet_framework/velvet_framework.dart';
 
 /// A contract defining the configuration for the router.
-abstract class RouterConfigContract {
+abstract class RouterConfigContract implements Config<RouterConfigContract> {
   /// The initial path to be displayed when the app starts.
   String get initialPath;
 
@@ -10,4 +10,7 @@ abstract class RouterConfigContract {
 
   /// The default page transition to be used when navigating between pages.
   RouterPageTransitionEnum get defaultPageTransition;
+
+  @override
+  ConfigProvider get toOverride => routerConfigProvider;
 }
