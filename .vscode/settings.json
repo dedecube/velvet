@@ -19,7 +19,8 @@
     "**/.flutter-plugins-dependencies": true,
     "**/*.iml": true,
     "**/pubspec_overrides.yaml": true,
-    "custom_lint.log": true
+    "custom_lint.log": true,
+    "**/*.velvet.dart": true
   },
   "search.exclude": {
     "/.fvm": true,
@@ -43,11 +44,6 @@
       "globMatch": "**/assets/**",
       "command": "flutter.hotReload",
       "runIn": "vscode"
-    },
-    {
-      "globMatch": "**/lib/**",
-      "command": "npx vscode-generate-index-standalone packages/velvet_framework/lib/",
-      "runIn": "terminal"
     }
   ],
   "[json]": {
