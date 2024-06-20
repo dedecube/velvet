@@ -7,11 +7,6 @@ command:
     hooks:
       pre: cd ./packages/velvet_framework && dart pub run build_runner build --delete-conflicting-outputs
 
-scripts:
-  meta:
-    exec: flutter pub add meta
-    description: "Run the version command"
-
 packages:
   - examples/*
   - packages/*

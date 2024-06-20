@@ -14,7 +14,7 @@ dependencies:
   json_annotation: ^4.9.0
   riverpod: ^2.5.1
   riverpod_annotation: ^2.3.5
-  meta: ^1.14.0
+  meta: ^1.7.0
 
 dev_dependencies:
   flutter_test:
@@ -26,9 +26,6 @@ dev_dependencies:
   pyramid_lint: ^2.0.0
   riverpod_lint: ^2.3.10
   velvet_custom_lints: ^0.0.1-dev.4
-
-dependency_overrides:
-  meta: ^1.14.0
 
 topics:
   - annotations

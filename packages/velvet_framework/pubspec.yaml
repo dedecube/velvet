@@ -38,9 +38,6 @@ dev_dependencies:
   riverpod_lint: ^2.3.10
   velvet_custom_lints: ^0.0.1-dev.4
 
-dependency_overrides:
-  meta: ^1.14.0
-
 flutter: null
 
 topics:
