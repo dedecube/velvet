@@ -1,5 +1,4 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:riverpod/riverpod.dart';
 import 'package:velvet_annotation/velvet_annotation.dart';
 
 void main() {
@@ -13,10 +12,8 @@ void main() {
     expect(instance, isA<VelvetBootstrap>());
   });
 
-  test('can instanciate VelvetConfig', () {
-    final fakeProvider = Provider((ref) => 'fake');
-    final instance = VelvetConfig(provider: (ref) => fakeProvider);
-
+  test('can instanciate VelvetAutoloader', () {
+    const instance = VelvetAutoloader(glob: 'lib/**/*.dart');
     expect(instance, isNotNull);
   });
 }

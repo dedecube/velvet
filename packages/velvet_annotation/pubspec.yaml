@@ -10,7 +10,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  freezed_annotation: ^2.4.1
+  json_annotation: ^4.9.0
+  meta: ^1.12.0
   riverpod: ^2.5.1
+  riverpod_annotation: ^2.3.5
 
 dev_dependencies:
   flutter_test:
