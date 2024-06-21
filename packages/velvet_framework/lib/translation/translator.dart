@@ -45,7 +45,9 @@ class Translator {
   _loadFromOS() {
     var locale = WidgetsBinding.instance.window.locale;
 
-    if (config.supportedLocales.contains(locale)) {
+    var languageCode = locale.languageCode;
+
+    if (config.supportedLocales.contains(Locale(languageCode))) {
       currentLocale = locale;
     }
   }
