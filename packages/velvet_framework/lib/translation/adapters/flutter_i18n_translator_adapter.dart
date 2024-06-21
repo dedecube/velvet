@@ -30,7 +30,9 @@ class FlutterI18nTranslationAdapter extends TranslatorAdapterContract {
   }
 
   @override
-  Future<bool> refresh(BuildContext context, Locale locale) {
-    return FlutterI18n.refresh(context, locale) as Future<bool>;
+  Future<bool> refresh(BuildContext context, Locale locale) async {
+    await FlutterI18n.refresh(context, locale);
+
+    return true;
   }
 }
