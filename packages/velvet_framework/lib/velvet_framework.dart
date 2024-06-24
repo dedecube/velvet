@@ -15,6 +15,7 @@ export 'package:hooks_riverpod/hooks_riverpod.dart'; // internally exports flutt
 
 // @index('./**/exports.dart', f => `export '${f.path}.dart';`)
 export './core/exports.dart';
+export './data_loader/exports.dart';
 export './dev_inspector/exports.dart';
 export './hooks/exports.dart';
 export './http/exports.dart';
