@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:velvet_framework/hooks/use_input_state/use_input_state.dart';
-import 'package:velvet_framework/http/exceptions/http_request/http_request_exception.dart';
+import 'package:velvet_framework/form/hooks/use_form_state/form_options.dart';
+import 'package:velvet_framework/form/hooks/use_input_state/use_input.dart';
 import 'package:velvet_framework/types.dart';
 
 part '_form_state.dart';
@@ -21,8 +21,8 @@ part '_form_state.dart';
 /// Example usage:
 /// ```dart
 /// Map<String, InputState> inputs = {
-///   'username': InputState(),
-///   'password': InputState(),
+///   'username': useInputState(),
+///   'password': useInputState(),
 /// };
 ///
 /// Future<void> submitForm(Map<String, InputState> inputs) async {
@@ -40,13 +40,58 @@ FormState useForm(
   Future<void> Function(Map<String, InputState> inputs) onSubmit, {
   Future<void> Function(Map<String, InputState> inputs)? onSuccess,
   ExceptionMatcher? exceptionMatcher,
+  FormOptions options = const FormOptions(),
 }) {
   final isSubmitting = useState(false);
+  final isValid = useState(true);
+
+  validate({bool quietly = true}) async {
+    if (quietly) {
+      isValid.value = inputs.values.every((input) => input.isValid);
+    } else {
+      for (var input in inputs.values) {
+        input.validate();
+        isValid.value = inputs.values.every((input) => input.hasError == false);
+      }
+    }
+  }
+
+  useEffect(
+    () {
+      if (options.shouldValidateImmediately) {
+        validate(quietly: options.shouldValidateImmediatelyQuietly);
+      }
+
+      return null;
+    },
+    [],
+  );
+
+  for (final input in inputs.values) {
+    useEffect(
+      () {
+        input.controller.addListener(validate);
+
+        return () {
+          input.controller.removeListener(validate);
+        };
+      },
+      [input.controller],
+    );
+  }
 
   Future<void> submit() async {
     isSubmitting.value = true;
 
     try {
+      await validate(quietly: false);
+
+      if (!isValid.value) {
+        isSubmitting.value = false;
+
+        return;
+      }
+
       await onSubmit(inputs);
 
       if (onSuccess != null) {
@@ -54,13 +99,13 @@ FormState useForm(
       }
 
       isSubmitting.value = false;
-    } on HttpRequestException catch (e) {
+    } on Exception catch (e) {
       inputs.forEach((key, value) {
         if (value.exceptionMatcher != null) {
           final error = value.exceptionMatcher!(e);
 
           if (error != null) {
-            value.setError(error);
+            value.error.value = error;
           }
         }
       });
@@ -68,13 +113,17 @@ FormState useForm(
       if (exceptionMatcher != null) {
         exceptionMatcher(e);
       }
+
+      isSubmitting.value = false;
     }
   }
 
   return FormState(
     inputs: inputs,
+    isValid: isValid,
     isSubmitting: isSubmitting,
-    submit: submit,
     onSuccess: onSuccess,
+    submit: submit,
+    validate: validate,
   );
 }
