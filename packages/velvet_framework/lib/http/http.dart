@@ -2,7 +2,6 @@ import 'package:dio/dio.dart';
 import 'package:velvet_framework/http/contracts/http_exception_handler_contract.dart';
 import 'package:velvet_framework/http/contracts/http_request_contract.dart';
 import 'package:velvet_framework/http/contracts/http_request_custom_handling_contract.dart';
-import 'package:velvet_framework/http/enums/http_request_method_enum.dart';
 import 'package:velvet_framework/http/exceptions/http_request/http_request_exception.dart';
 import 'package:velvet_framework/http/http_config.dart';
 import 'package:velvet_framework/http/http_exception_handler.dart';
@@ -59,19 +58,12 @@ class Http {
     );
   }
 
-  /// Qualify the method to be used in the request.
-  ///
-  /// [method] is the method to be qualified.
-  _qualifyHttpRequestMethod(HttpRequestMethodEnum method) {
-    return method.name.toString().toUpperCase();
-  }
-
   Future<HttpResponse<ResponseReturnType, RawResponseRootType>>
       _makeRequest<ResponseReturnType, RawResponseRootType>(
     HttpRequestContract<ResponseReturnType, RawResponseRootType> httpRequest,
   ) async {
     final requestOptions = Options(
-      method: _qualifyHttpRequestMethod(httpRequest.method),
+      method: httpRequest.method.value,
       headers: httpRequest.headers,
     );
 
