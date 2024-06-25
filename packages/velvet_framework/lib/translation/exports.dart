@@ -1,4 +1,4 @@
-// @index(['./**/(*.dart)','!./**/*.g.dart', '!./**/_*.dart', '!./**/store.dart'], f => `export '${f.path}.dart';`)
+// @index(['./**/(*.dart)','!./**/*.g.dart', '!./**/_*.dart'], f => `export '${f.path}.dart';`)
 export './adapters/flutter_i18n_translator_adapter.dart';
 export './bootstrap/translation_locale_from_store_bootstrap.dart';
 export './contracts/translation_config_contract.dart';
@@ -10,5 +10,6 @@ export './providers/translation_config_provider.dart';
 export './providers/translator_adapter_provider.dart';
 export './providers/translator_provider.dart';
 export './storables/locale_storable.dart';
+export './translation_item.dart';
 export './translator.dart';
 // @endindex

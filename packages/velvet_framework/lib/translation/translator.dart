@@ -6,6 +6,7 @@ import 'package:velvet_framework/translation/contracts/translation_config_contra
 import 'package:velvet_framework/translation/contracts/translator_adapter_contract.dart';
 import 'package:velvet_framework/translation/exceptions/locale_not_available_exception.dart';
 import 'package:velvet_framework/translation/storables/locale_storable.dart';
+import 'package:velvet_framework/translation/translation_item.dart';
 
 class Translator {
   Translator(
@@ -70,5 +71,19 @@ class Translator {
     Map<String, String>? args,
   }) {
     return adapter.translate(context, key, args);
+  }
+
+  String translateItem(
+    BuildContext context,
+    TranslationItem item, {
+    Map<String, String>? args,
+  }) {
+    return adapter.translate(
+      context,
+      item.fullKey,
+      {}
+        ..addAll(item.args ?? {})
+        ..addAll(args ?? {}),
+    );
   }
 }
