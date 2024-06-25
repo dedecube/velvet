@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:velvet_basic_app/presentation/pages/home_page.dart';
+import 'package:velvet_basic_app/presentation/pages/home/home_page.dart';
 import 'package:velvet_framework/velvet_framework.dart';
 
 part 'home_route.g.dart';

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:velvet_basic_app/presentation/pages/form/form_route.dart';
 import 'package:velvet_framework/velvet_framework.dart';
 
 class HomePage extends HookConsumerWidget {
@@ -14,7 +15,13 @@ class HomePage extends HookConsumerWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(context.translate('home.title')),
+            ElevatedButton(
+              onPressed: () {
+                FormRoute().go(context);
+              },
+              child: Text(context.translate('pages.home.go_to_form')),
+            ),
+            Text(context.translate('pages.home.title')),
             ElevatedButton(
               onPressed: () {
                 if (translator.currentLocale == const Locale('en')) {
@@ -23,7 +30,7 @@ class HomePage extends HookConsumerWidget {
                   localeSwitcher(const Locale('en'));
                 }
               },
-              child: Text(context.translate('home.switch')),
+              child: Text(context.translate('pages.home.switch')),
             ),
           ],
         ),

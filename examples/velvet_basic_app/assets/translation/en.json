@@ -1,6 +1,16 @@
 {
-  "home": {
-    "title": "Home - EN",
-    "switch": "Switch to IT"
+  "pages": {
+    "home": {
+      "title": "Home - EN",
+      "go_to_form": "Go to Form",
+      "switch": "Switch to IT"
+    },
+    "form": {
+      "title": "Example Form"
+    }
+  },
+  "validation": {
+    "required_string": "This field is required",
+    "min_length": "This field must be at least {min} characters long"
   }
 }
