@@ -4,7 +4,7 @@ _useValidateOnFocusLost(
   FocusNode focusNode,
   TextEditingController controller,
   List<Rule> rules,
-  ValueNotifier<TranslationItem?> error,
+  ValueNotifier<String?> error,
 ) {
   useEffect(
     () {

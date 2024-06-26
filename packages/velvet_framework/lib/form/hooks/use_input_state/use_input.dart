@@ -1,7 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:velvet_framework/form/hooks/use_input_state/input_options.dart';
-import 'package:velvet_framework/translation/exports.dart';
 import 'package:velvet_framework/types.dart';
 import 'package:velvet_framework/validation/rule.dart';
 import 'package:velvet_framework/validation/validator.dart';
@@ -51,7 +50,7 @@ InputState useInput({
 }) {
   final controller = useTextEditingController();
   final focusNode = useFocusNode();
-  final error = useState<TranslationItem?>(null);
+  final error = useState<String?>(null);
 
   if (options.shouldValidateOnFocusLost) {
     _useValidateOnFocusLost(focusNode, controller, rules, error);

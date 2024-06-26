@@ -3,7 +3,7 @@ part of 'use_input.dart';
 _useValidateOnChange(
   TextEditingController controller,
   List<Rule> rules,
-  ValueNotifier<TranslationItem?> error,
+  ValueNotifier<String?> error,
 ) {
   useEffect(
     () {

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:velvet_framework/hooks/use_provider/use_provider.dart';
 import 'package:velvet_framework/translation/providers/translator_provider.dart';
-import 'package:velvet_framework/translation/translation_item.dart';
 import 'package:velvet_framework/translation/translator.dart';
 
 extension TranslatorExtension on BuildContext {
@@ -11,9 +10,5 @@ extension TranslatorExtension on BuildContext {
 
   String translate(String key, {Map<String, String>? args}) {
     return translator().translate(this, key, args: args);
-  }
-
-  String translateItem(TranslationItem item, {Map<String, String>? args}) {
-    return translator().translateItem(this, item, args: args);
   }
 }

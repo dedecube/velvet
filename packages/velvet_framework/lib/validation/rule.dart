@@ -1,5 +1,3 @@
-import 'package:velvet_framework/translation/translation_item.dart';
-
 /// The base class for all validation rules.
 ///
 /// A validation rule is used to validate a value of type [T].
@@ -9,7 +7,7 @@ abstract class Rule<T> {
   /// The [name] parameter is used to provide a name for the value being validated, which can be used in error messages.
   ///
   /// Returns a [TranslationItem] object if the value is invalid, otherwise returns `null`.
-  TranslationItem? isValid(
+  String? isValid(
     T value,
   );
 }

@@ -1,12 +1,11 @@
-import 'package:velvet_framework/translation/translation_item.dart';
 import 'package:velvet_framework/validation/rule.dart';
 
 class Validator {
-  static List<TranslationItem> on<T>(
+  static List<String> on<T>(
     T value,
     List<Rule<T>> rules,
   ) {
-    List<TranslationItem> errors = [];
+    List<String> errors = [];
 
     for (var rule in rules) {
       var error = rule.isValid(value);

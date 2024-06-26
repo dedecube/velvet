@@ -1,4 +1,4 @@
-import 'package:velvet_framework/translation/translation_item.dart';
+import 'package:velvet_framework/translation/translate.dart';
 import 'package:velvet_framework/validation/rule.dart';
 
 class MinLengthRule extends Rule<String> {
@@ -7,11 +7,10 @@ class MinLengthRule extends Rule<String> {
   final int min;
 
   @override
-  TranslationItem? isValid(value) {
+  String? isValid(value) {
     if (value.length < min) {
-      return TranslationItem(
-        namespace: 'validation',
-        key: 'min_length',
+      return translate(
+        'validation.min_length',
         args: {'min': min.toString()},
       );
     }

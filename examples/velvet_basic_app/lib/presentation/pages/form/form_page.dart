@@ -49,7 +49,7 @@ class FormPage extends HookConsumerWidget {
                 focusNode: nameInput.focusNode,
                 controller: form.inputs['name']!.controller,
                 decoration: InputDecoration(
-                  errorText: form.inputs['name']!.errorText(),
+                  errorText: form.inputs['name']!.error.value,
                   labelText: 'Name',
                 ),
               ),
@@ -57,8 +57,7 @@ class FormPage extends HookConsumerWidget {
                 focusNode: emailInput.focusNode,
                 controller: form.inputs['email']!.controller,
                 decoration: InputDecoration(
-                  errorText:
-                      form.inputs['email']!.errorText(args: {'name': 'mmail'}),
+                  errorText: form.inputs['email']!.error.value,
                   labelText: 'Email',
                 ),
               ),

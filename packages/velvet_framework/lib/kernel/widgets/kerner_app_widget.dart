@@ -14,9 +14,9 @@ class KernelAppWidget extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final router = ref.read(routerProvider);
     final translator = ref.read(translatorProvider);
-    final lightThemeDefinition = ref.watch(themeLightProvider);
-    final darkThemeDefinition = ref.watch(themeDarkProvider);
-    final themeData = ref.watch(themeDataProvider);
+    final lightThemeDefinition = ref.read(themeLightProvider);
+    final darkThemeDefinition = ref.read(themeDarkProvider);
+    final themeData = ref.read(themeDataProvider);
 
     final lightThemeData = themeData.copyWith(
       brightness: Brightness.light,
@@ -42,10 +42,13 @@ class KernelAppWidget extends HookConsumerWidget {
           localizationsDelegates: translator.delegates(),
           supportedLocales: translator.supportedLocales,
           locale: locale.data,
-          key: KernelWidget.resolutionKey,
           themeMode: ThemeMode.system,
           theme: lightThemeData,
           darkTheme: darkThemeData,
+          builder: (context, child) => Builder(
+            key: KernelWidget.resolutionKey,
+            builder: (context) => child!,
+          ),
         );
       },
     );

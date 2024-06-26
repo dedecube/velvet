@@ -2,7 +2,7 @@ part of 'use_input.dart';
 
 _useClearErrorOnFocus(
   FocusNode focusNode,
-  ValueNotifier<TranslationItem?> error,
+  ValueNotifier<String?> error,
 ) {
   useEffect(
     () {

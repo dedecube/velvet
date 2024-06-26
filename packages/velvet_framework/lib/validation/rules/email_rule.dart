@@ -1,4 +1,4 @@
-import 'package:velvet_framework/translation/translation_item.dart';
+import 'package:velvet_framework/translation/translate.dart';
 import 'package:velvet_framework/validation/rule.dart';
 
 class EmailRule extends Rule {
@@ -11,7 +11,7 @@ class EmailRule extends Rule {
   @override
   isValid(value) {
     if (!_emailRegExp.hasMatch(value)) {
-      return TranslationItem(namespace: 'validation', key: 'email');
+      return translate('validation.email');
     }
 
     return null;

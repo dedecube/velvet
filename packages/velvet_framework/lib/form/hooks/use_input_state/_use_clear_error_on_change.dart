@@ -2,7 +2,7 @@ part of 'use_input.dart';
 
 _useClearErrorOnChange(
   TextEditingController controller,
-  ValueNotifier<TranslationItem?> error,
+  ValueNotifier<String?> error,
 ) {
   final backupValue = useState<String>(controller.text);
 

@@ -63,7 +63,7 @@ class InputState {
   final FocusNode focusNode;
 
   /// The current error message, if any.
-  final ValueNotifier<TranslationItem?> error;
+  final ValueNotifier<String?> error;
 
   /// An optional [ExceptionMatcher] that can be used to customize the error
   /// handling behavior of the input state.
