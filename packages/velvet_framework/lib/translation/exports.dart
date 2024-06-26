@@ -10,5 +10,6 @@ export './providers/translation_config_provider.dart';
 export './providers/translator_adapter_provider.dart';
 export './providers/translator_provider.dart';
 export './storables/locale_storable.dart';
+export './translate.dart';
 export './translator.dart';
 // @endindex
