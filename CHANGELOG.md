@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`velvet_framework` - `v0.0.1-dev.19`](#velvet_framework---v001-dev19)
+
+---
+
+#### `velvet_framework` - `v0.0.1-dev.19`
+
+ - **FIX**: add translate and kernel_context to exports. ([e16fd5a3](https://github.com/dedecube/velvet/commit/e16fd5a36da42b65b81f1384377aaa2bb3c0badf))
+
+
+## 2024-06-26
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`velvet_framework` - `v0.0.1-dev.18`](#velvet_framework---v001-dev18)
 
 ---
