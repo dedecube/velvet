@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`velvet_framework` - `v0.0.1-dev.18`](#velvet_framework---v001-dev18)
+
+---
+
+#### `velvet_framework` - `v0.0.1-dev.18`
+
+ - **REVERT**: remove TranslationItem and fix context usage for Localizations resolver. ([0f7618d6](https://github.com/dedecube/velvet/commit/0f7618d610f40f6a3e8cbd3626886b664a440890))
+
+
+## 2024-06-26
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`velvet_framework` - `v0.0.1-dev.17`](#velvet_framework---v001-dev17)
 
 ---
