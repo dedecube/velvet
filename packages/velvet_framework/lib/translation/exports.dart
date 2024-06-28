@@ -1,3 +1,12 @@
+// **************************************************************************
+// Export
+// **************************************************************************
+//
+// In order to generate the file, run the following command:
+// ```
+// npx vscode-generate-index-standalone packages/velvet_framework/lib/
+// ```
+
 // @index(['./**/(*.dart)','!./**/*.g.dart', '!./**/_*.dart'], f => `export '${f.path}.dart';`)
 export './adapters/flutter_i18n_translator_adapter.dart';
 export './bootstrap/translation_locale_from_store_bootstrap.dart';

@@ -1,3 +1,12 @@
+// **************************************************************************
+// Export
+// **************************************************************************
+//
+// In order to generate the file, run the following command:
+// ```
+// npx vscode-generate-index-standalone packages/velvet_framework/lib/
+// ```
+
 // @index(['./**/(*.dart)','!./**/*.g.dart', '!./**/_*.dart'], f => `export '${f.path}.dart';`)
 export './data_loader_error_view.dart';
 export './data_loader_loading_view.dart';
