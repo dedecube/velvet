@@ -52,8 +52,8 @@ class InputState {
     required this.controller,
     required this.focusNode,
     required this.error,
+    required this.exceptionMatcher,
     this.rules = const [],
-    this.exceptionMatcher,
   });
 
   /// The [TextEditingController] instance for controlling the text input field.
@@ -67,7 +67,7 @@ class InputState {
 
   /// An optional [ExceptionMatcher] that can be used to customize the error
   /// handling behavior of the input state.
-  ExceptionMatcher? exceptionMatcher;
+  ExceptionMatcher exceptionMatcher;
 
   /// A list of validation rules to be applied to the input field.
   List<Rule> rules;

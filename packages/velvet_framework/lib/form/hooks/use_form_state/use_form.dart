@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:velvet_framework/error_handling/types.dart';
 import 'package:velvet_framework/form/hooks/use_form_state/form_options.dart';
 import 'package:velvet_framework/form/hooks/use_input_state/use_input.dart';
-import 'package:velvet_framework/types.dart';
 
 part '_form_state.dart';
 
@@ -99,19 +99,13 @@ FormState useForm(
       }
 
       isSubmitting.value = false;
-    } on Exception catch (e) {
+    } on Exception catch (exception) {
       inputs.forEach((key, value) {
-        if (value.exceptionMatcher != null) {
-          final error = value.exceptionMatcher!(e);
-
-          if (error != null) {
-            value.error.value = error;
-          }
-        }
+        value.exceptionMatcher(exception);
       });
 
       if (exceptionMatcher != null) {
-        exceptionMatcher(e);
+        exceptionMatcher(exception);
       }
 
       isSubmitting.value = false;
