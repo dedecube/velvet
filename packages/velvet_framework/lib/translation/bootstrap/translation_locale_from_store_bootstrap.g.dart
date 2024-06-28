@@ -9,7 +9,9 @@ part of 'translation_locale_from_store_bootstrap.dart';
 String _$translationLocaleFromStoreBootstrapHash() =>
     r'19463ad770801b28571415d398e662bac187e249';
 
-/// Try to get the locale from the store and set it to the translator.
+/// Sets the translation locale from the store to the translator.
+///
+/// This function tries to retrieve the locale from the store and sets it as the current locale for the translator.
 /// If no locale is stored, the default behavior will be used.
 ///
 /// Copied from [translationLocaleFromStoreBootstrap].

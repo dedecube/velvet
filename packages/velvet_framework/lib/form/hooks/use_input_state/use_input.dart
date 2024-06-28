@@ -1,13 +1,19 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:velvet_framework/error_handling/types.dart';
 import 'package:velvet_framework/form/hooks/use_input_state/input_options.dart';
-import 'package:velvet_framework/types.dart';
+import 'package:velvet_framework/form/providers/form_config_provider.dart';
+import 'package:velvet_framework/hooks/use_provider/use_provider.dart';
 import 'package:velvet_framework/validation/rule.dart';
 import 'package:velvet_framework/validation/validator.dart';
+import 'package:velvet_support/velvet_support.dart';
 
 part '_input_state.dart';
 part '_use_clear_error_on_change.dart';
 part '_use_clear_error_on_focus.dart';
+part '_use_exception_matcher.dart';
+part '_use_initial_value_for_debug.dart';
 part '_use_validate_on_change.dart';
 part '_use_validate_on_focus_lost.dart';
 
@@ -24,16 +30,46 @@ part '_use_validate_on_focus_lost.dart';
 ///   input field.
 /// - [error]: A [String] value representing the current error message, if any.
 ///
-/// The [InputState] object also provides the following functions:
-/// - [setError]: Sets the error message for the input field.
-/// - [clearError]: Clears the error message for the input field.
-///
 /// The [exceptionMatcher] parameter is an optional [ExceptionMatcher] that can
 /// be used to customize the error handling behavior of the input state.
 ///
+/// The [rules] parameter is a list of [Rule] objects that define the local validation
+/// rules for the input field.
+///
+/// The [options] parameter is an [InputOptions] object that allows you to customize
+/// the behavior of the input field.
+///
+/// The [initialValue] parameter is a string representing the initial value of the
+/// input field. Default is an empty string.
+///
+/// The [name] parameter is an optional string representing the name of the input field.
+/// It is used for error messages and debugging purposes.
+///
+/// The [exceptionToMessageResolverFactories] parameter is a list of
+/// [ExceptionToMessageResolverFactory] objects that define the mapping between
+/// exceptions and error messages for the input field.
+///
 /// Example usage:
 /// ```dart
-/// InputState inputState = useInputState();
+/// InputState inputState = useInputState(
+///   rules: [
+///     RequiredStringRule(),
+///     MinLengthRule(6),
+///   ],
+///   options: InputOptions(
+///     shouldValidateOnFocusLost: true,
+///     shouldClearErrorOnFocus: true,
+///     shouldClearErrorOnChange: true,
+///     shouldValidateOnChange: true,
+///   ),
+///   initialValue: 'Hello World',
+///   name: 'myInput',
+///   exceptionToMessageResolverFactories: [
+///    () => ExceptionToMessageResolver<FormatException>(
+///          (e) => translate('form.invalid_format'),
+///        ),
+///   ],
+/// );
 ///
 /// TextField(
 ///   controller: inputState.controller,
@@ -47,10 +83,23 @@ InputState useInput({
   List<Rule> rules = const [],
   ExceptionMatcher? exceptionMatcher,
   InputOptions options = const InputOptions(),
+  String initialValue = '',
+  String? name,
+  List<ExceptionToMessageResolverFactory> exceptionToMessageResolverFactories =
+      const [],
 }) {
-  final controller = useTextEditingController();
+  if (kDebugMode && name != null) {
+    initialValue = _useInitialValueForDebug(name, initialValue);
+  }
+
+  final controller = useTextEditingController(text: initialValue);
   final focusNode = useFocusNode();
   final error = useState<String?>(null);
+
+  exceptionMatcher ??= _useInputExceptionMatcher(
+    exceptionToMessageResolverFactories,
+    error,
+  );
 
   if (options.shouldValidateOnFocusLost) {
     _useValidateOnFocusLost(focusNode, controller, rules, error);

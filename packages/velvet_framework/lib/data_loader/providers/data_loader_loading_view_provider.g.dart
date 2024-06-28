@@ -9,7 +9,23 @@ part of 'data_loader_loading_view_provider.dart';
 String _$dataLoaderLoadingViewHash() =>
     r'0d987f339d75e854b0641571069c7912259889b0';
 
-/// See also [dataLoaderLoadingView].
+/// Provider for the default loading view of the data loader.
+///
+/// This provider returns a [DataLoaderLoadingViewBuilder] that builds the default loading view for the data loader.
+/// The default loading view is an instance of [DataLoaderDefaultLoadingView] that displays a loading indicator.
+///
+/// To override the default loading view, you can use the `ProviderContainer`'s `override` method in your `main.dart` file.
+/// Here's an example of how to override the default loading view using `Kernel`:
+///
+/// ```dart
+/// void main() {
+///   Kernel.bind(dataLoaderLoadingView, (ref) => () {
+///     return CustomLoadingView();
+///   });
+/// }
+/// ```
+///
+/// Copied from [dataLoaderLoadingView].
 @ProviderFor(dataLoaderLoadingView)
 final dataLoaderLoadingViewProvider =
     AutoDisposeProvider<DataLoaderLoadingViewBuilder>.internal(

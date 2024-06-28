@@ -7,9 +7,25 @@ part of 'data_loader_error_view_provider.dart';
 // **************************************************************************
 
 String _$dataLoaderErrorViewHash() =>
-    r'00a961b5e69285595d6483f78e4acccb5d16d5a9';
+    r'4e09c25649ead5e14f98611b97be0112cc28a2f5';
 
-/// See also [dataLoaderErrorView].
+/// Provider for the default error view of the data loader.
+///
+/// This provider returns a [DataLoaderErrorViewBuilder] that builds the default error view for the data loader.
+/// The default error view is an instance of [DataLoaderDefaultErrorView] that displays the error message and stack trace.
+///
+/// To override the default error view, you can use the `ProviderContainer`'s `override` method in your `main.dart` file.
+/// Here's an example of how to override the default error view using `Kernel`:
+///
+/// ```dart
+/// void main() {
+///   Kernel.bind(dataLoaderErrorView, (ref) => (error, stackTrace) {
+///     return CustomErrorView(error: error, stackTrace: stackTrace);
+///   });
+/// }
+/// ```
+///
+/// Copied from [dataLoaderErrorView].
 @ProviderFor(dataLoaderErrorView)
 final dataLoaderErrorViewProvider =
     AutoDisposeProvider<DataLoaderErrorViewBuilder>.internal(

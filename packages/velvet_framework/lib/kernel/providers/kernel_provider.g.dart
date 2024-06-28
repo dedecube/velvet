@@ -8,8 +8,9 @@ part of 'kernel_provider.dart';
 
 String _$kernelHash() => r'4b122135c1c7da6afee36d3634c49f740ec3e0be';
 
-/// This is the kernel of the application.
+/// The kernel provider is the responsible for initializing the application and its dependencies.
 /// It is responsible for initializing the application and its dependencies.
+/// Internally, it initializes the store, the router, the translator, and the kernel bootstrap providers.
 ///
 /// See https://codewithandrea.com/articles/robust-app-initialization-riverpod/
 ///
