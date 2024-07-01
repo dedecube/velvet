@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:velvet_basic_app/presentation/pages/form/hooks/use_email_input.dart';
+import 'package:velvet_basic_app/presentation/pages/form/hooks/use_name_input.dart';
 import 'package:velvet_framework/velvet_framework.dart';
 
 class FormPage extends HookConsumerWidget {
@@ -6,35 +8,17 @@ class FormPage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    const inputOptions = InputOptions(
-      shouldValidateOnChange: false,
-      shouldValidateOnFocusLost: false,
-      shouldClearErrorOnFocus: false,
-      shouldClearErrorOnChange: true,
-    );
-
-    var nameInput = useInput(
-      rules: [
-        RequiredStringRule(),
-        MinLengthRule(3),
-      ],
-      options: inputOptions,
-    );
-
-    var emailInput = useInput(
-      rules: [
-        RequiredStringRule(),
-        EmailRule(),
-      ],
-      options: inputOptions,
-    );
+    var nameInput = useNameInput();
+    var emailInput = useEmailInput();
 
     var form = useForm(
       {
         'name': nameInput,
         'email': emailInput,
       },
-      (inputs) async {},
+      (inputs) async {
+        throw const FormatException('Invalid format');
+      },
     );
 
     return Scaffold(
@@ -47,17 +31,17 @@ class FormPage extends HookConsumerWidget {
             children: [
               TextFormField(
                 focusNode: nameInput.focusNode,
-                controller: form.inputs['name']!.controller,
+                controller: nameInput.controller,
                 decoration: InputDecoration(
-                  errorText: form.inputs['name']!.error.value,
+                  errorText: nameInput.error.value,
                   labelText: 'Name',
                 ),
               ),
               TextFormField(
                 focusNode: emailInput.focusNode,
-                controller: form.inputs['email']!.controller,
+                controller: emailInput.controller,
                 decoration: InputDecoration(
-                  errorText: form.inputs['email']!.error.value,
+                  errorText: emailInput.error.value,
                   labelText: 'Email',
                 ),
               ),

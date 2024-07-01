@@ -6,7 +6,10 @@
       "switch": "Switch to IT"
     },
     "form": {
-      "title": "Example Form"
+      "title": "Example Form",
+      "submit": "Submit",
+      "is_submitting": "Submitting...",
+      "is_invalid": "Form is invalid"
     }
   },
   "validation": {

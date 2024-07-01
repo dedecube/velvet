@@ -6,7 +6,10 @@
       "switch": "Switch to EN"
     },
     "form": {
-      "title": "Form di Esempio"
+      "title": "Form di Esempio",
+      "submit": "Invia",
+      "is_submitting": "Invio in corso...",
+      "is_invalid": "Il form contiene errori"
     }
   },
   "validation": {
