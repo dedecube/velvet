@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:velvet_framework/data_loader/data_loader_loading_view.dart';
-import 'package:velvet_framework/velvet_framework.dart';
 
 class DataLoaderDefaultLoadingView extends DataLoaderLoadingView {
   const DataLoaderDefaultLoadingView({

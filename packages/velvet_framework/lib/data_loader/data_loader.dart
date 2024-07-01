@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:velvet_framework/data_loader/data_loader_error_view.dart';
 import 'package:velvet_framework/data_loader/data_loader_loading_view.dart';
 import 'package:velvet_framework/data_loader/data_loader_success_view.dart';
 import 'package:velvet_framework/data_loader/providers/data_loader_error_view_provider.dart';
 import 'package:velvet_framework/data_loader/providers/data_loader_loading_view_provider.dart';
-import 'package:velvet_framework/velvet_framework.dart';
 
 part '_data_loader_builder_types.dart';
 

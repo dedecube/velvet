@@ -1,4 +1,4 @@
-import 'package:velvet_framework/velvet_framework.dart';
+import 'package:velvet_framework/router/enums/router_page_transition_enum.dart';
 
 /// A contract defining the configuration for the router.
 abstract class RouterConfigContract {

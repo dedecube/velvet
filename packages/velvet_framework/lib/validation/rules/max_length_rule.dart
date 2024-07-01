@@ -1,5 +1,5 @@
 import 'package:velvet_framework/translation/translate.dart';
-import 'package:velvet_framework/velvet_framework.dart';
+import 'package:velvet_framework/validation/rule.dart';
 
 class MaxLengthRule extends Rule<String> {
   MaxLengthRule(this.max);

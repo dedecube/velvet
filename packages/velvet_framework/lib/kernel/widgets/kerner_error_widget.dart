@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:velvet_framework/translation/extensions/translator_extension.dart';
 
 class KernelErrorWidget extends StatelessWidget {
   const KernelErrorWidget({
@@ -17,15 +18,24 @@ class KernelErrorWidget extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Error'),
+          title: Text(context.translate('velvet.kernel.widgets.error.title')),
         ),
         body: Center(
           child: Column(
             children: [
-              const Text('Error'),
+              Text(
+                context.translate(
+                  'velvet.kernel.widgets.error.message',
+                  args: {
+                    'error': error.toString(),
+                  },
+                ),
+              ),
               ElevatedButton(
                 onPressed: onRetry,
-                child: const Text('Retry'),
+                child: Text(
+                  context.translate('velvet.kernel.widgets.error.retry'),
+                ),
               ),
             ],
           ),

@@ -1,4 +1,4 @@
-import 'package:velvet_framework/velvet_framework.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 /// A widget that represents the view when data is successfully loaded by a [DataLoader].
 ///
