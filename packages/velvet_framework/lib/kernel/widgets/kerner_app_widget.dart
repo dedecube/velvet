@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:velvet_framework/kernel/hooks/use_dark_theme.dart';
+import 'package:velvet_framework/kernel/hooks/use_light_theme.dart';
 import 'package:velvet_framework/kernel/widgets/kernel_widget.dart';
 import 'package:velvet_framework/router/providers/router_provider.dart';
-import 'package:velvet_framework/theme/providers/theme_dark_provider.dart';
-import 'package:velvet_framework/theme/providers/theme_data_provider.dart';
-import 'package:velvet_framework/theme/providers/theme_light_provider.dart';
 import 'package:velvet_framework/translation/providers/translator_provider.dart';
 
 class KernelAppWidget extends HookConsumerWidget {
@@ -14,23 +13,8 @@ class KernelAppWidget extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final router = ref.read(routerProvider);
     final translator = ref.read(translatorProvider);
-    final lightThemeDefinition = ref.read(themeLightProvider);
-    final darkThemeDefinition = ref.read(themeDarkProvider);
-    final themeData = ref.read(themeDataProvider);
-
-    final lightThemeData = themeData.copyWith(
-      brightness: Brightness.light,
-      extensions: [
-        lightThemeDefinition,
-      ],
-    );
-
-    final darkThemeData = themeData.copyWith(
-      brightness: Brightness.dark,
-      extensions: [
-        darkThemeDefinition,
-      ],
-    );
+    final lightThemeData = useLightTheme();
+    final darkThemeData = useDarkTheme();
 
     return StreamBuilder(
       initialData: translator.currentLocale,
@@ -45,12 +29,22 @@ class KernelAppWidget extends HookConsumerWidget {
           themeMode: ThemeMode.system,
           theme: lightThemeData,
           darkTheme: darkThemeData,
-          builder: (context, child) => Builder(
-            key: KernelWidget.resolutionKey,
-            builder: (context) => child!,
-          ),
+          builder: _routerBuilder,
         );
       },
+    );
+  }
+
+  // ignore: avoid_returning_widgets
+  /// The builder is used to ensure that Localizations are available.
+  /// This enable usage of `translate` method in the entire app.
+  Widget _routerBuilder(
+    BuildContext context,
+    Widget? child,
+  ) {
+    return Builder(
+      key: KernelWidget.resolutionKey,
+      builder: (context) => child!,
     );
   }
 }
