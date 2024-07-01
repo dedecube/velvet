@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:ui';
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -43,7 +44,7 @@ class Translator {
   // Load the locale from the operating system
   // Here we can't use the setLocale because no context is available.
   _loadFromOS() {
-    var locale = WidgetsBinding.instance.window.locale;
+    var locale = PlatformDispatcher.instance.locale;
 
     var languageCode = locale.languageCode;
 
