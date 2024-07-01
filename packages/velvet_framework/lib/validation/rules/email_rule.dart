@@ -1,7 +1,7 @@
 import 'package:velvet_framework/translation/translate.dart';
 import 'package:velvet_framework/validation/rule.dart';
 
-class EmailRule extends Rule {
+class EmailRule extends Rule<String> {
   EmailRule();
 
   static final _emailRegExp = RegExp(
