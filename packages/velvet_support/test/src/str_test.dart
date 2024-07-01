@@ -100,24 +100,6 @@ void main() {
     expect(Str.charAt('Привет, мир!', 100), '');
   });
 
-  // TODO[epic=test]
-  test('contains', () {});
-
-// TODO[epic=test]
-  test('containsAny', () {});
-
-// TODO[epic=test]
-  test('containsAll', () {});
-
-// TODO[epic=test]
-  test('endsWith', () {});
-
-  // TODO[epic=test]
-  test('endsWithAny', () {});
-
-  // TODO[epic=test]
-  test('excerpt', () {});
-
   test('test snake', () {
     expect(Str.snake('LaravelPhpFramework'), 'laravel_php_framework');
     expect(Str.snake('LaravelPhpFramework', ' '), 'laravel php framework');

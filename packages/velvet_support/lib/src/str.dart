@@ -1,3 +1,4 @@
+// ignore_for_file: boolean_prefixes
 import 'package:velvet_support/src/functions/first_lower.dart';
 import 'package:velvet_support/src/functions/first_upper.dart';
 import 'package:velvet_support/src/functions/is_lower.dart';
