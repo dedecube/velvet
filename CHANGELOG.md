@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-07-01
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`velvet_framework` - `v0.0.1-dev.20`](#velvet_framework---v001-dev20)
+ - [`velvet_support` - `v0.0.1-dev.7`](#velvet_support---v001-dev7)
+ - [`velvet_generator` - `v0.0.1-dev.12`](#velvet_generator---v001-dev12)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `velvet_generator` - `v0.0.1-dev.12`
+
+---
+
+#### `velvet_framework` - `v0.0.1-dev.20`
+
+ - **REFACTOR**: update exports. ([7582556f](https://github.com/dedecube/velvet/commit/7582556fff7053063f62372c810055ff24369823))
+ - **REFACTOR**: wrap theme creation inside hooks. ([d9cec3b1](https://github.com/dedecube/velvet/commit/d9cec3b1b49486251950b5dd459dac93dfcace96))
+ - **REFACTOR**: rename exceptions import. ([3dff9e65](https://github.com/dedecube/velvet/commit/3dff9e65661866a7b73ecc7f8cf43aa8b215be52))
+ - **REFACTOR**: :pencil2: stackTrack to stackTrace. ([3ebe69a2](https://github.com/dedecube/velvet/commit/3ebe69a2d1844feda47e842d197b994b51e68e3b))
+ - **FIX**: prevent type error in translationLocaleFromStoreBootstrap. ([9d4f6469](https://github.com/dedecube/velvet/commit/9d4f64694e1103ab5c846a0f51902fe1f54855bd))
+ - **FIX**: remove usage of deprecated `WidgetsBinding.instance.window.locale`. ([770a1e14](https://github.com/dedecube/velvet/commit/770a1e14fb7301d903e18a39c59fbd019c6a707f))
+ - **FEAT**: add form_config_provider. ([fd24eccc](https://github.com/dedecube/velvet/commit/fd24eccc453b6004a3d64bff3b37c0e731f36112))
+ - **FEAT**: :sparkles: add ExceptionToMessageResolver and ExceptionToMessageResolverFactory. ([538d6c66](https://github.com/dedecube/velvet/commit/538d6c66418aaf5b52bfb971128950dd079091bd))
+ - **DOCS**: :memo: add some docs using copilot. ([843b1974](https://github.com/dedecube/velvet/commit/843b1974104b4edb4cff76e0ec110db77ca4c80d))
+
+#### `velvet_support` - `v0.0.1-dev.7`
+
+ - **FEAT**: :sparkles: add DotNotationMap extension for Map. ([160d98f5](https://github.com/dedecube/velvet/commit/160d98f5bdccf5bc0d10346a763b7ea12b35ffff))
+
+
 ## 2024-06-26
 
 ### Changes

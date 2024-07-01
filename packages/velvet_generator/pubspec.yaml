@@ -1,6 +1,6 @@
 name: velvet_generator
 description: The code generator for the Velvet framework. It helps to automate some tasks as autoload, service binding, and more.
-version: 0.0.1-dev.11
+version: 0.0.1-dev.12
 homepage: https://github.com/dedecube/velvet/tree/main/packages/velvet_generator
 
 environment:
@@ -21,7 +21,7 @@ dependencies:
   riverpod_generator: ^2.4.0
   source_gen: ^1.5.0
   velvet_annotation: ^0.0.1-dev.7
-  velvet_support: ^0.0.1-dev.6
+  velvet_support: ^0.0.1-dev.7
 
 dev_dependencies:
   flutter_test:

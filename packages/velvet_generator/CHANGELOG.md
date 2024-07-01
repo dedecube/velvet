@@ -1,3 +1,7 @@
+## 0.0.1-dev.12
+
+ - Update a dependency to the latest release.
+
 ## 0.0.1-dev.11
 
  - **FIX**: remove json_serializable. ([473c3f48](https://github.com/dedecube/velvet/commit/473c3f48b847d9747e2892744b18cb71424967f2))

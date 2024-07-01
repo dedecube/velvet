@@ -1,3 +1,7 @@
+## 0.0.1-dev.7
+
+ - **FEAT**: :sparkles: add DotNotationMap extension for Map. ([160d98f5](https://github.com/dedecube/velvet/commit/160d98f5bdccf5bc0d10346a763b7ea12b35ffff))
+
 ## 0.0.1-dev.6
 
  - **FIX**: remove meta from dependencies_overrides and downgrade analyzer to ^6.4.1. ([15750a93](https://github.com/dedecube/velvet/commit/15750a9384db9f0c49bf4b5c3bc8d8d66740a8f9))
