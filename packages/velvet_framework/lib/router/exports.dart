@@ -1,3 +1,12 @@
+// **************************************************************************
+// Export
+// **************************************************************************
+//
+// In order to generate the file, run the following command:
+// ```
+// npx vscode-generate-index-standalone packages/velvet_framework/lib/
+// ```
+
 // @index(['./**/(*.dart)','!./**/*.g.dart', '!./**/_*.dart'], f => `export '${f.path}.dart';`)
 export './base_route.dart';
 export './contracts/middleware_contract.dart';
