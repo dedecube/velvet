@@ -14,11 +14,16 @@ part 'translation_locale_from_store_bootstrap.g.dart';
 Future<void> translationLocaleFromStoreBootstrap(
   TranslationLocaleFromStoreBootstrapRef ref,
 ) async {
-  final translator = ref.watch(translatorProvider);
+  final translator = ref.read(translatorProvider);
   final storeInstance = ref.read(storeProvider);
+  final localeStorable = LocaleStorable()
+    ..usingStore(storeInstance.requireValue);
 
-  final locale =
-      await LocaleStorable().usingStore(storeInstance.requireValue).get();
+  final locale = await localeStorable.get();
+
+  if (locale == null) {
+    return;
+  }
 
   translator.currentLocale = Locale(locale);
 }
