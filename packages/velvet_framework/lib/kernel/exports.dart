@@ -9,6 +9,8 @@
 
 // @index(['./**/(*.dart)','!./**/*.g.dart', '!./**/_*.dart'], f => `export '${f.path}.dart';`)
 export './exceptions/kernel_is_already_running_exception.dart';
+export './hooks/use_dark_theme.dart';
+export './hooks/use_light_theme.dart';
 export './kernel.dart';
 export './providers/kernel_bootstrap_provider.dart';
 export './providers/kernel_provider.dart';

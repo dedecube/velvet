@@ -7,7 +7,7 @@ part of 'translation_locale_from_store_bootstrap.dart';
 // **************************************************************************
 
 String _$translationLocaleFromStoreBootstrapHash() =>
-    r'19463ad770801b28571415d398e662bac187e249';
+    r'2840c95c3af4b44a0767bf56b9bb5b41d22db2d8';
 
 /// Sets the translation locale from the store to the translator.
 ///
