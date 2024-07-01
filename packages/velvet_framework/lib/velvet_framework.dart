@@ -8,6 +8,7 @@ export 'package:dio/dio.dart';
 export 'package:flutter_hooks/flutter_hooks.dart';
 export 'package:go_router/go_router.dart';
 export 'package:hooks_riverpod/hooks_riverpod.dart'; // internally exports flutter_riverpod and riverpod
+export 'package:velvet_support/velvet_support.dart';
 
 /// Velvet Framework
 ///
