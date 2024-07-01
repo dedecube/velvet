@@ -1,12 +1,12 @@
-import 'package:velvet_framework/velvet_framework.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 abstract class DataLoaderErrorView extends HookConsumerWidget {
   const DataLoaderErrorView({
     super.key,
     required this.error,
-    required this.stackTrack,
+    required this.stackTrace,
   });
 
   final Object error;
-  final StackTrace stackTrack;
+  final StackTrace stackTrace;
 }

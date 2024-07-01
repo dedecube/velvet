@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:velvet_framework/data_loader/data_loader_error_view.dart';
-import 'package:velvet_framework/velvet_framework.dart';
+import 'package:velvet_framework/translation/extensions/translator_extension.dart';
 
 class DataLoaderDefaultErrorView extends DataLoaderErrorView {
   const DataLoaderDefaultErrorView({
     super.key,
     required super.error,
-    required super.stackTrack,
+    required super.stackTrace,
   });
 
   @override
@@ -15,7 +16,6 @@ class DataLoaderDefaultErrorView extends DataLoaderErrorView {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // ignore: velvet_check_translation_key_does_exist
           Text(context.translate('velvet.data_loader.error_view.title')),
           Text(error.toString()),
         ],
