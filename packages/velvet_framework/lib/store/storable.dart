@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:velvet_framework/kernel/widgets/kernel_widget.dart';
 import 'package:velvet_framework/store/contracts/store_contract.dart';
 import 'package:velvet_framework/store/providers/store_provider.dart';
+import 'package:velvet_framework/utils/container.dart';
 
 /// Create resusable storable data
 ///
@@ -90,8 +90,6 @@ abstract class Storable<T> {
       return _store!;
     }
 
-    return ProviderScope.containerOf(KernelWidget.resolutionKey.currentContext!)
-        .read(storeProvider)
-        .requireValue;
+    return container().read(storeProvider).requireValue;
   }
 }
