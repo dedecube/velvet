@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:velvet_framework/kernel/hooks/use_dark_theme.dart';
-import 'package:velvet_framework/kernel/hooks/use_light_theme.dart';
-import 'package:velvet_framework/kernel/widgets/kernel_widget.dart';
-import 'package:velvet_framework/router/providers/router_provider.dart';
-import 'package:velvet_framework/translation/providers/translator_provider.dart';
+import 'package:velvet_framework/velvet_framework.dart';
 
 class KernelAppWidget extends HookConsumerWidget {
   const KernelAppWidget({super.key});
@@ -43,7 +38,7 @@ class KernelAppWidget extends HookConsumerWidget {
     Widget? child,
   ) {
     return Builder(
-      key: KernelWidget.resolutionKey,
+      key: Kernel.resolutionKey,
       builder: (context) => child!,
     );
   }
