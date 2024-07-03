@@ -6,7 +6,7 @@ part of 'router_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$routerHash() => r'53edc27047682239c9b906a11c3455a6d8adb984';
+String _$routerHash() => r'd184f3b8bcfb223b7d61a03d080bc525efad526d';
 
 /// See also [router].
 @ProviderFor(router)
@@ -15,8 +15,19 @@ final routerProvider = FutureProvider<GoRouter>.internal(
   name: r'routerProvider',
   debugGetCreateSourceHash:
       const bool.fromEnvironment('dart.vm.product') ? null : _$routerHash,
-  dependencies: const <ProviderOrFamily>[],
-  allTransitiveDependencies: const <ProviderOrFamily>{},
+  dependencies: <ProviderOrFamily>[
+    routerConfigProvider,
+    routesProvider,
+    routerErrorBuilderProvider
+  ],
+  allTransitiveDependencies: <ProviderOrFamily>{
+    routerConfigProvider,
+    ...?routerConfigProvider.allTransitiveDependencies,
+    routesProvider,
+    ...?routesProvider.allTransitiveDependencies,
+    routerErrorBuilderProvider,
+    ...?routerErrorBuilderProvider.allTransitiveDependencies
+  },
 );
 
 typedef RouterRef = FutureProviderRef<GoRouter>;
