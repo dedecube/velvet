@@ -64,3 +64,9 @@ builders:
     auto_apply: dependents
     build_to: source
     applies_builders: ["source_gen|combining_builder"]
+  config_autoloader_builder:
+    import: "package:velvet_generator/src/builders/config_builder.dart"
+    builder_factories: ["configAutoloaderBuilder"]
+    build_extensions: { "lib/$lib$": ["lib/config.velvet.dart"] }
+    auto_apply: root_package
+    build_to: source
