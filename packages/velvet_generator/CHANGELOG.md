@@ -1,3 +1,8 @@
+## 0.0.1-dev.13
+
+ - **FEAT**: autoloader now works also without Type. ([fa5da87a](https://github.com/dedecube/velvet/commit/fa5da87a4407324fd74624fe927fdc6f3bb59900))
+ - **FEAT**: restore config builder. ([a09fcce3](https://github.com/dedecube/velvet/commit/a09fcce3e9ae565cf3eda49be05c7b3a1127f6d7))
+
 ## 0.0.1-dev.12
 
  - Update a dependency to the latest release.

@@ -1,3 +1,15 @@
+## 0.0.1-dev.21
+
+ - **REFACTOR**: remove all exports.dart and re-implement centrally in main lib entrypoint. ([c1fbd634](https://github.com/dedecube/velvet/commit/c1fbd6348daeb078225b96b1e1588f4808c3c4be))
+ - **REFACTOR**: rename kernel_app_widget file. ([164c6e67](https://github.com/dedecube/velvet/commit/164c6e6787222e31638fd63ee4e4187cbbcbb00e))
+ - **REFACTOR**: router now has its own default implementation to reduce boilerplate code in applications. ([99327ee4](https://github.com/dedecube/velvet/commit/99327ee44ad30a93d8b204bdfa16ab998c38abb5))
+ - **FIX**: use container() util in Storable base class. ([9db5d2dc](https://github.com/dedecube/velvet/commit/9db5d2dc528d8bd5d93b31585753e1c70c03f34b))
+ - **FEAT**: add events in translation load from os and from store. ([d04538ef](https://github.com/dedecube/velvet/commit/d04538ef0153a71710a189d4afe91db80f9795eb))
+ - **FEAT**: re-work of create and retrive of container. ([e12b59a6](https://github.com/dedecube/velvet/commit/e12b59a6b745974c1c8172172ed3898d34ca32c1))
+ - **FEAT**: add error_handling config and renderable contract. ([892c7c81](https://github.com/dedecube/velvet/commit/892c7c8180a22381b18f0537004e429c59c3b27f))
+ - **FEAT**: check for navigatorKey in router in kernel_provider and add event_bus initialization. ([a78734c7](https://github.com/dedecube/velvet/commit/a78734c757cf3bda7a1d76e56a5da8f0c151a525))
+ - **FEAT**: add event_bus. ([f99ef57f](https://github.com/dedecube/velvet/commit/f99ef57ffead00c5f6e01394620f3dc1ffb0a8ac))
+
 ## 0.0.1-dev.20
 
  - **REFACTOR**: update exports. ([7582556f](https://github.com/dedecube/velvet/commit/7582556fff7053063f62372c810055ff24369823))

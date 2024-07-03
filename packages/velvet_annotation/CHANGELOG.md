@@ -1,3 +1,7 @@
+## 0.0.1-dev.8
+
+ - **FEAT**: restore VelvetConfig. ([68acd17c](https://github.com/dedecube/velvet/commit/68acd17cc279f04bfee2d2bc9de937951e1aebcc))
+
 ## 0.0.1-dev.7
 
  - **FIX**: remove meta from dependencies_overrides and downgrade analyzer to ^6.4.1. ([15750a93](https://github.com/dedecube/velvet/commit/15750a9384db9f0c49bf4b5c3bc8d8d66740a8f9))
