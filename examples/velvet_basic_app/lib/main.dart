@@ -1,17 +1,22 @@
-import 'package:velvet_basic_app/config/dev_inspector_config.dart';
-import 'package:velvet_basic_app/config/form_config.dart';
-import 'package:velvet_basic_app/config/router_config.dart';
-import 'package:velvet_basic_app/config/translation_config.dart';
-import 'package:velvet_basic_app/presentation/router.dart';
-import 'package:velvet_framework/velvet_framework.dart' hide router;
+import 'package:velvet_basic_app/config.velvet.dart';
+import 'package:velvet_basic_app/presentation/routes.dart';
+import 'package:velvet_framework/velvet_framework.dart' hide routes;
 
 void main() {
   Kernel()
-    ..bindAsync(routerProvider, (ref) async => router)
     ..boot(translationLocaleFromStoreBootstrap)
-    ..bind(routerConfigProvider, (ref) => RouterConfig())
-    ..bind(devInspectorConfigProvider, (ref) => DevInspectorConfig())
-    ..bind(translationConfigProvider, (ref) => TranslationConfig())
-    ..bind(formConfigProvider, (ref) => FormConfig())
+    ..bind(routesProvider, (ref) => routes)
+    ..use((kernel) {
+      for (final configBinder in configProviders) {
+        kernel.bind(configBinder.abstract, configBinder.concrete);
+      }
+    })
+    ..use((kernel) {
+      kernel.boot(
+        (ref) => listen<LocaleLoadedFromStore>(
+          (event) => talkerGlobalInstance.info(event.locale),
+        ),
+      );
+    })
     ..run();
 }

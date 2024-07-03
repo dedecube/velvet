@@ -14,5 +14,6 @@
   },
   "validation": {
     "required_string": "Il campo {name} è obbligatorio"
-  }
+  },
+  "error": "Error"
 }

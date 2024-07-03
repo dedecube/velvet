@@ -15,5 +15,6 @@
   "validation": {
     "required_string": "This field is required",
     "min_length": "This field must be at least {min} characters long"
-  }
+  },
+  "error": "Error"
 }

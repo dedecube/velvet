@@ -34,7 +34,7 @@ class FormPage extends HookConsumerWidget {
                 controller: nameInput.controller,
                 decoration: InputDecoration(
                   errorText: nameInput.error.value,
-                  labelText: 'Name',
+                  labelText: context.translate('pages.form.name'),
                 ),
               ),
               TextFormField(
@@ -42,11 +42,12 @@ class FormPage extends HookConsumerWidget {
                 controller: emailInput.controller,
                 decoration: InputDecoration(
                   errorText: emailInput.error.value,
-                  labelText: 'Email',
+                  labelText: context.translate('pages.form.email'),
                 ),
               ),
               ElevatedButton(
                 onPressed: form.submit,
+                // onPressed: () => throw ExampleException('Error'),
                 child: Text(context.translate('pages.form.submit')),
               ),
               Text(
