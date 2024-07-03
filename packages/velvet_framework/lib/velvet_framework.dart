@@ -138,6 +138,7 @@ export './router/mixins/transitions/fade_page_transition.dart';
 export './router/mixins/transitions/material_page_transition.dart';
 export './router/mixins/transitions/none_page_transition.dart';
 export './router/providers/router_config_provider.dart';
+export './router/providers/router_error_builder_provider.dart';
 export './router/providers/router_provider.dart';
 export './router/providers/routes_provider.dart';
 // @endindex
@@ -188,6 +189,7 @@ export './translation/translator.dart';
 // @index(['./utils/**/(*.dart)','!./utils/**/*.g.dart', '!./utils/**/_*.dart'], f => `export '${f.path}.dart';`)
 export './utils/container.dart';
 export './utils/kernel_context.dart';
+export './utils/navigator_context.dart';
 // @endindex
 
 // @index(['./validation/**/(*.dart)','!./validation/**/*.g.dart', '!./validation/**/_*.dart'], f => `export '${f.path}.dart';`)
