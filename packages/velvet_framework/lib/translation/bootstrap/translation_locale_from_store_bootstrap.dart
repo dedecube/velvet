@@ -1,6 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:velvet_framework/event/utils/event.dart';
 import 'package:velvet_framework/store/providers/store_provider.dart';
+import 'package:velvet_framework/translation/events/locale_loaded_from_store.dart';
 import 'package:velvet_framework/translation/providers/translator_provider.dart';
 import 'package:velvet_framework/translation/storables/locale_storable.dart';
 
@@ -26,4 +28,6 @@ Future<void> translationLocaleFromStoreBootstrap(
   }
 
   translator.currentLocale = Locale(locale);
+
+  event(LocaleLoadedFromStore(Locale(locale)));
 }

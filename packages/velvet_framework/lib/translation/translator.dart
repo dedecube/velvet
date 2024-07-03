@@ -3,8 +3,10 @@ import 'dart:ui';
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:velvet_framework/event/utils/event.dart';
 import 'package:velvet_framework/translation/contracts/translation_config_contract.dart';
 import 'package:velvet_framework/translation/contracts/translator_adapter_contract.dart';
+import 'package:velvet_framework/translation/events/locale_loaded_from_os.dart';
 import 'package:velvet_framework/translation/exceptions/locale_not_available_exception.dart';
 import 'package:velvet_framework/translation/storables/locale_storable.dart';
 
@@ -43,14 +45,18 @@ class Translator {
 
   // Load the locale from the operating system
   // Here we can't use the setLocale because no context is available.
-  _loadFromOS() {
+  void _loadFromOS() {
     var locale = PlatformDispatcher.instance.locale;
 
     var languageCode = locale.languageCode;
 
-    if (config.supportedLocales.contains(Locale(languageCode))) {
-      currentLocale = locale;
+    if (!config.supportedLocales.contains(Locale(languageCode))) {
+      return;
     }
+
+    currentLocale = locale;
+
+    event(LocaleLoadedFromOs(locale));
   }
 
   List<LocalizationsDelegate> delegates() {
