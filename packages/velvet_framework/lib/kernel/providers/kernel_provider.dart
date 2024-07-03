@@ -1,4 +1,6 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:velvet_framework/event/providers/event_bus_provider.dart';
+import 'package:velvet_framework/kernel/kernel.dart';
 import 'package:velvet_framework/kernel/providers/kernel_bootstrap_provider.dart';
 import 'package:velvet_framework/router/providers/router_provider.dart';
 import 'package:velvet_framework/store/providers/store_provider.dart';
@@ -13,7 +15,7 @@ part 'kernel_provider.g.dart';
 /// See https://codewithandrea.com/articles/robust-app-initialization-riverpod/
 @Riverpod(
   keepAlive: true,
-  dependencies: [store, router, translator, kernelBootstrap],
+  dependencies: [store, router, translator, kernelBootstrap, eventBus],
 )
 Future<void> kernel(KernelRef ref) async {
   ref.onDispose(() {
@@ -22,8 +24,14 @@ Future<void> kernel(KernelRef ref) async {
     ref.invalidate(kernelBootstrapProvider);
   });
 
-  ref.read(routerProvider);
+  final router = await ref.watch(routerProvider.future);
+
+  if (router.configuration.navigatorKey != Kernel.navigatorKey) {
+    throw Exception('Navigator key must be the same as Kernel.navigatorKey.');
+  }
+
   ref.read(translatorProvider);
+  ref.read(eventBusProvider);
 
   await ref.watch(storeProvider.future);
   await ref.watch(kernelBootstrapProvider.future);
