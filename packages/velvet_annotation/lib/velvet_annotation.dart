@@ -7,3 +7,5 @@ export 'package:riverpod_annotation/riverpod_annotation.dart';
 
 export 'src/annotations/velvet_autoloader.dart';
 export 'src/annotations/velvet_bootstrap.dart';
+export 'src/annotations/velvet_config.dart';
+export 'src/misc/config_binder.dart';
