@@ -15,7 +15,7 @@ class AutoloaderGenerator extends GeneratorForAnnotation<VelvetAutoloader> {
     var imports = <String>[];
     var classNames = <String>[];
 
-    late final DartType? type;
+    DartType? type;
 
     var glob = annotation.read('glob').stringValue;
 
@@ -36,6 +36,14 @@ class AutoloaderGenerator extends GeneratorForAnnotation<VelvetAutoloader> {
           classNames.addAll(classesInLibrary.map((c) => c.name));
           imports.add("import '${input.uri}';");
         }
+      } else {
+        var classesInLibrary =
+            LibraryReader(library).allElements.whereType<ClassElement>();
+
+        if (classesInLibrary.isNotEmpty) {
+          classNames.addAll(classesInLibrary.map((c) => c.name));
+          imports.add("import '${input.uri}';");
+        }
       }
     }
 
@@ -47,7 +55,7 @@ class AutoloaderGenerator extends GeneratorForAnnotation<VelvetAutoloader> {
     return '''
 ${imports.join('\n')}
 
-List<${type!.element!.name}> \$${element.name}Items = [
+List<${type != null ? type.toString() : 'dynamic'}> \$${element.name}Items = [
     ${classNames.map((c) => '$c()').join(',\n')}
   ];
 ''';
