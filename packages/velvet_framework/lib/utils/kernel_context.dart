@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:velvet_framework/kernel/widgets/kernel_widget.dart';
+import 'package:velvet_framework/kernel/kernel.dart';
 
 /// Returns the current build context of the kernel widget.
 ///
@@ -13,11 +13,8 @@ import 'package:velvet_framework/kernel/widgets/kernel_widget.dart';
 /// BuildContext context = kernelContext();
 /// ```
 ///
-/// Note: This function assumes that the [KernelWidget.resolutionKey] has been
+/// Note: This function assumes that the [Kernel.resolutionKey] has been
 /// properly initialized and is not null.
-///
-/// See also:
-/// - [KernelWidget], which is the widget that provides the build context.
 BuildContext kernelContext() {
-  return KernelWidget.resolutionKey.currentContext!;
+  return Kernel.resolutionKey.currentContext!;
 }

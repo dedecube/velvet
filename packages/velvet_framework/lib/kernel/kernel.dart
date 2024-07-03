@@ -1,14 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:velvet_framework/kernel/exceptions/kernel_is_already_running_exception.dart';
-import 'package:velvet_framework/kernel/providers/kernel_bootstrap_provider.dart';
-import 'package:velvet_framework/kernel/widgets/kernel_loading_widget.dart';
-import 'package:velvet_framework/kernel/widgets/kernel_widget.dart';
-import 'package:velvet_framework/kernel/widgets/kerner_error_widget.dart';
+import 'package:velvet_framework/utils/container.dart' as util_container;
+import 'package:velvet_framework/velvet_framework.dart';
 
 typedef Create<T, R extends Ref> = T Function(R ref);
+
+typedef UseCallback = void Function(Kernel kernel);
 
 class Kernel {
   Widget? appWidget;
@@ -19,7 +17,7 @@ class Kernel {
   final List<Create<FutureOr, FutureProviderRef>> _bootstrapServices = [];
 
   /// The kernel running status
-  bool _isRunning = false;
+  static bool _isRunning = false;
 
   /// A bag of Riverpod's [ProviderObserver] that will be used by the [ProviderScope]
   final List<ProviderObserver> _riverpodObservers = [];
@@ -28,7 +26,34 @@ class Kernel {
   final List<Override> _riverpodOvverides = [];
 
   /// Indicates if the kernel is running
-  bool get isRunning => _isRunning;
+  static bool get isRunning => _isRunning;
+
+  static ProviderContainer? container;
+
+  /// This key is used to get the context of the Navigator
+  /// It will be used to show dialogs, snackbars.
+  ///
+  /// ```dart
+  /// showAboutDialog(
+  ///  context: Kernel.navigatorKey.currentState!.context,
+  ///  applicationName: 'Velvet Framework',
+  /// );
+  /// ```
+  ///
+  /// IMPORTANT: This key should be used only for showing dialogs, snackbars, custom error handling.
+  /// If you need to read providers or get global context, use the [resolutionKey] instead.
+  /// or use the [kernelContext] util function directly.
+  static final navigatorKey = GlobalKey<NavigatorState>();
+
+  /// This key is used to get the context of the KernelWidget
+  /// It, combined with the [ProviderContainer], will be used to read providers
+  ///
+  /// ```dart
+  /// ProviderScope
+  ///   .containerOf(Kernel.resolutionKey.currentContext!)
+  ///   .read(...);
+  /// ```
+  static final resolutionKey = GlobalKey();
 
   /// Bind a new provider to the list of providers.
   /// This will override the original provider with the new one.
@@ -140,6 +165,27 @@ class Kernel {
     this.loadingWidget = loadingWidget;
   }
 
+  /// Check if the kernel is running.
+  /// If it is, throw a [KernelIsAlreadyRunningException]
+  /// to prevent the user from changing the configuration
+  /// while the application is already running.
+  _throwIfRunning() {
+    if (isRunning) {
+      throw KernelIsAlreadyRunningException();
+    }
+  }
+
+  /// Set the kernel as running
+  void _setAsRunning() {
+    _isRunning = true;
+  }
+
+  void use(void Function(Kernel kernel) callback) {
+    _throwIfRunning();
+
+    callback(this);
+  }
+
   /// Run the application
   ///
   /// This method should be called at the end of the configuration
@@ -159,37 +205,44 @@ class Kernel {
 
     WidgetsFlutterBinding.ensureInitialized();
 
+    container = ProviderContainer(
+      observers: _riverpodObservers,
+      overrides: [
+        ..._riverpodOvverides,
+        kernelBootstrapProvider.overrideWith((ref) async {
+          for (var service in _bootstrapServices) {
+            service(ref);
+          }
+        }),
+      ],
+    );
+
+    FlutterError.onError = (FlutterErrorDetails details) {
+      final exception = details.exception;
+
+      if (exception is RenderableExceptionContract) {
+        exception.render(navigatorKey.currentState!.context);
+      } else {
+        final errorHandlingConfig =
+            util_container.container().read(errorHandlingConfigProvider);
+
+        errorHandlingConfig.renderer(
+          navigatorKey.currentState!.context,
+          exception as Exception,
+        );
+      }
+
+      FlutterError.presentError(details);
+    };
+
     runApp(
-      ProviderScope(
-        observers: _riverpodObservers,
-        overrides: [
-          ..._riverpodOvverides,
-          kernelBootstrapProvider.overrideWith((ref) async {
-            for (var service in _bootstrapServices) {
-              service(ref);
-            }
-          }),
-        ],
+      UncontrolledProviderScope(
+        container: container!,
         child: KernelWidget(
           errorWidget: errorWidget,
           loadingWidget: loadingWidget,
         ),
       ),
     );
-  }
-
-  /// Check if the kernel is running.
-  /// If it is, throw a [KernelIsAlreadyRunningException]
-  /// to prevent the user from changing the configuration
-  /// while the application is already running.
-  _throwIfRunning() {
-    if (isRunning) {
-      throw KernelIsAlreadyRunningException();
-    }
-  }
-
-  /// Set the kernel as running
-  void _setAsRunning() {
-    _isRunning = true;
   }
 }
