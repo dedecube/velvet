@@ -100,6 +100,8 @@ FormState useForm(
 
       isSubmitting.value = false;
     } on Exception catch (exception) {
+      isSubmitting.value = false;
+
       inputs.forEach((key, value) {
         value.exceptionMatcher(exception);
       });
@@ -107,8 +109,6 @@ FormState useForm(
       if (exceptionMatcher != null) {
         exceptionMatcher(exception);
       }
-
-      isSubmitting.value = false;
     }
   }
 
