@@ -1,3 +1,7 @@
+## 0.0.1-dev.22
+
+ - **FEAT**: add useEventListener hook. ([b6c68b5b](https://github.com/dedecube/velvet/commit/b6c68b5ba0d95673f0938d4a0894872d878c713a))
+
 ## 0.0.1-dev.21
 
  - **REFACTOR**: remove all exports.dart and re-implement centrally in main lib entrypoint. ([c1fbd634](https://github.com/dedecube/velvet/commit/c1fbd6348daeb078225b96b1e1588f4808c3c4be))

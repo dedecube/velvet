@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-07-08
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`velvet_framework` - `v0.0.1-dev.22`](#velvet_framework---v001-dev22)
+
+---
+
+#### `velvet_framework` - `v0.0.1-dev.22`
+
+ - **FEAT**: add useEventListener hook. ([b6c68b5b](https://github.com/dedecube/velvet/commit/b6c68b5ba0d95673f0938d4a0894872d878c713a))
+
+
 ## 2024-07-03
 
 ### Changes
