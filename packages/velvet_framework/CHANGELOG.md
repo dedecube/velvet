@@ -1,3 +1,8 @@
+## 0.0.1-dev.23
+
+ - **FIX**: set on submitting on form error before match exceptions. ([71c49fd9](https://github.com/dedecube/velvet/commit/71c49fd9c3f88292fcb8676932b6a81e713ed5f9))
+ - **FIX**: add missing return type in Http for dioInstance getter. ([f6a993fd](https://github.com/dedecube/velvet/commit/f6a993fd3b62acb66930d18b2cc5a92fc4746648))
+
 ## 0.0.1-dev.22
 
  - **FEAT**: add useEventListener hook. ([b6c68b5b](https://github.com/dedecube/velvet/commit/b6c68b5ba0d95673f0938d4a0894872d878c713a))
