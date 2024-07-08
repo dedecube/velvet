@@ -22,7 +22,7 @@ class Http {
   /// The instance of the Dio client.
   final Dio _dioInstance;
 
-  get dioInstance => _dioInstance;
+  Dio get dioInstance => _dioInstance;
 
   /// The default exception handler.
   ///
