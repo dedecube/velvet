@@ -1,3 +1,10 @@
+## 0.0.1-dev.24
+
+ - **FIX**: avoid errors to be caught by error handling. ([11188ac0](https://github.com/dedecube/velvet/commit/11188ac0b71e309d69238607f1758c1cecd390a4))
+ - **FEAT**: add use_event_listener in exports. ([50f4b19a](https://github.com/dedecube/velvet/commit/50f4b19adc830349e3274eb733b206f8e256bbe7))
+ - **DOCS**: add description and examples in event_bus_provider. ([6bd5757f](https://github.com/dedecube/velvet/commit/6bd5757fe8df0cd76f20b23eed72e322877bd3ca))
+ - **DOCS**: add docs in RenderableExceptionContract. ([aa4214a2](https://github.com/dedecube/velvet/commit/aa4214a2537f6259c2612a6bd24347d59245ba87))
+
 ## 0.0.1-dev.23
 
  - **FIX**: set on submitting on form error before match exceptions. ([71c49fd9](https://github.com/dedecube/velvet/commit/71c49fd9c3f88292fcb8676932b6a81e713ed5f9))
