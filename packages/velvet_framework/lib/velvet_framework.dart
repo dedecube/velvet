@@ -56,6 +56,7 @@ export './error_handling/types.dart';
 // @index(['./event/**/(*.dart)','!./event/**/*.g.dart', '!./event/**/_*.dart'], f => `export '${f.path}.dart';`)
 export './event/contracts/event_contract.dart';
 export './event/event_bus.dart';
+export './event/hooks/use_event_listener.dart';
 export './event/providers/event_bus_provider.dart';
 export './event/utils/event.dart';
 export './event/utils/listen.dart';
