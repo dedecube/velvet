@@ -8,7 +8,29 @@ part of 'event_bus_provider.dart';
 
 String _$eventBusHash() => r'7cbfcc3d23dab9aa6f71cf4cd65cc97b9763f136';
 
-/// See also [eventBus].
+/// Provides the [EventBus] instance.
+///
+/// Most of the time, you will not need to use this provider directly.
+/// Instead, use the [useEventBus] hook in Widgets or the event / listen helper functions.
+///
+/// ### Usage
+///
+/// With the `useProvider` hook:
+/// ```dart
+/// final eventBus = useProvider(eventBusProvider);
+/// ```
+///
+/// With the `container`:
+/// ```dart
+/// final eventBus = container().read(eventBusProvider);
+/// ```
+///
+/// With the `ref`:
+/// ```dart
+/// final eventBus = ref.read(eventBusProvider);
+/// ```
+///
+/// Copied from [eventBus].
 @ProviderFor(eventBus)
 final eventBusProvider = Provider<EventBus>.internal(
   eventBus,
