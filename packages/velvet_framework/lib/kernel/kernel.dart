@@ -222,13 +222,13 @@ class Kernel {
 
       if (exception is RenderableExceptionContract) {
         exception.render(navigatorKey.currentState!.context);
-      } else {
+      } else if (exception is Exception) {
         final errorHandlingConfig =
             util_container.container().read(errorHandlingConfigProvider);
 
         errorHandlingConfig.renderer(
           navigatorKey.currentState!.context,
-          exception as Exception,
+          exception,
         );
       }
 
