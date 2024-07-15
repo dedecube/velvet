@@ -1,3 +1,7 @@
+## 0.0.1-dev.25
+
+ - **FIX**: kernel_error_widget now can use translator using kernel resolutionKey. ([931959a7](https://github.com/dedecube/velvet/commit/931959a7c66efdeb79880a7ef123de6cfad0a22e))
+
 ## 0.0.1-dev.24
 
  - **FIX**: avoid errors to be caught by error handling. ([11188ac0](https://github.com/dedecube/velvet/commit/11188ac0b71e309d69238607f1758c1cecd390a4))

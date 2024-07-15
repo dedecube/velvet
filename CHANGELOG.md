@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-07-15
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`velvet_framework` - `v0.0.1-dev.25`](#velvet_framework---v001-dev25)
+
+---
+
+#### `velvet_framework` - `v0.0.1-dev.25`
+
+ - **FIX**: kernel_error_widget now can use translator using kernel resolutionKey. ([931959a7](https://github.com/dedecube/velvet/commit/931959a7c66efdeb79880a7ef123de6cfad0a22e))
+
+
 ## 2024-07-14
 
 ### Changes
