@@ -1,3 +1,7 @@
+## 0.0.1-dev.26
+
+ - **FIX**: move up `isSubmitting.value = false;` before call onSuccess.
+
 ## 0.0.1-dev.25
 
  - **FIX**: kernel_error_widget now can use translator using kernel resolutionKey. ([931959a7](https://github.com/dedecube/velvet/commit/931959a7c66efdeb79880a7ef123de6cfad0a22e))

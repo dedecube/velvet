@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-07-16
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`velvet_framework` - `v0.0.1-dev.26`](#velvet_framework---v001-dev26)
+
+---
+
+#### `velvet_framework` - `v0.0.1-dev.26`
+
+ - **FIX**: move up `isSubmitting.value = false;` before call onSuccess.
+
+
 ## 2024-07-15
 
 ### Changes
