@@ -94,11 +94,11 @@ FormState useForm(
 
       await onSubmit(inputs);
 
+      isSubmitting.value = false;
+
       if (onSuccess != null) {
         await onSuccess(inputs);
       }
-
-      isSubmitting.value = false;
     } on Exception catch (exception) {
       isSubmitting.value = false;
 
