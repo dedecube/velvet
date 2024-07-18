@@ -158,9 +158,11 @@ export './talker/talker_global_instance.dart';
 // @endindex
 
 // @index(['./theme/**/(*.dart)','!./theme/**/*.g.dart','!./theme/**/*.tailor.dart','!./theme/**/_*.dart'], f => `export '${f.path}.dart';`)
+export './theme/contracts/theme_config_contract.dart';
 export './theme/contracts/theme_definition_contract.dart';
 export './theme/extensions/theme_definition_build_context_extension.dart';
 export './theme/extensions/theme_definition_theme_data_extension.dart';
+export './theme/providers/theme_config_provider.dart';
 export './theme/providers/theme_dark_provider.dart';
 export './theme/providers/theme_data_provider.dart';
 export './theme/providers/theme_light_provider.dart';
