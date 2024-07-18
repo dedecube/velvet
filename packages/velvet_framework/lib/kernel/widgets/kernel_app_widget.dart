@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:velvet_framework/kernel/hooks/use_dark_theme.dart';
+import 'package:velvet_framework/kernel/hooks/use_light_theme.dart';
+import 'package:velvet_framework/kernel/kernel.dart';
+import 'package:velvet_framework/router/providers/router_provider.dart';
 import 'package:velvet_framework/theme/providers/theme_config_provider.dart';
-import 'package:velvet_framework/velvet_framework.dart';
+import 'package:velvet_framework/translation/providers/translator_provider.dart';
 
 class KernelAppWidget extends HookConsumerWidget {
   const KernelAppWidget({super.key});
