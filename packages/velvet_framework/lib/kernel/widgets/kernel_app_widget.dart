@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:velvet_framework/theme/providers/theme_config_provider.dart';
 import 'package:velvet_framework/velvet_framework.dart';
 
 class KernelAppWidget extends HookConsumerWidget {
@@ -10,6 +11,7 @@ class KernelAppWidget extends HookConsumerWidget {
     final translator = ref.read(translatorProvider);
     final lightThemeData = useLightTheme();
     final darkThemeData = useDarkTheme();
+    final themeConfig = ref.read(themeConfigProvider);
 
     return StreamBuilder(
       initialData: translator.currentLocale,
@@ -21,7 +23,7 @@ class KernelAppWidget extends HookConsumerWidget {
           localizationsDelegates: translator.delegates(),
           supportedLocales: translator.supportedLocales,
           locale: locale.data,
-          themeMode: ThemeMode.system,
+          themeMode: themeConfig.themeMode,
           theme: lightThemeData,
           darkTheme: darkThemeData,
           builder: _routerBuilder,
