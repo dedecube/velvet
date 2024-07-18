@@ -1,3 +1,9 @@
+## 0.0.1-dev.28
+
+ - **FIX**: prevent imports from library entrypoint and add themeMode also in KernelErrorWidget. ([6c2341d7](https://github.com/dedecube/velvet/commit/6c2341d788d3bea9cfef1bd110dd5c5be3fb8db5))
+ - **FEAT**: update exports. ([6ac5bb41](https://github.com/dedecube/velvet/commit/6ac5bb414a1a8edc4579f87646c2e2fa61242116))
+ - **FEAT**: add PlatformDispatcher.instance.onError to handle async errors. ([d4e3bf2b](https://github.com/dedecube/velvet/commit/d4e3bf2bcbd93f5af61be6a665240c45cd27e16f))
+
 ## 0.0.1-dev.27
 
  - **FEAT**: add themeConfig.
