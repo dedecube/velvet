@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:velvet_framework/utils/container.dart' as util_container;
 import 'package:velvet_framework/velvet_framework.dart';
@@ -217,6 +218,7 @@ class Kernel {
       ],
     );
 
+    // TODO[epic=refactor] Move to error handling module
     FlutterError.onError = (FlutterErrorDetails details) {
       final exception = details.exception;
 
@@ -233,6 +235,27 @@ class Kernel {
       }
 
       FlutterError.presentError(details);
+    };
+
+    // TODO[epic=refactor] Move to error handling module
+    PlatformDispatcher.instance.onError = (exception, stackTrace) {
+      if (exception is RenderableExceptionContract) {
+        exception.render(navigatorKey.currentState!.context);
+
+        return true;
+      } else if (exception is Exception) {
+        final errorHandlingConfig =
+            util_container.container().read(errorHandlingConfigProvider);
+
+        errorHandlingConfig.renderer(
+          navigatorKey.currentState!.context,
+          exception,
+        );
+
+        return true;
+      }
+
+      return false;
     };
 
     runApp(
