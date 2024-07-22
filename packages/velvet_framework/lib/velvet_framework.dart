@@ -85,6 +85,7 @@ export './http/contracts/http_request_custom_handling_contract.dart';
 export './http/contracts/http_request_list_contract.dart';
 export './http/contracts/http_request_map_contract.dart';
 export './http/contracts/http_response_mapper_contract.dart';
+export './http/enums/dio_request_options_extra_field_enum.dart';
 export './http/enums/http_request_method_enum.dart';
 export './http/exceptions/http_request/4xx/bad_http_request_exception.dart';
 export './http/exceptions/http_request/4xx/conflict_http_request_exception.dart';
@@ -109,6 +110,7 @@ export './http/exceptions/http_request/receive_timeout_http_request_exception.da
 export './http/exceptions/http_request/send_timeout_http_request_exception.dart';
 export './http/exceptions/http_request/unknown_http_request_exception.dart';
 export './http/exceptions/http_response_parse_exception.dart';
+export './http/extensions/dio_request_options_has_http_request.dart';
 export './http/http_config.dart';
 export './http/http_exception_handler.dart';
 export './http/http_response.dart';
