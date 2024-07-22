@@ -1,3 +1,8 @@
+## 0.0.1-dev.30
+
+ - **FIX**: add temp workaround to prevent black screen on go_router. ([ed94ec7f](https://github.com/dedecube/velvet/commit/ed94ec7f96e5cf6258bd12240b4f8ea071cd2765))
+ - **FEAT**: add httpRequest inside extra param of dio requestOptions so that interceptor can use httpRequest. ([71f2b025](https://github.com/dedecube/velvet/commit/71f2b0256af9d16a5a10b47fb3f378d15bc18dec))
+
 ## 0.0.1-dev.29
 
  - **FIX**: useInput now support a more future proof solution for exceptionMatcher. ([baf72b2e](https://github.com/dedecube/velvet/commit/baf72b2e5a9bead45fdff8f72ddb6b30854d5a41))
