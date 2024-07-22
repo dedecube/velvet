@@ -17,6 +17,11 @@ part '_use_initial_value_for_debug.dart';
 part '_use_validate_on_change.dart';
 part '_use_validate_on_focus_lost.dart';
 
+typedef ExceptionMatcherFactory = ExceptionMatcher Function(
+  List<ExceptionToMessageResolverFactory> exceptionToMessageResolverFactories,
+  ValueNotifier<String?> error,
+);
+
 /// Custom hook that provides an input state for managing text input fields.
 ///
 /// The [useInputState] hook returns an [InputState] object that encapsulates
@@ -81,12 +86,12 @@ part '_use_validate_on_focus_lost.dart';
 /// ```
 InputState useInput({
   List<Rule> rules = const [],
-  ExceptionMatcher? exceptionMatcher,
   InputOptions options = const InputOptions(),
   String initialValue = '',
   String? name,
   List<ExceptionToMessageResolverFactory> exceptionToMessageResolverFactories =
       const [],
+  ExceptionMatcherFactory? exceptionMatcherFactory,
 }) {
   if (kDebugMode && name != null) {
     initialValue = _useInitialValueForDebug(name, initialValue);
@@ -96,10 +101,12 @@ InputState useInput({
   final focusNode = useFocusNode();
   final error = useState<String?>(null);
 
-  exceptionMatcher ??= _useInputExceptionMatcher(
-    exceptionToMessageResolverFactories,
-    error,
-  );
+  final exceptionMatcher = exceptionMatcherFactory != null
+      ? exceptionMatcherFactory(exceptionToMessageResolverFactories, error)
+      : _useInputExceptionMatcher(
+          exceptionToMessageResolverFactories,
+          error,
+        );
 
   if (options.shouldValidateOnFocusLost) {
     _useValidateOnFocusLost(focusNode, controller, rules, error);
