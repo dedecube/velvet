@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:velvet_framework/http/contracts/http_exception_handler_contract.dart';
 import 'package:velvet_framework/http/contracts/http_request_contract.dart';
 import 'package:velvet_framework/http/contracts/http_request_custom_handling_contract.dart';
+import 'package:velvet_framework/http/enums/dio_request_options_extra_field_enum.dart';
 import 'package:velvet_framework/http/exceptions/http_request/http_request_exception.dart';
 import 'package:velvet_framework/http/http_config.dart';
 import 'package:velvet_framework/http/http_exception_handler.dart';
@@ -65,6 +66,9 @@ class Http {
     final requestOptions = Options(
       method: httpRequest.method.value,
       headers: httpRequest.headers,
+      extra: {
+        DioRequestOptionsExtraFieldEnum.httpRequest.name: httpRequest,
+      },
     );
 
     if (httpRequest is HttpRequestCustomHandlingContract) {
