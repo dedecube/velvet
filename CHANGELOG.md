@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`velvet_framework` - `v0.0.1-dev.31`](#velvet_framework---v001-dev31)
+
+---
+
+#### `velvet_framework` - `v0.0.1-dev.31`
+
+ - **FIX**: BagException now accepts generic and change exceptions from getter to final in HttpRequestBagException to prevent no adding items. ([fe13561c](https://github.com/dedecube/velvet/commit/fe13561cb73d1c32f36581d0636d2bb53bbbacdc))
+
+
+## 2024-07-22
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`velvet_framework` - `v0.0.1-dev.30`](#velvet_framework---v001-dev30)
 
 ---

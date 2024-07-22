@@ -1,3 +1,7 @@
+## 0.0.1-dev.31
+
+ - **FIX**: BagException now accepts generic and change exceptions from getter to final in HttpRequestBagException to prevent no adding items. ([fe13561c](https://github.com/dedecube/velvet/commit/fe13561cb73d1c32f36581d0636d2bb53bbbacdc))
+
 ## 0.0.1-dev.30
 
  - **FIX**: add temp workaround to prevent black screen on go_router. ([ed94ec7f](https://github.com/dedecube/velvet/commit/ed94ec7f96e5cf6258bd12240b4f8ea071cd2765))
