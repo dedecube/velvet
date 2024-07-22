@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:velvet_framework/error_handling/bag_exception.dart';
 import 'package:velvet_framework/error_handling/types.dart';
 import 'package:velvet_framework/form/hooks/use_form_state/form_options.dart';
 import 'package:velvet_framework/form/hooks/use_input_state/use_input.dart';
@@ -103,7 +104,13 @@ FormState useForm(
       isSubmitting.value = false;
 
       inputs.forEach((key, value) {
-        value.exceptionMatcher(exception);
+        if (exception is BagException) {
+          for (var item in exception.exceptions) {
+            value.exceptionMatcher(item);
+          }
+        } else {
+          value.exceptionMatcher(exception);
+        }
       });
 
       if (exceptionMatcher != null) {
