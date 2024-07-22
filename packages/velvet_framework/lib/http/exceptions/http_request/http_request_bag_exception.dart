@@ -2,7 +2,7 @@ import 'package:velvet_framework/error_handling/bag_exception.dart';
 import 'package:velvet_framework/http/exceptions/http_request/http_request_exception.dart';
 
 class HttpRequestBagException extends HttpRequestException
-    implements BagException {
+    implements BagException<HttpRequestException> {
   HttpRequestBagException({
     required super.httpRequest,
     required super.dioException,
@@ -10,12 +10,12 @@ class HttpRequestBagException extends HttpRequestException
   });
 
   @override
-  void add(Exception exception) {
+  void add(HttpRequestException exception) {
     exceptions.add(exception);
   }
 
   @override
-  List<Exception> get exceptions => [];
+  List<HttpRequestException> exceptions = [];
 
   @override
   get isEmpty => exceptions.isEmpty;
