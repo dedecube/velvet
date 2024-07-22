@@ -4,6 +4,7 @@ import 'package:velvet_framework/kernel/hooks/use_dark_theme.dart';
 import 'package:velvet_framework/kernel/hooks/use_light_theme.dart';
 import 'package:velvet_framework/kernel/kernel.dart';
 import 'package:velvet_framework/router/providers/router_provider.dart';
+import 'package:velvet_framework/theme/extensions/theme_definition_build_context_extension.dart';
 import 'package:velvet_framework/theme/providers/theme_config_provider.dart';
 import 'package:velvet_framework/translation/providers/translator_provider.dart';
 
@@ -46,7 +47,11 @@ class KernelAppWidget extends HookConsumerWidget {
   ) {
     return Builder(
       key: Kernel.resolutionKey,
-      builder: (context) => child!,
+      // FIXME[epic=workaround] Temporary fix for the issue with go_router black screen.
+      builder: (context) => ColoredBox(
+        color: context.theme.surface50,
+        child: child!,
+      ),
     );
   }
 }
