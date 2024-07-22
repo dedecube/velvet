@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-07-22
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`velvet_framework` - `v0.0.1-dev.29`](#velvet_framework---v001-dev29)
+
+---
+
+#### `velvet_framework` - `v0.0.1-dev.29`
+
+ - **FIX**: useInput now support a more future proof solution for exceptionMatcher. ([baf72b2e](https://github.com/dedecube/velvet/commit/baf72b2e5a9bead45fdff8f72ddb6b30854d5a41))
+ - **FEAT**: useForm intercepts BagException. ([12caa911](https://github.com/dedecube/velvet/commit/12caa91121e6f298bf2e6cbfd13cb702fdf7c422))
+ - **FEAT**: add bag_exception. ([a5adfb1d](https://github.com/dedecube/velvet/commit/a5adfb1d673e4f6579c386b179386d9c0f1364d2))
+
+
 ## 2024-07-18
 
 ### Changes

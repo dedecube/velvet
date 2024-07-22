@@ -1,3 +1,9 @@
+## 0.0.1-dev.29
+
+ - **FIX**: useInput now support a more future proof solution for exceptionMatcher. ([baf72b2e](https://github.com/dedecube/velvet/commit/baf72b2e5a9bead45fdff8f72ddb6b30854d5a41))
+ - **FEAT**: useForm intercepts BagException. ([12caa911](https://github.com/dedecube/velvet/commit/12caa91121e6f298bf2e6cbfd13cb702fdf7c422))
+ - **FEAT**: add bag_exception. ([a5adfb1d](https://github.com/dedecube/velvet/commit/a5adfb1d673e4f6579c386b179386d9c0f1364d2))
+
 ## 0.0.1-dev.28
 
  - **FIX**: prevent imports from library entrypoint and add themeMode also in KernelErrorWidget. ([6c2341d7](https://github.com/dedecube/velvet/commit/6c2341d788d3bea9cfef1bd110dd5c5be3fb8db5))
