@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:velvet_basic_app/exceptions/example_exception.dart';
 import 'package:velvet_basic_app/presentation/pages/form/hooks/use_email_input.dart';
 import 'package:velvet_basic_app/presentation/pages/form/hooks/use_name_input.dart';
+import 'package:velvet_framework/error_handling/bag_exception.dart';
 import 'package:velvet_framework/velvet_framework.dart';
 
 class FormPage extends HookConsumerWidget {
@@ -17,7 +19,14 @@ class FormPage extends HookConsumerWidget {
         'email': emailInput,
       },
       (inputs) async {
-        throw const FormatException('Invalid format');
+        await Future.delayed(const Duration(seconds: 2));
+
+        throw BagException(
+          exceptions: [
+            const FormatException(),
+            ExampleException('Error'),
+          ],
+        );
       },
     );
 

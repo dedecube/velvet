@@ -4,6 +4,8 @@
 import 'package:velvet_annotation/velvet_annotation.dart';
 import './config/translation_config.dart';
 import 'package:velvet_framework/translation/providers/translation_config_provider.dart';
+import './config/theme_config.dart';
+import 'package:velvet_framework/theme/providers/theme_config_provider.dart';
 import './config/router_config.dart';
 import 'package:velvet_framework/router/providers/router_config_provider.dart';
 import './config/form_config.dart';
@@ -17,6 +19,10 @@ final List<ConfigBinder> configProviders = [
   ConfigBinder(
     abstract: translationConfigProvider,
     concrete: (ref) => TranslationConfig(),
+  ),
+  ConfigBinder(
+    abstract: themeConfigProvider,
+    concrete: (ref) => ThemeConfig(),
   ),
   ConfigBinder(
     abstract: routerConfigProvider,

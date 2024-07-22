@@ -15,5 +15,14 @@
   "validation": {
     "required_string": "Il campo {name} è obbligatorio"
   },
-  "error": "Error"
+  "error": "Error",
+  "velvet": {
+    "kernel": {
+      "widgets": {
+        "error": {
+          "message": "An error occurred"
+        }
+      }
+    }
+  }
 }
