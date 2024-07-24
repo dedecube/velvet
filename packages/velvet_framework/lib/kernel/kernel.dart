@@ -187,6 +187,12 @@ class Kernel {
     callback(this);
   }
 
+  void rawOverride(List<Override> overrides) {
+    _throwIfRunning();
+
+    _riverpodOvverides.addAll(overrides);
+  }
+
   /// Run the application
   ///
   /// This method should be called at the end of the configuration
