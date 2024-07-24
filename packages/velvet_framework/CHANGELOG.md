@@ -1,3 +1,8 @@
+## 0.0.1-dev.33
+
+ - **FIX**: update email rule regex. ([1ee9c144](https://github.com/dedecube/velvet/commit/1ee9c14478e27d0fc07e05fd621f26e74d81f9e9))
+ - **FEAT**: add rawOverride in Kernel. ([2ff911ff](https://github.com/dedecube/velvet/commit/2ff911ff7c29be55c465b8aacdc00621377b53da))
+
 ## 0.0.1-dev.32
 
  - **FIX**: add await for execution of each bootstrap. ([5c7c6077](https://github.com/dedecube/velvet/commit/5c7c6077ec854c36de4a8d8ecf7c9708acebf828))

@@ -15,6 +15,28 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`velvet_framework` - `v0.0.1-dev.33`](#velvet_framework---v001-dev33)
+
+---
+
+#### `velvet_framework` - `v0.0.1-dev.33`
+
+ - **FIX**: update email rule regex. ([1ee9c144](https://github.com/dedecube/velvet/commit/1ee9c14478e27d0fc07e05fd621f26e74d81f9e9))
+ - **FEAT**: add rawOverride in Kernel. ([2ff911ff](https://github.com/dedecube/velvet/commit/2ff911ff7c29be55c465b8aacdc00621377b53da))
+
+
+## 2024-07-24
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`velvet_framework` - `v0.0.1-dev.32`](#velvet_framework---v001-dev32)
 
 ---
