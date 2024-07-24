@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-07-24
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`velvet_framework` - `v0.0.1-dev.32`](#velvet_framework---v001-dev32)
+
+---
+
+#### `velvet_framework` - `v0.0.1-dev.32`
+
+ - **FIX**: add await for execution of each bootstrap. ([5c7c6077](https://github.com/dedecube/velvet/commit/5c7c6077ec854c36de4a8d8ecf7c9708acebf828))
+ - **FEAT**: add TalkerRouteObserver in router. ([337e3f27](https://github.com/dedecube/velvet/commit/337e3f275e37471e0788ed036d49903d31037f46))
+
+
 ## 2024-07-22
 
 ### Changes

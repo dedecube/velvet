@@ -1,3 +1,8 @@
+## 0.0.1-dev.32
+
+ - **FIX**: add await for execution of each bootstrap. ([5c7c6077](https://github.com/dedecube/velvet/commit/5c7c6077ec854c36de4a8d8ecf7c9708acebf828))
+ - **FEAT**: add TalkerRouteObserver in router. ([337e3f27](https://github.com/dedecube/velvet/commit/337e3f275e37471e0788ed036d49903d31037f46))
+
 ## 0.0.1-dev.31
 
  - **FIX**: BagException now accepts generic and change exceptions from getter to final in HttpRequestBagException to prevent no adding items. ([fe13561c](https://github.com/dedecube/velvet/commit/fe13561cb73d1c32f36581d0636d2bb53bbbacdc))
