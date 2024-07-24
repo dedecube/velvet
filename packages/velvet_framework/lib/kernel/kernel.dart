@@ -211,8 +211,9 @@ class Kernel {
       overrides: [
         ..._riverpodOvverides,
         kernelBootstrapProvider.overrideWith((ref) async {
+          // NOTE Maybe we should use Future.wait here
           for (var service in _bootstrapServices) {
-            service(ref);
+            await service(ref);
           }
         }),
       ],
