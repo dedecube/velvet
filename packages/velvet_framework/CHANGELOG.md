@@ -1,3 +1,7 @@
+## 0.0.1-dev.34
+
+ - **FEAT**: redefine loading in Kernel and add HideLoadingWidgetEvent. ([e587fa03](https://github.com/dedecube/velvet/commit/e587fa03e51ca07236dda018ee862c6528dec115))
+
 ## 0.0.1-dev.33
 
  - **FIX**: update email rule regex. ([1ee9c144](https://github.com/dedecube/velvet/commit/1ee9c14478e27d0fc07e05fd621f26e74d81f9e9))

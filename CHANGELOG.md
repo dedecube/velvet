@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-07-25
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`velvet_framework` - `v0.0.1-dev.34`](#velvet_framework---v001-dev34)
+
+---
+
+#### `velvet_framework` - `v0.0.1-dev.34`
+
+ - **FEAT**: redefine loading in Kernel and add HideLoadingWidgetEvent. ([e587fa03](https://github.com/dedecube/velvet/commit/e587fa03e51ca07236dda018ee862c6528dec115))
+
+
 ## 2024-07-24
 
 ### Changes
