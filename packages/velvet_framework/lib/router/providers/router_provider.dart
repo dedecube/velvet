@@ -3,6 +3,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 import 'package:velvet_framework/kernel/kernel.dart';
 import 'package:velvet_framework/router/middleware/middleware_pipeline.dart';
+import 'package:velvet_framework/router/observers/hide_loading_widget_observer.dart';
 import 'package:velvet_framework/router/providers/router_config_provider.dart';
 import 'package:velvet_framework/router/providers/router_error_builder_provider.dart';
 import 'package:velvet_framework/router/providers/routes_provider.dart';
@@ -27,6 +28,7 @@ Future<GoRouter> router(RouterRef ref) async {
     routes: routes,
     observers: [
       TalkerRouteObserver(talkerGlobalInstance),
+      HideLoadingWidgetObserver(),
     ],
   );
 }

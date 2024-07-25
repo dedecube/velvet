@@ -4,12 +4,11 @@ class KernelLoadingWidget extends StatelessWidget {
   const KernelLoadingWidget({super.key});
 
   @override
-  MaterialApp build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: CircularProgressIndicator(),
-        ),
+  build(BuildContext context) {
+    return const ColoredBox(
+      color: Colors.white,
+      child: Center(
+        child: CircularProgressIndicator(),
       ),
     );
   }

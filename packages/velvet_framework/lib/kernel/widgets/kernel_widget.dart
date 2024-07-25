@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:velvet_framework/kernel/providers/kernel_provider.dart';
-import 'package:velvet_framework/kernel/widgets/kernel_app_widget.dart';
-import 'package:velvet_framework/kernel/widgets/kernel_loading_widget.dart';
-import 'package:velvet_framework/kernel/widgets/kerner_error_widget.dart';
+import 'package:velvet_framework/kernel/events/hide_loading_widget_event.dart';
+import 'package:velvet_framework/velvet_framework.dart';
 
 class KernelWidget extends HookConsumerWidget {
   const KernelWidget({
@@ -19,19 +15,33 @@ class KernelWidget extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final appStartupState = ref.watch(kernelProvider);
+    final sholdShowSplash = useState(true);
+
+    useEventListener<HideLoadingWidgetEvent>(
+      (event) => sholdShowSplash.value = false,
+    );
 
     onRetry() => ref.invalidate(kernelProvider);
 
-    return appStartupState.when(
-      loading: () => loadingWidget ?? const KernelLoadingWidget(),
-      error: (error, stackTrace) =>
-          errorWidget ??
-          KernelErrorWidget(
-            onRetry: onRetry,
-            error: error,
-            stackTrace: stackTrace,
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      builder: (context, child) => Stack(
+        children: [
+          appStartupState.when(
+            loading: () => const SizedBox(),
+            error: (error, stackTrace) =>
+                errorWidget ??
+                KernelErrorWidget(
+                  onRetry: onRetry,
+                  error: error,
+                  stackTrace: stackTrace,
+                ),
+            data: (_) => const KernelAppWidget(),
           ),
-      data: (_) => const KernelAppWidget(),
+          if (sholdShowSplash.value)
+            loadingWidget ?? const KernelLoadingWidget(),
+        ],
+      ),
     );
   }
 }
