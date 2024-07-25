@@ -118,6 +118,7 @@ export './http/http.dart';
 // @endindex
 
 // @index(['./kernel/**/(*.dart)','!./kernel/**/*.g.dart', '!./kernel/**/_*.dart'], f => `export '${f.path}.dart';`)
+export './kernel/events/hide_loading_widget_event.dart';
 export './kernel/exceptions/kernel_is_already_running_exception.dart';
 export './kernel/hooks/use_dark_theme.dart';
 export './kernel/hooks/use_light_theme.dart';
@@ -142,6 +143,7 @@ export './router/mixins/resolves_page.dart';
 export './router/mixins/transitions/fade_page_transition.dart';
 export './router/mixins/transitions/material_page_transition.dart';
 export './router/mixins/transitions/none_page_transition.dart';
+export './router/observers/hide_loading_widget_observer.dart';
 export './router/providers/router_config_provider.dart';
 export './router/providers/router_error_builder_provider.dart';
 export './router/providers/router_provider.dart';
