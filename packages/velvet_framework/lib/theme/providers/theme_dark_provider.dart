@@ -1,4 +1,4 @@
-import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:velvet_annotation/velvet_annotation.dart';
 import 'package:velvet_framework/theme/theme_definition.dart';
 import 'package:velvet_framework/theme/themes/wireframe/wireframe_dark.dart';
 

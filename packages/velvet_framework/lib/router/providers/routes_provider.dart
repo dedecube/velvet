@@ -1,5 +1,5 @@
 import 'package:go_router/go_router.dart';
-import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:velvet_annotation/velvet_annotation.dart';
 
 part 'routes_provider.g.dart';
 

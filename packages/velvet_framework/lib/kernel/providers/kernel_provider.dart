@@ -1,4 +1,4 @@
-import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:velvet_annotation/velvet_annotation.dart';
 import 'package:velvet_framework/event/providers/event_bus_provider.dart';
 import 'package:velvet_framework/kernel/kernel.dart';
 import 'package:velvet_framework/kernel/providers/kernel_bootstrap_provider.dart';

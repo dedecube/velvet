@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:velvet_annotation/velvet_annotation.dart';
 import 'package:velvet_framework/theme/contracts/theme_definition_contract.dart';
 import 'package:velvet_framework/theme/theme_definition.dart';
 

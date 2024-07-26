@@ -1,4 +1,4 @@
-import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:velvet_annotation/velvet_annotation.dart';
 import 'package:velvet_framework/data_loader/data_loader.dart';
 import 'package:velvet_framework/data_loader/views/data_loader_default_error_view.dart';
 

@@ -1,4 +1,4 @@
-import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:velvet_annotation/velvet_annotation.dart';
 import 'package:velvet_framework/dev_inspector/adapters/dev_inspector_talker_adapter.dart';
 import 'package:velvet_framework/dev_inspector/contracts/dev_inspector_adapter_contract.dart';
 

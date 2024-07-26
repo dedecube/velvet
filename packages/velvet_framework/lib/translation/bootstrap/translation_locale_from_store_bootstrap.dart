@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:velvet_annotation/velvet_annotation.dart';
 import 'package:velvet_framework/event/utils/event.dart';
 import 'package:velvet_framework/store/providers/store_provider.dart';
 import 'package:velvet_framework/translation/events/locale_loaded_from_store.dart';
