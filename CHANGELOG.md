@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-07-27
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`velvet_framework` - `v0.0.1-dev.35`](#velvet_framework---v001-dev35)
+
+---
+
+#### `velvet_framework` - `v0.0.1-dev.35`
+
+ - **FEAT**: improve useInput and useForm providing some default options from config and returing a useMemoized to avoid new instance on each rebuild. ([18f27f94](https://github.com/dedecube/velvet/commit/18f27f944801d05e373b27777b8338cb25c7bc72))
+ - **FEAT**: now input_options has copyWith method. ([e86179ea](https://github.com/dedecube/velvet/commit/e86179eae12babceab0b3b5570fa530336722e45))
+
+
 ## 2024-07-25
 
 ### Changes
