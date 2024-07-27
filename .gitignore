@@ -31,6 +31,9 @@ migrate_working_dir/
 build/
 **/.flutter-plugins
 **/.flutter-plugins-dependencies
+/packages/velvet_framework/lib/bootstrap.velvet.dart
+/packages/velvet_framework/lib/config.velvet.dart
+
 # Melos
 pubspec_overrides.yaml
 
