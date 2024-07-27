@@ -4,6 +4,8 @@ import 'package:velvet_framework/error_handling/bag_exception.dart';
 import 'package:velvet_framework/error_handling/types.dart';
 import 'package:velvet_framework/form/hooks/use_form_state/form_options.dart';
 import 'package:velvet_framework/form/hooks/use_input_state/use_input.dart';
+import 'package:velvet_framework/form/providers/form_config_provider.dart';
+import 'package:velvet_framework/utils/container.dart';
 
 part '_form_state.dart';
 
@@ -45,6 +47,16 @@ FormState useForm(
 }) {
   final isSubmitting = useState(false);
   final isValid = useState(true);
+
+  useEffect(
+    () {
+      exceptionMatcher ??=
+          container().read(formConfigProvider).defaultFormExceptionMatcher;
+
+      return null;
+    },
+    [],
+  );
 
   validate({bool quietly = true}) async {
     if (quietly) {
@@ -114,17 +126,20 @@ FormState useForm(
       });
 
       if (exceptionMatcher != null) {
-        exceptionMatcher(exception);
+        exceptionMatcher!(exception);
       }
     }
   }
 
-  return FormState(
-    inputs: inputs,
-    isValid: isValid,
-    isSubmitting: isSubmitting,
-    onSuccess: onSuccess,
-    submit: submit,
-    validate: validate,
+  return useMemoized(
+    () => FormState(
+      inputs: inputs,
+      isValid: isValid,
+      isSubmitting: isSubmitting,
+      onSuccess: onSuccess,
+      submit: submit,
+      validate: validate,
+    ),
+    [],
   );
 }

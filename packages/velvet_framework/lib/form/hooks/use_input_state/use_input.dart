@@ -5,6 +5,7 @@ import 'package:velvet_framework/error_handling/types.dart';
 import 'package:velvet_framework/form/hooks/use_input_state/input_options.dart';
 import 'package:velvet_framework/form/providers/form_config_provider.dart';
 import 'package:velvet_framework/hooks/use_provider/use_provider.dart';
+import 'package:velvet_framework/utils/container.dart';
 import 'package:velvet_framework/validation/rule.dart';
 import 'package:velvet_framework/validation/validator.dart';
 import 'package:velvet_support/velvet_support.dart';
@@ -86,7 +87,7 @@ typedef ExceptionMatcherFactory = ExceptionMatcher Function(
 /// ```
 InputState useInput({
   List<Rule> rules = const [],
-  InputOptions options = const InputOptions(),
+  InputOptions? options,
   String initialValue = '',
   String? name,
   List<ExceptionToMessageResolverFactory> exceptionToMessageResolverFactories =
@@ -97,16 +98,42 @@ InputState useInput({
     initialValue = _useInitialValueForDebug(name, initialValue);
   }
 
+  options ??= container().read(formConfigProvider).defaultInputOptions;
+
   final controller = useTextEditingController(text: initialValue);
   final focusNode = useFocusNode();
   final error = useState<String?>(null);
+  final value = useState<String>('');
 
-  final exceptionMatcher = exceptionMatcherFactory != null
-      ? exceptionMatcherFactory(exceptionToMessageResolverFactories, error)
-      : _useInputExceptionMatcher(
-          exceptionToMessageResolverFactories,
-          error,
-        );
+  trimOrNot() {
+    value.value =
+        options!.shouldTrim ? controller.text.trim() : controller.text;
+  }
+
+  useEffect(
+    () {
+      trimOrNot();
+
+      controller.addListener(trimOrNot);
+
+      return () => controller.removeListener(trimOrNot);
+    },
+    [],
+  );
+
+  final exceptionMatcher = useMemoized(
+    () {
+      return exceptionMatcherFactory != null
+          ? exceptionMatcherFactory(exceptionToMessageResolverFactories, error)
+          : container()
+              .read(formConfigProvider)
+              .defaultInputExceptionMatcherFactory(
+                exceptionToMessageResolverFactories,
+                error,
+              );
+    },
+    [],
+  );
 
   if (options.shouldValidateOnFocusLost) {
     _useValidateOnFocusLost(focusNode, controller, rules, error);
@@ -124,11 +151,15 @@ InputState useInput({
     _useValidateOnChange(controller, rules, error);
   }
 
-  return InputState(
-    controller: controller,
-    focusNode: focusNode,
-    error: error,
-    exceptionMatcher: exceptionMatcher,
-    rules: rules,
+  return useMemoized(
+    () => InputState(
+      controller: controller,
+      error: error,
+      exceptionMatcher: exceptionMatcher,
+      focusNode: focusNode,
+      rules: rules,
+      value: value,
+    ),
+    [],
   );
 }

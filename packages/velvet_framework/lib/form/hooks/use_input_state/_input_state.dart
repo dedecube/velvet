@@ -50,9 +50,10 @@ class InputState {
   /// capabilities.
   InputState({
     required this.controller,
-    required this.focusNode,
     required this.error,
     required this.exceptionMatcher,
+    required this.focusNode,
+    required this.value,
     this.rules = const [],
   });
 
@@ -67,19 +68,19 @@ class InputState {
 
   /// An optional [ExceptionMatcher] that can be used to customize the error
   /// handling behavior of the input state.
-  ExceptionMatcher exceptionMatcher;
+  final ExceptionMatcher exceptionMatcher;
 
   /// A list of validation rules to be applied to the input field.
-  List<Rule> rules;
+  final List<Rule> rules;
 
-  get value => controller.text;
+  final ValueNotifier<String> value;
 
   get hasError => error.value != null;
 
   /// Validates the input field against the defined rules.
   validate() {
     final errors = Validator.on(
-      value,
+      value.value,
       rules,
     );
 
@@ -91,7 +92,7 @@ class InputState {
   }
 
   get isValid => Validator.on(
-        value,
+        value.value,
         rules,
       ).isEmpty;
 }
