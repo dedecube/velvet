@@ -63,7 +63,7 @@ export './event/utils/event.dart';
 export './event/utils/listen.dart';
 // @endindex
 
-// @index(['./form/**/(*.dart)','!./form/**/*.g.dart', '!./form/**/_*.dart'], f => `export '${f.path}.dart';`)
+// @index(['./form/**/(*.dart)','!./form/**/*.g.dart', '!./form/**/_*.dart', '!./form/**/*.freezed.dart'], f => `export '${f.path}.dart';`)
 export './form/contracts/form_config_contract.dart';
 export './form/hooks/use_form_state/form_options.dart';
 export './form/hooks/use_form_state/use_form.dart';
