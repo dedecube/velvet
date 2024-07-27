@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:velvet_framework/http/contracts/http_request_contract.dart';
 import 'package:velvet_framework/http/exceptions/http_response_parse_exception.dart';
 
@@ -31,7 +34,27 @@ class HttpResponse<ResponseReturnType, RawResponseRootType> {
     try {
       return httpRequest.fromResponse(dioResponse);
     } catch (exception) {
-      throw HttpResponseParseException();
+      if (exception is Error) {
+        JsonEncoder encoder = const JsonEncoder.withIndent('  ');
+        final prettyDioResponse = encoder.convert(dioResponse.data);
+
+        if (kDebugMode) {
+          FlutterError.reportError(
+            FlutterErrorDetails(
+              exception: exception,
+              stack: exception.stackTrace,
+              context: ErrorDescription(
+                'HttpResponse toObject(). \nDio response: $prettyDioResponse',
+              ),
+            ),
+          );
+        }
+      }
+
+      throw HttpResponseParseException(
+        message: 'Failed to parse the response.',
+        dioResponse: dioResponse,
+      );
     }
   }
 }
