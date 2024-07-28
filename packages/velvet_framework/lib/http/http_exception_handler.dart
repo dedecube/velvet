@@ -17,6 +17,7 @@ import 'package:velvet_framework/http/exceptions/http_request/5xx/bad_gateway_ht
 import 'package:velvet_framework/http/exceptions/http_request/5xx/internal_server_error_http_request_exception.dart';
 import 'package:velvet_framework/http/exceptions/http_request/bad_certificate_http_request_exception.dart';
 import 'package:velvet_framework/http/exceptions/http_request/canceled_http_request_exception.dart';
+import 'package:velvet_framework/http/exceptions/http_request/connection_error_http_request_exception.dart';
 import 'package:velvet_framework/http/exceptions/http_request/connection_timeout_http_request_exception.dart';
 import 'package:velvet_framework/http/exceptions/http_request/http_request_exception.dart';
 import 'package:velvet_framework/http/exceptions/http_request/receive_timeout_http_request_exception.dart';
@@ -66,9 +67,14 @@ class HttpExceptionHandler implements HttpExceptionHandlerContract {
           httpRequest: httpRequest,
           dioException: dioException,
         );
+      case DioExceptionType.connectionError:
+        return ConnectionErrorHttpRequestException(
+          httpRequest: httpRequest,
+          dioException: dioException,
+        );
       default:
         return HttpRequestException(
-          message: 'Unexpected error occurred',
+          message: dioException.message,
           httpRequest: httpRequest,
           dioException: dioException,
         );
