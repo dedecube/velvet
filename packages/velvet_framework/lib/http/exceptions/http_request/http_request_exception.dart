@@ -13,5 +13,5 @@ class HttpRequestException implements Exception {
   final DioException dioException;
 
   @override
-  String toString() => 'HttpRequestException: $message';
+  String toString() => '$dioException';
 }

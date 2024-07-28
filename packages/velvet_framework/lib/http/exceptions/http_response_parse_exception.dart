@@ -1,3 +1,17 @@
+import 'package:dio/dio.dart';
+
 class HttpResponseParseException implements Exception {
-  final String message = 'Failed to parse response';
+  const HttpResponseParseException({
+    required this.message,
+    required this.dioResponse,
+  });
+
+  final String message;
+
+  final Response dioResponse;
+
+  @override
+  String toString() {
+    return 'HttpResponseParseException: $message';
+  }
 }
