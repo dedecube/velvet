@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:velvet_framework/plugin/contracts/velvet_plugin_contract.dart';
 import 'package:velvet_framework/utils/container.dart' as util_container;
 import 'package:velvet_framework/velvet_framework.dart';
 
@@ -191,6 +192,12 @@ class Kernel {
     _throwIfRunning();
 
     _riverpodOvverides.addAll(overrides);
+  }
+
+  void plugin(VelvetPluginContract plugin) {
+    _throwIfRunning();
+
+    plugin.install(this);
   }
 
   /// Run the application
