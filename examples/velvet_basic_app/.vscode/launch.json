@@ -1,0 +1,53 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Mobile",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "-t",
+                "lib/main.dart",
+                "--no-enable-impeller"
+            ],
+            "preLaunchTask": "build_runner: clean and watch",
+            "postDebugTask": "Terminate All Tasks"
+        },
+        {
+            "name": "Mobile - Manual",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "-t",
+                "lib/main.dart",
+                "--no-enable-impeller"
+            ]
+        },
+        {
+            "name": "Web",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "-d",
+                "chrome",
+                "--web-port=5000",
+                "--web-enable-expression-evaluation",
+                "--target=lib/main.dart"
+            ],
+            "preLaunchTask": "build_runner: clean and watch",
+            "postDebugTask": "Terminate All Tasks"
+        },
+        {
+            "name": "Web - Manual",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "-d",
+                "chrome",
+                "--web-port=5000",
+                "--web-enable-expression-evaluation",
+                "--target=lib/main.dart"
+            ]
+        }
+    ]
+}
