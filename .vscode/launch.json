@@ -2,51 +2,51 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Mobile",
+            "name": "Basic App - Mobile",
             "request": "launch",
             "type": "dart",
+            "program": "examples/velvet_basic_app/lib/main.dart",
             "args": [
-                "-t",
-                "lib/main.dart",
                 "--no-enable-impeller"
             ],
-            "preLaunchTask": "build_runner: clean and watch",
-            "postDebugTask": "Terminate All Tasks"
+            "preLaunchTask": "basic app - build_runner: clean and watch",
+            "postDebugTask": "basic app - terminate all tasks",
         },
         {
-            "name": "Mobile - Manual",
+            "name": "Basic App - Mobile Manual",
             "request": "launch",
             "type": "dart",
+            "program": "examples/velvet_basic_app/lib/main.dart",
             "args": [
-                "-t",
-                "lib/main.dart",
                 "--no-enable-impeller"
             ]
         },
         {
-            "name": "Web",
+            "name": "Basic App - Web",
             "request": "launch",
             "type": "dart",
+            "program": "examples/velvet_basic_app/lib/main.dart",
             "args": [
                 "-d",
                 "chrome",
                 "--web-port=5000",
                 "--web-enable-expression-evaluation",
-                "--target=lib/main.dart"
+                "--web-browser-flag=--disable-web-security",
             ],
-            "preLaunchTask": "build_runner: clean and watch",
-            "postDebugTask": "Terminate All Tasks"
+            "preLaunchTask": "basic app - build_runner: clean and watch",
+            "postDebugTask": "basic app - terminate all tasks"
         },
         {
-            "name": "Web - Manual",
+            "name": "Basic App - Web Manual",
             "request": "launch",
             "type": "dart",
+            "program": "examples/velvet_basic_app/lib/main.dart",
             "args": [
                 "-d",
                 "chrome",
                 "--web-port=5000",
                 "--web-enable-expression-evaluation",
-                "--target=lib/main.dart"
+                "--web-browser-flag=--disable-web-security",
             ]
         }
     ]

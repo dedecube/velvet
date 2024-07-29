@@ -14,8 +14,11 @@
           "$dart-build_runner"
         ],
         "group": "build",
-        "label": "build_runner: clean",
+        "label": "basic app - build_runner: clean",
         "detail": "",
+        "options": {
+          "cwd": "${workspaceFolder}/examples/velvet_basic_app"
+        },
         "presentation": {
           "echo": true,
           "reveal": "always",
@@ -40,8 +43,11 @@
           "$dart-build_runner"
         ],
         "group": "build",
-        "label": "build_runner: watch",
+        "label": "basic app - build_runner: watch",
         "detail": "",
+        "options": {
+          "cwd": "${workspaceFolder}/examples/velvet_basic_app"
+        },
         "isBackground": true,
       },
       {
@@ -58,21 +64,24 @@
           "$dart-build_runner"
         ],
         "group": "build",
-        "label": "build_runner: build",
-        "detail": ""
+        "label": "basic app - build_runner: build",
+        "detail": "",
+        "options": {
+          "cwd": "${workspaceFolder}/examples/velvet_basic_app"
+        },
       },
       {
-        "label": "build_runner: clean and watch",
+        "label": "basic app - build_runner: clean and watch",
         "dependsOrder": "sequence",
         "dependsOn": [
-          "build_runner: clean",
-          "build_runner: build",
-          "build_runner: watch"
+          "basic app - build_runner: clean",
+          "basic app - build_runner: build",
+          "basic app - build_runner: watch"
         ],
       },
       {
         "type": "shell",
-        "label": "clean cache: removed .build and .dart_tool",
+        "label": "basic app - clean cache: removed .build and .dart_tool",
         "command": "bash",
         "args": [
           "-c",
@@ -80,6 +89,9 @@
         ],
         "problemMatcher": [],
         "group": "build",
+        "options": {
+          "cwd": "${workspaceFolder}/examples/velvet_basic_app"
+        },
         "presentation": {
           "echo": true,
           "reveal": "always",
@@ -91,10 +103,13 @@
         }
       },
       {
-        "label": "Terminate All Tasks",
+        "label": "basic app - terminate all tasks",
         "command": "echo ${input:terminate}",
         "type": "shell",
-        "problemMatcher": []
+        "problemMatcher": [],
+        "options": {
+          "cwd": "${workspaceFolder}/examples/velvet_basic_app"
+        },
       }
     ],
     "inputs": [
