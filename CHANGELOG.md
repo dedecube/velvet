@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-07-29
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`velvet_framework` - `v0.0.1-dev.36`](#velvet_framework---v001-dev36)
+
+---
+
+#### `velvet_framework` - `v0.0.1-dev.36`
+
+ - **FEAT**: add VelvetPluginContract. ([a327e1df](https://github.com/dedecube/velvet/commit/a327e1df1d85f82159d15d28df408719c507c8f3))
+ - **FEAT**: improve debugging of HttpResponseParseException. ([2be76aa2](https://github.com/dedecube/velvet/commit/2be76aa275b042013759ad5a3e8224e822ee594b))
+ - **FEAT**: add ConnectionErrorHttpRequestException. ([19062795](https://github.com/dedecube/velvet/commit/19062795b13b23fc508a5d5c99bbeabb2b378bee))
+ - **FEAT**: removed params in useCaseContract. ([1d262cf0](https://github.com/dedecube/velvet/commit/1d262cf0e19465965cc00ecd585a60049e75f066))
+ - **FEAT**: added use_case_contract. ([d4ef3c12](https://github.com/dedecube/velvet/commit/d4ef3c12e9c3c4df6f04b5b2b515f9dfb99a7818))
+ - **FEAT**: improve debug of http_request response when unable to parse. ([6aa3fcc1](https://github.com/dedecube/velvet/commit/6aa3fcc19407cf5381b3653b0f255cbc02eb9b1d))
+
+
 ## 2024-07-27
 
 ### Changes
