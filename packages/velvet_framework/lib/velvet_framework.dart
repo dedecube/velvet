@@ -103,6 +103,7 @@ export './http/exceptions/http_request/5xx/bad_gateway_http_request_exception.da
 export './http/exceptions/http_request/5xx/internal_server_error_http_request_exception.dart';
 export './http/exceptions/http_request/bad_certificate_http_request_exception.dart';
 export './http/exceptions/http_request/canceled_http_request_exception.dart';
+export './http/exceptions/http_request/connection_error_http_request_exception.dart';
 export './http/exceptions/http_request/connection_timeout_http_request_exception.dart';
 export './http/exceptions/http_request/http_request_bag_exception.dart';
 export './http/exceptions/http_request/http_request_exception.dart';
