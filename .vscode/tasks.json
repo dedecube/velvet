@@ -81,12 +81,22 @@
       },
       {
         "type": "shell",
-        "label": "framework - clean cache: removed .build and .dart_tool",
-        "command": "bash",
-        "args": [
-          "-c",
-          "if [[ \"$OSTYPE\" == \"darwin\"* ]]; then rm -rf .build .dart_tool; elif [[ \"$OSTYPE\" == \"cygwin\" || \"$OSTYPE\" == \"msys\" || \"$OSTYPE\" == \"win32\" ]]; then rmdir /s /q .build .dart_tool; else echo \"Unsupported OS\"; fi"
-        ],
+        "label": "framework - clean cache: remove .build and .dart_tool",
+        "windows": {
+          "command": "powershell",
+          "args": [
+            "-Command",
+            "if (Test-Path .build) { Remove-Item -Recurse -Force .build }",
+            "if (Test-Path .dart_tool) { Remove-Item -Recurse -Force .dart_tool }"
+          ]
+        },
+        "osx": {
+          "command": "bash",
+          "args": [
+            "-c",
+            "rm -rf .build .dart_tool"
+          ]
+        },
         "problemMatcher": [],
         "group": "build",
         "options": {
@@ -191,12 +201,22 @@
       },
       {
         "type": "shell",
-        "label": "basic app - clean cache: removed .build and .dart_tool",
-        "command": "bash",
-        "args": [
-          "-c",
-          "if [[ \"$OSTYPE\" == \"darwin\"* ]]; then rm -rf .build .dart_tool; elif [[ \"$OSTYPE\" == \"cygwin\" || \"$OSTYPE\" == \"msys\" || \"$OSTYPE\" == \"win32\" ]]; then rmdir /s /q .build .dart_tool; else echo \"Unsupported OS\"; fi"
-        ],
+        "label": "basic app - clean cache: remove .build and .dart_tool",
+        "windows": {
+          "command": "powershell",
+          "args": [
+            "-Command",
+            "if (Test-Path .build) { Remove-Item -Recurse -Force .build }",
+            "if (Test-Path .dart_tool) { Remove-Item -Recurse -Force .dart_tool }"
+          ]
+        },
+        "osx": {
+          "command": "bash",
+          "args": [
+            "-c",
+            "rm -rf .build .dart_tool"
+          ]
+        },
         "problemMatcher": [],
         "group": "build",
         "options": {
