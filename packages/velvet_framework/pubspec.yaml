@@ -8,7 +8,6 @@ environment:
   flutter: ">=3.0.0"
 
 dependencies:
-  connectivity_plus: ^6.0.3
   dio: ^5.4.3+1
   event_bus: ^2.0.0
   flutter:
@@ -24,7 +23,7 @@ dependencies:
   talker_flutter: ^4.2.3
   talker_riverpod_logger: ^1.0.0
   theme_tailor_annotation: ^3.0.1
-  velvet_annotation: 0.0.1-dev.8
+  velvet_annotation: ^0.0.1-dev.8
   velvet_support: ^0.0.1-dev.7
 
 dev_dependencies:
