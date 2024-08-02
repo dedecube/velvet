@@ -23,6 +23,10 @@ export 'package:velvet_support/velvet_support.dart';
 // npx vscode-generate-index-standalone packages/velvet_framework/lib/
 // ```
 
+// @index(['./contracts/**/(*.dart)','!./contracts/**/*.g.dart', '!./contracts/**/_*.dart'], f => `export '${f.path}.dart';`)
+export './contracts/use_case_contract.dart';
+// @endindex
+
 // @index(['./data_loader/**/(*.dart)','!./data_loader/**/*.g.dart', '!./data_loader/**/_*.dart'], f => `export '${f.path}.dart';`)
 export './data_loader/data_loader_error_view.dart';
 export './data_loader/data_loader_loading_view.dart';
@@ -204,7 +208,9 @@ export './utils/navigator_context.dart';
 
 // @index(['./validation/**/(*.dart)','!./validation/**/*.g.dart', '!./validation/**/_*.dart'], f => `export '${f.path}.dart';`)
 export './validation/rule.dart';
+export './validation/rules/confirmation_rule.dart';
 export './validation/rules/email_rule.dart';
+export './validation/rules/fixed_length_rule.dart';
 export './validation/rules/max_length_rule.dart';
 export './validation/rules/min_length_rule.dart';
 export './validation/rules/required_string_rule.dart';
@@ -214,5 +220,3 @@ export './validation/validator.dart';
 // @index(['./widgets/**/(*.dart)','!./widgets/**/*.g.dart', '!./widgets/**/_*.dart'], f => `export '${f.path}.dart';`)
 export './widgets/pre_renderer.dart';
 // @endindex
-
-
