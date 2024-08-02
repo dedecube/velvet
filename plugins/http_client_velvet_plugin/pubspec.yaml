@@ -1,22 +1,21 @@
-name: velvet_basic_app
-description: "A new Flutter project."
-publish_to: "none"
-version: 1.0.0+1
+name: http_client_velvet_plugin
+description: A plugin that provide a simple way to manage a http client in a velvet applications.
+version: 0.0.1-dev.0
+homepage: https://github.com/dedecube/velvet/tree/main/plugins/http_client_velvet_plugin
+publish_to: none
 
 environment:
   sdk: ">=3.2.6 <4.0.0"
+  flutter: ">=3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
   velvet_annotation: ^0.0.1-dev.8
-  connectivity_velvet_plugin: ^0.0.1-dev.0
   velvet_framework: ^0.0.1-dev.37
 
 dev_dependencies:
   build_runner: ^2.4.9
-  flutter_test:
-    sdk: flutter
   velvet_generator: ^0.0.1-dev.13
 
   # Mandatory dependencies for make custom_lint work in monorepo
@@ -26,7 +25,8 @@ dev_dependencies:
   riverpod_lint: ^2.3.10
   velvet_custom_lints: ^0.0.1-dev.6
 
-flutter:
-  uses-material-design: true
-  assets:
-    - assets/translation/
+flutter: null
+
+topics:
+  - flutter
+  - framework

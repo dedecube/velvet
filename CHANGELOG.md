@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-08-02
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`velvet_framework` - `v0.0.1-dev.37`](#velvet_framework---v001-dev37)
+
+---
+
+#### `velvet_framework` - `v0.0.1-dev.37`
+
+ - **FEAT**: add middlewares field in BaseRoute. ([d03d2088](https://github.com/dedecube/velvet/commit/d03d20883158750edf170deaaeb39b3af6727169))
+ - **FEAT**: add confirmation and fixed_length rule. ([aa682126](https://github.com/dedecube/velvet/commit/aa6821263bb19496f1b2fe1f25cc50ec0c7dd5fd))
+
+
 ## 2024-07-29
 
 ### Changes
