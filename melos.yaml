@@ -12,3 +12,4 @@ command:
 packages:
   - examples/*
   - packages/*
+  - plugins/*
