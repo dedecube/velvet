@@ -20,7 +20,8 @@
     "**/*.iml": true,
     "**/pubspec_overrides.yaml": true,
     "custom_lint.log": true,
-    "**/*.velvet.dart": true
+    "**/*.velvet.dart": true,
+    "**/*.freezed.dart": true
   },
   "search.exclude": {
     "/.fvm": true,
