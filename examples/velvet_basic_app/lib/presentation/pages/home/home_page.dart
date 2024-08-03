@@ -17,7 +17,7 @@ class HomePage extends HookConsumerWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                FormRoute().go(context);
+                FormRoute().push(context);
               },
               child: Text(context.translate('pages.home.go_to_form')),
             ),
