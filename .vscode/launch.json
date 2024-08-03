@@ -1,0 +1,53 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Basic App - Mobile",
+            "request": "launch",
+            "type": "dart",
+            "program": "examples/velvet_basic_app/lib/main.dart",
+            "args": [
+                "--no-enable-impeller"
+            ],
+            "preLaunchTask": "basic app - build_runner: clean and watch",
+            "postDebugTask": "basic app - terminate all tasks",
+        },
+        {
+            "name": "Basic App - Mobile Manual",
+            "request": "launch",
+            "type": "dart",
+            "program": "examples/velvet_basic_app/lib/main.dart",
+            "args": [
+                "--no-enable-impeller"
+            ]
+        },
+        {
+            "name": "Basic App - Web",
+            "request": "launch",
+            "type": "dart",
+            "program": "examples/velvet_basic_app/lib/main.dart",
+            "args": [
+                "-d",
+                "chrome",
+                "--web-port=5000",
+                "--web-enable-expression-evaluation",
+                "--web-browser-flag=--disable-web-security",
+            ],
+            "preLaunchTask": "basic app - build_runner: clean and watch",
+            "postDebugTask": "basic app - terminate all tasks"
+        },
+        {
+            "name": "Basic App - Web Manual",
+            "request": "launch",
+            "type": "dart",
+            "program": "examples/velvet_basic_app/lib/main.dart",
+            "args": [
+                "-d",
+                "chrome",
+                "--web-port=5000",
+                "--web-enable-expression-evaluation",
+                "--web-browser-flag=--disable-web-security",
+            ]
+        }
+    ]
+}

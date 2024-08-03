@@ -1,0 +1,253 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "type": "shell",
+        "command": "flutter",
+        "args": [
+          "pub",
+          "run",
+          "build_runner",
+          "clean"
+        ],
+        "problemMatcher": [
+          "$dart-build_runner"
+        ],
+        "group": "build",
+        "label": "framework - build_runner: clean",
+        "detail": "",
+        "options": {
+          "cwd": "${workspaceFolder}/packages/velvet_framework"
+        },
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "dedicated",
+          "showReuseMessage": true,
+          "clear": false,
+          "close": true
+        }
+      },
+      {
+        "type": "shell",
+        "command": "flutter",
+        "args": [
+          "pub",
+          "run",
+          "build_runner",
+          "watch",
+          "--delete-conflicting-outputs"
+        ],
+        "problemMatcher": [
+          "$dart-build_runner"
+        ],
+        "group": "build",
+        "label": "framework - build_runner: watch",
+        "detail": "",
+        "options": {
+          "cwd": "${workspaceFolder}/packages/velvet_framework"
+        },
+        "isBackground": true,
+      },
+      {
+        "type": "shell",
+        "command": "flutter",
+        "args": [
+          "pub",
+          "run",
+          "build_runner",
+          "build",
+          "--delete-conflicting-outputs"
+        ],
+        "problemMatcher": [
+          "$dart-build_runner"
+        ],
+        "group": "build",
+        "label": "framework - build_runner: build",
+        "detail": "",
+        "options": {
+          "cwd": "${workspaceFolder}/packages/velvet_framework"
+        },
+      },
+      {
+        "label": "framework - build_runner: clean and watch",
+        "dependsOrder": "sequence",
+        "dependsOn": [
+          "framework - build_runner: clean",
+          "framework - build_runner: build",
+          "framework - build_runner: watch"
+        ],
+      },
+      {
+        "type": "shell",
+        "label": "framework - clean cache: remove .build and .dart_tool",
+        "windows": {
+          "command": "powershell",
+          "args": [
+            "-Command",
+            "if (Test-Path .build) { Remove-Item -Recurse -Force .build }",
+            "if (Test-Path .dart_tool) { Remove-Item -Recurse -Force .dart_tool }"
+          ]
+        },
+        "osx": {
+          "command": "bash",
+          "args": [
+            "-c",
+            "rm -rf .build .dart_tool"
+          ]
+        },
+        "problemMatcher": [],
+        "group": "build",
+        "options": {
+          "cwd": "${workspaceFolder}/packages/velvet_framework"
+        },
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "dedicated",
+          "showReuseMessage": true,
+          "clear": false,
+          "close": true
+        }
+      },
+      {
+        "label": "framework - terminate all tasks",
+        "command": "echo ${input:terminate}",
+        "type": "shell",
+        "problemMatcher": [],
+        "options": {
+          "cwd": "${workspaceFolder}/packages/velvet_framework"
+        },
+      },
+      {
+        "type": "shell",
+        "command": "flutter",
+        "args": [
+          "pub",
+          "run",
+          "build_runner",
+          "clean"
+        ],
+        "problemMatcher": [
+          "$dart-build_runner"
+        ],
+        "group": "build",
+        "label": "basic app - build_runner: clean",
+        "detail": "",
+        "options": {
+          "cwd": "${workspaceFolder}/examples/velvet_basic_app"
+        },
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "dedicated",
+          "showReuseMessage": true,
+          "clear": false,
+          "close": true
+        }
+      },
+      {
+        "type": "shell",
+        "command": "flutter",
+        "args": [
+          "pub",
+          "run",
+          "build_runner",
+          "watch",
+          "--delete-conflicting-outputs"
+        ],
+        "problemMatcher": [
+          "$dart-build_runner"
+        ],
+        "group": "build",
+        "label": "basic app - build_runner: watch",
+        "detail": "",
+        "options": {
+          "cwd": "${workspaceFolder}/examples/velvet_basic_app"
+        },
+        "isBackground": true,
+      },
+      {
+        "type": "shell",
+        "command": "flutter",
+        "args": [
+          "pub",
+          "run",
+          "build_runner",
+          "build",
+          "--delete-conflicting-outputs"
+        ],
+        "problemMatcher": [
+          "$dart-build_runner"
+        ],
+        "group": "build",
+        "label": "basic app - build_runner: build",
+        "detail": "",
+        "options": {
+          "cwd": "${workspaceFolder}/examples/velvet_basic_app"
+        },
+      },
+      {
+        "label": "basic app - build_runner: clean and watch",
+        "dependsOrder": "sequence",
+        "dependsOn": [
+          "basic app - build_runner: clean",
+          "basic app - build_runner: build",
+          "basic app - build_runner: watch"
+        ],
+      },
+      {
+        "type": "shell",
+        "label": "basic app - clean cache: remove .build and .dart_tool",
+        "windows": {
+          "command": "powershell",
+          "args": [
+            "-Command",
+            "if (Test-Path .build) { Remove-Item -Recurse -Force .build }",
+            "if (Test-Path .dart_tool) { Remove-Item -Recurse -Force .dart_tool }"
+          ]
+        },
+        "osx": {
+          "command": "bash",
+          "args": [
+            "-c",
+            "rm -rf .build .dart_tool"
+          ]
+        },
+        "problemMatcher": [],
+        "group": "build",
+        "options": {
+          "cwd": "${workspaceFolder}/examples/velvet_basic_app"
+        },
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "dedicated",
+          "showReuseMessage": true,
+          "clear": false,
+          "close": true
+        }
+      },
+      {
+        "label": "basic app - terminate all tasks",
+        "command": "echo ${input:terminate}",
+        "type": "shell",
+        "problemMatcher": [],
+        "options": {
+          "cwd": "${workspaceFolder}/examples/velvet_basic_app"
+        },
+      }
+    ],
+    "inputs": [
+      {
+        "id": "terminate",
+        "type": "command",
+        "command": "workbench.action.tasks.terminate",
+        "args": "terminateAll"
+      }
+    ]
+  }
