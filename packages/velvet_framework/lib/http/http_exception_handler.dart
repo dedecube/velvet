@@ -1,13 +1,13 @@
 import 'package:dio/dio.dart';
 import 'package:velvet_framework/http/contracts/http_exception_handler_contract.dart';
-import 'package:velvet_framework/http/contracts/http_request_bad_response_handler.dart';
+import 'package:velvet_framework/http/contracts/http_request_bad_response_handler_contract.dart';
 import 'package:velvet_framework/http/contracts/http_request_contract.dart';
 import 'package:velvet_framework/http/exceptions/http_request/4xx/bad_http_request_exception.dart';
 import 'package:velvet_framework/http/exceptions/http_request/4xx/conflict_http_request_exception.dart';
 import 'package:velvet_framework/http/exceptions/http_request/4xx/forbidden_http_request_exception.dart';
 import 'package:velvet_framework/http/exceptions/http_request/4xx/gone_http_request_exception.dart';
 import 'package:velvet_framework/http/exceptions/http_request/4xx/method_not_allowed_http_request_exception.dart';
-import 'package:velvet_framework/http/exceptions/http_request/4xx/not_accetable_http_request_exception.dart';
+import 'package:velvet_framework/http/exceptions/http_request/4xx/not_acceptable_http_request_exception.dart';
 import 'package:velvet_framework/http/exceptions/http_request/4xx/not_found_http_request_exception.dart';
 import 'package:velvet_framework/http/exceptions/http_request/4xx/payload_too_large_http_request_exception.dart';
 import 'package:velvet_framework/http/exceptions/http_request/4xx/payment_required_http_request_exception.dart';
@@ -115,7 +115,7 @@ class HttpExceptionHandler implements HttpExceptionHandlerContract {
           dioException: dioException,
         );
       case 402:
-        return PaymentRequiredRequestException(
+        return PaymentRequiredHttpRequestException(
           httpRequest: httpRequest,
           dioException: dioException,
         );
@@ -130,12 +130,12 @@ class HttpExceptionHandler implements HttpExceptionHandlerContract {
           dioException: dioException,
         );
       case 405:
-        return MethodNotAllowedHttpException(
+        return MethodNotAllowedHttpRequestException(
           httpRequest: httpRequest,
           dioException: dioException,
         );
       case 406:
-        return NotAcceptableAllowedHttpException(
+        return NotAcceptableHttpRequestException(
           httpRequest: httpRequest,
           dioException: dioException,
         );
@@ -150,12 +150,12 @@ class HttpExceptionHandler implements HttpExceptionHandlerContract {
           dioException: dioException,
         );
       case 413:
-        return PayloadTooLargeRequestException(
+        return PayloadTooLargeHttpRequestException(
           httpRequest: httpRequest,
           dioException: dioException,
         );
       case 422:
-        return UnprocessableContenteHttpRequestException(
+        return UnprocessableContentHttpRequestException(
           httpRequest: httpRequest,
           dioException: dioException,
         );

@@ -83,7 +83,7 @@ export './hooks/use_provider/use_provider.dart';
 
 // @index(['./http/**/(*.dart)','!./http/**/*.g.dart', '!./http/**/_*.dart'], f => `export '${f.path}.dart';`)
 export './http/contracts/http_exception_handler_contract.dart';
-export './http/contracts/http_request_bad_response_handler.dart';
+export './http/contracts/http_request_bad_response_handler_contract.dart';
 export './http/contracts/http_request_contract.dart';
 export './http/contracts/http_request_custom_handling_contract.dart';
 export './http/contracts/http_request_list_contract.dart';
@@ -96,7 +96,7 @@ export './http/exceptions/http_request/4xx/conflict_http_request_exception.dart'
 export './http/exceptions/http_request/4xx/forbidden_http_request_exception.dart';
 export './http/exceptions/http_request/4xx/gone_http_request_exception.dart';
 export './http/exceptions/http_request/4xx/method_not_allowed_http_request_exception.dart';
-export './http/exceptions/http_request/4xx/not_accetable_http_request_exception.dart';
+export './http/exceptions/http_request/4xx/not_acceptable_http_request_exception.dart';
 export './http/exceptions/http_request/4xx/not_found_http_request_exception.dart';
 export './http/exceptions/http_request/4xx/payload_too_large_http_request_exception.dart';
 export './http/exceptions/http_request/4xx/payment_required_http_request_exception.dart';
@@ -131,9 +131,9 @@ export './kernel/kernel.dart';
 export './kernel/providers/kernel_bootstrap_provider.dart';
 export './kernel/providers/kernel_provider.dart';
 export './kernel/widgets/kernel_app_widget.dart';
+export './kernel/widgets/kernel_error_widget.dart';
 export './kernel/widgets/kernel_loading_widget.dart';
 export './kernel/widgets/kernel_widget.dart';
-export './kernel/widgets/kerner_error_widget.dart';
 // @endindex
 
 // @index(['./router/**/(*.dart)','!./router/**/*.g.dart', '!./router/**/_*.dart'], f => `export '${f.path}.dart';`)

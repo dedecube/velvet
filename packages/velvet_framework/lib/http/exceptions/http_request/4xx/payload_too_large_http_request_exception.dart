@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:velvet_framework/http/exceptions/http_request/http_request_exception.dart';
 
-class PayloadTooLargeRequestException extends HttpRequestException {
-  PayloadTooLargeRequestException({
+class PayloadTooLargeHttpRequestException extends HttpRequestException {
+  PayloadTooLargeHttpRequestException({
     required super.httpRequest,
     required super.dioException,
     String? message,

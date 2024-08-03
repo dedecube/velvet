@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:velvet_framework/http/exceptions/http_request/http_request_exception.dart';
 
-class UnprocessableContenteHttpRequestException extends HttpRequestException {
-  UnprocessableContenteHttpRequestException({
+class UnprocessableContentHttpRequestException extends HttpRequestException {
+  UnprocessableContentHttpRequestException({
     required super.httpRequest,
     required super.dioException,
     String? message,

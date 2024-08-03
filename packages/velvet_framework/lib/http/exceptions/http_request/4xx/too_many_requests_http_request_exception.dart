@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:velvet_framework/http/exceptions/http_request/http_request_exception.dart';
 
-class TooManyRequestsContenteHttpRequestException extends HttpRequestException {
-  TooManyRequestsContenteHttpRequestException({
+class TooManyRequestsHttpRequestException extends HttpRequestException {
+  TooManyRequestsHttpRequestException({
     required super.httpRequest,
     required super.dioException,
     String? message,

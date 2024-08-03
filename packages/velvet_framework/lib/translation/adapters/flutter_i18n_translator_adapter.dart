@@ -3,8 +3,8 @@ import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:velvet_framework/talker/talker_global_instance.dart';
 import 'package:velvet_framework/translation/contracts/translator_adapter_contract.dart';
 
-class FlutterI18nTranslationAdapter extends TranslatorAdapterContract {
-  FlutterI18nTranslationAdapter(super.config);
+class FlutterI18nTranslatorAdapter extends TranslatorAdapterContract {
+  FlutterI18nTranslatorAdapter(super.config);
 
   @override
   get delegate {

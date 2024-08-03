@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:velvet_framework/http/exceptions/http_request/http_request_exception.dart';
 
-class NotAcceptableAllowedHttpException extends HttpRequestException {
-  NotAcceptableAllowedHttpException({
+class NotAcceptableHttpRequestException extends HttpRequestException {
+  NotAcceptableHttpRequestException({
     required super.httpRequest,
     required super.dioException,
     String? message,

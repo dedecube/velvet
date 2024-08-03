@@ -9,5 +9,5 @@ part 'translator_adapter_provider.g.dart';
 TranslatorAdapterContract translatorAdapter(TranslatorAdapterRef ref) {
   var config = ref.read(translationConfigProvider);
 
-  return FlutterI18nTranslationAdapter(config);
+  return FlutterI18nTranslatorAdapter(config);
 }
