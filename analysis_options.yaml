@@ -72,3 +72,7 @@ custom_lint:
     # - proper_super_dispose
     # - proper_super_init_state
     - use_spacer
+
+dart_code_metrics:
+  extends:
+    - recommended
