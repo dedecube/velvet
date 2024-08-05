@@ -25,6 +25,7 @@ export 'package:velvet_support/velvet_support.dart';
 
 // @index(['./contracts/**/(*.dart)','!./contracts/**/*.g.dart', '!./contracts/**/_*.dart'], f => `export '${f.path}.dart';`)
 export './contracts/use_case_contract.dart';
+export './contracts/velvet_plugin_contract.dart';
 // @endindex
 
 // @index(['./data_loader/**/(*.dart)','!./data_loader/**/*.g.dart', '!./data_loader/**/_*.dart'], f => `export '${f.path}.dart';`)
