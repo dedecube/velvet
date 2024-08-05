@@ -47,7 +47,7 @@ class BootstrapAutoloaderGenerator
 
     await for (final names in stream) {
       for (var name in names) {
-        var fileName = Str.snake(name);
+        var fileName = name.snake();
 
         b.writeln('import \'./bootstrap/$fileName.dart\';');
       }

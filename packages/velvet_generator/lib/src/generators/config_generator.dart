@@ -56,7 +56,7 @@ class ConfigAutoloaderGenerator
 
     await for (final streamItem in stream) {
       for (var config in streamItem) {
-        var fileName = Str.snake(config.name);
+        var fileName = config.name.snake();
         var import = 'package:${config.import.replaceAll('/lib', '')}';
 
         b.writeln('import \'./config/$fileName.dart\';');
@@ -73,11 +73,8 @@ class ConfigAutoloaderGenerator
 
     for (var names in allConfig) {
       for (var name in names) {
-        var provider = Str.of(name.import)
-            .afterLast('/')
-            .before('.dart')
-            .camel()
-            .toString();
+        var provider =
+            name.import.afterLast('/').before('.dart').camel().toString();
 
         var configClassName = name.name;
 
