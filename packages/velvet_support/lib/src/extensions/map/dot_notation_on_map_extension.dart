@@ -1,5 +1,5 @@
 // ignore_for_file: avoid_dynamic
-extension DotNotationMap<K, V> on Map<K, V> {
+extension DotNotationOnMapExtension<K, V> on Map<K, V> {
   /// Retrieves a value from the map using dot notation.
   ///
   /// The [key] parameter represents the dot-separated path to the value.

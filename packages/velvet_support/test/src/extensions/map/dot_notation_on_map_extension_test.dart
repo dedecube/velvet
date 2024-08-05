@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:velvet_support/src/map.dart';
+import 'package:velvet_support/src/extensions/map/dot_notation_on_map_extension.dart';
 
 void main() {
   var map = {
@@ -9,7 +9,7 @@ void main() {
     },
   };
 
-  test('get method', () {
+  test('DotNotationOnMapExtension - get', () {
     expect(map.get<String>(key: 'my.example', defaultValue: null), 'hello');
     expect(
       map.get<List>(key: 'my.list', defaultValue: null),
@@ -25,7 +25,7 @@ void main() {
     expect(map.get<String>(key: 'my.list.{last}', defaultValue: null), 'item2');
   });
 
-  test('set method', () {
+  test('DotNotationOnMapExtension - set', () {
     map.set(key: 'my.new.key', value: 'new value');
     expect(map.get<String>(key: 'my.new.key', defaultValue: null), 'new value');
 
@@ -37,7 +37,7 @@ void main() {
     );
   });
 
-  test('empty map', () {
+  test('DotNotationOnMapExtension - fill from empty map', () {
     var emptyMap = {};
     emptyMap.set(key: 'my.example.0', value: 'hello');
     expect(emptyMap, {
