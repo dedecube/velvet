@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:velvet_framework/velvet_framework.dart';
 
-class ExampleException implements Exception, RenderableExceptionContract {
+class ExampleException implements Exception, RenderableException {
   ExampleException(this.message);
 
   final String message;

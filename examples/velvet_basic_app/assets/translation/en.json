@@ -21,7 +21,7 @@
     "kernel": {
       "widgets": {
         "error": {
-          "message": "An error occurred"
+          "message": "An error occurred: {error}"
         }
       }
     }

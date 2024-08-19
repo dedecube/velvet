@@ -1,8 +1,6 @@
-import 'package:velvet_annotation/velvet_annotation.dart';
 import 'package:velvet_framework/velvet_framework.dart';
 
-@VelvetConfig(provider: formConfig)
-class FormConfig extends FormConfigContract {
+class FormConfig extends FormDefaultConfig {
   @override
   Map<String, dynamic> get precompiledValues => {
         'name': 'Daniele Tulone',

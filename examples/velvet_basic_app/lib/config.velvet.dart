@@ -8,10 +8,6 @@ import './config/theme_config.dart';
 import 'package:velvet_framework/theme/providers/theme_config_provider.dart';
 import './config/router_config.dart';
 import 'package:velvet_framework/router/providers/router_config_provider.dart';
-import './config/form_config.dart';
-import 'package:velvet_framework/form/providers/form_config_provider.dart';
-import './config/error_handling_config.dart';
-import 'package:velvet_framework/error_handling/providers/error_handling_config_provider.dart';
 import './config/dev_inspector_config.dart';
 import 'package:velvet_framework/dev_inspector/providers/dev_inspector_config_provider.dart';
 
@@ -27,14 +23,6 @@ final List<ConfigBinder> configProviders = [
   ConfigBinder(
     abstract: routerConfigProvider,
     concrete: (ref) => RouterConfig(),
-  ),
-  ConfigBinder(
-    abstract: formConfigProvider,
-    concrete: (ref) => FormConfig(),
-  ),
-  ConfigBinder(
-    abstract: errorHandlingConfigProvider,
-    concrete: (ref) => ErrorHandlingConfig(),
   ),
   ConfigBinder(
     abstract: devInspectorConfigProvider,

@@ -1,7 +1,7 @@
 import 'package:velvet_framework/velvet_framework.dart';
 
-InputState useNameInput() {
-  return useInput(
+UseTextInputReturn useNameInput() {
+  return useTextInput(
     rules: [
       RequiredStringRule(),
       MinLengthRule(3),

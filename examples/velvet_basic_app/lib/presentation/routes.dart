@@ -1,9 +1,16 @@
-import 'package:velvet_basic_app/presentation/pages/form/form_route.dart'
-    as form_route;
-import 'package:velvet_basic_app/presentation/pages/home/home_route.dart'
-    as home_route;
+import 'package:flutter/widgets.dart';
+import 'package:velvet_basic_app/presentation/pages/form/form_page.dart';
+import 'package:velvet_basic_app/presentation/pages/home/home_page.dart';
+import 'package:velvet_framework/velvet_framework.dart';
 
-final routes = [
-  ...home_route.$appRoutes,
-  ...form_route.$appRoutes,
-];
+part 'pages/form/form_route.dart';
+part 'pages/home/home_route.dart';
+part 'routes.g.dart';
+
+@TypedShellRoute<Routes>(
+  routes: [
+    TypedGoRoute<HomeRoute>(path: '/home'),
+    TypedGoRoute<FormRoute>(path: '/form'),
+  ],
+)
+class Routes extends ShellRouteData {}
