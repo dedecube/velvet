@@ -25,10 +25,10 @@ part of 'use_input.dart';
 ///
 /// Note: This hook should be used within a widget that has a [FocusNode] and a
 /// [TextEditingController] associated with it.
-_useValidateOnFocusLost(
+_useValidateOnFocusLost<T>(
+  ValueNotifier<T> value,
+  List<Rule<T>> rules,
   FocusNode focusNode,
-  TextEditingController controller,
-  List<Rule> rules,
   ValueNotifier<String?> error,
 ) {
   useEffect(
@@ -38,7 +38,7 @@ _useValidateOnFocusLost(
           return;
         }
 
-        var errors = Validator.on(controller.text, rules);
+        var errors = Validator.on(value.value, rules);
 
         if (errors.isNotEmpty) {
           error.value = errors.first;

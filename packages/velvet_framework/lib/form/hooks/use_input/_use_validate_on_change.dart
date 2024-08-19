@@ -19,27 +19,23 @@ part of 'use_input.dart';
 ///
 /// _useValidateOnChange(controller, rules, error);
 /// ```
-_useValidateOnChange(
-  TextEditingController controller,
-  List<Rule> rules,
+_useValidateOnChange<T>(
+  T value,
+  List<Rule<T>> rules,
   ValueNotifier<String?> error,
 ) {
   useEffect(
     () {
-      void listener() {
-        var errors = Validator.on(controller.text, rules);
+      var errors = Validator.on(value, rules);
 
-        if (errors.isNotEmpty) {
-          error.value = errors.first;
-        } else {
-          error.value = null;
-        }
+      if (errors.isNotEmpty) {
+        error.value = errors.first;
+      } else {
+        error.value = null;
       }
 
-      controller.addListener(listener);
-
-      return () => controller.removeListener(listener);
+      return null;
     },
-    [controller],
+    [value],
   );
 }

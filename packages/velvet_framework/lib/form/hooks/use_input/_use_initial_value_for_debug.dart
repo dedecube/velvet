@@ -13,11 +13,11 @@ part of 'use_input.dart';
 /// ```
 ///
 /// Note: This function is part of the `useInput` framework and should not be called directly.
-String _useInitialValueForDebug(String name, String initialValue) {
+T? _useInitialValueForDebug<T>(String name, T? initialValue) {
   final formConfig = useProvider(formConfigProvider);
 
-  return formConfig.precompiledValues.get<String>(
+  return formConfig.precompiledValues.get<T>(
     key: name,
     defaultValue: initialValue,
-  ) as String;
+  );
 }

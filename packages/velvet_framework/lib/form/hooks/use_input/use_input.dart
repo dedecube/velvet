@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:velvet_framework/error_handling/types.dart';
-import 'package:velvet_framework/form/hooks/use_input_state/input_options.dart';
+import 'package:velvet_framework/form/hooks/use_input/input_options.dart';
 import 'package:velvet_framework/form/providers/form_config_provider.dart';
 import 'package:velvet_framework/hooks/use_provider/use_provider.dart';
 import 'package:velvet_framework/utils/container.dart';
@@ -10,11 +10,11 @@ import 'package:velvet_framework/validation/rule.dart';
 import 'package:velvet_framework/validation/validator.dart';
 import 'package:velvet_support/velvet_support.dart';
 
-part '_input_state.dart';
 part '_use_clear_error_on_change.dart';
 part '_use_clear_error_on_focus.dart';
 part '_use_exception_matcher.dart';
 part '_use_initial_value_for_debug.dart';
+part '_use_input_return.dart';
 part '_use_validate_on_change.dart';
 part '_use_validate_on_focus_lost.dart';
 
@@ -85,41 +85,38 @@ typedef ExceptionMatcherFactory = ExceptionMatcher Function(
 ///   ),
 /// )
 /// ```
-InputState useInput({
-  List<Rule> rules = const [],
+UseInputReturn<T> useInput<T>({
+  List<Rule<T>> rules = const [],
   InputOptions? options,
-  String initialValue = '',
+  T? initialValue,
   String? name,
   List<ExceptionToMessageResolverFactory> exceptionToMessageResolverFactories =
       const [],
   ExceptionMatcherFactory? exceptionMatcherFactory,
 }) {
   if (kDebugMode && name != null) {
-    initialValue = _useInitialValueForDebug(name, initialValue);
+    initialValue = _useInitialValueForDebug<T>(name, initialValue);
   }
 
   options ??= container().read(formConfigProvider).defaultInputOptions;
 
-  final controller = useTextEditingController(text: initialValue);
+  // final controller = useTextEditingController(text: initialValue);
   final focusNode = useFocusNode();
   final error = useState<String?>(null);
-  final value = useState<String>('');
+  final value = useState<T?>(initialValue);
 
-  trimOrNot() {
-    value.value =
-        options!.shouldTrim ? controller.text.trim() : controller.text;
-  }
+  // trimOrNot() {
+  //   value.value =
+  //       options!.shouldTrim ? controller.text.trim() : controller.text;
+  // }
 
-  useEffect(
-    () {
-      trimOrNot();
+  // useEffectOnce(() {
+  //   trimOrNot();
 
-      controller.addListener(trimOrNot);
+  //   controller.addListener(trimOrNot);
 
-      return () => controller.removeListener(trimOrNot);
-    },
-    [],
-  );
+  //   return () => controller.removeListener(trimOrNot);
+  // });
 
   final exceptionMatcher = useMemoized(
     () {
@@ -136,7 +133,7 @@ InputState useInput({
   );
 
   if (options.shouldValidateOnFocusLost) {
-    _useValidateOnFocusLost(focusNode, controller, rules, error);
+    _useValidateOnFocusLost(value, rules, focusNode, error);
   }
 
   if (options.shouldClearErrorOnFocus) {
@@ -144,22 +141,56 @@ InputState useInput({
   }
 
   if (options.shouldClearErrorOnChange) {
-    _useClearErrorOnChange(controller, error);
+    _useClearErrorOnChange(value, error);
   }
 
   if (options.shouldValidateOnChange) {
-    _useValidateOnChange(controller, rules, error);
+    _useValidateOnChange(value, rules, error);
   }
 
+  final validate = useCallback(
+    () {
+      final errors = Validator.on(
+        value.value,
+        rules,
+      );
+
+      if (errors.isNotEmpty) {
+        error.value = errors.first;
+      } else {
+        error.value = null;
+      }
+    },
+    [],
+  );
+
+  final isValid = useMemoized(
+    () {
+      return Validator.on(
+        value.value,
+        rules,
+      ).isEmpty;
+    },
+    [error],
+  );
+
+  final hasError = useMemoized(
+    () {
+      return error.value != null;
+    },
+    [error],
+  );
+
   return useMemoized(
-    () => InputState(
-      controller: controller,
+    () => UseInputReturn(
       error: error,
       exceptionMatcher: exceptionMatcher,
       focusNode: focusNode,
+      hasError: hasError,
+      isValid: isValid,
       rules: rules,
+      validate: validate,
       value: value,
     ),
-    [],
   );
 }

@@ -28,15 +28,15 @@ part of 'use_input.dart';
 ///
 /// Note: This hook is part of the 'use_input.dart' file.
 /// Make sure to import it before using this hook.
-_useClearErrorOnChange(
-  TextEditingController controller,
+_useClearErrorOnChange<T>(
+  ValueNotifier<T> value,
   ValueNotifier<String?> error,
 ) {
-  final backupValue = useState<String>(controller.text);
+  final backupValue = useRef<T>(value.value);
 
   useEffect(
     () {
-      backupValue.value = controller.text;
+      backupValue.value = value.value;
 
       return null;
     },
@@ -45,18 +45,14 @@ _useClearErrorOnChange(
 
   useEffect(
     () {
-      void listener() {
-        if (controller.text == backupValue.value) {
-          return;
-        }
-
-        error.value = null;
+      if (value.value == backupValue.value) {
+        return;
       }
 
-      controller.addListener(listener);
+      error.value = null;
 
-      return () => controller.removeListener(listener);
+      return null;
     },
-    [controller],
+    [value],
   );
 }
