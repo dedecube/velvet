@@ -19,7 +19,7 @@ import 'package:splash_velvet_plugin/splash_velvet_plugin.dart';
 void main() {
   Kernel()
     // other stuff
-   ..plugin(SplashVelvetPlugin())
+   ..installPlugin(SplashVelvetPlugin())
    ..run();
 }
 ```
