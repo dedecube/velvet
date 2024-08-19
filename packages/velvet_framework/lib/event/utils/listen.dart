@@ -1,11 +1,11 @@
 import 'dart:async';
 
-import 'package:velvet_framework/event/contracts/event_contract.dart';
-import 'package:velvet_framework/event/providers/event_bus_provider.dart';
-import 'package:velvet_framework/utils/container.dart';
+import 'package:velvet_framework/core/container.dart';
+import 'package:velvet_framework/event/contracts/velvet_event_bus_contract.dart';
+import 'package:velvet_framework/event/velvet_event.dart';
 
-StreamSubscription<T> listen<T extends EventContract>(
+StreamSubscription<T> listen<T extends VelvetEvent>(
   void Function(T event) callback,
 ) {
-  return container().read(eventBusProvider).listen(callback);
+  return container.get<VelvetEventBusContract>().on<T>(callback);
 }

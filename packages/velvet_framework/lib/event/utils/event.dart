@@ -1,7 +1,7 @@
-import 'package:velvet_framework/event/contracts/event_contract.dart';
-import 'package:velvet_framework/event/providers/event_bus_provider.dart';
-import 'package:velvet_framework/utils/container.dart';
+import 'package:velvet_framework/core/container.dart';
+import 'package:velvet_framework/event/contracts/velvet_event_bus_contract.dart';
+import 'package:velvet_framework/event/velvet_event.dart';
 
-void event(EventContract event) {
-  container().read(eventBusProvider).event(event);
+void event(VelvetEvent event) {
+  container.get<VelvetEventBusContract>().dispatch(event);
 }
