@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:velvet_framework/event/hooks/use_event_listener.dart';
 import 'package:velvet_framework/kernel/events/hide_loading_widget_event.dart';
-import 'package:velvet_framework/velvet_framework.dart';
+import 'package:velvet_framework/kernel/providers/kernel_provider.dart';
+import 'package:velvet_framework/kernel/widgets/kernel_app_widget.dart';
+import 'package:velvet_framework/kernel/widgets/kernel_error_widget.dart';
+import 'package:velvet_framework/kernel/widgets/kernel_loading_widget.dart';
 
 class KernelWidget extends HookConsumerWidget {
   const KernelWidget({
@@ -21,7 +27,7 @@ class KernelWidget extends HookConsumerWidget {
       (event) => sholdShowSplash.value = false,
     );
 
-    onRetry() => ref.invalidate(kernelProvider);
+    void onRetry() => ref.invalidate(kernelProvider);
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,

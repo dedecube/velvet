@@ -1,5 +1,5 @@
-import 'package:velvet_framework/velvet_framework.dart';
+import 'package:velvet_framework/event/velvet_event.dart';
 
-class HideLoadingWidgetEvent extends EventContract {
+class HideLoadingWidgetEvent extends VelvetEvent {
   HideLoadingWidgetEvent();
 }
