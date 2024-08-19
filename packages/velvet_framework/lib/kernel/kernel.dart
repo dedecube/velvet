@@ -1,8 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:velvet_framework/utils/container.dart' as util_container;
 import 'package:velvet_framework/velvet_framework.dart';
 
 typedef Create<T, R extends Ref> = T Function(R ref);
@@ -10,6 +8,21 @@ typedef Create<T, R extends Ref> = T Function(R ref);
 typedef UseCallback = void Function(Kernel kernel);
 
 class Kernel {
+  Kernel() {
+    _init();
+  }
+
+  void _init() {
+    container.allowReassignment = true;
+
+    final pluginManager = container
+        .registerSingleton<VelvetPluginManagerContract>(VelvetPluginManager());
+
+    pluginManager.add(EventVelvetPlugin());
+    pluginManager.add(ErrorHandlingPlugin());
+    pluginManager.add(FormPlugin());
+  }
+
   Widget? appWidget;
   KernelErrorWidget? errorWidget;
   KernelLoadingWidget? loadingWidget;
@@ -29,7 +42,7 @@ class Kernel {
   /// Indicates if the kernel is running
   static bool get isRunning => _isRunning;
 
-  static ProviderContainer? container;
+  static ProviderContainer? riverpodContainer;
 
   /// This key is used to get the context of the Navigator
   /// It will be used to show dialogs, snackbars.
@@ -51,7 +64,7 @@ class Kernel {
   ///
   /// ```dart
   /// ProviderScope
-  ///   .containerOf(Kernel.resolutionKey.currentContext!)
+  ///   .riverpodContainerOf(Kernel.resolutionKey.currentContext!)
   ///   .read(...);
   /// ```
   static final resolutionKey = GlobalKey();
@@ -108,7 +121,7 @@ class Kernel {
   ///   // ... other configurations
   ///   ..run();
   /// ```
-  boot(Create<FutureOr, FutureProviderRef> create) {
+  void boot(Create<FutureOr, FutureProviderRef> create) {
     _throwIfRunning();
 
     _bootstrapServices.add(create);
@@ -123,7 +136,7 @@ class Kernel {
   /// // ... other configurations
   /// ..run();
   /// ```
-  bootMany(List<Create<FutureOr, FutureProviderRef>> creates) {
+  void bootMany(List<Create<FutureOr, FutureProviderRef>> creates) {
     _throwIfRunning();
 
     _bootstrapServices.addAll(creates);
@@ -170,7 +183,7 @@ class Kernel {
   /// If it is, throw a [KernelIsAlreadyRunningException]
   /// to prevent the user from changing the configuration
   /// while the application is already running.
-  _throwIfRunning() {
+  void _throwIfRunning() {
     if (isRunning) {
       throw KernelIsAlreadyRunningException();
     }
@@ -193,10 +206,10 @@ class Kernel {
     _riverpodOvverides.addAll(overrides);
   }
 
-  void plugin(VelvetPluginContract plugin) {
+  void installPlugin(VelvetPlugin plugin) {
     _throwIfRunning();
 
-    plugin.install(this);
+    container.get<VelvetPluginManagerContract>().add(plugin);
   }
 
   /// Run the application
@@ -218,7 +231,7 @@ class Kernel {
 
     WidgetsFlutterBinding.ensureInitialized();
 
-    container = ProviderContainer(
+    riverpodContainer = ProviderContainer(
       observers: _riverpodObservers,
       overrides: [
         ..._riverpodOvverides,
@@ -231,49 +244,9 @@ class Kernel {
       ],
     );
 
-    // TODO[epic=refactor] Move to error handling module
-    FlutterError.onError = (FlutterErrorDetails details) {
-      final exception = details.exception;
-
-      if (exception is RenderableExceptionContract) {
-        exception.render(navigatorKey.currentState!.context);
-      } else if (exception is Exception) {
-        final errorHandlingConfig =
-            util_container.container().read(errorHandlingConfigProvider);
-
-        errorHandlingConfig.renderer(
-          navigatorKey.currentState!.context,
-          exception,
-        );
-      }
-
-      FlutterError.presentError(details);
-    };
-
-    // TODO[epic=refactor] Move to error handling module
-    PlatformDispatcher.instance.onError = (exception, stackTrace) {
-      if (exception is RenderableExceptionContract) {
-        exception.render(navigatorKey.currentState!.context);
-
-        return true;
-      } else if (exception is Exception) {
-        final errorHandlingConfig =
-            util_container.container().read(errorHandlingConfigProvider);
-
-        errorHandlingConfig.renderer(
-          navigatorKey.currentState!.context,
-          exception,
-        );
-
-        return true;
-      }
-
-      return false;
-    };
-
     runApp(
       UncontrolledProviderScope(
-        container: container!,
+        container: riverpodContainer!,
         child: KernelWidget(
           errorWidget: errorWidget,
           loadingWidget: loadingWidget,

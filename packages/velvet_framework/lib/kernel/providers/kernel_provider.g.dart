@@ -6,7 +6,7 @@ part of 'kernel_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$kernelHash() => r'896ccc7ddbdc3db87eac281c1631a674d6d13496';
+String _$kernelHash() => r'cda01768ebaefcb9422d3058d52a151d3c855afe';
 
 /// The kernel provider is the responsible for initializing the application and its dependencies.
 /// It is responsible for initializing the application and its dependencies.
@@ -25,8 +25,7 @@ final kernelProvider = FutureProvider<void>.internal(
     storeProvider,
     routerProvider,
     translatorProvider,
-    kernelBootstrapProvider,
-    eventBusProvider
+    kernelBootstrapProvider
   },
   allTransitiveDependencies: <ProviderOrFamily>{
     storeProvider,
@@ -36,9 +35,7 @@ final kernelProvider = FutureProvider<void>.internal(
     translatorProvider,
     ...?translatorProvider.allTransitiveDependencies,
     kernelBootstrapProvider,
-    ...?kernelBootstrapProvider.allTransitiveDependencies,
-    eventBusProvider,
-    ...?eventBusProvider.allTransitiveDependencies
+    ...?kernelBootstrapProvider.allTransitiveDependencies
   },
 );
 
