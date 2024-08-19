@@ -1,18 +1,13 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:velvet_framework/core/container.dart';
 import 'package:velvet_framework/error_handling/types.dart';
+import 'package:velvet_framework/form/contracts/form_config_contract.dart';
 import 'package:velvet_framework/form/hooks/use_input/input_options.dart';
 import 'package:velvet_framework/form/hooks/use_input/use_input.dart';
-import 'package:velvet_framework/form/providers/form_config_provider.dart';
-import 'package:velvet_framework/utils/container.dart';
 import 'package:velvet_framework/validation/rule.dart';
 
 part '_use_text_input_return.dart';
-
-typedef ExceptionMatcherFactory = ExceptionMatcher Function(
-  List<ExceptionToMessageResolverFactory> exceptionToMessageResolverFactories,
-  ValueNotifier<String?> error,
-);
 
 UseTextInputReturn useTextInput({
   List<Rule<String>> rules = const [],
@@ -23,12 +18,12 @@ UseTextInputReturn useTextInput({
       const [],
   ExceptionMatcherFactory? exceptionMatcherFactory,
 }) {
-  options ??= container().read(formConfigProvider).defaultInputOptions;
+  options ??= container.get<FormConfigContract>().defaultInputOptions;
 
   final input = useInput<String>(
     rules: rules,
     options: options,
-    initialValue: initialValue,
+    initialValue: initialValue ?? '',
     name: name,
     exceptionToMessageResolverFactories: exceptionToMessageResolverFactories,
     exceptionMatcherFactory: exceptionMatcherFactory,

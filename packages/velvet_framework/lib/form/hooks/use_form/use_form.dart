@@ -1,13 +1,12 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:velvet_framework/error_handling/bag_exception.dart';
-import 'package:velvet_framework/error_handling/types.dart';
-import 'package:velvet_framework/form/hooks/use_form_state/form_options.dart';
-import 'package:velvet_framework/form/hooks/use_input_state/use_input.dart';
-import 'package:velvet_framework/form/providers/form_config_provider.dart';
-import 'package:velvet_framework/utils/container.dart';
+import 'package:velvet_framework/velvet_framework.dart';
 
-part '_form_state.dart';
+typedef UseFormReturn = ({
+  ValueNotifier<bool> isSubmitting,
+  ValueNotifier<bool> isValid,
+  AsyncCallback submit,
+  Future<void> Function({bool quietly}) validate,
+});
 
 /// A custom hook for managing form state in Flutter applications.
 ///
@@ -38,66 +37,57 @@ part '_form_state.dart';
 /// bool isSubmitting = formState.isSubmitting.value;
 /// formState.submit();
 /// ```
-FormState useForm(
-  Map<String, InputState> inputs,
-  Future<void> Function(Map<String, InputState> inputs) onSubmit, {
-  Future<void> Function(Map<String, InputState> inputs)? onSuccess,
+UseFormReturn useForm(
+  List<UseInputReturn> inputs,
+  AsyncCallback onSubmit, {
+  AsyncCallback? onSuccess,
   ExceptionMatcher? exceptionMatcher,
   FormOptions options = const FormOptions(),
 }) {
   final isSubmitting = useState(false);
   final isValid = useState(true);
 
-  useEffect(
-    () {
-      exceptionMatcher ??=
-          container().read(formConfigProvider).defaultFormExceptionMatcher;
+  exceptionMatcher = useMemoized(() {
+    exceptionMatcher ??=
+        container.get<FormConfigContract>().defaultFormExceptionMatcher;
 
-      return null;
-    },
-    [],
-  );
+    return exceptionMatcher;
+  });
 
-  validate({bool quietly = true}) async {
+  Future<void> validate({bool quietly = true}) async {
     if (quietly) {
-      isValid.value = inputs.values.every((input) => input.isValid);
+      isValid.value = inputs.every((input) => input.isValid);
     } else {
-      for (var input in inputs.values) {
+      for (var input in inputs) {
         input.validate();
-        isValid.value = inputs.values.every((input) => input.hasError == false);
+        isValid.value = inputs.every((input) => input.hasError == false);
       }
     }
   }
 
-  useEffect(
-    () {
-      if (options.shouldValidateImmediately) {
-        validate(quietly: options.shouldValidateImmediatelyQuietly);
-      }
+  useEffectOnce(() {
+    if (options.shouldValidateImmediately) {
+      validate(quietly: options.shouldValidateImmediatelyQuietly);
+    }
 
-      return null;
-    },
-    [],
-  );
+    return null;
+  });
 
-  for (final input in inputs.values) {
-    useEffect(
-      () {
-        input.controller.addListener(validate);
+  for (final input in inputs) {
+    useEffectOnce(() {
+      input.value.addListener(validate);
 
-        return () {
-          input.controller.removeListener(validate);
-        };
-      },
-      [input.controller],
-    );
+      return () {
+        input.value.removeListener(validate);
+      };
+    });
   }
 
   Future<void> submit() async {
     isSubmitting.value = true;
 
     try {
-      await validate(quietly: false);
+      validate(quietly: false);
 
       if (!isValid.value) {
         isSubmitting.value = false;
@@ -105,25 +95,25 @@ FormState useForm(
         return;
       }
 
-      await onSubmit(inputs);
+      await onSubmit();
 
       isSubmitting.value = false;
 
       if (onSuccess != null) {
-        await onSuccess(inputs);
+        await onSuccess();
       }
     } on Exception catch (exception) {
       isSubmitting.value = false;
 
-      inputs.forEach((key, value) {
+      for (var input in inputs) {
         if (exception is BagException) {
           for (var item in exception.exceptions) {
-            value.exceptionMatcher(item);
+            input.exceptionMatcher(item);
           }
         } else {
-          value.exceptionMatcher(exception);
+          input.exceptionMatcher(exception);
         }
-      });
+      }
 
       if (exceptionMatcher != null) {
         exceptionMatcher!(exception);
@@ -132,14 +122,11 @@ FormState useForm(
   }
 
   return useMemoized(
-    () => FormState(
-      inputs: inputs,
-      isValid: isValid,
+    () => (
       isSubmitting: isSubmitting,
-      onSuccess: onSuccess,
+      isValid: isValid,
       submit: submit,
       validate: validate,
     ),
-    [],
   );
 }

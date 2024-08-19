@@ -1,14 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:velvet_framework/error_handling/types.dart';
-import 'package:velvet_framework/form/hooks/use_input/input_options.dart';
-import 'package:velvet_framework/form/providers/form_config_provider.dart';
-import 'package:velvet_framework/hooks/use_provider/use_provider.dart';
-import 'package:velvet_framework/utils/container.dart';
-import 'package:velvet_framework/validation/rule.dart';
-import 'package:velvet_framework/validation/validator.dart';
-import 'package:velvet_support/velvet_support.dart';
+import 'package:velvet_framework/velvet_framework.dart';
 
 part '_use_clear_error_on_change.dart';
 part '_use_clear_error_on_focus.dart';
@@ -98,7 +90,7 @@ UseInputReturn<T> useInput<T>({
     initialValue = _useInitialValueForDebug<T>(name, initialValue);
   }
 
-  options ??= container().read(formConfigProvider).defaultInputOptions;
+  options ??= container.get<FormConfigContract>().defaultInputOptions;
 
   // final controller = useTextEditingController(text: initialValue);
   final focusNode = useFocusNode();
@@ -122,8 +114,8 @@ UseInputReturn<T> useInput<T>({
     () {
       return exceptionMatcherFactory != null
           ? exceptionMatcherFactory(exceptionToMessageResolverFactories, error)
-          : container()
-              .read(formConfigProvider)
+          : container
+              .get<FormConfigContract>()
               .defaultInputExceptionMatcherFactory(
                 exceptionToMessageResolverFactories,
                 error,
