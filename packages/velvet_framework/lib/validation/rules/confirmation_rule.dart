@@ -1,4 +1,6 @@
-import 'package:velvet_framework/velvet_framework.dart';
+import 'package:velvet_framework/form/hooks/use_input/use_input.dart';
+import 'package:velvet_framework/translation/translate.dart';
+import 'package:velvet_framework/validation/rule.dart';
 
 /// A validation rule that checks if the value matches another input's value.
 ///
@@ -11,7 +13,7 @@ class ConfirmationRule extends Rule<String> {
   ConfirmationRule({required this.anotherInput});
 
   /// The input state of the other input to compare against.
-  final InputState anotherInput;
+  final UseInputReturn anotherInput;
 
   @override
   String? isValid(value) {
