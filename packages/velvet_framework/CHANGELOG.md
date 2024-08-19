@@ -1,3 +1,24 @@
+## 0.0.1-dev.38
+
+ - **REFACTOR**: rename EventContract with VelvetEvent. ([035a57d0](https://github.com/dedecube/velvet/commit/035a57d02abe499f445c2015adea37844d53a017))
+ - **REFACTOR**: confirmation_rule now uses UseInputReturn. ([8093b0c8](https://github.com/dedecube/velvet/commit/8093b0c8ef07a86e5d7d2146d50d5bcdf473bafe))
+ - **REFACTOR**: old container is now riverpodContainer. ([6416fc0a](https://github.com/dedecube/velvet/commit/6416fc0a8023708d8d1c7e818e1fe6c98d9926ab))
+ - **REFACTOR**: make use_input generic and provide a more specific useTextInput hook. ([47305176](https://github.com/dedecube/velvet/commit/473051769695822a6e2038378843d9c86fd9615c))
+ - **REFACTOR**: move velvet_plugin_contract to contracts folder. ([0f4a120d](https://github.com/dedecube/velvet/commit/0f4a120dce33743ab61a1dc0b7490aa3f2f39990))
+ - **FIX**: dispatch HideLoadingWidgetEvent in KernelErrorWidget to avoid loading to persist. ([c3639fd0](https://github.com/dedecube/velvet/commit/c3639fd0e87a1d11e6d67907ce7fbbabb709ad6c))
+ - **FEAT**: add plugin manager in Kernel class and init provider. ([d8869def](https://github.com/dedecube/velvet/commit/d8869def749d3302eb2d0fa1d4e093699e18f0e0))
+ - **FEAT**: add VelvetPluginManager. ([36cdf796](https://github.com/dedecube/velvet/commit/36cdf79617bcbf7ef5308f615463f2d372820cd7))
+ - **FEAT**: add a new http request base class, HttpRequestNoContentContract. ([1f278d0d](https://github.com/dedecube/velvet/commit/1f278d0dcd4b82e2a90a4339d0760ff44456cde5))
+ - **FEAT**: convert form feature to get_it container and providing plugin. ([1b123214](https://github.com/dedecube/velvet/commit/1b123214612ee0787695b75235d7bde20333aad1))
+ - **FEAT**: convert error_handling feature to get_it container and providing plugin. ([c8f4ea10](https://github.com/dedecube/velvet/commit/c8f4ea10b7db2457d5faf7af8bd6c3198202537d))
+ - **FEAT**: convert event feature to get_it container and providing plugin. ([e80c670b](https://github.com/dedecube/velvet/commit/e80c670b872708fdecad3bb0b6cd2b6bf7ef98ec))
+ - **FEAT**: VelvetPlugin (s) now have register and boot methods. ([6f171319](https://github.com/dedecube/velvet/commit/6f1713198b7ca0ab5d55e51b0ffcb864293e77ff))
+ - **FEAT**: add container using get_it. ([d827919d](https://github.com/dedecube/velvet/commit/d827919d9e21da22d8142ff482c0767cc2ec5801))
+ - **FEAT**: useEffectOnce in useEventListener. ([682ac795](https://github.com/dedecube/velvet/commit/682ac795a722c1ca2e8f653f94442aa8b2ef8c55))
+ - **FEAT**: add useEffectOnce hook. ([5540dcb9](https://github.com/dedecube/velvet/commit/5540dcb9b97e380d6726071ff85a8ae521dfbe39))
+ - **DOCS**: add doc to some http contracts. ([c34f6110](https://github.com/dedecube/velvet/commit/c34f61109a0b986f3213cc436c3d09c5318c53d6))
+ - **DOCS**: update docs of some contract, config provider and validation rules. ([be056e66](https://github.com/dedecube/velvet/commit/be056e66f17f73d10458a5c71f05ee1c47b4abe3))
+
 ## 0.0.1-dev.37
 
  - **FEAT**: add middlewares field in BaseRoute. ([d03d2088](https://github.com/dedecube/velvet/commit/d03d20883158750edf170deaaeb39b3af6727169))

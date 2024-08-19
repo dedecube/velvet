@@ -1,3 +1,7 @@
+## 0.0.1-dev.14
+
+ - **REFACTOR**: implement new way of use support method from velvet_support on string. ([05c96175](https://github.com/dedecube/velvet/commit/05c9617582d24baf14cba5215a564be848b4b55d))
+
 ## 0.0.1-dev.13
 
  - **FEAT**: autoloader now works also without Type. ([fa5da87a](https://github.com/dedecube/velvet/commit/fa5da87a4407324fd74624fe927fdc6f3bb59900))

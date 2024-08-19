@@ -1,3 +1,7 @@
+## 0.0.1-dev.8
+
+ - **REFACTOR**: now support package make right usage of extension instead of Str and Stringable classes. ([d8ee0b68](https://github.com/dedecube/velvet/commit/d8ee0b68c6209416c2c796f730e7974551e76388))
+
 ## 0.0.1-dev.7
 
  - **FEAT**: :sparkles: add DotNotationMap extension for Map. ([160d98f5](https://github.com/dedecube/velvet/commit/160d98f5bdccf5bc0d10346a763b7ea12b35ffff))
