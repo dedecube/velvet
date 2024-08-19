@@ -4,10 +4,10 @@ import 'package:velvet_framework/velvet_framework.dart';
 
 part 'http_client_provider.g.dart';
 
-@Riverpod(keepAlive: true, dependencies: [httpClientConfig])
+@Riverpod(keepAlive: true, dependencies: [])
 Http httpClient(HttpClientRef ref) {
-  final apiConfig = ref.read(httpClientConfigProvider);
-  final httpConfig = HttpConfig(baseURL: apiConfig.baseURL);
+  final httpClientConfig = container.get<HttpClientConfigContract>();
+  final httpConfig = HttpConfig(baseURL: httpClientConfig.baseURL);
 
   return Http(httpConfig);
 }

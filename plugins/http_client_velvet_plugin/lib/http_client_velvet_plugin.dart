@@ -4,7 +4,6 @@ library http_client_velvet_plugin;
 export './bootstrap.velvet.dart';
 export './config.velvet.dart';
 export './src/contracts/http_client_config_contract.dart';
-export './src/extensions/http_client_provider_container_extension.dart';
-export './src/providers/http_client_config_provider.dart';
+export './src/http_client_velvet_plugin.dart';
 export './src/providers/http_client_provider.dart';
 // @endindex
