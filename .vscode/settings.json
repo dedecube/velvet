@@ -36,17 +36,10 @@
     "/build": true,
     "**/fastlane": true
   },
-  "dart.flutterSdkPath": ".fvm/versions/3.22.1",
+  "dart.flutterSdkPath": ".fvm/versions/3.22.2",
   "dart.sdkPath": ".fvm/versions/3.22.1",
   "dart.runPubGetOnNestedProjects": "none",
   "dart.runPubGetOnPubspecChanges": "never",
-  "runOnSave.commands": [
-    {
-      "globMatch": "**/assets/**",
-      "command": "flutter.hotReload",
-      "runIn": "vscode"
-    }
-  ],
   "[json]": {
     "editor.quickSuggestions": {
       "strings": true
@@ -54,5 +47,17 @@
     "editor.suggest.insertMode": "replace",
     "editor.tabSize": 2,
     "editor.detectIndentation": false
-  }
+  },
+  "runOnSave.commands": [
+    {
+      "globMatch": "**/assets/**",
+      "command": "flutter.hotReload",
+      "runIn": "vscode"
+    },
+    {
+      "globMatch": "**/pubspec.yaml",
+      "command": "fvm dart run melos bootstrap",
+      "runIn": "terminal"
+    }
+  ]
 }
