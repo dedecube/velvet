@@ -1,3 +1,4 @@
+// ignore_for_file: avoid_empty_blocks
 import 'package:velvet_framework/kernel/kernel.dart';
 
 /// The contract for a Velvet plugin.
@@ -15,10 +16,12 @@ import 'package:velvet_framework/kernel/kernel.dart';
 ///   }
 /// }
 /// ```
-abstract class VelvetPluginContract {
-  /// Installs the plugin into the Velvet framework.
-  ///
-  /// The [kernel] parameter is an instance of the [Kernel] class, which provides access to the
-  /// core functionality of the Velvet framework.
-  void install(Kernel kernel);
+abstract class VelvetPlugin {
+  void register() {
+    // Intentionally empty
+  }
+
+  void boot() {
+    // Intentionally empty
+  }
 }
