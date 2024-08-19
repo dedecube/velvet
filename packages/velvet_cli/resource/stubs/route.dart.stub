@@ -1,0 +1,13 @@
+part of '{{ relativeBacks }}routes.dart';
+
+class ExampleRoute extends BaseRoute {
+  const ExampleRoute();
+
+  @override
+  get middlewares => [];
+
+  @override
+  build(BuildContext context, GoRouterState state) {
+    return const ExamplePage();
+  }
+}
