@@ -16,7 +16,7 @@ mixin BaseRoutePageBuilderMixin on GoRouteData {
       return pageTransition;
     }
 
-    return container().read(routerConfigProvider).defaultPageTransition;
+    return riverpodContainer().read(routerConfigProvider).defaultPageTransition;
   }
 
   @override

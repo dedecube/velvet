@@ -69,7 +69,7 @@ import 'package:velvet_framework/utils/container.dart';
 abstract class Storable<T> {
   StoreContract? _store;
 
-  get key => T.toString();
+  String get key;
 
   Future<T?> get({T? defaultValue});
 
@@ -90,6 +90,6 @@ abstract class Storable<T> {
       return _store!;
     }
 
-    return container().read(storeProvider).requireValue;
+    return riverpodContainer().read(storeProvider).requireValue;
   }
 }

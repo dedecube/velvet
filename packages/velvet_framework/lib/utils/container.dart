@@ -7,10 +7,10 @@ import 'package:velvet_framework/kernel/kernel.dart';
 ///
 /// Example usage:
 /// ```dart
-/// ProviderContainer container = container();
+/// ProviderContainer container = riverpodContainer();
 /// ```
-ProviderContainer container() {
-  if (Kernel.container == null) {
+ProviderContainer riverpodContainer() {
+  if (Kernel.riverpodContainer == null) {
     throw Exception(
       [
         'Kernel is not running',
@@ -20,5 +20,5 @@ ProviderContainer container() {
     );
   }
 
-  return Kernel.container!;
+  return Kernel.riverpodContainer!;
 }
