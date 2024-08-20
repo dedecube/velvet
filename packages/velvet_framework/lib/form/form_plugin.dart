@@ -1,8 +1,10 @@
-import 'package:velvet_framework/velvet_framework.dart';
+import 'package:velvet_framework/core/plugin/velvet_plugin.dart';
+import 'package:velvet_framework/form/config/default_form_config.dart';
+import 'package:velvet_framework/form/contracts/form_config_contract.dart';
 
 class FormPlugin extends VelvetPlugin {
   @override
   void register() {
-    container.registerSingleton<FormConfigContract>(FormDefaultConfig());
+    registerConfig<FormConfigContract>(DefaultFormConfig());
   }
 }

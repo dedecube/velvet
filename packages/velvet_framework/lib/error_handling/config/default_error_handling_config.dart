@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:velvet_framework/velvet_framework.dart';
 
-class ErrorHandlingDefaultConfig extends ErrorHandlingConfigContract {
+class DefaultErrorHandlingConfig extends ErrorHandlingConfigContract {
   @override
   void renderer(BuildContext context, Exception exception) {
     showDialog(

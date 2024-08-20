@@ -1,8 +1,9 @@
 import 'package:flutter/widgets.dart';
+import 'package:velvet_framework/core/config/velvet_config.dart';
 
 /// The contract for the translation configuration.
 /// This contract defines the required properties for a translation configuration.
-abstract class TranslationConfigContract {
+abstract class TranslationConfigContract extends VelvetConfig {
   /// The default locale to be used for translations.
   Locale get defaultLocale;
 
