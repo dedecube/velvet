@@ -1,4 +1,4 @@
-part of '../../routes.dart';
+part of '../../routing/routes.dart';
 
 class FormRoute extends BaseRoute {
   @override

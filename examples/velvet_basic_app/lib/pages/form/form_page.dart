@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:velvet_basic_app/presentation/pages/form/hooks/use_email_input.dart';
-import 'package:velvet_basic_app/presentation/pages/form/hooks/use_name_input.dart';
+import 'package:velvet_basic_app/pages/form/hooks/use_email_input.dart';
+import 'package:velvet_basic_app/pages/form/hooks/use_name_input.dart';
 import 'package:velvet_framework/velvet_framework.dart';
 
 class FormPage extends HookConsumerWidget {

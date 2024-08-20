@@ -1,9 +1,8 @@
-import 'package:velvet_annotation/velvet_annotation.dart';
 import 'package:velvet_basic_app/middlewares/example_middleware.dart';
+import 'package:velvet_basic_app/routing/routes.dart';
 import 'package:velvet_framework/velvet_framework.dart';
 
-@VelvetConfig(provider: routerConfig)
-class RouterConfig extends RouterConfigContract {
+class RouterConfig extends DefaultRouterConfig {
   @override
   String get initialPath => '/home';
 
@@ -11,4 +10,7 @@ class RouterConfig extends RouterConfigContract {
   List<MiddlewareContract> get redirectMiddlewares => [
         ExampleMiddleware(),
       ];
+
+  @override
+  List<RouteBase> get routes => $routes.routes;
 }
