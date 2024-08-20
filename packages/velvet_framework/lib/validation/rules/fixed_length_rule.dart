@@ -1,5 +1,6 @@
 import 'package:velvet_framework/velvet_framework.dart';
 
+/// FIXME[epic=get-it] - should be injected
 /// A validation rule that checks if the length of a string is fixed.
 ///
 /// This rule is used to ensure that a string has a specific length.
@@ -23,7 +24,7 @@ class FixedLengthRule extends Rule<String> {
   final int length;
 
   @override
-  String? isValid(value) {
+  String? isValid(String value) {
     if (value.length != length) {
       return translate(
         'validation.fixed_length',
