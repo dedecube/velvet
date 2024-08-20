@@ -6,7 +6,7 @@ part of 'kernel_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$kernelHash() => r'cda01768ebaefcb9422d3058d52a151d3c855afe';
+String _$kernelHash() => r'cc43d91aaa8e20c873bbc99c3c53574bb4458678';
 
 /// The kernel provider is the responsible for initializing the application and its dependencies.
 /// It is responsible for initializing the application and its dependencies.

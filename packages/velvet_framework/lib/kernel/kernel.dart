@@ -1,11 +1,32 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:velvet_framework/velvet_framework.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:velvet_framework/core/config/contracts/velvet_config_manager_contract.dart';
+import 'package:velvet_framework/core/config/velvet_config_manager.dart';
+import 'package:velvet_framework/core/container.dart';
+import 'package:velvet_framework/core/plugin/contracts/velvet_plugin_manager_contract.dart';
+import 'package:velvet_framework/core/plugin/velvet_plugin.dart';
+import 'package:velvet_framework/core/plugin/velvet_plugin_manager.dart';
+import 'package:velvet_framework/error_handling/error_handling_plugin.dart';
+import 'package:velvet_framework/event/event_velvet_plugin.dart';
+import 'package:velvet_framework/form/form_plugin.dart';
+import 'package:velvet_framework/kernel/exceptions/kernel_is_already_running_exception.dart';
+import 'package:velvet_framework/kernel/providers/kernel_bootstrap_provider.dart';
+import 'package:velvet_framework/kernel/widgets/kernel_error_widget.dart';
+import 'package:velvet_framework/kernel/widgets/kernel_loading_widget.dart';
+import 'package:velvet_framework/kernel/widgets/kernel_widget.dart';
+import 'package:velvet_framework/router/router_plugin.dart';
+import 'package:velvet_framework/theme/theme_plugin.dart';
+import 'package:velvet_framework/translation/translation_plugin.dart';
 
 typedef Create<T, R extends Ref> = T Function(R ref);
 
 typedef UseCallback = void Function(Kernel kernel);
+
+typedef ConfigCallback = void Function(
+  VelvetConfigManagerContract configManager,
+);
 
 class Kernel {
   Kernel() {
@@ -15,12 +36,29 @@ class Kernel {
   void _init() {
     container.allowReassignment = true;
 
-    final pluginManager = container
-        .registerSingleton<VelvetPluginManagerContract>(VelvetPluginManager());
+    _registerConfigManager();
+    _registerPluginManager();
+    _addCorePlugins();
+  }
 
-    pluginManager.add(EventVelvetPlugin());
-    pluginManager.add(ErrorHandlingPlugin());
-    pluginManager.add(FormPlugin());
+  void _registerConfigManager() {
+    container
+        .registerSingleton<VelvetConfigManagerContract>(VelvetConfigManager());
+  }
+
+  void _registerPluginManager() {
+    container
+        .registerSingleton<VelvetPluginManagerContract>(VelvetPluginManager());
+  }
+
+  void _addCorePlugins() {
+    container.get<VelvetPluginManagerContract>()
+      ..add(ErrorHandlingPlugin())
+      ..add(EventVelvetPlugin())
+      ..add(FormPlugin())
+      ..add(RouterPlugin())
+      ..add(TranslationPlugin())
+      ..add(ThemePlugin());
   }
 
   Widget? appWidget;
@@ -43,6 +81,8 @@ class Kernel {
   static bool get isRunning => _isRunning;
 
   static ProviderContainer? riverpodContainer;
+
+  final List<ConfigCallback> _configCallbacks = [];
 
   /// This key is used to get the context of the Navigator
   /// It will be used to show dialogs, snackbars.
@@ -212,6 +252,14 @@ class Kernel {
     container.get<VelvetPluginManagerContract>().add(plugin);
   }
 
+  void config(
+    void Function(VelvetConfigManagerContract configManager) callback,
+  ) {
+    _throwIfRunning();
+
+    _configCallbacks.add(callback);
+  }
+
   /// Run the application
   ///
   /// This method should be called at the end of the configuration
@@ -230,6 +278,13 @@ class Kernel {
     _setAsRunning();
 
     WidgetsFlutterBinding.ensureInitialized();
+
+    container.get<VelvetPluginManagerContract>().runRegister();
+
+    final configManager = container.get<VelvetConfigManagerContract>();
+    for (var callback in _configCallbacks) {
+      callback(configManager);
+    }
 
     riverpodContainer = ProviderContainer(
       observers: _riverpodObservers,

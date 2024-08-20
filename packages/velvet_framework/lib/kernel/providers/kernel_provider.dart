@@ -19,10 +19,6 @@ part 'kernel_provider.g.dart';
   dependencies: [store, router, translator, kernelBootstrap],
 )
 Future<void> kernel(KernelRef ref) async {
-  final pluginManager = container.get<VelvetPluginManagerContract>();
-
-  pluginManager.runRegister();
-
   ref.onDispose(() {
     ref.invalidate(routerProvider);
     ref.invalidate(translatorProvider);
@@ -40,5 +36,5 @@ Future<void> kernel(KernelRef ref) async {
   await ref.watch(storeProvider.future);
   await ref.watch(kernelBootstrapProvider.future);
 
-  pluginManager.runBoot();
+  container.get<VelvetPluginManagerContract>().runBoot();
 }
