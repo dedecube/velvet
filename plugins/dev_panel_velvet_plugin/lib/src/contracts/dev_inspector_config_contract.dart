@@ -1,5 +1,7 @@
+import 'package:velvet_framework/core/config/velvet_config.dart';
+
 /// A contract defining the configuration for the developer inspector.
-abstract class DevInspectorConfigContract {
+abstract class DevInspectorConfigContract extends VelvetConfig {
   /// Whether the developer inspector is enabled or not.
   bool get isEnabled;
 

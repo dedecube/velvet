@@ -1,6 +1,6 @@
+import 'package:dev_panel_velvet_plugin/src/contracts/dev_inspector_adapter_contract.dart';
 import 'package:flutter/material.dart';
 import 'package:talker_flutter/talker_flutter.dart';
-import 'package:velvet_framework/dev_inspector/contracts/dev_inspector_adapter_contract.dart';
 import 'package:velvet_framework/talker/talker_global_instance.dart';
 import 'package:velvet_framework/translation/extensions/translator_extension.dart';
 

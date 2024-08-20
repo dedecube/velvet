@@ -29,6 +29,7 @@ String _$devInspectorAdapterHash() =>
 ///   );
 /// }
 /// ```
+/// FIXME[epic=get-it] - Convert to get_it
 ///
 /// Copied from [devInspectorAdapter].
 @ProviderFor(devInspectorAdapter)

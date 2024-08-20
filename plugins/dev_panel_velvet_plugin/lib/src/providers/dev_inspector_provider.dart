@@ -1,7 +1,7 @@
+import 'package:dev_panel_velvet_plugin/src/dev_inspector.dart';
+import 'package:dev_panel_velvet_plugin/src/providers/dev_inspector_adapter_provider.dart';
+import 'package:dev_panel_velvet_plugin/src/providers/dev_inspector_config_provider.dart';
 import 'package:velvet_annotation/velvet_annotation.dart';
-import 'package:velvet_framework/dev_inspector/dev_inspector.dart';
-import 'package:velvet_framework/dev_inspector/providers/dev_inspector_adapter_provider.dart';
-import 'package:velvet_framework/dev_inspector/providers/dev_inspector_config_provider.dart';
 
 part 'dev_inspector_provider.g.dart';
 
