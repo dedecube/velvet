@@ -49,7 +49,7 @@ UseFormReturn useForm(
 
   exceptionMatcher = useMemoized(() {
     exceptionMatcher ??=
-        container.get<FormConfigContract>().defaultFormExceptionMatcher;
+        config<FormConfigContract>().defaultFormExceptionMatcher;
 
     return exceptionMatcher;
   });

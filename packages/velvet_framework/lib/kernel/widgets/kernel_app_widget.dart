@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:velvet_framework/core/utils.dart';
 import 'package:velvet_framework/kernel/hooks/use_dark_theme.dart';
 import 'package:velvet_framework/kernel/hooks/use_light_theme.dart';
 import 'package:velvet_framework/kernel/kernel.dart';
 import 'package:velvet_framework/router/providers/router_provider.dart';
-import 'package:velvet_framework/theme/providers/theme_config_provider.dart';
+import 'package:velvet_framework/theme/contracts/theme_config_contract.dart';
 import 'package:velvet_framework/translation/providers/translator_provider.dart';
 
 class KernelAppWidget extends HookConsumerWidget {
@@ -16,7 +17,7 @@ class KernelAppWidget extends HookConsumerWidget {
     final translator = ref.read(translatorProvider);
     final lightThemeData = useLightTheme();
     final darkThemeData = useDarkTheme();
-    final themeConfig = ref.read(themeConfigProvider);
+    final themeConfig = config<ThemeConfigContract>();
 
     return StreamBuilder(
       initialData: translator.currentLocale,

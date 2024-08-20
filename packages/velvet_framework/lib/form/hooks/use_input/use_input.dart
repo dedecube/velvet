@@ -90,7 +90,7 @@ UseInputReturn<T> useInput<T>({
     initialValue = _useInitialValueForDebug<T>(name, initialValue);
   }
 
-  options ??= container.get<FormConfigContract>().defaultInputOptions;
+  options ??= config<FormConfigContract>().defaultInputOptions;
 
   // final controller = useTextEditingController(text: initialValue);
   final focusNode = useFocusNode();

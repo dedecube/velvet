@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:velvet_framework/core/utils.dart';
 import 'package:velvet_framework/event/utils/event.dart';
 import 'package:velvet_framework/hooks/use_effect_once/use_effect_once.dart';
 import 'package:velvet_framework/kernel/events/hide_loading_widget_event.dart';
 import 'package:velvet_framework/kernel/hooks/use_dark_theme.dart';
 import 'package:velvet_framework/kernel/hooks/use_light_theme.dart';
 import 'package:velvet_framework/kernel/kernel.dart';
-import 'package:velvet_framework/theme/providers/theme_config_provider.dart';
+import 'package:velvet_framework/theme/contracts/theme_config_contract.dart';
 import 'package:velvet_framework/translation/extensions/translator_extension.dart';
 import 'package:velvet_framework/translation/providers/translator_provider.dart';
 
@@ -27,7 +28,7 @@ class KernelErrorWidget extends HookConsumerWidget {
     final translator = ref.read(translatorProvider);
     final lightThemeData = useLightTheme();
     final darkThemeData = useDarkTheme();
-    final themeConfig = ref.read(themeConfigProvider);
+    final themeConfig = config<ThemeConfigContract>();
 
     useEffectOnce(() {
       event(HideLoadingWidgetEvent());

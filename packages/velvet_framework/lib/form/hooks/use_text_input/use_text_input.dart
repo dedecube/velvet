@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:velvet_framework/core/container.dart';
+import 'package:velvet_framework/core/utils.dart';
 import 'package:velvet_framework/error_handling/types.dart';
 import 'package:velvet_framework/form/contracts/form_config_contract.dart';
 import 'package:velvet_framework/form/hooks/use_input/input_options.dart';
@@ -18,7 +18,7 @@ UseTextInputReturn useTextInput({
       const [],
   ExceptionMatcherFactory? exceptionMatcherFactory,
 }) {
-  options ??= container.get<FormConfigContract>().defaultInputOptions;
+  options ??= config<FormConfigContract>().defaultInputOptions;
 
   final input = useInput<String>(
     rules: rules,

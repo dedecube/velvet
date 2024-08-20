@@ -6,7 +6,7 @@ part of 'translator_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$translatorHash() => r'df9cad34ce5b3f839915af83ce48267e50d381a4';
+String _$translatorHash() => r'98c14a9af4b17994dadd64cd5b99347bd1b25af4';
 
 /// See also [translator].
 @ProviderFor(translator)
@@ -15,15 +15,10 @@ final translatorProvider = Provider<Translator>.internal(
   name: r'translatorProvider',
   debugGetCreateSourceHash:
       const bool.fromEnvironment('dart.vm.product') ? null : _$translatorHash,
-  dependencies: <ProviderOrFamily>[
-    translatorAdapterProvider,
-    translationConfigProvider
-  ],
+  dependencies: <ProviderOrFamily>[translatorAdapterProvider],
   allTransitiveDependencies: <ProviderOrFamily>{
     translatorAdapterProvider,
-    ...?translatorAdapterProvider.allTransitiveDependencies,
-    translationConfigProvider,
-    ...?translationConfigProvider.allTransitiveDependencies
+    ...?translatorAdapterProvider.allTransitiveDependencies
   },
 );
 
