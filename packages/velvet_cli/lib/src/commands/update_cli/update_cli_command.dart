@@ -1,5 +1,6 @@
+import 'dart:io';
+
 import 'package:velvet_cli/src/velvet_command.dart';
-import 'package:velvet_cli/velvet_cli.dart';
 
 class UpdateCliCommand extends VelvetCommand {
   @override
@@ -10,6 +11,10 @@ class UpdateCliCommand extends VelvetCommand {
 
   @override
   Future<void> run() async {
-    'dart pub add velvet_cli'.run;
+    await Process.start(
+      'flutter',
+      ['pub', 'add', 'dev:velvet_cli'],
+      mode: ProcessStartMode.inheritStdio,
+    );
   }
 }
