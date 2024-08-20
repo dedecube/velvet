@@ -28,11 +28,17 @@ export './contracts/use_case_contract.dart';
 // @endindex
 
 // @index(['./core/**/(*.dart)','!./core/**/*.g.dart', '!./core/**/_*.dart'], f => `export '${f.path}.dart';`)
+export './core/config/contracts/velvet_config_manager_contract.dart';
+export './core/config/velvet_config_manager.dart';
+export './core/config/velvet_config.dart';
 export './core/container.dart';
+export './core/create_app.dart';
 export './core/plugin/anonymous_velvet_plugin.dart';
 export './core/plugin/contracts/velvet_plugin_manager_contract.dart';
+export './core/plugin/mixins/register_helpers.dart';
 export './core/plugin/velvet_plugin_manager.dart';
 export './core/plugin/velvet_plugin.dart';
+export './core/utils.dart';
 // @endindex
 
 // @index(['./data_loader/**/(*.dart)','!./data_loader/**/*.g.dart', '!./data_loader/**/_*.dart'], f => `export '${f.path}.dart';`)
@@ -47,23 +53,13 @@ export './data_loader/views/data_loader_default_error_view.dart';
 export './data_loader/views/data_loader_default_loading_view.dart';
 // @endindex
 
-// @index(['./dev_inspector/**/(*.dart)','!./dev_inspector/**/*.g.dart', '!./dev_inspector/**/_*.dart'], f => `export '${f.path}.dart';`)
-export './dev_inspector/adapters/dev_inspector_talker_adapter.dart';
-export './dev_inspector/contracts/dev_inspector_adapter_contract.dart';
-export './dev_inspector/contracts/dev_inspector_config_contract.dart';
-export './dev_inspector/dev_inspector.dart';
-export './dev_inspector/providers/dev_inspector_adapter_provider.dart';
-export './dev_inspector/providers/dev_inspector_config_provider.dart';
-export './dev_inspector/providers/dev_inspector_provider.dart';
-// @endindex
-
 // @index(['./error_handling/**/(*.dart)','!./error_handling/**/*.g.dart', '!./error_handling/**/_*.dart'], f => `export '${f.path}.dart';`)
 export './error_handling/bag_exception.dart';
+export './error_handling/config/default_error_handling_config.dart';
 export './error_handling/contracts/error_handling_config_contract.dart';
-export './error_handling/error_handling_default_config.dart';
 export './error_handling/error_handling_plugin.dart';
 export './error_handling/exception_to_message_resolver.dart';
-export './error_handling/renderable_exception_contract.dart';
+export './error_handling/renderable_exception.dart';
 export './error_handling/types.dart';
 // @endindex
 
@@ -78,8 +74,8 @@ export './event/velvet_event.dart';
 // @endindex
 
 // @index(['./form/**/(*.dart)','!./form/**/*.g.dart', '!./form/**/_*.dart', '!./form/**/*.freezed.dart'], f => `export '${f.path}.dart';`)
+export './form/config/default_form_config.dart';
 export './form/contracts/form_config_contract.dart';
-export './form/form_default_config.dart';
 export './form/form_plugin.dart';
 export './form/hooks/use_form/form_options.dart';
 export './form/hooks/use_form/use_form.dart';
@@ -152,6 +148,7 @@ export './kernel/widgets/kernel_widget.dart';
 
 // @index(['./router/**/(*.dart)','!./router/**/*.g.dart', '!./router/**/_*.dart'], f => `export '${f.path}.dart';`)
 export './router/base_route.dart';
+export './router/config/default_router_config.dart';
 export './router/contracts/middleware_contract.dart';
 export './router/contracts/router_config_contract.dart';
 export './router/enums/router_page_transition_enum.dart';
@@ -163,10 +160,10 @@ export './router/mixins/transitions/fade_page_transition.dart';
 export './router/mixins/transitions/material_page_transition.dart';
 export './router/mixins/transitions/none_page_transition.dart';
 export './router/observers/hide_loading_widget_observer.dart';
-export './router/providers/router_config_provider.dart';
 export './router/providers/router_error_builder_provider.dart';
 export './router/providers/router_provider.dart';
 export './router/providers/routes_provider.dart';
+export './router/router_plugin.dart';
 // @endindex
 
 // @index(['./store/**/(*.dart)','!./store/**/*.g.dart','!./store/**/_*.dart','!./store/**/store.dart'], f => `export '${f.path}.dart';`)
@@ -183,15 +180,16 @@ export './talker/talker_global_instance.dart';
 // @endindex
 
 // @index(['./theme/**/(*.dart)','!./theme/**/*.g.dart','!./theme/**/*.tailor.dart','!./theme/**/_*.dart'], f => `export '${f.path}.dart';`)
+export './theme/config/default_theme_config.dart';
 export './theme/contracts/theme_config_contract.dart';
 export './theme/contracts/theme_definition_contract.dart';
 export './theme/extensions/theme_definition_build_context_extension.dart';
 export './theme/extensions/theme_definition_theme_data_extension.dart';
-export './theme/providers/theme_config_provider.dart';
 export './theme/providers/theme_dark_provider.dart';
 export './theme/providers/theme_data_provider.dart';
 export './theme/providers/theme_light_provider.dart';
 export './theme/theme_definition.dart';
+export './theme/theme_plugin.dart';
 export './theme/themes/wireframe/wireframe_dark.dart';
 export './theme/themes/wireframe/wireframe_light.dart';
 // @endindex
@@ -199,6 +197,7 @@ export './theme/themes/wireframe/wireframe_light.dart';
 // @index(['./translation/**/(*.dart)','!./translation/**/*.g.dart', '!./translation/**/_*.dart'], f => `export '${f.path}.dart';`)
 export './translation/adapters/flutter_i18n_translator_adapter.dart';
 export './translation/bootstrap/translation_locale_from_store_bootstrap.dart';
+export './translation/config/default_translation_config.dart';
 export './translation/contracts/translation_config_contract.dart';
 export './translation/contracts/translator_adapter_contract.dart';
 export './translation/events/locale_loaded_from_os.dart';
@@ -206,11 +205,11 @@ export './translation/events/locale_loaded_from_store.dart';
 export './translation/exceptions/locale_not_available_exception.dart';
 export './translation/extensions/translator_extension.dart';
 export './translation/hooks/use_locale_switcher.dart';
-export './translation/providers/translation_config_provider.dart';
 export './translation/providers/translator_adapter_provider.dart';
 export './translation/providers/translator_provider.dart';
 export './translation/storables/locale_storable.dart';
 export './translation/translate.dart';
+export './translation/translation_plugin.dart';
 export './translation/translator.dart';
 // @endindex
 
