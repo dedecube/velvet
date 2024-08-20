@@ -1,3 +1,12 @@
+## 0.0.1-dev.39
+
+ - **REFACTOR**: rename renderable_exception file. ([ab09bc7c](https://github.com/dedecube/velvet/commit/ab09bc7c2f23d9dc936ede0364fe48e59496c4c0))
+ - **REFACTOR**: now all core plugins configs are VelvetConfig and use container. ([0cbb2522](https://github.com/dedecube/velvet/commit/0cbb2522ea5011e36177b00c5cff09088d78259b))
+ - **REFACTOR**: move dev_inspector to plugins. ([6333ca9a](https://github.com/dedecube/velvet/commit/6333ca9ae65d1607adfa508263bf9c0100850cfb))
+ - **FIX**: runRegister from Kernel.run and add a helper method to register/override configurations. ([9eac4c6f](https://github.com/dedecube/velvet/commit/9eac4c6f27c4c77266250640fa77cd0f887f60f8))
+ - **FEAT**: add the createVelvetApp function. ([8ef35f58](https://github.com/dedecube/velvet/commit/8ef35f58718b2a36d9618af67ebd3ea7e2f7a13b))
+ - **FEAT**: add config base class and config manager. ([49469d08](https://github.com/dedecube/velvet/commit/49469d088784de5898bf832e04570d4b9bb981d6))
+
 ## 0.0.1-dev.38
 
  - **REFACTOR**: rename EventContract with VelvetEvent. ([035a57d0](https://github.com/dedecube/velvet/commit/035a57d02abe499f445c2015adea37844d53a017))

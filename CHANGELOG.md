@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-08-20
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`splash_velvet_plugin` - `v0.0.1-dev.2`](#splash_velvet_plugin---v001-dev2)
+ - [`velvet_framework` - `v0.0.1-dev.39`](#velvet_framework---v001-dev39)
+
+---
+
+#### `splash_velvet_plugin` - `v0.0.1-dev.2`
+
+ - **FIX**: disable velvet generators in plugins. ([8da6df4d](https://github.com/dedecube/velvet/commit/8da6df4db3dffc597b55c40ca56c9c3ea8f15e33))
+
+#### `velvet_framework` - `v0.0.1-dev.39`
+
+ - **REFACTOR**: rename renderable_exception file. ([ab09bc7c](https://github.com/dedecube/velvet/commit/ab09bc7c2f23d9dc936ede0364fe48e59496c4c0))
+ - **REFACTOR**: now all core plugins configs are VelvetConfig and use container. ([0cbb2522](https://github.com/dedecube/velvet/commit/0cbb2522ea5011e36177b00c5cff09088d78259b))
+ - **REFACTOR**: move dev_inspector to plugins. ([6333ca9a](https://github.com/dedecube/velvet/commit/6333ca9ae65d1607adfa508263bf9c0100850cfb))
+ - **FIX**: runRegister from Kernel.run and add a helper method to register/override configurations. ([9eac4c6f](https://github.com/dedecube/velvet/commit/9eac4c6f27c4c77266250640fa77cd0f887f60f8))
+ - **FEAT**: add the createVelvetApp function. ([8ef35f58](https://github.com/dedecube/velvet/commit/8ef35f58718b2a36d9618af67ebd3ea7e2f7a13b))
+ - **FEAT**: add config base class and config manager. ([49469d08](https://github.com/dedecube/velvet/commit/49469d088784de5898bf832e04570d4b9bb981d6))
+
+
 ## 2024-08-19
 
 ### Changes
