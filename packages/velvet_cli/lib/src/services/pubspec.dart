@@ -7,6 +7,10 @@ import 'package:yaml/yaml.dart';
 class Pubspec {
   late String name;
 
+  late Map dependencies;
+
+  late Map devDependencies;
+
   Pubspec() {
     _init();
   }
@@ -31,5 +35,17 @@ class Pubspec {
     }
 
     name = projectYaml['name'] as String;
+    dependencies = (projectYaml['dependencies'] as YamlMap).value;
+    devDependencies = (projectYaml['dev_dependencies'] as YamlMap).value;
+  }
+
+  /// Check if a package is installed in the project
+  hasDependency(String packageName) {
+    return dependencies.containsKey(packageName);
+  }
+
+  /// Check if a package is installed in the project as a dev dependency
+  hasDevDependency(String packageName) {
+    return devDependencies.containsKey(packageName);
   }
 }
