@@ -2,16 +2,20 @@ import 'package:dcli/dcli.dart';
 import 'package:velvet_cli/src/velvet_command.dart';
 
 class VelvetCommandHandler {
-  VelvetCommandHandler(this.commands);
+  VelvetCommandHandler({this.commands = const []});
 
   final List<VelvetCommand> commands;
 
-  String _commandName(List<String> args) {
-    return args.isEmpty ? 'list' : args.first;
+  void add(VelvetCommand command) {
+    commands.add(command);
   }
 
-  void handle(List<String> args) {
-    final commandName = _commandName(args);
+  String _commandName(List<String> arguments) {
+    return arguments.isEmpty ? 'list' : arguments.first;
+  }
+
+  void handle(List<String> arguments) {
+    final commandName = _commandName(arguments);
 
     final command =
         commands.where((command) => command.name == commandName).firstOrNull;
