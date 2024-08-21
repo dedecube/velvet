@@ -5,7 +5,6 @@ class UseTextInputReturn extends UseInputReturn<String> {
     required super.error,
     required super.exceptionMatcher,
     required super.focusNode,
-    required super.hasError,
     required super.isValid,
     required super.rules,
     required super.validate,

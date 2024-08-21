@@ -49,7 +49,7 @@ typedef ExceptionMatcherFactory = ExceptionMatcher Function(
 ///
 /// Example usage:
 /// ```dart
-/// InputState inputState = useInputState(
+/// InputState inputState = useInput(
 ///   rules: [
 ///     RequiredStringRule(),
 ///     MinLengthRule(6),
@@ -92,23 +92,10 @@ UseInputReturn<T> useInput<T>({
 
   options ??= config<FormConfigContract>().defaultInputOptions;
 
-  // final controller = useTextEditingController(text: initialValue);
   final focusNode = useFocusNode();
   final error = useState<String?>(null);
   final value = useState<T?>(initialValue);
-
-  // trimOrNot() {
-  //   value.value =
-  //       options!.shouldTrim ? controller.text.trim() : controller.text;
-  // }
-
-  // useEffectOnce(() {
-  //   trimOrNot();
-
-  //   controller.addListener(trimOrNot);
-
-  //   return () => controller.removeListener(trimOrNot);
-  // });
+  final isValid = useState(false);
 
   final exceptionMatcher = useMemoized(
     () {
@@ -156,21 +143,21 @@ UseInputReturn<T> useInput<T>({
     [],
   );
 
-  final isValid = useMemoized(
-    () {
-      return Validator.on(
-        value.value,
-        rules,
-      ).isEmpty;
-    },
-    [error],
-  );
+  void updateIsValid() {
+    isValid.value = Validator.on(
+      value.value,
+      rules,
+    ).isEmpty;
+  }
 
-  final hasError = useMemoized(
+  useEffectOnce(
     () {
-      return error.value != null;
+      updateIsValid();
+
+      value.addListener(updateIsValid);
+
+      return () => value.removeListener(updateIsValid);
     },
-    [error],
   );
 
   return useMemoized(
@@ -178,7 +165,6 @@ UseInputReturn<T> useInput<T>({
       error: error,
       exceptionMatcher: exceptionMatcher,
       focusNode: focusNode,
-      hasError: hasError,
       isValid: isValid,
       rules: rules,
       validate: validate,

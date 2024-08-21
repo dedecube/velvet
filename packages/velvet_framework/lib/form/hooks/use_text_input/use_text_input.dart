@@ -52,7 +52,6 @@ UseTextInputReturn useTextInput({
       error: input.error,
       exceptionMatcher: input.exceptionMatcher,
       focusNode: input.focusNode,
-      hasError: input.hasError,
       isValid: input.isValid,
       rules: rules,
       validate: input.validate,

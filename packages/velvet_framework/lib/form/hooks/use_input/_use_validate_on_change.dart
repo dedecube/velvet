@@ -19,7 +19,7 @@ part of 'use_input.dart';
 ///
 /// _useValidateOnChange(controller, rules, error);
 /// ```
-_useValidateOnChange<T>(
+void _useValidateOnChange<T>(
   T value,
   List<Rule<T>> rules,
   ValueNotifier<String?> error,

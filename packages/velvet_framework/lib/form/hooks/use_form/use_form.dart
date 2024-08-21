@@ -55,14 +55,13 @@ UseFormReturn useForm(
   });
 
   Future<void> validate({bool quietly = true}) async {
-    if (quietly) {
-      isValid.value = inputs.every((input) => input.isValid);
-    } else {
+    if (!quietly) {
       for (var input in inputs) {
         input.validate();
-        isValid.value = inputs.every((input) => input.hasError == false);
       }
     }
+
+    isValid.value = inputs.every((input) => input.isValid.value);
   }
 
   useEffectOnce(() {
