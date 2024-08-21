@@ -17,8 +17,8 @@ runs:
         reformat_for_discord() {
           local content="$1"
 
-          # Replace "Changes" with "Changelog"
-          content=$(echo "$content" | sed 's/Changes/Changelog/g')
+          # Remove the ## Changes heading
+          content=$(echo "$content" | sed 's/^### Changes//')
           
           # Remove links with anchor tags (Discord doesn't support them)
           content=$(echo "$content" | sed -r 's/\[([^]]+)\]\(#[^)]+\)/\1/g')
@@ -31,7 +31,7 @@ runs:
           content=$(echo "$content" | sed -E 's/^(####) (.*)$/### \2/')
 
           # Replace horizontal rules with a line of dashes (Discord-friendly)
-          content=$(echo "$content" | sed 's/^---$/\n----------\n/')
+          content=$(echo "$content" | sed 's/^---$/\n\n/')
           
           # Replace inline code with single backticks
           content=$(echo "$content" | sed 's/`\(.*\)`/\`\1\`/g')
@@ -47,12 +47,16 @@ runs:
 
           # Convert multiple line breaks to a single line break
           content=$(echo "$content" | sed '/^$/N;/^\n$/D')
-          
-          # Add a line break at the end of the content
-          content=$(echo "$content" | sed -e '$a\'$'\n')    
+
+          # Check if content is more than 1850 characters
+          if [ ${#content} -gt 1850 ]; then
+            # Truncate the content to 1850 characters
+            content=${content:0:1850}
+            content=$(echo "$content" | sed -e '$a\'$'\n... **changelog truncated** -> [View full changelog](https://github.com/dedecube/velvet/tree/main/CHANGELOG.md)')
+          fi
 
           # Add a link to the changelog at the end of the content
-          content=$(echo "$content" | sed -e '$a\'$'\n[View full changelog](https://github.com/dedecube/velvet/tree/main/CHANGELOG.md)')
+          # content=$(echo "$content" | sed -e '$a\'$'\n[View full changelog](https://github.com/dedecube/velvet/tree/main/CHANGELOG.md)')
           echo "$content"
         }
 
