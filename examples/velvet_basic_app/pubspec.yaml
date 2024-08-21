@@ -11,6 +11,7 @@ dependencies:
     sdk: flutter
   velvet_annotation: ^0.0.1-dev.8
   connectivity_velvet_plugin: ^0.0.1-dev.0
+  velvet_cli: ^0.0.1-dev-0
   velvet_framework: ^0.0.1-dev.39
 
 dev_dependencies:
@@ -18,7 +19,6 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   velvet_generator: ^0.0.1-dev.14
-  velvet_cli: 0.0.1-dev-0
 
   # Mandatory dependencies for make custom_lint work in monorepo
   custom_lint: ^0.6.4
@@ -31,3 +31,6 @@ flutter:
   uses-material-design: true
   assets:
     - assets/translation/
+
+executables:
+  velvet_basic_app:
