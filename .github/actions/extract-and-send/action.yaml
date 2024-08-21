@@ -1,0 +1,73 @@
+name: Extract and Send Markdown Section
+description: Extracts the first "##" section of a markdown file, simplifies the markdown, and sends it to a Discord webhook.
+inputs:
+  filepath:
+    description: "Path to the markdown file"
+    required: true
+  webhook_url:
+    description: "Discord webhook URL"
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Extract content from first "##" section
+      id: extract_section
+      shell: bash
+      run: |
+        reformat_for_discord() {
+          local content="$1"
+
+          # Replace "Changes" with "Changelog"
+          content=$(echo "$content" | sed 's/Changes/Changelog/g')
+          
+          # Remove links with anchor tags (Discord doesn't support them)
+          content=$(echo "$content" | sed -r 's/\[([^]]+)\]\(#[^)]+\)/\1/g')
+          
+          # Replace all string that ends with a colon with bold text
+          # content=$(echo "$content" | sed -r 's/([^:]+):/**\1**:/g')
+          
+          # Replace headings with plain text (removing the ### and #)
+          content=$(echo "$content" | sed -E 's/^(###) (.*)$/## \2/')
+          content=$(echo "$content" | sed -E 's/^(####) (.*)$/### \2/')
+
+          # Replace horizontal rules with a line of dashes (Discord-friendly)
+          content=$(echo "$content" | sed 's/^---$/\n----------\n/')
+          
+          # Replace inline code with single backticks
+          content=$(echo "$content" | sed 's/`\(.*\)`/\`\1\`/g')
+
+          # Convert list items to Discord-friendly bullet points
+          content=$(echo "$content" | sed 's/^ - /• /')
+
+          # Replace Markdown links with plain text (showing URL)
+          content=$(echo "$content" | sed -r 's/\[([^\]]+)\]\([^\)]+\)/\1/')
+
+          # Remove any additional line breaks for better readability
+          content=$(echo "$content" | sed '/^\s*$/d')
+
+          # Convert multiple line breaks to a single line break
+          content=$(echo "$content" | sed '/^$/N;/^\n$/D')
+          
+          # Add a line break at the end of the content
+          content=$(echo "$content" | sed -e '$a\'$'\n')    
+
+          # Add a link to the changelog at the end of the content
+          content=$(echo "$content" | sed -e '$a\'$'\n[View full changelog](https://github.com/dedecube/velvet/tree/main/CHANGELOG.md)')
+          echo "$content"
+        }
+
+        # Extract content from file and reformat it
+        FILEPATH={{ inputs.filepath }}
+        SECTION_CONTENT=$(awk '
+          /^## / { if (found) exit; found=1; next }
+          found { if (/^## /) exit; print }
+        ' "$FILEPATH")
+
+        # Reformat the content
+        SECTION_CONTENT=$(reformat_for_discord "$SECTION_CONTENT")
+        ESCAPED_CONTENT=$(echo "$SECTION_CONTENT" | jq -Rs .)
+
+        # Send the content to Discord
+        curl -H "Content-Type: application/json" \
+            -d "{\"content\": $ESCAPED_CONTENT}" \
+            {{ inputs.webhook_url }}

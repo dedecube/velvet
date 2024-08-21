@@ -1,0 +1,22 @@
+name: Changelog to Discord
+
+on:
+  push:
+    branches:
+      - main
+env:
+  COMMIT_MESSAGE_THAT_TRIGGER: "chore(release): publish packages"
+
+jobs:
+  extract_and_send:
+    if: contains(github.event.head_commit.message, github.env.COMMIT_MESSAGE_THAT_TRIGGER)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Send first section to Discord
+        uses: ./.github/actions/extract-and-send
+        with:
+          filepath: CHANGELOG.md
+          webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
