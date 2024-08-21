@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:velvet_cli/src/core/container.dart';
+import 'package:velvet_cli/src/services/pubspec.dart';
 import 'package:velvet_cli/src/velvet_command.dart';
 
 class UpdateCliCommand extends VelvetCommand {
@@ -11,9 +13,15 @@ class UpdateCliCommand extends VelvetCommand {
 
   @override
   Future<void> run() async {
+    var packageSignature = 'velvet_cli';
+
+    if (container.get<Pubspec>().hasDevDependency(packageSignature)) {
+      packageSignature = 'dev:$packageSignature';
+    }
+
     await Process.start(
       'flutter',
-      ['pub', 'add', 'dev:velvet_cli'],
+      ['pub', 'add', packageSignature],
       mode: ProcessStartMode.inheritStdio,
     );
   }
