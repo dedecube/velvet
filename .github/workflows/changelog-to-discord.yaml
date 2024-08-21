@@ -4,12 +4,16 @@ on:
   push:
     branches:
       - main
-env:
-  COMMIT_MESSAGE_THAT_TRIGGER: "chore(release): publish packages"
+  workflow_dispatch:
+    inputs:
+      markdown_file:
+        description: "Path to the markdown file"
+        required: true
+        default: "CHANGELOG.md"
 
 jobs:
   extract_and_send:
-    if: contains(github.event.head_commit.message, github.env.COMMIT_MESSAGE_THAT_TRIGGER)
+    if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && contains(github.event.head_commit.message, 'chore(release)')) }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code

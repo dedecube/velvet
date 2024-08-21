@@ -57,7 +57,7 @@ runs:
         }
 
         # Extract content from file and reformat it
-        FILEPATH={{ inputs.filepath }}
+        FILEPATH=${{ inputs.filepath }}
         SECTION_CONTENT=$(awk '
           /^## / { if (found) exit; found=1; next }
           found { if (/^## /) exit; print }
@@ -70,4 +70,4 @@ runs:
         # Send the content to Discord
         curl -H "Content-Type: application/json" \
             -d "{\"content\": $ESCAPED_CONTENT}" \
-            {{ inputs.webhook_url }}
+            ${{ inputs.webhook_url }}
