@@ -1,3 +1,7 @@
+## 0.0.1-dev.40
+
+ - **FIX**: use_input and use_form validation. ([bcec8caa](https://github.com/dedecube/velvet/commit/bcec8caa1745090019915ed66be17a021e509928))
+
 ## 0.0.1-dev.39
 
  - **REFACTOR**: rename renderable_exception file. ([ab09bc7c](https://github.com/dedecube/velvet/commit/ab09bc7c2f23d9dc936ede0364fe48e59496c4c0))

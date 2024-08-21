@@ -1,3 +1,7 @@
+## 0.0.1-dev.3
+
+ - Update a dependency to the latest release.
+
 ## 0.0.1-dev.2
 
  - **FIX**: disable velvet generators in plugins. ([8da6df4d](https://github.com/dedecube/velvet/commit/8da6df4db3dffc597b55c40ca56c9c3ea8f15e33))

@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-08-21
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`velvet_cli` - `v0.0.1-dev.1`](#velvet_cli---v001-dev1)
+ - [`velvet_framework` - `v0.0.1-dev.40`](#velvet_framework---v001-dev40)
+ - [`splash_velvet_plugin` - `v0.0.1-dev.3`](#splash_velvet_plugin---v001-dev3)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `splash_velvet_plugin` - `v0.0.1-dev.3`
+
+---
+
+#### `velvet_cli` - `v0.0.1-dev.1`
+
+ - **REFACTOR**: main now use the createVelvetCli. ([8582658e](https://github.com/dedecube/velvet/commit/8582658ec725ced8a2f11bfe2fbc7b91641bf21b))
+ - **FIX**: update:* commands now are fully working. ([1a79b005](https://github.com/dedecube/velvet/commit/1a79b00571b2f9e1316038c6251b9c9316122ae6))
+ - **FEAT**: add hasDependency and hasDevDependency to Pubspec class. ([3dfed834](https://github.com/dedecube/velvet/commit/3dfed8349ecb486f3e3f2075c0e9a9f4c229bdfb))
+ - **FEAT**: update:cli command take care of user choice of install as dev or not dev dependency. ([825c5498](https://github.com/dedecube/velvet/commit/825c5498daebb3c5c892ed9d5d7d17967c022204))
+ - **FEAT**: add "add" method to VelvetCommandHandler to register commands on fly. ([8988f289](https://github.com/dedecube/velvet/commit/8988f289fea82c071e7786a2d4bbf700d535e3ac))
+ - **FEAT**: add VelvetCli and createVelvetCli. ([5d984207](https://github.com/dedecube/velvet/commit/5d984207be0d7c454b05fd34e705f1c6b7103400))
+ - **FEAT**: add make:route and list commands. ([975f0b00](https://github.com/dedecube/velvet/commit/975f0b00c5359435424985004bc4405b449f9e04))
+ - **FEAT**: setup velvet_cli. ([b299af2c](https://github.com/dedecube/velvet/commit/b299af2cea1be1095d5c052ec84e76bd1ec108a0))
+ - **DOCS**: add tutorial about custom commands. ([01357fa0](https://github.com/dedecube/velvet/commit/01357fa0329df7c27f08b5d5a91871790fcd34eb))
+
+#### `velvet_framework` - `v0.0.1-dev.40`
+
+ - **FIX**: use_input and use_form validation. ([bcec8caa](https://github.com/dedecube/velvet/commit/bcec8caa1745090019915ed66be17a021e509928))
+
+
 ## 2024-08-20
 
 ### Changes
