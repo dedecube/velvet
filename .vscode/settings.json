@@ -52,12 +52,19 @@
     {
       "globMatch": "**/assets/**",
       "command": "flutter.hotReload",
-      "runIn": "vscode"
+      "runIn": "vscode",
     },
     {
       "globMatch": "**/pubspec.yaml",
       "command": "fvm dart run melos bootstrap",
-      "runIn": "terminal"
+      "runIn": "terminal",
+      "commandBeforeSaving": "cd ${workspaceFolder}",
+    },
+    {
+      "globMatch": "packages/velvet_cli/resource/**",
+      "command": "dcli pack",
+      "runIn": "terminal",
+      "commandBeforeSaving": "cd ${workspaceFolder}/packages/velvet_cli",
     }
   ]
 }
