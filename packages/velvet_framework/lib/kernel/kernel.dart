@@ -76,14 +76,16 @@ class Kernel extends KernelContract
   }
 
   @override
-  void run() {
+  void run() async {
     super.run();
 
     WidgetsFlutterBinding.ensureInitialized();
 
     registerDefaultLoggerConfig();
 
-    pluginManager.runRegister();
+    runPluginCallbacks();
+
+    await pluginManager.runRegister();
 
     runConfigCallbacks();
 

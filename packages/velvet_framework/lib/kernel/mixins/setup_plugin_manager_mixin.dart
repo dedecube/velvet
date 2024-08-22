@@ -41,4 +41,11 @@ mixin SetupPluginManagerMixin on KernelContract {
       ..add(TranslationPlugin())
       ..add(ThemePlugin());
   }
+
+  @protected
+  void runPluginCallbacks() {
+    for (var callback in _withPluginsCallback) {
+      callback(pluginManager);
+    }
+  }
 }
