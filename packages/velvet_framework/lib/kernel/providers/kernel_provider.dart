@@ -1,8 +1,7 @@
 import 'package:velvet_annotation/velvet_annotation.dart';
-import 'package:velvet_framework/core/container.dart';
 import 'package:velvet_framework/core/plugin/contracts/velvet_plugin_manager_contract.dart';
-import 'package:velvet_framework/kernel/kernel.dart';
-import 'package:velvet_framework/kernel/providers/kernel_bootstrap_provider.dart';
+import 'package:velvet_framework/core/utils/navigator_key.dart';
+import 'package:velvet_framework/core/velvet_container.dart';
 import 'package:velvet_framework/router/providers/router_provider.dart';
 import 'package:velvet_framework/store/providers/store_provider.dart';
 import 'package:velvet_framework/translation/providers/translator_provider.dart';
@@ -16,25 +15,23 @@ part 'kernel_provider.g.dart';
 /// See https://codewithandrea.com/articles/robust-app-initialization-riverpod/
 @Riverpod(
   keepAlive: true,
-  dependencies: [store, router, translator, kernelBootstrap],
+  dependencies: [store, router, translator],
 )
-Future<void> kernel(KernelRef ref) async {
+Future<void> kernelInitialization(KernelInitializationRef ref) async {
   ref.onDispose(() {
     ref.invalidate(routerProvider);
     ref.invalidate(translatorProvider);
-    ref.invalidate(kernelBootstrapProvider);
   });
 
   final router = await ref.watch(routerProvider.future);
 
-  if (router.configuration.navigatorKey != Kernel.navigatorKey) {
+  if (router.configuration.navigatorKey != navigatorKey()) {
     throw Exception('Navigator key must be the same as Kernel.navigatorKey.');
   }
 
   ref.read(translatorProvider);
 
   await ref.watch(storeProvider.future);
-  await ref.watch(kernelBootstrapProvider.future);
 
   container.get<VelvetPluginManagerContract>().runBoot();
 }

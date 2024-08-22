@@ -1,12 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:velvet_framework/core/utils.dart';
-import 'package:velvet_framework/kernel/hooks/use_dark_theme.dart';
-import 'package:velvet_framework/kernel/hooks/use_light_theme.dart';
-import 'package:velvet_framework/kernel/kernel.dart';
-import 'package:velvet_framework/router/providers/router_provider.dart';
-import 'package:velvet_framework/theme/contracts/theme_config_contract.dart';
-import 'package:velvet_framework/translation/providers/translator_provider.dart';
+import 'package:velvet_framework/velvet_framework.dart';
 
 class KernelAppWidget extends HookConsumerWidget {
   const KernelAppWidget({super.key});
@@ -15,8 +8,8 @@ class KernelAppWidget extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final router = ref.read(routerProvider);
     final translator = ref.read(translatorProvider);
-    final lightThemeData = useLightTheme();
-    final darkThemeData = useDarkTheme();
+    final lightThemeData = useCreateLightTheme();
+    final darkThemeData = useCreateDarkTheme();
     final themeConfig = config<ThemeConfigContract>();
 
     return StreamBuilder(
@@ -46,7 +39,7 @@ class KernelAppWidget extends HookConsumerWidget {
     Widget? child,
   ) {
     return Builder(
-      key: Kernel.resolutionKey,
+      key: resolutionKey(),
       builder: (context) => child!,
     );
   }

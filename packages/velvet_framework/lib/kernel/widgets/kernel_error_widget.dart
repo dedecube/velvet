@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:velvet_framework/core/utils.dart';
-import 'package:velvet_framework/event/utils/event.dart';
+import 'package:velvet_framework/core/event/utils/event.dart';
+import 'package:velvet_framework/core/utils/config.dart';
+import 'package:velvet_framework/core/utils/navigator_key.dart';
+import 'package:velvet_framework/core/utils/resolution_key.dart';
 import 'package:velvet_framework/hooks/use_effect_once/use_effect_once.dart';
 import 'package:velvet_framework/kernel/events/hide_loading_widget_event.dart';
-import 'package:velvet_framework/kernel/hooks/use_dark_theme.dart';
-import 'package:velvet_framework/kernel/hooks/use_light_theme.dart';
-import 'package:velvet_framework/kernel/kernel.dart';
 import 'package:velvet_framework/theme/contracts/theme_config_contract.dart';
+import 'package:velvet_framework/theme/hooks/use_create_dark_theme.dart';
+import 'package:velvet_framework/theme/hooks/use_create_light_theme.dart';
 import 'package:velvet_framework/translation/extensions/translator_extension.dart';
 import 'package:velvet_framework/translation/providers/translator_provider.dart';
 
@@ -26,8 +27,8 @@ class KernelErrorWidget extends HookConsumerWidget {
   @override
   StreamBuilder<Locale?> build(BuildContext context, WidgetRef ref) {
     final translator = ref.read(translatorProvider);
-    final lightThemeData = useLightTheme();
-    final darkThemeData = useDarkTheme();
+    final lightThemeData = useCreateLightTheme();
+    final darkThemeData = useCreateDarkTheme();
     final themeConfig = config<ThemeConfigContract>();
 
     useEffectOnce(() {
@@ -42,7 +43,7 @@ class KernelErrorWidget extends HookConsumerWidget {
       builder: (context, locale) {
         return MaterialApp(
           builder: (context, child) => Builder(
-            key: Kernel.resolutionKey,
+            key: resolutionKey(),
             builder: (context) => Scaffold(
               appBar: AppBar(
                 title: Text(
@@ -74,7 +75,7 @@ class KernelErrorWidget extends HookConsumerWidget {
           theme: lightThemeData,
           darkTheme: darkThemeData,
           themeMode: themeConfig.themeMode,
-          navigatorKey: Kernel.navigatorKey,
+          navigatorKey: navigatorKey(),
           localizationsDelegates: translator.delegates(),
           supportedLocales: translator.supportedLocales,
           locale: locale.data,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:velvet_framework/event/hooks/use_event_listener.dart';
+import 'package:velvet_framework/core/event/hooks/use_event_listener.dart';
 import 'package:velvet_framework/kernel/events/hide_loading_widget_event.dart';
 import 'package:velvet_framework/kernel/providers/kernel_provider.dart';
 import 'package:velvet_framework/kernel/widgets/kernel_app_widget.dart';
@@ -20,14 +20,14 @@ class KernelWidget extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final appStartupState = ref.watch(kernelProvider);
+    final appStartupState = ref.watch(kernelInitializationProvider);
     final sholdShowSplash = useState(true);
 
     useEventListener<HideLoadingWidgetEvent>(
       (event) => sholdShowSplash.value = false,
     );
 
-    void onRetry() => ref.invalidate(kernelProvider);
+    void onRetry() => ref.invalidate(kernelInitializationProvider);
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
