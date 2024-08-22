@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:velvet_framework/core/utils.dart';
+import 'package:velvet_framework/core/utils/config.dart';
 import 'package:velvet_framework/router/contracts/router_config_contract.dart';
 import 'package:velvet_framework/router/enums/router_page_transition_enum.dart';
 
-mixin BaseRoutePageBuilderMixin on GoRouteData {
+mixin VelvetRoutePageBuilderMixin on GoRouteData {
   /// The page transition to be used.
   RouterPageTransitionEnum? get pageTransition => null;
 

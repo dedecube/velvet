@@ -1,7 +1,7 @@
 import 'package:go_router/go_router.dart';
-import 'package:velvet_framework/router/contracts/middleware_contract.dart';
 import 'package:velvet_framework/router/contracts/router_config_contract.dart';
 import 'package:velvet_framework/router/enums/router_page_transition_enum.dart';
+import 'package:velvet_framework/router/middleware/velvet_middleware.dart';
 
 class DefaultRouterConfig extends RouterConfigContract {
   @override
@@ -12,7 +12,7 @@ class DefaultRouterConfig extends RouterConfigContract {
       RouterPageTransitionEnum.material;
 
   @override
-  List<MiddlewareContract> get redirectMiddlewares => [];
+  List<VelvetMiddleware> get globalMiddlewares => [];
 
   @override
   List<RouteBase> get routes => [];
