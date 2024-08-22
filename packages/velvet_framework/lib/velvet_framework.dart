@@ -31,14 +31,31 @@ export './contracts/use_case_contract.dart';
 export './core/config/contracts/velvet_config_manager_contract.dart';
 export './core/config/velvet_config_manager.dart';
 export './core/config/velvet_config.dart';
-export './core/container.dart';
-export './core/create_app.dart';
+export './core/event/contracts/velvet_event_bus_contract.dart';
+export './core/event/hooks/use_event_listener.dart';
+export './core/event/utils/event.dart';
+export './core/event/utils/listen.dart';
+export './core/event/velvet_event_bus.dart';
+export './core/event/velvet_event.dart';
+export './core/logger/channels/talker_velvet_logger_channel.dart';
+export './core/logger/config/default_velvet_logger_config.dart';
+export './core/logger/contracts/velvet_logger_config_contract.dart';
+export './core/logger/contracts/velvet_logger_contract.dart';
+export './core/logger/enums/velvet_log_severity_enum.dart';
+export './core/logger/velvet_logger_channel.dart';
+export './core/logger/velvet_logger.dart';
 export './core/plugin/anonymous_velvet_plugin.dart';
 export './core/plugin/contracts/velvet_plugin_manager_contract.dart';
 export './core/plugin/mixins/register_helpers.dart';
 export './core/plugin/velvet_plugin_manager.dart';
 export './core/plugin/velvet_plugin.dart';
-export './core/utils.dart';
+export './core/utils/config.dart';
+export './core/utils/create_velvet_app.dart';
+export './core/utils/kernel.dart';
+export './core/utils/logger.dart';
+export './core/utils/navigator_key.dart';
+export './core/utils/resolution_key.dart';
+export './core/velvet_container.dart';
 // @endindex
 
 // @index(['./data_loader/**/(*.dart)','!./data_loader/**/*.g.dart', '!./data_loader/**/_*.dart'], f => `export '${f.path}.dart';`)
@@ -64,13 +81,7 @@ export './error_handling/types.dart';
 // @endindex
 
 // @index(['./event/**/(*.dart)','!./event/**/*.g.dart', '!./event/**/_*.dart'], f => `export '${f.path}.dart';`)
-export './event/contracts/velvet_event_bus_contract.dart';
-export './event/event_velvet_plugin.dart';
-export './event/hooks/use_event_listener.dart';
-export './event/utils/event.dart';
-export './event/utils/listen.dart';
-export './event/velvet_event_bus.dart';
-export './event/velvet_event.dart';
+
 // @endindex
 
 // @index(['./form/**/(*.dart)','!./form/**/*.g.dart', '!./form/**/_*.dart', '!./form/**/*.freezed.dart'], f => `export '${f.path}.dart';`)
@@ -132,38 +143,18 @@ export './http/http_response.dart';
 export './http/http.dart';
 // @endindex
 
-// @index(['./kernel/**/(*.dart)','!./kernel/**/*.g.dart', '!./kernel/**/_*.dart'], f => `export '${f.path}.dart';`)
-export './kernel/events/hide_loading_widget_event.dart';
-export './kernel/exceptions/kernel_is_already_running_exception.dart';
-export './kernel/hooks/use_dark_theme.dart';
-export './kernel/hooks/use_light_theme.dart';
-export './kernel/kernel.dart';
-export './kernel/providers/kernel_bootstrap_provider.dart';
-export './kernel/providers/kernel_provider.dart';
-export './kernel/widgets/kernel_app_widget.dart';
-export './kernel/widgets/kernel_error_widget.dart';
-export './kernel/widgets/kernel_loading_widget.dart';
-export './kernel/widgets/kernel_widget.dart';
-// @endindex
-
 // @index(['./router/**/(*.dart)','!./router/**/*.g.dart', '!./router/**/_*.dart'], f => `export '${f.path}.dart';`)
-export './router/base_route.dart';
 export './router/config/default_router_config.dart';
-export './router/contracts/middleware_contract.dart';
 export './router/contracts/router_config_contract.dart';
 export './router/enums/router_page_transition_enum.dart';
-export './router/middleware/middleware_operation.dart';
-export './router/middleware/middleware_pipeline.dart';
-export './router/mixins/base_route_page_builder_mixin.dart';
-export './router/mixins/resolves_page.dart';
-export './router/mixins/transitions/fade_page_transition.dart';
-export './router/mixins/transitions/material_page_transition.dart';
-export './router/mixins/transitions/none_page_transition.dart';
+export './router/middleware/velvet_middleware_pipeline.dart';
+export './router/middleware/velvet_middleware.dart';
+export './router/mixins/velvet_route_page_builder_mixin.dart';
 export './router/observers/hide_loading_widget_observer.dart';
 export './router/providers/router_error_builder_provider.dart';
 export './router/providers/router_provider.dart';
-export './router/providers/routes_provider.dart';
 export './router/router_plugin.dart';
+export './router/velvet_route.dart';
 // @endindex
 
 // @index(['./store/**/(*.dart)','!./store/**/*.g.dart','!./store/**/_*.dart','!./store/**/store.dart'], f => `export '${f.path}.dart';`)
@@ -185,6 +176,8 @@ export './theme/contracts/theme_config_contract.dart';
 export './theme/contracts/theme_definition_contract.dart';
 export './theme/extensions/theme_definition_build_context_extension.dart';
 export './theme/extensions/theme_definition_theme_data_extension.dart';
+export './theme/hooks/use_create_dark_theme.dart';
+export './theme/hooks/use_create_light_theme.dart';
 export './theme/providers/theme_dark_provider.dart';
 export './theme/providers/theme_data_provider.dart';
 export './theme/providers/theme_light_provider.dart';
@@ -214,9 +207,9 @@ export './translation/translator.dart';
 // @endindex
 
 // @index(['./utils/**/(*.dart)','!./utils/**/*.g.dart', '!./utils/**/_*.dart'], f => `export '${f.path}.dart';`)
-export './utils/container.dart';
 export './utils/kernel_context.dart';
 export './utils/navigator_context.dart';
+export './utils/riverpod_container.dart';
 // @endindex
 
 // @index(['./validation/**/(*.dart)','!./validation/**/*.g.dart', '!./validation/**/_*.dart'], f => `export '${f.path}.dart';`)
@@ -232,4 +225,21 @@ export './validation/validator.dart';
 
 // @index(['./widgets/**/(*.dart)','!./widgets/**/*.g.dart', '!./widgets/**/_*.dart'], f => `export '${f.path}.dart';`)
 export './widgets/pre_renderer.dart';
+// @endindex
+
+// @index(['./kernel/**/(*.dart)','!./kernel/**/*.g.dart', '!./kernel/**/_*.dart'], f => `export '${f.path}.dart';`)
+export './kernel/contracts/kernel_contract.dart';
+export './kernel/events/hide_loading_widget_event.dart';
+export './kernel/exceptions/kernel_is_already_running_exception.dart';
+export './kernel/kernel.dart';
+export './kernel/mixins/setup_config_manager_mixin.dart';
+export './kernel/mixins/setup_event_but_mixin.dart';
+export './kernel/mixins/setup_logger_mixin.dart';
+export './kernel/mixins/setup_plugin_manager_mixin.dart';
+export './kernel/mixins/setup_riverpod_mixin.dart';
+export './kernel/providers/kernel_provider.dart';
+export './kernel/widgets/kernel_app_widget.dart';
+export './kernel/widgets/kernel_error_widget.dart';
+export './kernel/widgets/kernel_loading_widget.dart';
+export './kernel/widgets/kernel_widget.dart';
 // @endindex
