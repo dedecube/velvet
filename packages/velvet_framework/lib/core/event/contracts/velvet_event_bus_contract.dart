@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:velvet_framework/event/velvet_event.dart';
+import 'package:velvet_framework/core/event/velvet_event.dart';
 
 abstract class VelvetEventBusContract {
   void dispatch(VelvetEvent event);

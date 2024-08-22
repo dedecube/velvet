@@ -1,5 +1,5 @@
-import 'package:velvet_framework/event/utils/listen.dart';
-import 'package:velvet_framework/event/velvet_event.dart';
+import 'package:velvet_framework/core/event/utils/listen.dart';
+import 'package:velvet_framework/core/event/velvet_event.dart';
 import 'package:velvet_framework/hooks/use_effect_once/use_effect_once.dart';
 
 /// Listens to the specified event and calls the callback when the event is

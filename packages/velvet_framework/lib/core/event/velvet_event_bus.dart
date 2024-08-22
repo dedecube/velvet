@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:event_bus/event_bus.dart' as event_bus;
-import 'package:velvet_framework/event/contracts/velvet_event_bus_contract.dart';
-import 'package:velvet_framework/event/velvet_event.dart';
+import 'package:velvet_framework/core/event/contracts/velvet_event_bus_contract.dart';
+import 'package:velvet_framework/core/event/velvet_event.dart';
 
 class VelvetEventBus implements VelvetEventBusContract {
   VelvetEventBus() : super();
