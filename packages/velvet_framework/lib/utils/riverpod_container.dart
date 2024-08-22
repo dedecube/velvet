@@ -1,5 +1,5 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:velvet_framework/kernel/kernel.dart';
+import 'package:velvet_framework/core/utils/kernel.dart';
 
 /// Returns a [ProviderContainer] instance.
 ///
@@ -10,7 +10,9 @@ import 'package:velvet_framework/kernel/kernel.dart';
 /// ProviderContainer container = riverpodContainer();
 /// ```
 ProviderContainer riverpodContainer() {
-  if (Kernel.riverpodContainer == null) {
+  final riverpodContainer = kernel().riverpodContainer;
+
+  if (riverpodContainer == null) {
     throw Exception(
       [
         'Kernel is not running',
@@ -20,5 +22,5 @@ ProviderContainer riverpodContainer() {
     );
   }
 
-  return Kernel.riverpodContainer!;
+  return riverpodContainer;
 }

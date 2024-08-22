@@ -3,7 +3,7 @@ import 'dart:ui';
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:velvet_framework/event/utils/event.dart';
+import 'package:velvet_framework/core/event/utils/event.dart';
 import 'package:velvet_framework/translation/contracts/translation_config_contract.dart';
 import 'package:velvet_framework/translation/contracts/translator_adapter_contract.dart';
 import 'package:velvet_framework/translation/events/locale_loaded_from_os.dart';
@@ -31,7 +31,7 @@ class Translator {
 
   Stream<Locale?> get localeStream => _localeStream.stream;
 
-  setLocale(BuildContext context, Locale locale) {
+  FutureOr<void> setLocale(BuildContext context, Locale locale) {
     if (!config.supportedLocales.contains(locale)) {
       throw LocaleNotAvailableException(locale);
     }
@@ -67,7 +67,7 @@ class Translator {
     ];
   }
 
-  get supportedLocales {
+  List<Locale> get supportedLocales {
     return config.supportedLocales;
   }
 

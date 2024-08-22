@@ -7,7 +7,7 @@ class FlutterI18nTranslatorAdapter extends TranslatorAdapterContract {
   FlutterI18nTranslatorAdapter(super.config);
 
   @override
-  get delegate {
+  LocalizationsDelegate get delegate {
     return FlutterI18nDelegate(
       translationLoader: FileTranslationLoader(
         useCountryCode: false,

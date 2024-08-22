@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:velvet_framework/event/utils/event.dart';
+import 'package:velvet_framework/core/event/utils/event.dart';
 import 'package:velvet_framework/kernel/events/hide_loading_widget_event.dart';
 
 class HideLoadingWidgetObserver extends NavigatorObserver {
