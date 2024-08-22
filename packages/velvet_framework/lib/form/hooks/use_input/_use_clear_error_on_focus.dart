@@ -16,7 +16,7 @@ part of 'use_input.dart';
 ///
 /// - `focusNode`: The [FocusNode] associated with the input field.
 /// - `error`: A [ValueNotifier] that holds the error value of the input field.
-_useClearErrorOnFocus(
+void _useClearErrorOnFocus(
   FocusNode focusNode,
   ValueNotifier<String?> error,
 ) {

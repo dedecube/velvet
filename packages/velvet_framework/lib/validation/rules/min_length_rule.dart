@@ -15,7 +15,7 @@ class MinLengthRule extends Rule<String> {
   final int min;
 
   @override
-  String? isValid(value) {
+  String? isValid(String value) {
     if (value.length < min) {
       return translate(
         'validation.min_length',

@@ -22,7 +22,7 @@ class RequiredStringRule extends Rule<String> {
   RequiredStringRule();
 
   @override
-  String? isValid(value) {
+  String? isValid(String value) {
     if (value.isEmpty) {
       return translate('validation.required_string');
     }

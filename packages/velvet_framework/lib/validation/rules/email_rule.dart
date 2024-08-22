@@ -15,7 +15,7 @@ class EmailRule extends Rule<String> {
   );
 
   @override
-  isValid(value) {
+  String? isValid(String value) {
     if (!_emailRegExp.hasMatch(value)) {
       return translate('validation.email');
     }

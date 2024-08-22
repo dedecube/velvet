@@ -16,7 +16,7 @@ class ConfirmationRule extends Rule<String> {
   final UseInputReturn anotherInput;
 
   @override
-  String? isValid(value) {
+  String? isValid(String value) {
     if (value != anotherInput.value.value) {
       return translate('validation.confirmation_mismatch');
     }

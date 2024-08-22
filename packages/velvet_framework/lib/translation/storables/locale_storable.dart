@@ -2,7 +2,7 @@ import 'package:velvet_framework/store/storable.dart';
 
 class LocaleStorable extends Storable<String> {
   @override
-  get key => 'locale';
+  String get key => 'locale';
 
   @override
   Future<void> set(String data) async {

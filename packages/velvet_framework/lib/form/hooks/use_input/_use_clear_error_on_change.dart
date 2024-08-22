@@ -28,7 +28,7 @@ part of 'use_input.dart';
 ///
 /// Note: This hook is part of the 'use_input.dart' file.
 /// Make sure to import it before using this hook.
-_useClearErrorOnChange<T>(
+void _useClearErrorOnChange<T>(
   ValueNotifier<T> value,
   ValueNotifier<String?> error,
 ) {
