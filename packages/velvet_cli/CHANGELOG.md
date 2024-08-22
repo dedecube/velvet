@@ -1,3 +1,8 @@
+## 0.0.1-dev.2
+
+ - **FEAT**: update route stub to extends VelvetRoute. ([f685b642](https://github.com/dedecube/velvet/commit/f685b642a006e2df353051b25395bfc9b3c2c3d8))
+ - **DOCS**: add example. ([5d67a16d](https://github.com/dedecube/velvet/commit/5d67a16d33a2ccb2bc1be1ccd618cef19ebc0c28))
+
 ## 0.0.1-dev.1
 
  - **REFACTOR**: main now use the createVelvetCli. ([8582658e](https://github.com/dedecube/velvet/commit/8582658ec725ced8a2f11bfe2fbc7b91641bf21b))

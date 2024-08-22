@@ -3,6 +3,44 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-08-22
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - [`velvet_framework` - `v0.0.1-dev.41`](#velvet_framework---v001-dev41)
+
+Packages with other changes:
+
+ - [`velvet_cli` - `v0.0.1-dev.2`](#velvet_cli---v001-dev2)
+ - [`splash_velvet_plugin` - `v0.0.1-dev.4`](#splash_velvet_plugin---v001-dev4)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `splash_velvet_plugin` - `v0.0.1-dev.4`
+
+---
+
+#### `velvet_framework` - `v0.0.1-dev.41`
+
+ - **REFACTOR**: restructuring utils and update imports. ([6300facb](https://github.com/dedecube/velvet/commit/6300facb4543777827184302b6e24b8a174a927f))
+ - **REFACTOR**: kernel logic is now splitted in multiple mixins that make it more easy to understand and mantain. ([baefe935](https://github.com/dedecube/velvet/commit/baefe9352f8b5a1ec902f61adb80049536786638))
+ - **REFACTOR**: move event into core, as it is not a plugin but a sdk core piece. ([65ad8891](https://github.com/dedecube/velvet/commit/65ad88916f540fa8842ef84bf8097702054e0672))
+ - **REFACTOR**: error_handling. ([60531d54](https://github.com/dedecube/velvet/commit/60531d5412f56d4a89a06b628837ef5d7f563655))
+ - **FEAT**: add logger. ([a4afc8ad](https://github.com/dedecube/velvet/commit/a4afc8ad594b6ab48e245c25adb69f1e877d8072))
+ - **BREAKING** **REFACTOR**: change nomenclature of routing stuff. ([3767a704](https://github.com/dedecube/velvet/commit/3767a704e44a55d4a42c3d68b0dfcc63ff6a28e0))
+
+#### `velvet_cli` - `v0.0.1-dev.2`
+
+ - **FEAT**: update route stub to extends VelvetRoute. ([f685b642](https://github.com/dedecube/velvet/commit/f685b642a006e2df353051b25395bfc9b3c2c3d8))
+ - **DOCS**: add example. ([5d67a16d](https://github.com/dedecube/velvet/commit/5d67a16d33a2ccb2bc1be1ccd618cef19ebc0c28))
+
+
 ## 2024-08-21
 
 ### Changes

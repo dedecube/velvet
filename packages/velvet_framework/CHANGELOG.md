@@ -1,3 +1,14 @@
+## 0.0.1-dev.41
+
+> Note: This release has breaking changes.
+
+ - **REFACTOR**: restructuring utils and update imports. ([6300facb](https://github.com/dedecube/velvet/commit/6300facb4543777827184302b6e24b8a174a927f))
+ - **REFACTOR**: kernel logic is now splitted in multiple mixins that make it more easy to understand and mantain. ([baefe935](https://github.com/dedecube/velvet/commit/baefe9352f8b5a1ec902f61adb80049536786638))
+ - **REFACTOR**: move event into core, as it is not a plugin but a sdk core piece. ([65ad8891](https://github.com/dedecube/velvet/commit/65ad88916f540fa8842ef84bf8097702054e0672))
+ - **REFACTOR**: error_handling. ([60531d54](https://github.com/dedecube/velvet/commit/60531d5412f56d4a89a06b628837ef5d7f563655))
+ - **FEAT**: add logger. ([a4afc8ad](https://github.com/dedecube/velvet/commit/a4afc8ad594b6ab48e245c25adb69f1e877d8072))
+ - **BREAKING** **REFACTOR**: change nomenclature of routing stuff. ([3767a704](https://github.com/dedecube/velvet/commit/3767a704e44a55d4a42c3d68b0dfcc63ff6a28e0))
+
 ## 0.0.1-dev.40
 
  - **FIX**: use_input and use_form validation. ([bcec8caa](https://github.com/dedecube/velvet/commit/bcec8caa1745090019915ed66be17a021e509928))
