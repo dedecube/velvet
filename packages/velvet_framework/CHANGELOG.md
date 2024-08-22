@@ -1,3 +1,8 @@
+## 0.0.1-dev.42
+
+ - **FIX**: add runPluginCallbacks in Kernel. ([a43ff187](https://github.com/dedecube/velvet/commit/a43ff18721f9a4efeed68e03b1c2bcedb01c2773))
+ - **FIX**: now boot and register return FutureOr. ([9e77300f](https://github.com/dedecube/velvet/commit/9e77300f9259832611e868ed777b6b444efd6d97))
+
 ## 0.0.1-dev.41
 
 > Note: This release has breaking changes.

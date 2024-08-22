@@ -11,6 +11,35 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 Packages with breaking changes:
 
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`velvet_framework` - `v0.0.1-dev.42`](#velvet_framework---v001-dev42)
+ - [`splash_velvet_plugin` - `v0.0.1-dev.5`](#splash_velvet_plugin---v001-dev5)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `splash_velvet_plugin` - `v0.0.1-dev.5`
+
+---
+
+#### `velvet_framework` - `v0.0.1-dev.42`
+
+ - **FIX**: add runPluginCallbacks in Kernel. ([a43ff187](https://github.com/dedecube/velvet/commit/a43ff18721f9a4efeed68e03b1c2bcedb01c2773))
+ - **FIX**: now boot and register return FutureOr. ([9e77300f](https://github.com/dedecube/velvet/commit/9e77300f9259832611e868ed777b6b444efd6d97))
+
+
+## 2024-08-22
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
  - [`velvet_framework` - `v0.0.1-dev.41`](#velvet_framework---v001-dev41)
 
 Packages with other changes:
