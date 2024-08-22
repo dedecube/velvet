@@ -1,6 +1,6 @@
 part of '{{ relativeBacks }}routes.dart';
 
-class ExampleRoute extends BaseRoute {
+class ExampleRoute extends VelvetRoute {
   const ExampleRoute();
 
   @override
