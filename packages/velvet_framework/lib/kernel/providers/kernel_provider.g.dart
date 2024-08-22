@@ -7,7 +7,7 @@ part of 'kernel_provider.dart';
 // **************************************************************************
 
 String _$kernelInitializationHash() =>
-    r'9b662c4b4e566bd55fc83299c090951c0da7bedf';
+    r'8dd3a966a0ec1e42b182ae4798e387b388daaa7f';
 
 /// The kernel provider is the responsible for initializing the application and its dependencies.
 /// It is responsible for initializing the application and its dependencies.
