@@ -7,7 +7,7 @@ class HttpClientVelvetPlugin extends VelvetPlugin {
   @override
   void register() {
     container.registerLazySingleton<HttpClientContract>(() {
-      final httpClientConfig = container.get<HttpClientConfigContract>();
+      final httpClientConfig = config<HttpClientConfigContract>();
       final httpConfig = HttpConfig(baseURL: httpClientConfig.baseURL);
 
       return DefaultHttpClient(httpConfig);
