@@ -6,9 +6,6 @@
             "request": "launch",
             "type": "dart",
             "program": "examples/velvet_basic_app/lib/main.dart",
-            "args": [
-                "--no-enable-impeller"
-            ],
             "preLaunchTask": "basic app - build_runner: clean and watch",
             "postDebugTask": "basic app - terminate all tasks",
         },
@@ -17,9 +14,6 @@
             "request": "launch",
             "type": "dart",
             "program": "examples/velvet_basic_app/lib/main.dart",
-            "args": [
-                "--no-enable-impeller"
-            ]
         },
         {
             "name": "Basic App - Web",
