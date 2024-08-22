@@ -33,5 +33,5 @@ Future<void> kernelInitialization(KernelInitializationRef ref) async {
 
   await ref.watch(storeProvider.future);
 
-  container.get<VelvetPluginManagerContract>().runBoot();
+  await container.get<VelvetPluginManagerContract>().runBoot();
 }
