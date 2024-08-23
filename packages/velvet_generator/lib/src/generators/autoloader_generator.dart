@@ -7,7 +7,7 @@ import 'package:velvet_annotation/velvet_annotation.dart';
 
 class AutoloaderGenerator extends GeneratorForAnnotation<VelvetAutoloader> {
   @override
-  generateForAnnotatedElement(
+  Future<String> generateForAnnotatedElement(
     Element element,
     ConstantReader annotation,
     BuildStep buildStep,
