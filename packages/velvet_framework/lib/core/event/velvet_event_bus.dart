@@ -10,7 +10,7 @@ class VelvetEventBus implements VelvetEventBusContract {
   final _instance = event_bus.EventBus();
 
   @override
-  void dispatch(VelvetEvent event) {
+  void dispatch<T extends VelvetEvent>(T event) {
     _instance.fire(event);
   }
 
