@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_i18n/flutter_i18n.dart';
-import 'package:velvet_framework/talker/talker_global_instance.dart';
+import 'package:velvet_framework/core/utils/logger.dart';
 import 'package:velvet_framework/translation/contracts/translator_adapter_contract.dart';
 
 class FlutterI18nTranslatorAdapter extends TranslatorAdapterContract {
@@ -15,7 +15,7 @@ class FlutterI18nTranslatorAdapter extends TranslatorAdapterContract {
         fallbackFile: config.fallbackLocale.languageCode,
       ),
       missingTranslationHandler: (key, locale) {
-        talkerGlobalInstance.warning('Missing key: $key');
+        logger().warning('Missing key: $key');
       },
     );
   }

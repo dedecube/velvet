@@ -29,6 +29,7 @@ mixin SetupConfigManagerMixin on KernelContract {
     _configCallbacks.add(callback);
   }
 
+  @protected
   void runConfigCallbacks() {
     for (var callback in _configCallbacks) {
       callback(configManager);

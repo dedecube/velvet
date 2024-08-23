@@ -14,7 +14,6 @@ import 'package:velvet_framework/core/plugin/velvet_plugin.dart';
 
 List<VelvetPlugin> $velvetPluginLoaderItems = [
   FormPlugin(),
-  AnonymousVelvetPlugin(),
   TranslationPlugin(),
   ErrorHandlingPlugin(),
   ThemePlugin(),

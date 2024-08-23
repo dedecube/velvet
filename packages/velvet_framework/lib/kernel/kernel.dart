@@ -7,8 +7,7 @@ import 'package:velvet_framework/kernel/mixins/setup_event_but_mixin.dart';
 import 'package:velvet_framework/kernel/mixins/setup_logger_mixin.dart';
 import 'package:velvet_framework/kernel/mixins/setup_plugin_manager_mixin.dart';
 import 'package:velvet_framework/kernel/mixins/setup_riverpod_mixin.dart';
-import 'package:velvet_framework/kernel/widgets/kernel_error_widget.dart';
-import 'package:velvet_framework/kernel/widgets/kernel_loading_widget.dart';
+import 'package:velvet_framework/kernel/mixins/setup_widgets_mixin.dart';
 import 'package:velvet_framework/kernel/widgets/kernel_widget.dart';
 
 class Kernel extends KernelContract
@@ -17,7 +16,8 @@ class Kernel extends KernelContract
         SetupConfigManagerMixin,
         SetupPluginManagerMixin,
         SetupLoggerMixin,
-        SetupEventButMixin {
+        SetupEventButMixin,
+        SetupWidgetsMixin {
   Kernel() {
     _init();
   }
@@ -27,11 +27,11 @@ class Kernel extends KernelContract
 
     _registerItSelf();
 
-    registerConfigManager();
-    registerPluginManager();
     registerLogger();
     registerEventBus();
-    installCorePlugins();
+    registerConfigManager();
+    registerPluginManager();
+    addCorePlugins();
   }
 
   /// Register the Kernel to the container
@@ -43,37 +43,17 @@ class Kernel extends KernelContract
     container.registerSingleton<KernelContract>(this);
   }
 
+  /// See [navigatorKey] for more information
   static final _navigatorKey = GlobalKey<NavigatorState>();
 
   @override
   GlobalKey<NavigatorState> get navigatorKey => _navigatorKey;
 
+  /// See [resolutionKey] for more information
   static final _resolutionKey = GlobalKey();
 
   @override
   GlobalKey get resolutionKey => _resolutionKey;
-
-  // Set the initialization's error widget of the application
-  /// If not set, the default error widget will be used
-  ///
-  /// IMPORTANT: The widget must return a MaterialApp at its root
-  @override
-  void usingError(KernelErrorWidget errorWidget) {
-    throwIfRunning();
-
-    this.errorWidget = errorWidget;
-  }
-
-  /// Set the initialization's loading widget of the application
-  /// If not set, the default loading widget will be used
-  ///
-  /// IMPORTANT: The widget must return a MaterialApp at its root
-  @override
-  void usingLoading(KernelLoadingWidget loadingWidget) {
-    throwIfRunning();
-
-    this.loadingWidget = loadingWidget;
-  }
 
   @override
   void run() async {
