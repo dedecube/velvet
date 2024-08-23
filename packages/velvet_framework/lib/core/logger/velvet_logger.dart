@@ -1,3 +1,4 @@
+// ignore_for_file: avoid_dynamic, avoid-dynamic
 import 'package:velvet_framework/core/logger/contracts/velvet_logger_config_contract.dart';
 import 'package:velvet_framework/core/logger/contracts/velvet_logger_contract.dart';
 import 'package:velvet_framework/core/logger/enums/velvet_log_severity_enum.dart';
@@ -34,22 +35,22 @@ class VelvetLogger implements VelvetLoggerContract {
   }
 
   @override
-  void info(String message, {List<VelvetLoggerChannel>? channels}) {
+  void info(dynamic message, {List<VelvetLoggerChannel>? channels}) {
     _log(message, VelvetLogSeverityEnum.info, channels: channels);
   }
 
   @override
-  void error(String message, {List<VelvetLoggerChannel>? channels}) {
+  void error(dynamic message, {List<VelvetLoggerChannel>? channels}) {
     _log(message, VelvetLogSeverityEnum.error, channels: channels);
   }
 
   @override
-  void warning(String message, {List<VelvetLoggerChannel>? channels}) {
+  void warning(dynamic message, {List<VelvetLoggerChannel>? channels}) {
     _log(message, VelvetLogSeverityEnum.warning, channels: channels);
   }
 
   @override
-  void debug(String message, {List<VelvetLoggerChannel>? channels}) {
+  void debug(dynamic message, {List<VelvetLoggerChannel>? channels}) {
     _log(message, VelvetLogSeverityEnum.debug, channels: channels);
   }
 }
