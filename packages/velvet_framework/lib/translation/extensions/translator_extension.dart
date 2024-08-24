@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:velvet_framework/hooks/use_provider/use_provider.dart';
-import 'package:velvet_framework/translation/providers/translator_provider.dart';
+import 'package:velvet_framework/core/velvet_container.dart';
+import 'package:velvet_framework/translation/contracts/translator_contract.dart';
 import 'package:velvet_framework/translation/translator.dart';
 
 /// Extension on [BuildContext] to provide translation capabilities.
@@ -14,8 +14,8 @@ extension TranslatorExtension on BuildContext {
   /// ```dart
   /// Translator translator = context.translator();
   /// ```
-  Translator translator() {
-    return useProvider(translatorProvider, context: this);
+  TranslatorContract translator() {
+    return container.get<TranslatorContract>();
   }
 
   /// Translates the given [key] using the [Translator] instance.

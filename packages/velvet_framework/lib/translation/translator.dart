@@ -6,11 +6,12 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:velvet_framework/core/event/utils/event.dart';
 import 'package:velvet_framework/translation/contracts/translation_config_contract.dart';
 import 'package:velvet_framework/translation/contracts/translator_adapter_contract.dart';
+import 'package:velvet_framework/translation/contracts/translator_contract.dart';
 import 'package:velvet_framework/translation/events/locale_loaded_from_os.dart';
 import 'package:velvet_framework/translation/exceptions/locale_not_available_exception.dart';
 import 'package:velvet_framework/translation/storables/locale_storable.dart';
 
-class Translator {
+class Translator extends TranslatorContract {
   Translator(
     this.config,
     this.adapter,
@@ -22,15 +23,18 @@ class Translator {
     }
   }
 
+  @override
   final TranslatorAdapterContract adapter;
-  final TranslationConfigContract config;
 
-  late Locale currentLocale;
+  @override
+  final TranslationConfigContract config;
 
   final _localeStream = StreamController<Locale?>.broadcast();
 
+  @override
   Stream<Locale?> get localeStream => _localeStream.stream;
 
+  @override
   FutureOr<void> setLocale(BuildContext context, Locale locale) {
     if (!config.supportedLocales.contains(locale)) {
       throw LocaleNotAvailableException(locale);
@@ -59,6 +63,7 @@ class Translator {
     event(LocaleLoadedFromOs(locale));
   }
 
+  @override
   List<LocalizationsDelegate> delegates() {
     return [
       adapter.delegate,
@@ -67,10 +72,12 @@ class Translator {
     ];
   }
 
+  @override
   List<Locale> get supportedLocales {
     return config.supportedLocales;
   }
 
+  @override
   String translate(
     BuildContext context,
     String key, {
