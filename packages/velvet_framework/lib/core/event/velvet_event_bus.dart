@@ -7,7 +7,7 @@ import 'package:velvet_framework/core/event/velvet_event.dart';
 class VelvetEventBus implements VelvetEventBusContract {
   VelvetEventBus() : super();
 
-  final _instance = event_bus.EventBus();
+  final _instance = event_bus.EventBus(sync: true);
 
   @override
   void dispatch<T extends VelvetEvent>(T event) {
