@@ -2,15 +2,18 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:velvet_framework/core/plugin/velvet_plugin.dart';
 import 'package:velvet_framework/core/utils/config.dart';
-import 'package:velvet_framework/core/utils/navigator_key.dart';
+import 'package:velvet_framework/core/utils/config_manager.dart';
 import 'package:velvet_framework/error_handling/config/default_error_handling_config.dart';
 import 'package:velvet_framework/error_handling/contracts/error_handling_config_contract.dart';
 import 'package:velvet_framework/error_handling/renderable_exception.dart';
+import 'package:velvet_framework/utils/navigator_context.dart';
 
 class ErrorHandlingPlugin extends VelvetPlugin {
   @override
   void register() {
-    registerConfig<ErrorHandlingConfigContract>(DefaultErrorHandlingConfig());
+    configManager().register<ErrorHandlingConfigContract>(
+      DefaultErrorHandlingConfig(),
+    );
   }
 
   @override
@@ -40,14 +43,13 @@ class ErrorHandlingPlugin extends VelvetPlugin {
 
   void renderException(Exception exception) {
     if (exception is RenderableException) {
-      (exception as RenderableException)
-          .render(navigatorKey().currentState!.context);
+      (exception as RenderableException).render(navigatorContext());
 
       return;
     }
 
     config<ErrorHandlingConfigContract>().renderer(
-      navigatorKey().currentState!.context,
+      navigatorContext(),
       exception,
     );
   }
