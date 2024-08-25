@@ -4,6 +4,7 @@ import 'package:velvet_framework/core/velvet_container.dart';
 import 'package:velvet_framework/kernel/contracts/kernel_contract.dart';
 import 'package:velvet_framework/kernel/mixins/setup_config_manager_mixin.dart';
 import 'package:velvet_framework/kernel/mixins/setup_container_composition_mixin.dart';
+import 'package:velvet_framework/kernel/mixins/setup_env_mixin.dart';
 import 'package:velvet_framework/kernel/mixins/setup_event_but_mixin.dart';
 import 'package:velvet_framework/kernel/mixins/setup_logger_mixin.dart';
 import 'package:velvet_framework/kernel/mixins/setup_plugin_manager_mixin.dart';
@@ -13,13 +14,14 @@ import 'package:velvet_framework/kernel/widgets/kernel_widget.dart';
 
 class Kernel extends KernelContract
     with
-        SetupRiverpodMixin,
         SetupConfigManagerMixin,
-        SetupPluginManagerMixin,
-        SetupLoggerMixin,
+        SetupContainerCompositionMixin,
+        SetupEnvMixin,
         SetupEventButMixin,
-        SetupWidgetsMixin,
-        SetupContainerCompositionMixin {
+        SetupLoggerMixin,
+        SetupPluginManagerMixin,
+        SetupRiverpodMixin,
+        SetupWidgetsMixin {
   Kernel() {
     _init();
   }
@@ -30,6 +32,7 @@ class Kernel extends KernelContract
     registerEventBus();
     registerConfigManager();
     registerPluginManager();
+    registerEnvConfig();
     addCorePlugins();
   }
 
@@ -59,6 +62,7 @@ class Kernel extends KernelContract
       FutureProvider<void>((ref) async {
         registerDefaultLoggerConfig();
         runPluginCallbacks();
+        await loadEnv();
         await pluginManager.runRegister();
         await runRegisterCallbacks();
         runConfigCallbacks();
