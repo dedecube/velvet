@@ -1,7 +1,5 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:velvet_framework/core/velvet_container.dart';
 import 'package:velvet_framework/store/contracts/store_contract.dart';
-import 'package:velvet_framework/store/providers/store_provider.dart';
-import 'package:velvet_framework/utils/riverpod_container.dart';
 
 /// Create resusable storable data
 ///
@@ -67,8 +65,6 @@ import 'package:velvet_framework/utils/riverpod_container.dart';
 /// }
 /// ```
 abstract class Storable<T> {
-  StoreContract? _store;
-
   String get key;
 
   Future<T?> get({T? defaultValue});
@@ -79,18 +75,7 @@ abstract class Storable<T> {
     return store.simple.remove(key);
   }
 
-  Storable usingStore(StoreContract store) {
-    _store = store;
-
-    return this;
-  }
-
-  // FIXME it must use the store from get_it
   StoreContract get store {
-    if (_store != null) {
-      return _store!;
-    }
-
-    return riverpodContainer().read(storeProvider).requireValue;
+    return container.get<StoreContract>();
   }
 }
