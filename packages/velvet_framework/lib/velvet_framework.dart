@@ -31,12 +31,23 @@ export './contracts/use_case_contract.dart';
 export './core/config/contracts/velvet_config_manager_contract.dart';
 export './core/config/velvet_config_manager.dart';
 export './core/config/velvet_config.dart';
+export './core/container/contracts/velvet_container_contract.dart';
+export './core/container/mixins/proxy_to_get_it_mixin.dart';
+export './core/container/velvet_container.dart';
+export './core/env/config/dynamic_env_config.dart';
+export './core/env/contracts/env_config_contract.dart';
+export './core/env/events/env_read_event.dart';
+export './core/env/hooks/use_load_env_on_reassemble.dart';
 export './core/event/contracts/velvet_event_bus_contract.dart';
 export './core/event/hooks/use_event_listener.dart';
 export './core/event/utils/event.dart';
 export './core/event/utils/listen.dart';
 export './core/event/velvet_event_bus.dart';
 export './core/event/velvet_event.dart';
+export './core/event/velvet_observer_from_events.dart';
+export './core/event/velvet_observer.dart';
+export './core/event/velvet_subject.dart';
+export './core/logger/channels/logging_velvet_logger_channel.dart';
 export './core/logger/channels/talker_velvet_logger_channel.dart';
 export './core/logger/config/default_velvet_logger_config.dart';
 export './core/logger/contracts/velvet_logger_config_contract.dart';
@@ -44,13 +55,26 @@ export './core/logger/contracts/velvet_logger_contract.dart';
 export './core/logger/enums/velvet_log_severity_enum.dart';
 export './core/logger/velvet_logger_channel.dart';
 export './core/logger/velvet_logger.dart';
-export './core/plugin/anonymous_velvet_plugin.dart';
 export './core/plugin/contracts/velvet_plugin_manager_contract.dart';
-export './core/plugin/mixins/register_helpers.dart';
+export './core/plugin/events/plugin_manager/velvet_plugin_manager_after_run_boot.dart';
+export './core/plugin/events/plugin_manager/velvet_plugin_manager_after_run_register.dart';
+export './core/plugin/events/plugin_manager/velvet_plugin_manager_before_run_boot.dart';
+export './core/plugin/events/plugin_manager/velvet_plugin_manager_before_run_register.dart';
+export './core/plugin/events/plugin/velvet_plugin_after_boot.dart';
+export './core/plugin/events/plugin/velvet_plugin_after_register.dart';
+export './core/plugin/events/plugin/velvet_plugin_before_boot.dart';
+export './core/plugin/events/plugin/velvet_plugin_before_register.dart';
+export './core/plugin/extensions/observe_pattern_on_velvet_plugin_manager.dart';
+export './core/plugin/observers/velvet_plugin_manager_observer.dart';
+export './core/plugin/observers/velvet_plugin_observer.dart';
+export './core/plugin/subjects/velvet_plugin_manager_subject.dart';
+export './core/plugin/subjects/velvet_plugin_subject.dart';
 export './core/plugin/velvet_plugin_manager.dart';
 export './core/plugin/velvet_plugin.dart';
+export './core/utils/config_manager.dart';
 export './core/utils/config.dart';
 export './core/utils/create_velvet_app.dart';
+export './core/utils/env.dart';
 export './core/utils/kernel.dart';
 export './core/utils/logger.dart';
 export './core/utils/navigator_key.dart';
@@ -76,6 +100,7 @@ export './error_handling/config/default_error_handling_config.dart';
 export './error_handling/contracts/error_handling_config_contract.dart';
 export './error_handling/error_handling_plugin.dart';
 export './error_handling/exception_to_message_resolver.dart';
+export './error_handling/helper/stack_trace_parser.dart';
 export './error_handling/renderable_exception.dart';
 export './error_handling/types.dart';
 // @endindex
@@ -143,16 +168,41 @@ export './http/http_response.dart';
 export './http/http.dart';
 // @endindex
 
+// @index(['./kernel/**/(*.dart)','!./kernel/**/*.g.dart', '!./kernel/**/_*.dart'], f => `export '${f.path}.dart';`)
+export './kernel/contracts/kernel_contract.dart';
+export './kernel/events/hide_loading_widget_event.dart';
+export './kernel/exceptions/kernel_is_already_running_exception.dart';
+export './kernel/kernel.dart';
+export './kernel/loaders/velvet_plugin_loader.dart';
+export './kernel/loaders/velvet_plugin_loader.velvet.dart';
+export './kernel/mixins/setup_config_manager_mixin.dart';
+export './kernel/mixins/setup_container_composition_mixin.dart';
+export './kernel/mixins/setup_env_mixin.dart';
+export './kernel/mixins/setup_event_but_mixin.dart';
+export './kernel/mixins/setup_logger_mixin.dart';
+export './kernel/mixins/setup_plugin_manager_mixin.dart';
+export './kernel/mixins/setup_riverpod_mixin.dart';
+export './kernel/mixins/setup_widgets_mixin.dart';
+export './kernel/widgets/components/stack_trace_main_error_alert.dart';
+export './kernel/widgets/components/stack_trace_parsed_line_info.dart';
+export './kernel/widgets/components/stack_trace_viewer.dart';
+export './kernel/widgets/components/strack_trace_parsed_line_row.dart';
+export './kernel/widgets/kernel_app_widget.dart';
+export './kernel/widgets/kernel_error_debug_widget.dart';
+export './kernel/widgets/kernel_error_widget.dart';
+export './kernel/widgets/kernel_loading_widget.dart';
+export './kernel/widgets/kernel_widget.dart';
+// @endindex
+
 // @index(['./router/**/(*.dart)','!./router/**/*.g.dart', '!./router/**/_*.dart'], f => `export '${f.path}.dart';`)
-export './router/config/default_router_config.dart';
-export './router/contracts/router_config_contract.dart';
+export './router/config/default_velvet_router_config.dart';
+export './router/contracts/velvet_router_config_contract.dart';
+export './router/contracts/velvet_router_contract.dart';
 export './router/enums/router_page_transition_enum.dart';
 export './router/middleware/velvet_middleware_pipeline.dart';
 export './router/middleware/velvet_middleware.dart';
 export './router/mixins/velvet_route_page_builder_mixin.dart';
 export './router/observers/hide_loading_widget_observer.dart';
-export './router/providers/router_error_builder_provider.dart';
-export './router/providers/router_provider.dart';
 export './router/router_plugin.dart';
 export './router/velvet_route.dart';
 // @endindex
@@ -162,12 +212,12 @@ export './store/adapters/shared_preferences_simple_store.dart';
 export './store/contracts/store_cleaner_adapter_contract.dart';
 export './store/contracts/store_contract.dart';
 export './store/contracts/store_simple_adapter_contract.dart';
-export './store/providers/store_provider.dart';
 export './store/storable.dart';
+export './store/store_plugin.dart';
 // @endindex
 
 // @index(['./talker/**/(*.dart)','!./talker/**/*.g.dart','!./talker/**/_*.dart'], f => `export '${f.path}.dart';`)
-export './talker/talker_global_instance.dart';
+
 // @endindex
 
 // @index(['./theme/**/(*.dart)','!./theme/**/*.g.dart','!./theme/**/*.tailor.dart','!./theme/**/_*.dart'], f => `export '${f.path}.dart';`)
@@ -189,10 +239,10 @@ export './theme/themes/wireframe/wireframe_light.dart';
 
 // @index(['./translation/**/(*.dart)','!./translation/**/*.g.dart', '!./translation/**/_*.dart'], f => `export '${f.path}.dart';`)
 export './translation/adapters/flutter_i18n_translator_adapter.dart';
-export './translation/bootstrap/translation_locale_from_store_bootstrap.dart';
 export './translation/config/default_translation_config.dart';
 export './translation/contracts/translation_config_contract.dart';
 export './translation/contracts/translator_adapter_contract.dart';
+export './translation/contracts/translator_contract.dart';
 export './translation/events/locale_loaded_from_os.dart';
 export './translation/events/locale_loaded_from_store.dart';
 export './translation/exceptions/locale_not_available_exception.dart';
@@ -207,6 +257,7 @@ export './translation/translator.dart';
 // @endindex
 
 // @index(['./utils/**/(*.dart)','!./utils/**/*.g.dart', '!./utils/**/_*.dart'], f => `export '${f.path}.dart';`)
+export './utils/callback_manager.dart';
 export './utils/kernel_context.dart';
 export './utils/navigator_context.dart';
 export './utils/riverpod_container.dart';
@@ -225,21 +276,4 @@ export './validation/validator.dart';
 
 // @index(['./widgets/**/(*.dart)','!./widgets/**/*.g.dart', '!./widgets/**/_*.dart'], f => `export '${f.path}.dart';`)
 export './widgets/pre_renderer.dart';
-// @endindex
-
-// @index(['./kernel/**/(*.dart)','!./kernel/**/*.g.dart', '!./kernel/**/_*.dart'], f => `export '${f.path}.dart';`)
-export './kernel/contracts/kernel_contract.dart';
-export './kernel/events/hide_loading_widget_event.dart';
-export './kernel/exceptions/kernel_is_already_running_exception.dart';
-export './kernel/kernel.dart';
-export './kernel/mixins/setup_config_manager_mixin.dart';
-export './kernel/mixins/setup_event_but_mixin.dart';
-export './kernel/mixins/setup_logger_mixin.dart';
-export './kernel/mixins/setup_plugin_manager_mixin.dart';
-export './kernel/mixins/setup_riverpod_mixin.dart';
-export './kernel/providers/kernel_provider.dart';
-export './kernel/widgets/kernel_app_widget.dart';
-export './kernel/widgets/kernel_error_widget.dart';
-export './kernel/widgets/kernel_loading_widget.dart';
-export './kernel/widgets/kernel_widget.dart';
 // @endindex
