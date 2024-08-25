@@ -3,6 +3,72 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-08-25
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`velvet_framework` - `v0.0.1-dev.43`](#velvet_framework---v001-dev43)
+ - [`velvet_generator` - `v0.0.1-dev.15`](#velvet_generator---v001-dev15)
+ - [`splash_velvet_plugin` - `v0.0.1-dev.6`](#splash_velvet_plugin---v001-dev6)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `splash_velvet_plugin` - `v0.0.1-dev.6`
+
+---
+
+#### `velvet_framework` - `v0.0.1-dev.43`
+
+ - **REVERT**: remove EnvPlugin from pluginLoader. ([59aa2319](https://github.com/dedecube/velvet/commit/59aa231946ee65170f6e2974eccd03f47babcd2d))
+ - **REFACTOR**: now Storable use Store from container instead of riverpod. ([507735f6](https://github.com/dedecube/velvet/commit/507735f6d112c53e119287470aadae21a3473f18))
+ - **REFACTOR**: logger names and params. ([a07e187e](https://github.com/dedecube/velvet/commit/a07e187e5b6060b81a8951b815a698f6c1ab12a9))
+ - **REFACTOR**: remove usage of registerConfig. ([c0b583e4](https://github.com/dedecube/velvet/commit/c0b583e42c9c34385c33f8743caa1f304cdb2266))
+ - **REFACTOR**: KernelAppWidget now get services from container. ([c52a01d4](https://github.com/dedecube/velvet/commit/c52a01d4bfc44ff86727a097da17a25caae86ed1))
+ - **REFACTOR**: adding autoloader for addCorePlugins. ([107481a3](https://github.com/dedecube/velvet/commit/107481a37c881392cf0b8d1380a95121476255fe))
+ - **REFACTOR**: convert router to plugin. ([bd93502c](https://github.com/dedecube/velvet/commit/bd93502caa108ffcc9a4d16e6988d16a0d4ed63a))
+ - **REFACTOR**: remove unused values in VelvetLogSeverityEnum. ([bf7c3b48](https://github.com/dedecube/velvet/commit/bf7c3b48ce6e35de492ea4bd59ba201a82efe6fb))
+ - **REFACTOR**: remove registerConfig helper. ([3c927463](https://github.com/dedecube/velvet/commit/3c9274633f0ec5a87ff02d5a40ee1cdd44a32545))
+ - **REFACTOR**: convert translation to plugin. ([b03c7cf0](https://github.com/dedecube/velvet/commit/b03c7cf0ba9f2baf1cc1337cbee8a6124ada05c7))
+ - **REFACTOR**: remove kernel_provider and its generated file. ([2afdfff3](https://github.com/dedecube/velvet/commit/2afdfff39e55fd55091bd4c77eefa007a6d2b02e))
+ - **FIX**: registration order of core services (event bus and logger) and refactor widgets assignment. ([790f14b0](https://github.com/dedecube/velvet/commit/790f14b094a905e8c4f289fd973b6fc05033c060))
+ - **FIX**: container is now a VelvetContainer instance. ([ba967d5d](https://github.com/dedecube/velvet/commit/ba967d5d82b9353bd8f4060c512123cd8f43ce74))
+ - **FIX**: type of dispatch in event_bus. ([1fc47325](https://github.com/dedecube/velvet/commit/1fc473256e238d4b390ea5c2c3c48c9dc0bd1e96))
+ - **FEAT**: add a developer friendly error page. ([3b9893ce](https://github.com/dedecube/velvet/commit/3b9893ce0c010b7a3a822cdd0a5b51d374f37537))
+ - **FEAT**: add StackTraceParser. ([6ae9e4dc](https://github.com/dedecube/velvet/commit/6ae9e4dcf07763235b51e6952411facb3a9aef1d))
+ - **FEAT**: convert store to plugin. ([5010a8e4](https://github.com/dedecube/velvet/commit/5010a8e4da1349863d428291a096c72fbaf147ff))
+ - **FEAT**: add configManager util. ([51ab625a](https://github.com/dedecube/velvet/commit/51ab625ad25fe53d21b174e0faa0d12a1699e2c4))
+ - **FEAT**: add _appStartupProvider to Kernel and update riverpod composition method. ([5fa1711d](https://github.com/dedecube/velvet/commit/5fa1711de816ae575a23281b4bb45f54712af77d))
+ - **FEAT**: add env core feature. ([513e18aa](https://github.com/dedecube/velvet/commit/513e18aaee017dfc75ab8a94c2cdd1af58fa6493))
+ - **FEAT**: add LoggingVelvetLoggerChannel. ([bd348d83](https://github.com/dedecube/velvet/commit/bd348d83399ced4c7deb61345ced395827baebc4))
+ - **FEAT**: add VelvetSubject, VelvetObserver and a contract that works as bridge between event-pattern and observer-pattern. ([b468630d](https://github.com/dedecube/velvet/commit/b468630dd3016ebf5bac6638827a1c3a8f3688fd))
+ - **FEAT**: showing stack error page instead of error widget when in debug mode. ([eb1b528e](https://github.com/dedecube/velvet/commit/eb1b528ed5a936e3af2a9fb69b8e71109f0ce9fc))
+ - **FEAT**: create VelvetContainer class that implements GetIt. ([cec9e087](https://github.com/dedecube/velvet/commit/cec9e087100644621f9f316aa7b22a4fe69f3058))
+ - **FEAT**: enable sync on event bus and update useEventListener to call listener callback on postBuild. ([f5fbf415](https://github.com/dedecube/velvet/commit/f5fbf415ff6a65ab9b58aa5f29815da222c9f36b))
+ - **FEAT**: add refresh and all in VelvetConfigManager. ([8807d9c1](https://github.com/dedecube/velvet/commit/8807d9c11d2d16703033db9a5bfc24b84b264400))
+ - **FEAT**: add CallbackManager helper. ([d05d3fc6](https://github.com/dedecube/velvet/commit/d05d3fc6b24c5da56e25f4ca926228ee3808ee54))
+ - **FEAT**: update plugin loader. ([e929f90b](https://github.com/dedecube/velvet/commit/e929f90b61f821b46d558932c96d7ec57977fa50))
+ - **FEAT**: add event-pattern and observer-pattern to plugin manager. ([cdfd7192](https://github.com/dedecube/velvet/commit/cdfd7192eb78870f3d6d6b2be8729354caf5b63e))
+ - **FEAT**: support opt-out from env loading feat. ([d38932a4](https://github.com/dedecube/velvet/commit/d38932a414233022320e79258086858799ff8040))
+ - **FEAT**(logger): support config customization. ([f6ed67f0](https://github.com/dedecube/velvet/commit/f6ed67f00fa5b7d354c9d18c77a5ba782c27c9e1))
+ - **FEAT**: convert logger message to dynamic to allow to handle anything. ([455d006b](https://github.com/dedecube/velvet/commit/455d006b0ea8f316e31c2e85b9d00d146c3b8d9e))
+ - **FEAT**: add env utils. ([744fe6d3](https://github.com/dedecube/velvet/commit/744fe6d3fe8a3699aaeff043f7991654c6c2b15e))
+ - **DOCS**: update some docs and add FIXME comments. ([e658990d](https://github.com/dedecube/velvet/commit/e658990d648647f31f3c098c27dafcd1bff98ba5))
+
+#### `velvet_generator` - `v0.0.1-dev.15`
+
+ - **REVERT**: remove VelvetConfigAutoloader and VelvetBootstrapAutoloader generators. ([54f69f5f](https://github.com/dedecube/velvet/commit/54f69f5faa67ec1522f1b618ac93a84fa6e8e59e))
+
+
 ## 2024-08-22
 
 ### Changes

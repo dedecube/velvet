@@ -1,6 +1,6 @@
 name: velvet_generator
 description: The code generator for the Velvet framework. It helps to automate some tasks as autoload, service binding, and more.
-version: 0.0.1-dev.14
+version: 0.0.1-dev.15
 homepage: https://github.com/dedecube/velvet/tree/main/packages/velvet_generator
 
 environment:
