@@ -14,8 +14,8 @@ class FormPage extends HookConsumerWidget {
     var form = useForm(
       [nameInput, emailInput],
       () async {
-        talkerGlobalInstance.info(nameInput.value);
-        talkerGlobalInstance.info(nameInput.controller.text);
+        logger().info(nameInput.value);
+        logger().info(nameInput.controller.text);
 
         throw const FormatException('Error');
       },

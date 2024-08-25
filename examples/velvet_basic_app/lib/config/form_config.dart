@@ -3,7 +3,7 @@ import 'package:velvet_framework/velvet_framework.dart';
 class FormConfig extends DefaultFormConfig {
   @override
   Map<String, dynamic> get precompiledValues => {
-        'name': 'Daniele Tulone',
+        'name': env('APP_NAME', 'Daniele'),
         'email': 'daniele@dedecube.com',
       };
 

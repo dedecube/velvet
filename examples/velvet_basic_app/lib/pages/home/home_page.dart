@@ -8,7 +8,7 @@ class HomePage extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final localeSwitcher = useLocaleSwitcher();
-    final translator = ref.watch(translatorProvider);
+    final translator = container.get<TranslatorContract>();
 
     return Scaffold(
       body: Center(

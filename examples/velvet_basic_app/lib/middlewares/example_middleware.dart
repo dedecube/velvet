@@ -1,15 +1,14 @@
 import 'package:flutter/widgets.dart';
 import 'package:velvet_framework/velvet_framework.dart';
 
-class ExampleMiddleware extends MiddlewareContract {
+class ExampleMiddleware extends VelvetMiddleware {
   @override
-  Future<MiddlewareOperation> handle(
+  Future<String?> handle(
     BuildContext context,
     GoRouterState state,
-    Next next,
   ) async {
-    talkerGlobalInstance.info('Hello from ExampleMiddleware.');
+    logger().info('Hello from ExampleMiddleware.');
 
-    return MiddlewareOperation.next();
+    return null;
   }
 }

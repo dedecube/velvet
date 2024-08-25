@@ -1,6 +1,6 @@
 part of '../../routing/routes.dart';
 
-class HomeRoute extends BaseRoute {
+class HomeRoute extends VelvetRoute {
   @override
   Widget build(BuildContext context, GoRouterState state) {
     return const HomePage();
