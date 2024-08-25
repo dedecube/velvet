@@ -25,7 +25,7 @@ part of 'use_input.dart';
 ///
 /// Note: This hook should be used within a widget that has a [FocusNode] and a
 /// [TextEditingController] associated with it.
-_useValidateOnFocusLost<T>(
+void _useValidateOnFocusLost<T>(
   ValueNotifier<T> value,
   List<Rule<T>> rules,
   FocusNode focusNode,

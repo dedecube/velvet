@@ -21,13 +21,6 @@ typedef ExceptionMatcherFactory = ExceptionMatcher Function(
 /// the necessary state and functions for managing a text input field. This hook
 /// is designed to be used within a Flutter widget.
 ///
-/// The returned [InputState] object contains the following properties:
-/// - [controller]: A [TextEditingController] instance for controlling the text
-///   input field.
-/// - [focusNode]: A [FocusNode] instance for managing the focus of the text
-///   input field.
-/// - [error]: A [String] value representing the current error message, if any.
-///
 /// The [exceptionMatcher] parameter is an optional [ExceptionMatcher] that can
 /// be used to customize the error handling behavior of the input state.
 ///

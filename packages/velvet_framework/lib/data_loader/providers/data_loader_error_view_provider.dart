@@ -19,6 +19,7 @@ part 'data_loader_error_view_provider.g.dart';
 ///   });
 /// }
 /// ```
+// FIXME[epic=get-it] - Convert to get_it
 @Riverpod()
 DataLoaderErrorViewBuilder dataLoaderErrorView(
   DataLoaderErrorViewRef ref,

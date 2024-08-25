@@ -22,16 +22,14 @@ typedef UseFormReturn = ({
 ///
 /// Example usage:
 /// ```dart
-/// Map<String, InputState> inputs = {
-///   'username': useInputState(),
-///   'password': useInputState(),
-/// };
+/// final username = useTextInput();
+/// final password = useTextInput();
 ///
-/// Future<void> submitForm(Map<String, InputState> inputs) async {
+/// Future<void> submitForm() async {
 ///   // Perform form submission logic
 /// }
 ///
-/// FormState formState = useForm(inputs, submitForm);
+/// final form = useForm(inputs, submitForm);
 ///
 /// // Access form state properties and methods
 /// bool isSubmitting = formState.isSubmitting.value;
