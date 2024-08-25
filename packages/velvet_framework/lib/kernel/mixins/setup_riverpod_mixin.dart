@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:velvet_annotation/velvet_annotation.dart';
 import 'package:velvet_framework/kernel/contracts/kernel_contract.dart';
 import 'package:velvet_framework/kernel/exceptions/kernel_is_already_running_exception.dart';
 
@@ -33,14 +34,15 @@ mixin SetupRiverpodMixin on KernelContract {
     _riverpodObservers.add(observer);
   }
 
-  void withRiverpodOverride(List<Override> overrides) {
+  void addRiverpodOverride(Override override) {
     if (_riverpodContainer != null) {
       throw KernelIsAlreadyRunningException();
     }
 
-    _riverpodOvverides.addAll(overrides);
+    _riverpodOvverides.add(override);
   }
 
+  @protected
   ProviderContainer createRiverpodContainer() {
     if (_riverpodContainer != null) {
       return _riverpodContainer!;
