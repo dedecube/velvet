@@ -1,6 +1,9 @@
-# Velvet
+![Alt text](./art/velvet-header.png "a title")
+
 
 [![melos](https://img.shields.io/badge/maintained%20with-melos-f700ff.svg?style=flat-square)](https://github.com/invertase/melos)
+[![discord](https://img.shields.io/discord/1271998803163217991?logo=discord)](https://discord.gg/hU3nzdsf95)
+
 
 Velvet is a robust, efficient, and flexible framework for developing Flutter applications.
 It is designed to be simple to use and easy to understand, while providing a solid foundation for building production-ready applications.
@@ -29,3 +32,4 @@ If you would like to contribute to Velvet, please read the [contributing guideli
 ## License
 
 Velvet is released under the [MIT License](LICENSE).
+
