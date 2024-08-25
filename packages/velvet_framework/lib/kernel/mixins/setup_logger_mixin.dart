@@ -7,15 +7,22 @@ import 'package:velvet_framework/core/velvet_container.dart';
 import 'package:velvet_framework/kernel/contracts/kernel_contract.dart';
 
 mixin SetupLoggerMixin on KernelContract {
+  VelvetLoggerConfigContract? _loggerConfig;
+
   @protected
   void registerLogger() {
     container.registerSingleton<VelvetLoggerContract>(VelvetLogger());
   }
 
   @protected
-  void registerDefaultLoggerConfig() {
+  void registerLoggerConfig() {
     container.registerSingleton<VelvetLoggerConfigContract>(
-      DefaultVelvetLoggerConfig(),
+      _loggerConfig ?? DefaultVelvetLoggerConfig(),
     );
+  }
+
+  // ignore: use_setters_to_change_properties
+  void useLoggerConfig(VelvetLoggerConfigContract loggerConfig) {
+    _loggerConfig = loggerConfig;
   }
 }

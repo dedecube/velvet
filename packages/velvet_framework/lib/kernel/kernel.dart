@@ -28,6 +28,7 @@ class Kernel extends KernelContract
 
   void _init() {
     registerItSelf();
+    registerLoggerConfig();
     registerLogger();
     registerEventBus();
     registerConfigManager();
@@ -60,7 +61,6 @@ class Kernel extends KernelContract
 
   FutureProvider<void> get _appStartupProvider =>
       FutureProvider<void>((ref) async {
-        registerDefaultLoggerConfig();
         runPluginCallbacks();
         await loadEnv();
         await pluginManager.runRegister();
