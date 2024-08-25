@@ -77,3 +77,27 @@ custom_lint:
 dart_code_metrics:
   extends:
     - recommended
+  metrics:
+    # Function/Method
+    cyclomatic-complexity: 10
+    lines-of-code: 50
+    maintainability-index: 50
+
+    # Class
+    coupling-between-object-classes: 12
+    depth-of-inheritance-tree: 5
+    number-of-added-methods: 10
+    response-for-class: 55
+
+    # File
+    number-of-external-imports: 5
+
+    technical-debt:
+      threshold: 1
+      todo-cost: 60
+      ignore-cost: 120
+      ignore-for-file-cost: 240
+      as-dynamic-cost: 400
+      deprecated-annotations-cost: 120
+      file-nullsafety-migration-cost: 40
+      unit-type: "EUR"
