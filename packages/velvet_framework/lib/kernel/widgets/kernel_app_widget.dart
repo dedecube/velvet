@@ -6,8 +6,8 @@ class KernelAppWidget extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final router = ref.read(routerProvider);
-    final translator = ref.read(translatorProvider);
+    final router = container.get<VelvetRouterContract>();
+    final translator = container.get<TranslatorContract>();
     final lightThemeData = useCreateLightTheme();
     final darkThemeData = useCreateDarkTheme();
     final themeConfig = config<ThemeConfigContract>();
@@ -17,7 +17,7 @@ class KernelAppWidget extends HookConsumerWidget {
       stream: translator.localeStream,
       builder: (context, locale) {
         return MaterialApp.router(
-          routerConfig: router.requireValue,
+          routerConfig: router,
           debugShowCheckedModeBanner: false,
           localizationsDelegates: translator.delegates(),
           supportedLocales: translator.supportedLocales,
