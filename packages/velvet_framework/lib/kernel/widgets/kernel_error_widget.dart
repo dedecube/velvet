@@ -1,35 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:velvet_framework/core/event/utils/event.dart';
-import 'package:velvet_framework/core/utils/config.dart';
-import 'package:velvet_framework/core/utils/navigator_key.dart';
-import 'package:velvet_framework/core/utils/resolution_key.dart';
+import 'package:velvet_framework/core/velvet_container.dart';
 import 'package:velvet_framework/hooks/use_effect_once/use_effect_once.dart';
 import 'package:velvet_framework/kernel/events/hide_loading_widget_event.dart';
-import 'package:velvet_framework/theme/contracts/theme_config_contract.dart';
-import 'package:velvet_framework/theme/hooks/use_create_dark_theme.dart';
-import 'package:velvet_framework/theme/hooks/use_create_light_theme.dart';
+import 'package:velvet_framework/translation/contracts/translator_contract.dart';
 import 'package:velvet_framework/translation/extensions/translator_extension.dart';
-import 'package:velvet_framework/translation/providers/translator_provider.dart';
 
-class KernelErrorWidget extends HookConsumerWidget {
+class KernelErrorWidget extends HookWidget {
   const KernelErrorWidget({
     super.key,
-    required this.error,
     required this.onRetry,
-    required this.stackTrace,
   });
 
-  final Object error;
   final VoidCallback onRetry;
-  final StackTrace stackTrace;
 
   @override
-  StreamBuilder<Locale?> build(BuildContext context, WidgetRef ref) {
-    final translator = ref.read(translatorProvider);
-    final lightThemeData = useCreateLightTheme();
-    final darkThemeData = useCreateDarkTheme();
-    final themeConfig = config<ThemeConfigContract>();
+  Widget build(BuildContext context) {
+    final translator = container.get<TranslatorContract>();
 
     useEffectOnce(() {
       event(HideLoadingWidgetEvent());
@@ -42,29 +30,58 @@ class KernelErrorWidget extends HookConsumerWidget {
       stream: translator.localeStream,
       builder: (context, locale) {
         return MaterialApp(
-          builder: (context, child) => Builder(
-            key: resolutionKey(),
-            builder: (context) => Scaffold(
-              appBar: AppBar(
-                title: Text(
-                  context.translate('velvet.kernel.widgets.error.title'),
+          builder: (context, child) => Scaffold(
+            appBar: AppBar(
+              title: Text(
+                context.translate('app.error.title'),
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
                 ),
               ),
-              body: Center(
+              centerTitle: true,
+              backgroundColor: Colors.white,
+              elevation: 4.0,
+            ),
+            body: Center(
+              child: Padding(
+                padding: const EdgeInsets.all(24.0),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                    Icon(
+                      Icons.warning_amber_rounded,
+                      color: Theme.of(context).colorScheme.error,
+                      size: 80,
+                    ),
+                    const SizedBox(height: 20),
                     Text(
                       context.translate(
-                        'velvet.kernel.widgets.error.message',
-                        args: {
-                          'error': error.toString(),
-                        },
+                        'app.error.message',
                       ),
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Theme.of(context).textTheme.bodyLarge?.color,
+                      ),
+                      textAlign: TextAlign.center,
                     ),
-                    ElevatedButton(
+                    const SizedBox(height: 20),
+                    ElevatedButton.icon(
                       onPressed: onRetry,
-                      child: Text(
-                        context.translate('velvet.kernel.widgets.error.retry'),
+                      icon: const Icon(Icons.refresh),
+                      label: Text(
+                        context.translate('app.error.retry'),
+                        style: const TextStyle(fontSize: 16),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 24,
+                          vertical: 12,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
                       ),
                     ),
                   ],
@@ -72,14 +89,12 @@ class KernelErrorWidget extends HookConsumerWidget {
               ),
             ),
           ),
-          theme: lightThemeData,
-          darkTheme: darkThemeData,
-          themeMode: themeConfig.themeMode,
-          navigatorKey: navigatorKey(),
+          theme: ThemeData.light(), // Replace with actual theme data
+          darkTheme: ThemeData.dark(), // Replace with actual theme data
+          themeMode: ThemeMode.system, // Replace with actual theme mode
           localizationsDelegates: translator.delegates(),
           supportedLocales: translator.supportedLocales,
           locale: locale.data,
-          home: const SizedBox.shrink(),
         );
       },
     );
