@@ -13,7 +13,7 @@ It is designed to be simple to use and easy to understand, while providing a sol
 
 ## Learning Velvet
 
-- **[Documentation](https://velvet.dedecube.dev)**: The best place to start learning about Velvet is the official documentation.
+- **[Documentation](https://velvet.dedecube.com)**: The best place to start learning about Velvet is the official documentation.
 - **[Discord](https://discord.gg/hU3nzdsf95)**: Join the Velvet Discord server to ask questions and get help from the community.
 
 We are actively working on improving the documentation and adding more examples to help you get started with Velvet.
