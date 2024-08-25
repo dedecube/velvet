@@ -1,7 +1,5 @@
-// ignore_for_file: avoid_empty_blocks, no-empty-block
 import 'dart:async';
 
-import 'package:velvet_framework/core/plugin/mixins/register_helpers.dart';
 import 'package:velvet_framework/kernel/kernel.dart';
 
 /// The contract for a Velvet plugin.
@@ -19,11 +17,15 @@ import 'package:velvet_framework/kernel/kernel.dart';
 ///   }
 /// }
 /// ```
-abstract class VelvetPlugin with RegisterHelpers {
+abstract class VelvetPlugin {
   /// The method that is called to register the plugin with the Velvet framework.
-  FutureOr<void> register() {}
+  FutureOr<void> register() {
+    return Future.value();
+  }
 
   /// The method that is called to boot the plugin.
   /// This method is called after all plugins have been registered.
-  FutureOr<void> boot() {}
+  FutureOr<void> boot() {
+    return Future.value();
+  }
 }
