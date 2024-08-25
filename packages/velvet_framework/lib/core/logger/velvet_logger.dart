@@ -7,8 +7,10 @@ import 'package:velvet_framework/core/velvet_container.dart';
 
 class VelvetLogger implements VelvetLoggerContract {
   void _log(
-    String message,
+    dynamic message,
     VelvetLogSeverityEnum severity, {
+    Object? error,
+    StackTrace? stackTrace,
     List<VelvetLoggerChannel>? channels,
   }) {
     if (!container.get<VelvetLoggerConfigContract>().isEnabled) {
@@ -19,38 +21,82 @@ class VelvetLogger implements VelvetLoggerContract {
         in channels ?? container.get<VelvetLoggerConfigContract>().channels) {
       switch (severity) {
         case VelvetLogSeverityEnum.error:
-          channel.error(message);
+          channel.error(message, error, stackTrace);
           break;
         case VelvetLogSeverityEnum.warning:
-          channel.warning(message);
+          channel.warning(message, error, stackTrace);
           break;
         case VelvetLogSeverityEnum.debug:
-          channel.debug(message);
+          channel.debug(message, error, stackTrace);
           break;
         default:
-          channel.info(message);
+          channel.info(message, error, stackTrace);
           break;
       }
     }
   }
 
   @override
-  void info(dynamic message, {List<VelvetLoggerChannel>? channels}) {
-    _log(message, VelvetLogSeverityEnum.info, channels: channels);
+  void info(
+    dynamic message, {
+    Object? error,
+    StackTrace? stackTrace,
+    List<VelvetLoggerChannel>? channels,
+  }) {
+    _log(
+      message,
+      VelvetLogSeverityEnum.info,
+      channels: channels,
+      error: error,
+      stackTrace: stackTrace,
+    );
   }
 
   @override
-  void error(dynamic message, {List<VelvetLoggerChannel>? channels}) {
-    _log(message, VelvetLogSeverityEnum.error, channels: channels);
+  void error(
+    dynamic message, {
+    Object? error,
+    StackTrace? stackTrace,
+    List<VelvetLoggerChannel>? channels,
+  }) {
+    _log(
+      message,
+      VelvetLogSeverityEnum.error,
+      channels: channels,
+      error: error,
+      stackTrace: stackTrace,
+    );
   }
 
   @override
-  void warning(dynamic message, {List<VelvetLoggerChannel>? channels}) {
-    _log(message, VelvetLogSeverityEnum.warning, channels: channels);
+  void warning(
+    dynamic message, {
+    Object? error,
+    StackTrace? stackTrace,
+    List<VelvetLoggerChannel>? channels,
+  }) {
+    _log(
+      message,
+      VelvetLogSeverityEnum.warning,
+      channels: channels,
+      error: error,
+      stackTrace: stackTrace,
+    );
   }
 
   @override
-  void debug(dynamic message, {List<VelvetLoggerChannel>? channels}) {
-    _log(message, VelvetLogSeverityEnum.debug, channels: channels);
+  void debug(
+    dynamic message, {
+    Object? error,
+    StackTrace? stackTrace,
+    List<VelvetLoggerChannel>? channels,
+  }) {
+    _log(
+      message,
+      VelvetLogSeverityEnum.debug,
+      channels: channels,
+      error: error,
+      stackTrace: stackTrace,
+    );
   }
 }

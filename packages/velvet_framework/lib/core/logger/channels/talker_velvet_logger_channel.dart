@@ -13,45 +13,45 @@ class TalkerVelvetLoggerChannel extends VelvetLoggerChannel {
   @override
   void info(
     dynamic message, [
-    Object? exception,
+    Object? error,
     StackTrace? stackTrace,
   ]) {
-    _talkerInstance.info(message, exception, stackTrace);
+    _talkerInstance.info(message, error, stackTrace);
   }
 
   @override
   void debug(
     dynamic message, [
-    Object? exception,
+    Object? error,
     StackTrace? stackTrace,
   ]) {
-    _talkerInstance.debug(message, exception, stackTrace);
+    _talkerInstance.debug(message, error, stackTrace);
   }
 
   @override
   void error(
     dynamic message, [
-    Object? exception,
+    Object? error,
     StackTrace? stackTrace,
   ]) {
-    _talkerInstance.error(message, exception, stackTrace);
+    _talkerInstance.error(message, error, stackTrace);
   }
 
   @override
   void warning(
     dynamic message, [
-    Object? exception,
+    Object? error,
     StackTrace? stackTrace,
   ]) {
-    _talkerInstance.warning(message, exception, stackTrace);
+    _talkerInstance.warning(message, error, stackTrace);
   }
 
   @override
   void critical(
     dynamic message, [
-    Object? exception,
+    Object? error,
     StackTrace? stackTrace,
   ]) {
-    _talkerInstance.critical(message, exception, stackTrace);
+    _talkerInstance.critical(message, error, stackTrace);
   }
 }
