@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`splash_velvet_plugin` - `v0.0.1-dev.9`](#splash_velvet_plugin---v001-dev9)
+
+---
+
+#### `splash_velvet_plugin` - `v0.0.1-dev.9`
+
+ - **FIX**: use register instead of boot. ([ad9586b8](https://github.com/dedecube/velvet/commit/ad9586b8e33bbd9896bc0f0809ca4a373e85bff5))
+
+
+## 2024-08-26
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`velvet_framework` - `v0.0.1-dev.45`](#velvet_framework---v001-dev45)
  - [`splash_velvet_plugin` - `v0.0.1-dev.8`](#splash_velvet_plugin---v001-dev8)
 
