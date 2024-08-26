@@ -1,5 +1,6 @@
 import 'package:velvet_framework/core/velvet_container.dart';
 import 'package:velvet_framework/store/contracts/store_contract.dart';
+import 'package:velvet_framework/store/extensions/store_on_container_extension.dart';
 
 /// Create resusable storable data
 ///
@@ -76,6 +77,6 @@ abstract class Storable<T> {
   }
 
   StoreContract get store {
-    return container.get<StoreContract>();
+    return container.store();
   }
 }
