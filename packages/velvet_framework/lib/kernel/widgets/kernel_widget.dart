@@ -45,7 +45,6 @@ class KernelWidget extends HookConsumerWidget {
               if (kDebugMode) {
                 return KernelErrorDebugWidget(
                   error: error,
-                  onRetry: () => ref.refresh(appStartupProvider),
                   stackTrace: stackTrace,
                 );
               } else {
