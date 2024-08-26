@@ -1,13 +1,13 @@
 import 'package:velvet_framework/velvet_framework.dart';
 import 'package:flutter/material.dart';
 
-class ExamplePage extends HookConsumerWidget {
+class ExamplePage extends StatelessWidget {
   const ExamplePage({
     super.key
   });
 
   @override
-  build(BuildContext context, WidgetRef ref) {
+  build(BuildContext context) {
     return Container();
   }
 }
