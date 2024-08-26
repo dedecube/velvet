@@ -24,6 +24,7 @@ export 'package:velvet_support/velvet_support.dart';
 // ```
 
 // @index(['./contracts/**/(*.dart)','!./contracts/**/*.g.dart', '!./contracts/**/_*.dart'], f => `export '${f.path}.dart';`)
+export './contracts/factory_wrapper_contract.dart';
 export './contracts/use_case_contract.dart';
 // @endindex
 
@@ -83,15 +84,18 @@ export './core/velvet_container.dart';
 // @endindex
 
 // @index(['./data_loader/**/(*.dart)','!./data_loader/**/*.g.dart', '!./data_loader/**/_*.dart'], f => `export '${f.path}.dart';`)
-export './data_loader/data_loader_error_view.dart';
-export './data_loader/data_loader_loading_view.dart';
-export './data_loader/data_loader_page.dart';
-export './data_loader/data_loader_success_view.dart';
+export './data_loader/builders/constructor_data_loader_error_builder.dart';
+export './data_loader/builders/constructor_data_loader_loading_builder.dart';
+export './data_loader/builders/default_data_loader_error_builder.dart';
+export './data_loader/builders/default_data_loader_loading_builder.dart';
+export './data_loader/contracts/data_loader_error_builder_contract.dart';
+export './data_loader/contracts/data_loader_loading_builder_contract.dart';
+export './data_loader/data_loader_plugin.dart';
 export './data_loader/data_loader.dart';
-export './data_loader/providers/data_loader_error_view_provider.dart';
-export './data_loader/providers/data_loader_loading_view_provider.dart';
-export './data_loader/views/data_loader_default_error_view.dart';
-export './data_loader/views/data_loader_default_loading_view.dart';
+export './data_loader/extensions/data_loader_on_container_extension.dart';
+export './data_loader/extensions/data_loader_on_kernel_contract_extension.dart';
+export './data_loader/interacts_with_success_data.dart';
+export './data_loader/views/default_data_loader_error_view.dart';
 // @endindex
 
 // @index(['./error_handling/**/(*.dart)','!./error_handling/**/*.g.dart', '!./error_handling/**/_*.dart'], f => `export '${f.path}.dart';`)
@@ -212,6 +216,7 @@ export './store/adapters/shared_preferences_simple_store.dart';
 export './store/contracts/store_cleaner_adapter_contract.dart';
 export './store/contracts/store_contract.dart';
 export './store/contracts/store_simple_adapter_contract.dart';
+export './store/extensions/store_on_container_extension.dart';
 export './store/storable.dart';
 export './store/store_plugin.dart';
 // @endindex
