@@ -2,7 +2,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:velvet_framework/core/env/config/dynamic_env_config.dart';
 import 'package:velvet_framework/core/env/contracts/env_config_contract.dart';
-import 'package:velvet_framework/velvet_framework.dart';
+import 'package:velvet_framework/core/env/events/env_read_event.dart';
+import 'package:velvet_framework/core/event/utils/listen.dart';
+import 'package:velvet_framework/core/utils/config.dart';
+import 'package:velvet_framework/core/utils/config_manager.dart';
+import 'package:velvet_framework/core/velvet_container.dart';
+import 'package:velvet_framework/kernel/contracts/kernel_contract.dart';
 
 mixin SetupEnvMixin on KernelContract {
   String _envContent = '';
