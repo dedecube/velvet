@@ -15,6 +15,34 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`velvet_framework` - `v0.0.1-dev.45`](#velvet_framework---v001-dev45)
+ - [`splash_velvet_plugin` - `v0.0.1-dev.8`](#splash_velvet_plugin---v001-dev8)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `splash_velvet_plugin` - `v0.0.1-dev.8`
+
+---
+
+#### `velvet_framework` - `v0.0.1-dev.45`
+
+ - **FIX**: restore allowReassignment in VelvetContainer. ([090dbc1e](https://github.com/dedecube/velvet/commit/090dbc1e781f33516b3dfcc2d53975b70902eab9))
+
+
+## 2024-08-26
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`velvet_framework` - `v0.0.1-dev.44`](#velvet_framework---v001-dev44)
  - [`splash_velvet_plugin` - `v0.0.1-dev.7`](#splash_velvet_plugin---v001-dev7)
 

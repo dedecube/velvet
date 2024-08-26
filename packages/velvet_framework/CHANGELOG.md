@@ -1,3 +1,7 @@
+## 0.0.1-dev.45
+
+ - **FIX**: restore allowReassignment in VelvetContainer. ([090dbc1e](https://github.com/dedecube/velvet/commit/090dbc1e781f33516b3dfcc2d53975b70902eab9))
+
 ## 0.0.1-dev.44
 
  - **REFACTOR**: convert data_loader stuff to plugin and container ready and allow less strict types. ([7e355abb](https://github.com/dedecube/velvet/commit/7e355abb5dce4528af2ec74c6684c8f5caaa640b))
