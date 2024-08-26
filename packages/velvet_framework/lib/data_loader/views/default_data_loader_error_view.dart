@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:velvet_framework/data_loader/data_loader_error_view.dart';
 import 'package:velvet_framework/translation/extensions/translator_extension.dart';
 
-class DataLoaderDefaultErrorView extends DataLoaderErrorView {
-  const DataLoaderDefaultErrorView({
+class DefaultDataLoaderErrorView extends StatelessWidget {
+  const DefaultDataLoaderErrorView({
     super.key,
-    required super.error,
-    required super.stackTrace,
+    required this.error,
+    required this.stackTrace,
   });
 
+  final Object error;
+
+  final StackTrace stackTrace;
+
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,

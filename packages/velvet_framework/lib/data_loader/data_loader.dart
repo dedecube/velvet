@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:velvet_framework/data_loader/data_loader_error_view.dart';
-import 'package:velvet_framework/data_loader/data_loader_loading_view.dart';
-import 'package:velvet_framework/data_loader/data_loader_success_view.dart';
-import 'package:velvet_framework/data_loader/providers/data_loader_error_view_provider.dart';
-import 'package:velvet_framework/data_loader/providers/data_loader_loading_view_provider.dart';
+import 'package:velvet_framework/core/velvet_container.dart';
+import 'package:velvet_framework/data_loader/contracts/data_loader_error_builder_contract.dart';
+import 'package:velvet_framework/data_loader/contracts/data_loader_loading_builder_contract.dart';
 
-part '_data_loader_builder_types.dart';
+typedef DataLoaderSuccessBuilder<T> = Widget Function(T data);
 
 /// A widget that handles loading, error, and data states for asynchronous data.
 ///
@@ -63,20 +61,26 @@ class DataLoader<T> extends HookConsumerWidget {
   /// The [dataBuilder] function is called when the asynchronous data is available.
   /// It receives the data as a parameter and should return a widget that represents
   /// the UI for the data state.
-  final DataLoaderSuccessViewBuilder<T> dataBuilder;
+  final DataLoaderSuccessBuilder<T> dataBuilder;
 
   /// A builder function that creates the UI for the loading state.
   ///
   /// The [loadingBuilder] function is called when the asynchronous data is still loading.
   /// If not provided, a default loading indicator will be displayed.
-  final DataLoaderLoadingViewBuilder? loadingBuilder;
+  final DataLoaderLoadingBuilder? loadingBuilder;
 
   /// A builder function that creates the UI for the error state.
   ///
   /// The [errorBuilder] function is called when an error occurs while loading the data.
   /// It receives the error and stack trace as parameters and should return a widget that
   /// represents the UI for the error state. If not provided, a default error view will be displayed.
-  final DataLoaderErrorViewBuilder? errorBuilder;
+  final DataLoaderErrorBuilder? errorBuilder;
+
+  DataLoaderErrorBuilder get defaultErrorBuilder =>
+      container.get<DataLoaderErrorBuilderContract>().factory;
+
+  DataLoaderLoadingBuilder get defaultLoadingBuilder =>
+      container.get<DataLoaderLoadingBuilderContract>().factory;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -84,8 +88,8 @@ class DataLoader<T> extends HookConsumerWidget {
 
     return resource.when(
       data: dataBuilder,
-      error: errorBuilder ?? ref.read(dataLoaderErrorViewProvider),
-      loading: loadingBuilder ?? ref.read(dataLoaderLoadingViewProvider),
+      error: errorBuilder ?? defaultErrorBuilder,
+      loading: loadingBuilder ?? defaultLoadingBuilder,
     );
   }
 }
