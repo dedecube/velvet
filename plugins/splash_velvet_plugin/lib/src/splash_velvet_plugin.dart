@@ -5,16 +5,9 @@ import 'package:velvet_framework/velvet_framework.dart';
 /// A plugin for Velvet Framework that handles the splash screen functionality.
 ///
 /// This plugin handles automatically preserving and removing the native splash.
-///
-/// Example of usage:
-/// ```dart
-///   Kernel()
-///    ..plugin(SplashVelvetPlugin())
-///    ..run();
-/// ```
 class SplashVelvetPlugin extends VelvetPlugin {
   @override
-  void boot() {
+  void register() {
     _preserveSplash();
     listen<HideLoadingWidgetEvent>((_) => _hideSplash());
   }
