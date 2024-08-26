@@ -10,6 +10,7 @@ import 'package:velvet_framework/error_handling/error_handling_plugin.dart';
 import 'package:velvet_framework/theme/theme_plugin.dart';
 import 'package:velvet_framework/store/store_plugin.dart';
 import 'package:velvet_framework/router/router_plugin.dart';
+import 'package:velvet_framework/data_loader/data_loader_plugin.dart';
 import 'package:velvet_framework/core/plugin/velvet_plugin.dart';
 
 List<VelvetPlugin> $velvetPluginLoaderItems = [
@@ -18,5 +19,6 @@ List<VelvetPlugin> $velvetPluginLoaderItems = [
   ErrorHandlingPlugin(),
   ThemePlugin(),
   StorePlugin(),
-  RouterPlugin()
+  RouterPlugin(),
+  DataLoaderPlugin()
 ];
