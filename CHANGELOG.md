@@ -3,6 +3,43 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-08-26
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`velvet_framework` - `v0.0.1-dev.44`](#velvet_framework---v001-dev44)
+ - [`splash_velvet_plugin` - `v0.0.1-dev.7`](#splash_velvet_plugin---v001-dev7)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `splash_velvet_plugin` - `v0.0.1-dev.7`
+
+---
+
+#### `velvet_framework` - `v0.0.1-dev.44`
+
+ - **REFACTOR**: convert data_loader stuff to plugin and container ready and allow less strict types. ([7e355abb](https://github.com/dedecube/velvet/commit/7e355abb5dce4528af2ec74c6684c8f5caaa640b))
+ - **FIX**: remove onRetry from KernelErrorDebugWidget. ([6942cbc5](https://github.com/dedecube/velvet/commit/6942cbc57366df440b0b20b04abf4badfbbe15e4))
+ - **FIX**: remove navigatorKey assignment in KernelErrorDebugWidget. ([57876e52](https://github.com/dedecube/velvet/commit/57876e52216756c79cf6e825231faff57d22070b))
+ - **FIX**: move allowReassignment to contract and make protected. ([0c8df559](https://github.com/dedecube/velvet/commit/0c8df559464c6edbc1cd1dfd6f2a600f75178747))
+ - **FIX**: the kernel_error_debug_widget now do not use any service from container and remove dead widget. ([16c1c192](https://github.com/dedecube/velvet/commit/16c1c192ccf516b345a1aae78cfcb30e33dfc554))
+ - **FEAT**: update plugins loader. ([91814428](https://github.com/dedecube/velvet/commit/91814428cefafdf205cfa75e27ff259d711604f5))
+ - **FEAT**(data_loader): add helper interface. ([6c59622b](https://github.com/dedecube/velvet/commit/6c59622b5be43a2a0a5eb1bfbc37ccd3479289b6))
+ - **FEAT**: add store extension on container. ([e48ff9d0](https://github.com/dedecube/velvet/commit/e48ff9d00c679235486f3e3649121533b5a35f2b))
+ - **FEAT**(data_loader): add extension on container and kernel. ([cff60679](https://github.com/dedecube/velvet/commit/cff60679bb3e69e2581a939c2bd1930963b02ac5))
+ - **FEAT**: add FactoryWrapper for better resolution of factory inside container. ([2d2ce95f](https://github.com/dedecube/velvet/commit/2d2ce95f042e6dc5317b415f409c3346bcc10ef9))
+
+
 ## 2024-08-25
 
 ### Changes
