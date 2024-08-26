@@ -2,20 +2,18 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:velvet_framework/velvet_framework.dart';
 
-class KernelErrorDebugWidget extends HookConsumerWidget {
+class KernelErrorDebugWidget extends HookWidget {
   const KernelErrorDebugWidget({
     super.key,
     required this.error,
-    required this.onRetry,
     required this.stackTrace,
   });
 
   final Object error;
-  final VoidCallback onRetry;
   final StackTrace stackTrace;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     useEffectOnce(() {
       event(HideLoadingWidgetEvent());
 
@@ -33,7 +31,6 @@ class KernelErrorDebugWidget extends HookConsumerWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       builder: (context, child) => Builder(
-        key: resolutionKey(),
         builder: (context) => Scaffold(
           backgroundColor: Colors.white,
           appBar: AppBar(
