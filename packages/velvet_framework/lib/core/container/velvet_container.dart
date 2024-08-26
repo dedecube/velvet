@@ -9,9 +9,7 @@ part '_when_context.dart';
 ///
 /// Behind the scenes, it uses the `get_it` package and operates mostly as a proxy to the `GetIt` instance.
 class VelvetContainer extends VelvetContainerContract with ProxyToGetItMixin {
-  VelvetContainer() {
-    getIt.allowReassignment = true;
-  }
+  VelvetContainer();
 
   final List<ContextualBinding> _contextualBindings = [];
 

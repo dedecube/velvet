@@ -1,3 +1,4 @@
+import 'package:velvet_framework/core/container/contracts/velvet_container_contract.dart';
 import 'package:velvet_framework/core/container/velvet_container.dart';
 
 /// The global container for the Velvet framework.
@@ -6,4 +7,4 @@ import 'package:velvet_framework/core/container/velvet_container.dart';
 ///
 /// Behind the scenes, it uses the `get_it` package
 /// and operates mostly as a proxy to the `GetIt` instance.
-final container = VelvetContainer();
+final VelvetContainerContract container = VelvetContainer();
