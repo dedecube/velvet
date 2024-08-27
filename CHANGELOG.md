@@ -15,6 +15,36 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`velvet_framework` - `v0.0.1-dev.47`](#velvet_framework---v001-dev47)
+ - [`splash_velvet_plugin` - `v0.0.1-dev.11`](#splash_velvet_plugin---v001-dev11)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `splash_velvet_plugin` - `v0.0.1-dev.11`
+
+---
+
+#### `velvet_framework` - `v0.0.1-dev.47`
+
+ - **FIX**: remove warning log from FlutterI18nTranslatorAdapter. ([15b87052](https://github.com/dedecube/velvet/commit/15b8705214b537ebc4196ba35aa259589508a27c))
+ - **FEAT**: must_be_true and must_be_false rules. ([b7efd7e1](https://github.com/dedecube/velvet/commit/b7efd7e135c222a9d8cff2e6aea53467e9621c96))
+ - **FEAT**(form): add flag to enable/disable precompiled values from env. ([01208a33](https://github.com/dedecube/velvet/commit/01208a333c4d203981d22157ab06db57c4026b88))
+
+
+## 2024-08-27
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`velvet_cli` - `v0.0.1-dev.3`](#velvet_cli---v001-dev3)
  - [`velvet_framework` - `v0.0.1-dev.46`](#velvet_framework---v001-dev46)
  - [`splash_velvet_plugin` - `v0.0.1-dev.10`](#splash_velvet_plugin---v001-dev10)

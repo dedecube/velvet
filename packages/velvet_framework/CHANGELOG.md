@@ -1,3 +1,9 @@
+## 0.0.1-dev.47
+
+ - **FIX**: remove warning log from FlutterI18nTranslatorAdapter. ([15b87052](https://github.com/dedecube/velvet/commit/15b8705214b537ebc4196ba35aa259589508a27c))
+ - **FEAT**: must_be_true and must_be_false rules. ([b7efd7e1](https://github.com/dedecube/velvet/commit/b7efd7e135c222a9d8cff2e6aea53467e9621c96))
+ - **FEAT**(form): add flag to enable/disable precompiled values from env. ([01208a33](https://github.com/dedecube/velvet/commit/01208a333c4d203981d22157ab06db57c4026b88))
+
 ## 0.0.1-dev.46
 
  - **FEAT**: add useBool input and change exception matcher stuff to more verbose and intuitive names. ([054ad918](https://github.com/dedecube/velvet/commit/054ad9184ecdbe6daaef4a5c0d1dd9ead8c3aa08))
