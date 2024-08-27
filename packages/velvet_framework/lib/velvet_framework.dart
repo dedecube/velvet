@@ -117,6 +117,7 @@ export './error_handling/types.dart';
 export './form/config/default_form_config.dart';
 export './form/contracts/form_config_contract.dart';
 export './form/form_plugin.dart';
+export './form/hooks/use_bool_input/use_bool_input.dart';
 export './form/hooks/use_form/form_options.dart';
 export './form/hooks/use_form/use_form.dart';
 export './form/hooks/use_input/input_options.dart';
