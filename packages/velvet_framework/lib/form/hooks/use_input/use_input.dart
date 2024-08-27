@@ -10,7 +10,9 @@ part '_use_input_return.dart';
 part '_use_validate_on_change.dart';
 part '_use_validate_on_focus_lost.dart';
 
-typedef ExceptionMatcherFactory = ExceptionMatcher Function(
+typedef InputOnFailure = ExceptionMatcher;
+
+typedef InputOnFailureFactory = InputOnFailure Function(
   List<ExceptionToMessageResolverFactory> exceptionToMessageResolverFactories,
   ValueNotifier<String?> error,
 );
@@ -21,7 +23,7 @@ typedef ExceptionMatcherFactory = ExceptionMatcher Function(
 /// the necessary state and functions for managing a text input field. This hook
 /// is designed to be used within a Flutter widget.
 ///
-/// The [exceptionMatcher] parameter is an optional [ExceptionMatcher] that can
+/// The [onFailure] parameter is an optional [ExceptionMatcher] that can
 /// be used to customize the error handling behavior of the input state.
 ///
 /// The [rules] parameter is a list of [Rule] objects that define the local validation
@@ -77,7 +79,7 @@ UseInputReturn<T> useInput<T>({
   String? name,
   List<ExceptionToMessageResolverFactory> exceptionToMessageResolverFactories =
       const [],
-  ExceptionMatcherFactory? exceptionMatcherFactory,
+  InputOnFailureFactory? onFailureFactory,
 }) {
   if (kDebugMode && name != null) {
     initialValue = _useInitialValueForDebug<T>(name, initialValue);
@@ -90,13 +92,11 @@ UseInputReturn<T> useInput<T>({
   final value = useState<T?>(initialValue);
   final isValid = useState(false);
 
-  final exceptionMatcher = useMemoized(
+  final onFailure = useMemoized(
     () {
-      return exceptionMatcherFactory != null
-          ? exceptionMatcherFactory(exceptionToMessageResolverFactories, error)
-          : container
-              .get<FormConfigContract>()
-              .defaultInputExceptionMatcherFactory(
+      return onFailureFactory != null
+          ? onFailureFactory(exceptionToMessageResolverFactories, error)
+          : container.get<FormConfigContract>().defaultInputOnFailureFactory(
                 exceptionToMessageResolverFactories,
                 error,
               );
@@ -156,7 +156,7 @@ UseInputReturn<T> useInput<T>({
   return useMemoized(
     () => UseInputReturn(
       error: error,
-      exceptionMatcher: exceptionMatcher,
+      onFailure: onFailure,
       focusNode: focusNode,
       isValid: isValid,
       rules: rules,

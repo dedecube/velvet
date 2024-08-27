@@ -16,7 +16,7 @@ UseTextInputReturn useTextInput({
   String? name,
   List<ExceptionToMessageResolverFactory> exceptionToMessageResolverFactories =
       const [],
-  ExceptionMatcherFactory? exceptionMatcherFactory,
+  InputOnFailureFactory? onFailureFactory,
 }) {
   options ??= config<FormConfigContract>().defaultInputOptions;
 
@@ -26,7 +26,7 @@ UseTextInputReturn useTextInput({
     initialValue: initialValue ?? '',
     name: name,
     exceptionToMessageResolverFactories: exceptionToMessageResolverFactories,
-    exceptionMatcherFactory: exceptionMatcherFactory,
+    onFailureFactory: onFailureFactory,
   );
 
   final controller = useTextEditingController(text: input.value.value);
@@ -50,7 +50,7 @@ UseTextInputReturn useTextInput({
   return useMemoized(
     () => UseTextInputReturn(
       error: input.error,
-      exceptionMatcher: input.exceptionMatcher,
+      onFailure: input.onFailure,
       focusNode: input.focusNode,
       isValid: input.isValid,
       rules: rules,

@@ -1,5 +1,5 @@
 import 'package:velvet_framework/core/config/velvet_config.dart';
-import 'package:velvet_framework/error_handling/types.dart';
+import 'package:velvet_framework/form/hooks/use_form/use_form.dart';
 import 'package:velvet_framework/form/hooks/use_input/input_options.dart';
 import 'package:velvet_framework/form/hooks/use_input/use_input.dart';
 
@@ -15,7 +15,7 @@ abstract class FormConfigContract extends VelvetConfig {
   /// Retrieves the default input options for the form fields.
   InputOptions get defaultInputOptions;
 
-  ExceptionMatcherFactory get defaultInputExceptionMatcherFactory;
+  InputOnFailureFactory get defaultInputOnFailureFactory;
 
-  ExceptionMatcher? get defaultFormExceptionMatcher;
+  FormOnFailure? get defaultFormOnFailure;
 }

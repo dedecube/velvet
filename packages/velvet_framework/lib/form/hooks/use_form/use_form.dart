@@ -8,15 +8,19 @@ typedef UseFormReturn = ({
   Future<void> Function({bool quietly}) validate,
 });
 
+typedef FormOnSuccess = AsyncCallback;
+
+typedef FormOnFailure = ExceptionMatcher;
+
 /// A custom hook for managing form state in Flutter applications.
 ///
 /// This hook takes a map of [inputs] and a [onSubmit] function as parameters.
 /// The [inputs] map represents the form inputs and their corresponding state.
 /// The [onSubmit] function is called when the form is submitted.
 ///
-/// Optional parameters include [onSuccess], [exceptionMatcher].
+/// Optional parameters include [onSuccess], [onFailure].
 /// The [onSuccess] function is called after the form submission is successful.
-/// The [exceptionMatcher] is used to handle specific exceptions that may occur during form submission.
+/// The [onFailure] is used to handle specific exceptions that may occur during form submission.
 ///
 /// The hook returns a [FormState] object that encapsulates the form state and provides methods for interacting with it.
 ///
@@ -38,18 +42,17 @@ typedef UseFormReturn = ({
 UseFormReturn useForm(
   List<UseInputReturn> inputs,
   AsyncCallback onSubmit, {
-  AsyncCallback? onSuccess,
-  ExceptionMatcher? exceptionMatcher,
+  FormOnSuccess? onSuccess,
+  FormOnFailure? onFailure,
   FormOptions options = const FormOptions(),
 }) {
   final isSubmitting = useState(false);
   final isValid = useState(true);
 
-  exceptionMatcher = useMemoized(() {
-    exceptionMatcher ??=
-        config<FormConfigContract>().defaultFormExceptionMatcher;
+  onFailure = useMemoized(() {
+    onFailure ??= config<FormConfigContract>().defaultFormOnFailure;
 
-    return exceptionMatcher;
+    return onFailure;
   });
 
   Future<void> validate({bool quietly = true}) async {
@@ -105,15 +108,15 @@ UseFormReturn useForm(
       for (var input in inputs) {
         if (exception is BagException) {
           for (var item in exception.exceptions) {
-            input.exceptionMatcher(item);
+            input.onFailure(item);
           }
         } else {
-          input.exceptionMatcher(exception);
+          input.onFailure(exception);
         }
       }
 
-      if (exceptionMatcher != null) {
-        exceptionMatcher!(exception);
+      if (onFailure != null) {
+        onFailure!(exception);
       }
     }
   }

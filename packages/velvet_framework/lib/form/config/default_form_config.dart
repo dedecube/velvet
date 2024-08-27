@@ -1,5 +1,5 @@
-import 'package:velvet_framework/error_handling/types.dart';
 import 'package:velvet_framework/form/contracts/form_config_contract.dart';
+import 'package:velvet_framework/form/hooks/use_form/use_form.dart';
 import 'package:velvet_framework/form/hooks/use_input/input_options.dart';
 import 'package:velvet_framework/form/hooks/use_input/use_input.dart';
 
@@ -11,7 +11,7 @@ class DefaultFormConfig implements FormConfigContract {
   InputOptions get defaultInputOptions => InputOptions();
 
   @override
-  ExceptionMatcherFactory get defaultInputExceptionMatcherFactory =>
+  InputOnFailureFactory get defaultInputOnFailureFactory =>
       (exceptionToMessageResolverFactories, error) {
         return (exception) {
           for (final exceptionToMessageResolverFactory
@@ -29,5 +29,5 @@ class DefaultFormConfig implements FormConfigContract {
       };
 
   @override
-  ExceptionMatcher? get defaultFormExceptionMatcher => null;
+  FormOnFailure? get defaultFormOnFailure => null;
 }
