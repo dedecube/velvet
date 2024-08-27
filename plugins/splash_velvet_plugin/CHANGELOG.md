@@ -1,3 +1,7 @@
+## 0.0.1-dev.10
+
+ - Update a dependency to the latest release.
+
 ## 0.0.1-dev.9
 
  - **FIX**: use register instead of boot. ([ad9586b8](https://github.com/dedecube/velvet/commit/ad9586b8e33bbd9896bc0f0809ca4a373e85bff5))

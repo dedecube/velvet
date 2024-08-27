@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-08-27
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`velvet_cli` - `v0.0.1-dev.3`](#velvet_cli---v001-dev3)
+ - [`velvet_framework` - `v0.0.1-dev.46`](#velvet_framework---v001-dev46)
+ - [`splash_velvet_plugin` - `v0.0.1-dev.10`](#splash_velvet_plugin---v001-dev10)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `splash_velvet_plugin` - `v0.0.1-dev.10`
+
+---
+
+#### `velvet_cli` - `v0.0.1-dev.3`
+
+ - **FIX**: make:route now create a StatelessWidget page. ([1074c541](https://github.com/dedecube/velvet/commit/1074c54111e6557f7de0691ea2a22cc1954316cf))
+
+#### `velvet_framework` - `v0.0.1-dev.46`
+
+ - **FEAT**: add useBool input and change exception matcher stuff to more verbose and intuitive names. ([054ad918](https://github.com/dedecube/velvet/commit/054ad9184ecdbe6daaef4a5c0d1dd9ead8c3aa08))
+
+
 ## 2024-08-26
 
 ### Changes

@@ -1,3 +1,7 @@
+## 0.0.1-dev.46
+
+ - **FEAT**: add useBool input and change exception matcher stuff to more verbose and intuitive names. ([054ad918](https://github.com/dedecube/velvet/commit/054ad9184ecdbe6daaef4a5c0d1dd9ead8c3aa08))
+
 ## 0.0.1-dev.45
 
  - **FIX**: restore allowReassignment in VelvetContainer. ([090dbc1e](https://github.com/dedecube/velvet/commit/090dbc1e781f33516b3dfcc2d53975b70902eab9))

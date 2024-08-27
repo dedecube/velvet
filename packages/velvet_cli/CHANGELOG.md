@@ -1,3 +1,7 @@
+## 0.0.1-dev.3
+
+ - **FIX**: make:route now create a StatelessWidget page. ([1074c541](https://github.com/dedecube/velvet/commit/1074c54111e6557f7de0691ea2a22cc1954316cf))
+
 ## 0.0.1-dev.2
 
  - **FEAT**: update route stub to extends VelvetRoute. ([f685b642](https://github.com/dedecube/velvet/commit/f685b642a006e2df353051b25395bfc9b3c2c3d8))
