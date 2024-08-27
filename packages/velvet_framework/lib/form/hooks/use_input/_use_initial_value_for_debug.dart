@@ -16,6 +16,10 @@ part of 'use_input.dart';
 T? _useInitialValueForDebug<T>(String name, T? initialValue) {
   final formConfig = config<FormConfigContract>();
 
+  if (!formConfig.shouldUsePrecompiledValuesEnabled) {
+    return initialValue;
+  }
+
   return formConfig.precompiledValues.get<T>(
     key: name,
     defaultValue: initialValue,

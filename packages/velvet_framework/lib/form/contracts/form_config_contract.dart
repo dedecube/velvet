@@ -8,6 +8,9 @@ import 'package:velvet_framework/form/hooks/use_input/use_input.dart';
 /// This contract defines the structure of a form configuration and provides
 /// a method to retrieve the default values for the form fields.
 abstract class FormConfigContract extends VelvetConfig {
+  /// Check if the precompiled values are enabled.
+  bool get shouldUsePrecompiledValuesEnabled;
+
   /// Retrieves the default values for the form fields.
   /// Useful for initializing the form fields with default values on debug mode.
   Map<String, dynamic> get precompiledValues;
