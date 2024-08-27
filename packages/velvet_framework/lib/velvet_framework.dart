@@ -271,6 +271,8 @@ export './utils/riverpod_container.dart';
 
 // @index(['./validation/**/(*.dart)','!./validation/**/*.g.dart', '!./validation/**/_*.dart'], f => `export '${f.path}.dart';`)
 export './validation/rule.dart';
+export './validation/rules/bool/must_be_false_rule.dart';
+export './validation/rules/bool/must_be_true_rule.dart';
 export './validation/rules/confirmation_rule.dart';
 export './validation/rules/email_rule.dart';
 export './validation/rules/fixed_length_rule.dart';
