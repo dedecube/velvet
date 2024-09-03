@@ -1,3 +1,7 @@
+## 0.0.1-dev.9
+
+ - **REFACTOR**: remove VelvetConfig and VelvetBootstrap annotations. ([07c9e45c](https://github.com/dedecube/velvet/commit/07c9e45c912549f4126183cc4e839461b571788f))
+
 ## 0.0.1-dev.8
 
  - **FEAT**: restore VelvetConfig. ([68acd17c](https://github.com/dedecube/velvet/commit/68acd17cc279f04bfee2d2bc9de937951e1aebcc))

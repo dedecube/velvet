@@ -1,3 +1,7 @@
+## 0.0.1-dev.16
+
+ - Update a dependency to the latest release.
+
 ## 0.0.1-dev.15
 
  - **REVERT**: remove VelvetConfigAutoloader and VelvetBootstrapAutoloader generators. ([54f69f5f](https://github.com/dedecube/velvet/commit/54f69f5faa67ec1522f1b618ac93a84fa6e8e59e))

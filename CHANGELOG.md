@@ -3,6 +3,42 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-09-03
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`velvet_annotation` - `v0.0.1-dev.9`](#velvet_annotation---v001-dev9)
+ - [`velvet_framework` - `v0.0.1-dev.48`](#velvet_framework---v001-dev48)
+ - [`velvet_generator` - `v0.0.1-dev.16`](#velvet_generator---v001-dev16)
+ - [`splash_velvet_plugin` - `v0.0.1-dev.12`](#splash_velvet_plugin---v001-dev12)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `velvet_generator` - `v0.0.1-dev.16`
+ - `splash_velvet_plugin` - `v0.0.1-dev.12`
+
+---
+
+#### `velvet_annotation` - `v0.0.1-dev.9`
+
+ - **REFACTOR**: remove VelvetConfig and VelvetBootstrap annotations. ([07c9e45c](https://github.com/dedecube/velvet/commit/07c9e45c912549f4126183cc4e839461b571788f))
+
+#### `velvet_framework` - `v0.0.1-dev.48`
+
+ - **REFACTOR**: wrap all file inside src folder. ([7faa5874](https://github.com/dedecube/velvet/commit/7faa58741e8058495882e9930996048db5f34e71))
+ - **FIX**: useInput now update isValid on validate. ([69b92e89](https://github.com/dedecube/velvet/commit/69b92e89fd0f4b380657925485dcf4597e999654))
+
+
 ## 2024-08-27
 
 ### Changes

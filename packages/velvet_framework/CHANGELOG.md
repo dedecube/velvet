@@ -1,3 +1,8 @@
+## 0.0.1-dev.48
+
+ - **REFACTOR**: wrap all file inside src folder. ([7faa5874](https://github.com/dedecube/velvet/commit/7faa58741e8058495882e9930996048db5f34e71))
+ - **FIX**: useInput now update isValid on validate. ([69b92e89](https://github.com/dedecube/velvet/commit/69b92e89fd0f4b380657925485dcf4597e999654))
+
 ## 0.0.1-dev.47
 
  - **FIX**: remove warning log from FlutterI18nTranslatorAdapter. ([15b87052](https://github.com/dedecube/velvet/commit/15b8705214b537ebc4196ba35aa259589508a27c))
