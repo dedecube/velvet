@@ -229,13 +229,13 @@ export './src/router/velvet_route.dart';
 
 // @index(['./src/store/**/(*.dart)','!./store/**/*.g.dart','!./store/**/_*.dart','!./store/**/store.dart'], f => `export '${f.path}.dart';`)
 export './src/store/adapters/shared_preferences_simple_store.dart';
-export './src/store/contracts/store_cleaner_adapter_contract.dart';
-export './src/store/contracts/store_contract.dart';
-export './src/store/contracts/store_simple_adapter_contract.dart';
-export './src/store/extensions/store_on_container_extension.dart';
-export './src/store/storable.dart';
-export './src/store/store_plugin.dart';
-export './src/store/store.dart';
+export './src/store/contracts/velvet_store_cleaner_adapter_contract.dart';
+export './src/store/contracts/velvet_store_contract.dart';
+export './src/store/contracts/velvet_store_simple_adapter_contract.dart';
+export './src/store/extensions/velvet_store_on_container_extension.dart';
+export './src/store/velvet_storable.dart';
+export './src/store/velvet_store_plugin.dart';
+export './src/store/velvet_store.dart';
 // @endindex
 
 // @index(['./src/talker/**/(*.dart)','!./talker/**/*.g.dart','!./talker/**/_*.dart'], f => `export '${f.path}.dart';`)
@@ -294,7 +294,6 @@ export './src/utils/riverpod_container.dart';
 // @endindex
 
 // @index(['./src/validation/**/(*.dart)','!./validation/**/*.g.dart', '!./validation/**/_*.dart'], f => `export '${f.path}.dart';`)
-export './src/validation/rule.dart';
 export './src/validation/rules/bool/must_be_false_rule.dart';
 export './src/validation/rules/bool/must_be_true_rule.dart';
 export './src/validation/rules/confirmation_rule.dart';
@@ -303,7 +302,8 @@ export './src/validation/rules/fixed_length_rule.dart';
 export './src/validation/rules/max_length_rule.dart';
 export './src/validation/rules/min_length_rule.dart';
 export './src/validation/rules/required_string_rule.dart';
-export './src/validation/validator.dart';
+export './src/validation/velvet_rule.dart';
+export './src/validation/velvet_validator.dart';
 // @endindex
 
 // @index(['./src/widgets/**/(*.dart)','!./widgets/**/*.g.dart', '!./widgets/**/_*.dart'], f => `export '${f.path}.dart';`)
