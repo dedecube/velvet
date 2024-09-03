@@ -23,7 +23,7 @@ export 'package:velvet_support/velvet_support.dart';
 // npx vscode-generate-index-standalone packages/velvet_framework/lib/
 // ```
 
-// @index(['./src/**/(*.dart)', '!./src/**/*.g.dart', '!./src/**/_*.dart', '!./src/**/*.velvet.dart', '!./src/**/*.tailor.dart'], f => `export '${f.path}.dart';`)
+// @index(['./src/**/(*.dart)', '!./src/**/*.g.dart', '!./src/**/_*.dart', '!./src/**/*.velvet.dart', '!./src/**/*.tailor.dart', '!./src/**/*.freezed.dart'], f => `export '${f.path}.dart';`)
 export './src/contracts/factory_wrapper_contract.dart';
 export './src/contracts/use_case_contract.dart';
 export './src/core/config/contracts/velvet_config_manager_contract.dart';
@@ -105,7 +105,6 @@ export './src/form/hooks/use_bool_input/use_bool_input.dart';
 export './src/form/hooks/use_form/form_options.dart';
 export './src/form/hooks/use_form/use_form.dart';
 export './src/form/hooks/use_input/input_options.dart';
-export './src/form/hooks/use_input/input_options.freezed.dart';
 export './src/form/hooks/use_input/use_input.dart';
 export './src/form/hooks/use_text_input/use_text_input.dart';
 export './src/hooks/use_effect_once/use_effect_once.dart';
