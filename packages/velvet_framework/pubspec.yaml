@@ -1,6 +1,6 @@
 name: velvet_framework
 description: A framework for building Flutter applications based on Riverpod and GoRouter.
-version: 0.0.1-dev.48
+version: 0.0.1-dev.49
 homepage: https://github.com/dedecube/velvet/tree/main/packages/velvet_framework
 
 environment:

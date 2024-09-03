@@ -1,3 +1,7 @@
+## 0.0.1-dev.49
+
+ - **FIX**: update exports. ([4f6557bb](https://github.com/dedecube/velvet/commit/4f6557bb59d67e89f7315f390fbdb54e6bb7315f))
+
 ## 0.0.1-dev.48
 
  - **REFACTOR**: wrap all file inside src folder. ([7faa5874](https://github.com/dedecube/velvet/commit/7faa58741e8058495882e9930996048db5f34e71))
