@@ -15,6 +15,34 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`velvet_framework` - `v0.0.1-dev.50`](#velvet_framework---v001-dev50)
+ - [`splash_velvet_plugin` - `v0.0.1-dev.14`](#splash_velvet_plugin---v001-dev14)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `splash_velvet_plugin` - `v0.0.1-dev.14`
+
+---
+
+#### `velvet_framework` - `v0.0.1-dev.50`
+
+ - **FIX**: update exports. ([eddd3270](https://github.com/dedecube/velvet/commit/eddd32700428c3c70e086a2ed5ba274e94e9cff6))
+
+
+## 2024-09-03
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`velvet_framework` - `v0.0.1-dev.49`](#velvet_framework---v001-dev49)
  - [`splash_velvet_plugin` - `v0.0.1-dev.13`](#splash_velvet_plugin---v001-dev13)
 

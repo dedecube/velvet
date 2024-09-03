@@ -1,6 +1,6 @@
 name: splash_velvet_plugin
 description: A plugin that interacts with flutter_native_splash.
-version: 0.0.1-dev.13
+version: 0.0.1-dev.14
 homepage: https://github.com/dedecube/velvet/tree/main/plugins/http_client_velvet_plugin
 
 environment:
@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   velvet_annotation: ^0.0.1-dev.9
-  velvet_framework: ^0.0.1-dev.49
+  velvet_framework: ^0.0.1-dev.50
   flutter_native_splash: ^2.4.1
 
 dev_dependencies:

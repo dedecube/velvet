@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   velvet_annotation: ^0.0.1-dev.9
-  velvet_framework: ^0.0.1-dev.49
+  velvet_framework: ^0.0.1-dev.50
   flutter_native_splash: ^2.4.1
 
   talker_flutter: any

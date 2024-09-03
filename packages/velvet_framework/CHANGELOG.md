@@ -1,3 +1,7 @@
+## 0.0.1-dev.50
+
+ - **FIX**: update exports. ([eddd3270](https://github.com/dedecube/velvet/commit/eddd32700428c3c70e086a2ed5ba274e94e9cff6))
+
 ## 0.0.1-dev.49
 
  - **FIX**: update exports. ([4f6557bb](https://github.com/dedecube/velvet/commit/4f6557bb59d67e89f7315f390fbdb54e6bb7315f))
