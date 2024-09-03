@@ -138,8 +138,10 @@ UseInputReturn<T> useInput<T>({
 
       if (errors.isNotEmpty) {
         error.value = errors.first;
+        isValid.value = false;
       } else {
         error.value = null;
+        isValid.value = true;
       }
     },
     [],
