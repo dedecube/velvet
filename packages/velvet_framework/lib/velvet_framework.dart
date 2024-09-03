@@ -23,17 +23,12 @@ export 'package:velvet_support/velvet_support.dart';
 // npx vscode-generate-index-standalone packages/velvet_framework/lib/
 // ```
 
-// @index(['./src/contracts/**/(*.dart)','!./contracts/**/*.g.dart', '!./contracts/**/_*.dart'], f => `export '${f.path}.dart';`)
+// @index(['./src/**/(*.dart)', '!./src/**/*.g.dart', '!./src/**/_*.dart', '!./src/**/*.velvet.dart', '!./src/**/*.tailor.dart'], f => `export '${f.path}.dart';`)
 export './src/contracts/factory_wrapper_contract.dart';
 export './src/contracts/use_case_contract.dart';
-// @endindex
-
-// @index(['./src/core/**/(*.dart)','!./core/**/*.g.dart', '!./core/**/_*.dart'], f => `export '${f.path}.dart';`)
 export './src/core/config/contracts/velvet_config_manager_contract.dart';
 export './src/core/config/velvet_config_manager.dart';
 export './src/core/config/velvet_config.dart';
-export './src/core/container/_contextual_binding.dart';
-export './src/core/container/_when_context.dart';
 export './src/core/container/contracts/velvet_container_contract.dart';
 export './src/core/container/mixins/proxy_to_get_it_mixin.dart';
 export './src/core/container/velvet_container.dart';
@@ -83,9 +78,6 @@ export './src/core/utils/logger.dart';
 export './src/core/utils/navigator_key.dart';
 export './src/core/utils/resolution_key.dart';
 export './src/core/velvet_container.dart';
-// @endindex
-
-// @index(['./src/data_loader/**/(*.dart)','!./data_loader/**/*.g.dart', '!./data_loader/**/_*.dart'], f => `export '${f.path}.dart';`)
 export './src/data_loader/builders/constructor_data_loader_error_builder.dart';
 export './src/data_loader/builders/constructor_data_loader_loading_builder.dart';
 export './src/data_loader/builders/default_data_loader_error_builder.dart';
@@ -98,9 +90,6 @@ export './src/data_loader/extensions/data_loader_on_container_extension.dart';
 export './src/data_loader/extensions/data_loader_on_kernel_contract_extension.dart';
 export './src/data_loader/interacts_with_success_data.dart';
 export './src/data_loader/views/default_data_loader_error_view.dart';
-// @endindex
-
-// @index(['./src/error_handling/**/(*.dart)','!./error_handling/**/*.g.dart', '!./error_handling/**/_*.dart'], f => `export '${f.path}.dart';`)
 export './src/error_handling/bag_exception.dart';
 export './src/error_handling/config/default_error_handling_config.dart';
 export './src/error_handling/contracts/error_handling_config_contract.dart';
@@ -109,41 +98,19 @@ export './src/error_handling/exception_to_message_resolver.dart';
 export './src/error_handling/helper/stack_trace_parser.dart';
 export './src/error_handling/renderable_exception.dart';
 export './src/error_handling/types.dart';
-// @endindex
-
-// @index(['./src/event/**/(*.dart)','!./event/**/*.g.dart', '!./event/**/_*.dart'], f => `export '${f.path}.dart';`)
-
-// @endindex
-
-// @index(['./src/form/**/(*.dart)','!./form/**/*.g.dart', '!./form/**/_*.dart', '!./form/**/*.freezed.dart'], f => `export '${f.path}.dart';`)
 export './src/form/config/default_form_config.dart';
 export './src/form/contracts/form_config_contract.dart';
 export './src/form/form_plugin.dart';
-export './src/form/hooks/use_bool_input/_use_bool_input_return.dart';
 export './src/form/hooks/use_bool_input/use_bool_input.dart';
 export './src/form/hooks/use_form/form_options.dart';
 export './src/form/hooks/use_form/use_form.dart';
-export './src/form/hooks/use_input/_use_clear_error_on_change.dart';
-export './src/form/hooks/use_input/_use_clear_error_on_focus.dart';
-export './src/form/hooks/use_input/_use_exception_matcher.dart';
-export './src/form/hooks/use_input/_use_initial_value_for_debug.dart';
-export './src/form/hooks/use_input/_use_input_return.dart';
-export './src/form/hooks/use_input/_use_validate_on_change.dart';
-export './src/form/hooks/use_input/_use_validate_on_focus_lost.dart';
 export './src/form/hooks/use_input/input_options.dart';
 export './src/form/hooks/use_input/input_options.freezed.dart';
 export './src/form/hooks/use_input/use_input.dart';
-export './src/form/hooks/use_text_input/_use_text_input_return.dart';
 export './src/form/hooks/use_text_input/use_text_input.dart';
-// @endindex
-
-// @index(['./src/hooks/**/(*.dart)','!./hooks/**/*.g.dart', '!./hooks/**/_*.dart'], f => `export '${f.path}.dart';`)
 export './src/hooks/use_effect_once/use_effect_once.dart';
 export './src/hooks/use_post_build_callback/use_post_build_callback.dart';
 export './src/hooks/use_provider/use_provider.dart';
-// @endindex
-
-// @index(['./src/http/**/(*.dart)','!./http/**/*.g.dart', '!./http/**/_*.dart'], f => `export '${f.path}.dart';`)
 export './src/http/contracts/http_exception_handler_contract.dart';
 export './src/http/contracts/http_request_bad_response_handler_contract.dart';
 export './src/http/contracts/http_request_custom_handling_contract.dart';
@@ -186,15 +153,11 @@ export './src/http/velvet_http_config.dart';
 export './src/http/velvet_http_exception_handler.dart';
 export './src/http/velvet_http_response.dart';
 export './src/http/velvet_http.dart';
-// @endindex
-
-// @index(['./src/kernel/**/(*.dart)','!./kernel/**/*.g.dart', '!./kernel/**/_*.dart'], f => `export '${f.path}.dart';`)
 export './src/kernel/contracts/kernel_contract.dart';
 export './src/kernel/events/hide_loading_widget_event.dart';
 export './src/kernel/exceptions/kernel_is_already_running_exception.dart';
 export './src/kernel/kernel.dart';
 export './src/kernel/loaders/velvet_plugin_loader.dart';
-export './src/kernel/loaders/velvet_plugin_loader.velvet.dart';
 export './src/kernel/mixins/setup_config_manager_mixin.dart';
 export './src/kernel/mixins/setup_container_composition_mixin.dart';
 export './src/kernel/mixins/setup_env_mixin.dart';
@@ -212,9 +175,6 @@ export './src/kernel/widgets/kernel_error_debug_widget.dart';
 export './src/kernel/widgets/kernel_error_widget.dart';
 export './src/kernel/widgets/kernel_loading_widget.dart';
 export './src/kernel/widgets/kernel_widget.dart';
-// @endindex
-
-// @index(['./src/router/**/(*.dart)','!./router/**/*.g.dart', '!./router/**/_*.dart'], f => `export '${f.path}.dart';`)
 export './src/router/config/default_velvet_router_config.dart';
 export './src/router/contracts/velvet_router_config_contract.dart';
 export './src/router/contracts/velvet_router_contract.dart';
@@ -225,9 +185,6 @@ export './src/router/mixins/velvet_route_page_builder_mixin.dart';
 export './src/router/observers/hide_loading_widget_observer.dart';
 export './src/router/router_plugin.dart';
 export './src/router/velvet_route.dart';
-// @endindex
-
-// @index(['./src/store/**/(*.dart)','!./store/**/*.g.dart','!./store/**/_*.dart','!./store/**/store.dart'], f => `export '${f.path}.dart';`)
 export './src/store/adapters/shared_preferences_simple_store.dart';
 export './src/store/contracts/velvet_store_cleaner_adapter_contract.dart';
 export './src/store/contracts/velvet_store_contract.dart';
@@ -236,13 +193,6 @@ export './src/store/extensions/velvet_store_on_container_extension.dart';
 export './src/store/velvet_storable.dart';
 export './src/store/velvet_store_plugin.dart';
 export './src/store/velvet_store.dart';
-// @endindex
-
-// @index(['./src/talker/**/(*.dart)','!./talker/**/*.g.dart','!./talker/**/_*.dart'], f => `export '${f.path}.dart';`)
-
-// @endindex
-
-// @index(['./src/theme/**/(*.dart)','!./theme/**/*.g.dart','!./theme/**/*.tailor.dart','!./theme/**/_*.dart'], f => `export '${f.path}.dart';`)
 export './src/theme/config/default_theme_config.dart';
 export './src/theme/contracts/theme_config_contract.dart';
 export './src/theme/contracts/theme_definition_contract.dart';
@@ -251,21 +201,12 @@ export './src/theme/extensions/theme_definition_theme_data_extension.dart';
 export './src/theme/hooks/use_create_dark_theme.dart';
 export './src/theme/hooks/use_create_light_theme.dart';
 export './src/theme/providers/theme_dark_provider.dart';
-export './src/theme/providers/theme_dark_provider.g.dart';
 export './src/theme/providers/theme_data_provider.dart';
-export './src/theme/providers/theme_data_provider.g.dart';
 export './src/theme/providers/theme_light_provider.dart';
-export './src/theme/providers/theme_light_provider.g.dart';
 export './src/theme/theme_definition.dart';
-export './src/theme/theme_definition.tailor.dart';
 export './src/theme/theme_plugin.dart';
 export './src/theme/themes/wireframe/wireframe_dark.dart';
-export './src/theme/themes/wireframe/wireframe_dark.g.dart';
 export './src/theme/themes/wireframe/wireframe_light.dart';
-export './src/theme/themes/wireframe/wireframe_light.g.dart';
-// @endindex
-
-// @index(['./src/translation/**/(*.dart)','!./translation/**/*.g.dart', '!./translation/**/_*.dart'], f => `export '${f.path}.dart';`)
 export './src/translation/adapters/flutter_i18n_translator_adapter.dart';
 export './src/translation/config/default_translation_config.dart';
 export './src/translation/contracts/translation_config_contract.dart';
@@ -277,23 +218,15 @@ export './src/translation/exceptions/locale_not_available_exception.dart';
 export './src/translation/extensions/translator_extension.dart';
 export './src/translation/hooks/use_locale_switcher.dart';
 export './src/translation/providers/translator_adapter_provider.dart';
-export './src/translation/providers/translator_adapter_provider.g.dart';
 export './src/translation/providers/translator_provider.dart';
-export './src/translation/providers/translator_provider.g.dart';
 export './src/translation/storables/locale_storable.dart';
 export './src/translation/translate.dart';
 export './src/translation/translation_plugin.dart';
 export './src/translation/translator.dart';
-// @endindex
-
-// @index(['./src/utils/**/(*.dart)','!./utils/**/*.g.dart', '!./utils/**/_*.dart'], f => `export '${f.path}.dart';`)
 export './src/utils/callback_manager.dart';
 export './src/utils/kernel_context.dart';
 export './src/utils/navigator_context.dart';
 export './src/utils/riverpod_container.dart';
-// @endindex
-
-// @index(['./src/validation/**/(*.dart)','!./validation/**/*.g.dart', '!./validation/**/_*.dart'], f => `export '${f.path}.dart';`)
 export './src/validation/rules/bool/must_be_false_rule.dart';
 export './src/validation/rules/bool/must_be_true_rule.dart';
 export './src/validation/rules/confirmation_rule.dart';
@@ -304,8 +237,5 @@ export './src/validation/rules/min_length_rule.dart';
 export './src/validation/rules/required_string_rule.dart';
 export './src/validation/velvet_rule.dart';
 export './src/validation/velvet_validator.dart';
-// @endindex
-
-// @index(['./src/widgets/**/(*.dart)','!./widgets/**/*.g.dart', '!./widgets/**/_*.dart'], f => `export '${f.path}.dart';`)
 export './src/widgets/pre_renderer.dart';
 // @endindex
