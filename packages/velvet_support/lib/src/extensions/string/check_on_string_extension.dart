@@ -11,7 +11,10 @@ extension CheckOnStringExtension on String {
   /// print(str.doesContains('hello')); // false
   /// print(str.doesContains('WORLD', true)); // true
   /// ```
-  bool doesContains(String search, [bool ignoreCase = false]) {
+  bool doesContains(
+    String search, {
+    bool ignoreCase = false,
+  }) {
     var value = this;
 
     if (ignoreCase) {
@@ -38,17 +41,11 @@ extension CheckOnStringExtension on String {
   /// print(result); // Output: true
   /// ```
   bool doesContainsAny(
-    List<String> needles, [
+    List<String> needles, {
     bool ignoreCase = false,
-  ]) {
-    var value = this;
-
-    if (ignoreCase) {
-      value = value.toLowerCase();
-      needles = needles.map((needle) => needle.toLowerCase()).toList();
-    }
-
-    return needles.any((needle) => contains(needle));
+  }) {
+    return needles
+        .any((needle) => doesContains(needle, ignoreCase: ignoreCase));
   }
 
   /// Checks if the current string contains all the specified needles.
@@ -67,17 +64,11 @@ extension CheckOnStringExtension on String {
   /// print(containsAll); // Output: true
   /// ```
   bool doesContainsAll(
-    List<String> needles, [
+    List<String> needles, {
     bool ignoreCase = false,
-  ]) {
-    var value = this;
-
-    if (ignoreCase) {
-      value = value.toLowerCase();
-      needles = needles.map((needle) => needle.toLowerCase()).toList();
-    }
-
-    return needles.every((needle) => contains(needle));
+  }) {
+    return needles
+        .every((needle) => doesContains(needle, ignoreCase: ignoreCase));
   }
 
   /// Checks if the string ends with the specified [search] string.
@@ -96,7 +87,14 @@ extension CheckOnStringExtension on String {
   /// bool endsWithUniverse = doesEndsWith(str, 'Universe');
   /// print(endsWithUniverse); // Output: false
   /// ```
-  bool doesEndsWith(String search) {
+  bool doesEndsWith(
+    String search, {
+    bool ignoreCase = false,
+  }) {
+    if (ignoreCase) {
+      return toLowerCase().endsWith(search.toLowerCase());
+    }
+
     return endsWith(search);
   }
 
@@ -113,7 +111,35 @@ extension CheckOnStringExtension on String {
   /// bool endsWithAny = str.doesEndsWithAny(needles);
   /// print(endsWithAny); // Output: true
   /// ```
-  bool doesEndsWithAny(List<String> needles) {
-    return needles.any((needle) => endsWith(needle));
+  bool doesEndsWithAny(
+    List<String> needles, {
+    bool ignoreCase = false,
+  }) {
+    return needles
+        .any((needle) => doesEndsWith(needle, ignoreCase: ignoreCase));
+  }
+
+  /// Checks if the string starts with the specified [search] string.
+  ///
+  /// Returns `true` if the string starts with [search], otherwise `false`.
+  bool doesStartsWith(
+    String search, {
+    bool ignoreCase = false,
+  }) {
+    if (ignoreCase) {
+      return toLowerCase().startsWith(search.toLowerCase());
+    }
+
+    return startsWith(search);
+  }
+
+  /// Checks if the string starts with any of the specified needles.
+  ///
+  /// This method takes a list of strings called [needles] and checks if the
+  /// current string starts with any of the needles. It returns `true` if the
+  /// string starts with any of the needles, and `false` otherwise.
+  bool doesStartsWithAny(List<String> needles, {bool ignoreCase = false}) {
+    return needles
+        .any((needle) => doesStartsWith(needle, ignoreCase: ignoreCase));
   }
 }

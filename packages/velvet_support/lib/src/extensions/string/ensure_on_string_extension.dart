@@ -1,3 +1,5 @@
+import 'package:velvet_support/src/extensions/string/check_on_string_extension.dart';
+
 extension EnsureOnStringExtension on String {
   /// Ensures that the string starts with the specified [prefix].
   ///
@@ -5,8 +7,8 @@ extension EnsureOnStringExtension on String {
   /// Otherwise, the original string is returned.
   ///
   /// Returns the modified string.
-  String ensureStartsWith(String prefix) {
-    if (!startsWith(prefix)) {
+  String ensureStartsWith(String prefix, {bool ignoreCase = false}) {
+    if (!doesStartsWith(prefix, ignoreCase: ignoreCase)) {
       return prefix + this;
     }
 
@@ -17,8 +19,8 @@ extension EnsureOnStringExtension on String {
   ///
   /// If the string does not already end with the [suffix], it appends the [suffix] to the string and returns the modified string.
   /// If the string already ends with the [suffix], it returns the original string.
-  String ensureEndsWith(String suffix) {
-    if (!endsWith(suffix)) {
+  String ensureEndsWith(String suffix, {bool ignoreCase = false}) {
+    if (!doesEndsWith(suffix, ignoreCase: ignoreCase)) {
       return this + suffix;
     }
 
@@ -28,8 +30,8 @@ extension EnsureOnStringExtension on String {
   /// Ensures that the string does not start with the specified [prefix].
   /// If the string starts with the [prefix], it is removed from the string.
   /// Otherwise, the original string is returned.
-  String ensureDoNotStartWith(String prefix) {
-    if (startsWith(prefix)) {
+  String ensureDoNotStartWith(String prefix, {bool ignoreCase = false}) {
+    if (doesStartsWith(prefix, ignoreCase: ignoreCase)) {
       return substring(prefix.length);
     }
 
@@ -39,8 +41,8 @@ extension EnsureOnStringExtension on String {
   /// Ensures that the string does not end with the specified [suffix].
   /// If the string ends with the [suffix], it is removed from the string.
   /// Otherwise, the original string is returned.
-  String ensureDoNotEndWith(String suffix) {
-    if (endsWith(suffix)) {
+  String ensureDoNotEndWith(String suffix, {bool ignoreCase = false}) {
+    if (doesEndsWith(suffix, ignoreCase: ignoreCase)) {
       return substring(0, length - suffix.length);
     }
 
@@ -52,8 +54,9 @@ extension EnsureOnStringExtension on String {
   /// If the string does not start with the [wrapper], it is prepended to the string.
   /// If the string does not end with the [wrapper], it is appended to the string.
   /// Otherwise, the original string is returned.
-  String ensureWrappedWith(String wrapper) {
-    return ensureStartsWith(wrapper).ensureEndsWith(wrapper);
+  String ensureWrappedWith(String wrapper, {bool ignoreCase = false}) {
+    return ensureStartsWith(wrapper, ignoreCase: ignoreCase)
+        .ensureEndsWith(wrapper, ignoreCase: ignoreCase);
   }
 
   /// Ensures that the string is wrapped with single quotes.
