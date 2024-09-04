@@ -16,8 +16,8 @@ class VelvetContainer extends VelvetContainerContract with ProxyToGetItMixin {
   final List<ContextualBinding> _contextualBindings = [];
 
   @override
-  void requireRegistrationOf<T extends Object>() {
-    if (isRegistered<T>()) {
+  void requireRegistrationOf<T extends Object>({String? instanceName}) {
+    if (isRegistered<T>(instanceName: instanceName)) {
       return;
     }
 
