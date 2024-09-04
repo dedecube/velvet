@@ -9,148 +9,186 @@ extension DotNotationOnMapExtension<K, V> on Map<K, V> {
   ///
   /// Throws a [TypeError] if the value is not of type [T].
   T? get<T>({required String key, T? defaultValue}) {
-    var keys = key.split('.');
-
-    dynamic current = this;
-
-    for (var part in keys) {
-      if (part == '{first}') {
-        current = _getFirstElement(current, defaultValue);
-      } else if (part == '{last}') {
-        current = _getLastElement(current, defaultValue);
-      } else if (part.contains(RegExp(r'^\d+$'))) {
-        current = _getArrayElement(current, part, defaultValue);
-      } else {
-        current = _getMapValue(current, part, defaultValue);
-      }
+    if (key.isEmpty) {
+      return defaultValue;
     }
 
-    if (current is T || current == null) {
-      return current as T?;
+    List<String> keyParts = key.split('.');
+    dynamic currentValue = this;
+
+    for (var keyPart in keyParts) {
+      currentValue = _getValueForKeyPart(currentValue, keyPart, defaultValue);
+    }
+
+    if (currentValue is T || currentValue == null) {
+      return currentValue as T?;
     } else {
       throw TypeError();
     }
   }
 
-  dynamic _getFirstElement(dynamic current, dynamic defaultValue) {
-    if (current is List && current.isNotEmpty) {
-      return current.first;
-    } else {
-      return defaultValue;
-    }
-  }
-
-  dynamic _getLastElement(dynamic current, dynamic defaultValue) {
-    if (current is List && current.isNotEmpty) {
-      return current.last;
-    } else {
-      return defaultValue;
-    }
-  }
-
-  dynamic _getArrayElement(dynamic current, String part, dynamic defaultValue) {
-    int index = int.parse(part);
-    if (current is List && index < current.length) {
-      return current[index];
-    } else {
-      return defaultValue;
-    }
-  }
-
-  dynamic _getMapValue(dynamic current, String part, dynamic defaultValue) {
-    if (current is Map && current.containsKey(part)) {
-      return current[part];
-    } else {
-      return defaultValue;
-    }
-  }
-
+  /// Sets a value in the map using dot notation.
+  ///
+  /// The [key] parameter represents the dot-separated path to the value.
+  /// The [value] parameter is the value to set at the specified path.
   void set({required String key, required dynamic value}) {
-    var keys = key.split('.');
-    dynamic current = this;
+    if (key.isEmpty) {
+      return;
+    }
 
-    for (var i = 0; i < keys.length; i++) {
-      var part = keys[i];
+    List<String> keyParts = key.split('.');
+    dynamic currentValue = this;
 
-      // ignore: avoid_nested_if
-      if (i == keys.length - 1) {
-        // Last part, set the value
-        // ignore: avoid_nested_if
-        if (part.contains(RegExp(r'^\d+$'))) {
-          // Part is an integer (array index)
-          int index = int.parse(part);
-          if (current is List) {
-            while (current.length <= index) {
-              current.add(null);
-            }
-            current[index] = value;
-          } else if (current is Map) {
-            if (current[part] is! List) {
-              current[part] = [];
-            }
-            while ((current[part] as List).length <= index) {
-              (current[part] as List).add(null);
-            }
-            (current[part] as List)[index] = value;
-          }
-        } else {
-          // Part is a map key
-          if (current is Map) {
-            current[part] = value;
-          }
-        }
+    for (var i = 0; i < keyParts.length; i++) {
+      var keyPart = keyParts[i];
+
+      if (i == keyParts.length - 1) {
+        _setValueForKeyPart(currentValue, keyPart, value);
       } else {
-        // Not the last part, traverse or create nested structure
-        // ignore: avoid_nested_if
-        if (part.contains(RegExp(r'^\d+$'))) {
-          // Part is an integer (array index)
-          int index = int.parse(part);
-          if (current is List && index < current.length) {
-            current = current[index];
-          } else {
-            // Expand list if necessary
-            if (current is List) {
-              while (current.length <= index) {
-                current.add(null);
-              }
-              if (current[index] == null) {
-                current[index] = {};
-              }
-              current = current[index];
-            } else {
-              if (current is! Map) {
-                current = <String, dynamic>{};
-              }
-              // Check if the next part is numeric
-              if (keys[i + 1].contains(RegExp(r'^\d+$'))) {
-                current[part] = [];
-              } else {
-                current[part] = {};
-              }
-              current = current[part];
-            }
-          }
-        } else {
-          // Part is a map key
-          // ignore: avoid_nested_if
-          if (current is Map) {
-            if (!current.containsKey(part)) {
-              // Check if the next part is numeric
-              if (i + 1 < keys.length &&
-                  keys[i + 1].contains(RegExp(r'^\d+$'))) {
-                current[part] = [];
-              } else {
-                current[part] = {};
-              }
-            }
-            current = current[part];
-          } else {
-            var newMap = {part: {}};
-            (current as Map)[keys[i - 1]] = newMap;
-            current = newMap;
-          }
-        }
+        currentValue = _traverseOrCreateStructure(currentValue, keyParts, i);
       }
     }
+  }
+
+  dynamic _getValueForKeyPart(
+    dynamic currentValue,
+    String keyPart,
+    dynamic defaultValue,
+  ) {
+    if (keyPart == '{first}') {
+      return _getFirstElement(currentValue, defaultValue);
+    } else if (keyPart == '{last}') {
+      return _getLastElement(currentValue, defaultValue);
+    } else if (_isArrayIndex(keyPart)) {
+      return _getArrayElement(currentValue, keyPart, defaultValue);
+    } else {
+      return _getMapValue(currentValue, keyPart, defaultValue);
+    }
+  }
+
+  dynamic _getFirstElement(dynamic currentValue, dynamic defaultValue) {
+    return (currentValue is List && currentValue.isNotEmpty)
+        ? currentValue.first
+        : defaultValue;
+  }
+
+  dynamic _getLastElement(dynamic currentValue, dynamic defaultValue) {
+    return (currentValue is List && currentValue.isNotEmpty)
+        ? currentValue.last
+        : defaultValue;
+  }
+
+  dynamic _getArrayElement(
+    dynamic currentValue,
+    String keyPart,
+    dynamic defaultValue,
+  ) {
+    int index = int.parse(keyPart);
+    return (currentValue is List && index < currentValue.length)
+        ? currentValue[index]
+        : defaultValue;
+  }
+
+  dynamic _getMapValue(
+    dynamic currentValue,
+    String keyPart,
+    dynamic defaultValue,
+  ) {
+    return (currentValue is Map && currentValue.containsKey(keyPart))
+        ? currentValue[keyPart]
+        : defaultValue;
+  }
+
+  void _setValueForKeyPart(
+    dynamic currentValue,
+    String keyPart,
+    dynamic value,
+  ) {
+    if (_isArrayIndex(keyPart)) {
+      int index = int.parse(keyPart);
+      if (currentValue is List) {
+        _ensureListSize(currentValue, index);
+        currentValue[index] = value;
+      } else if (currentValue is Map) {
+        if (currentValue[keyPart] is! List) {
+          currentValue[keyPart] = [];
+        }
+        _ensureListSize(currentValue[keyPart], index);
+        (currentValue[keyPart] as List)[index] = value;
+      }
+    } else if (currentValue is Map) {
+      currentValue[keyPart] = value;
+    }
+  }
+
+  dynamic _traverseOrCreateStructure(
+    dynamic currentValue,
+    List<String> keyParts,
+    int currentIndex,
+  ) {
+    String keyPart = keyParts[currentIndex];
+
+    if (_isArrayIndex(keyPart)) {
+      int index = int.parse(keyPart);
+      if (currentValue is List && index < currentValue.length) {
+        return currentValue[index];
+      } else {
+        return _expandListAndCreateMapIfNecessary(currentValue, index);
+      }
+    } else if (currentValue is Map) {
+      return _traverseMapOrCreateNext(currentValue, keyParts, currentIndex);
+    } else {
+      return _createNewMapInList(currentValue, keyParts, currentIndex);
+    }
+  }
+
+  dynamic _expandListAndCreateMapIfNecessary(dynamic currentValue, int index) {
+    if (currentValue is List) {
+      _ensureListSize(currentValue, index);
+      if (currentValue[index] == null) {
+        currentValue[index] = {};
+      }
+      return currentValue[index];
+    } else {
+      return <String, dynamic>{};
+    }
+  }
+
+  dynamic _traverseMapOrCreateNext(
+    dynamic currentValue,
+    List<String> keyParts,
+    int currentIndex,
+  ) {
+    String keyPart = keyParts[currentIndex];
+    if (!currentValue.containsKey(keyPart)) {
+      currentValue[keyPart] =
+          _isNextPartArrayIndex(keyParts, currentIndex) ? [] : {};
+    }
+    return currentValue[keyPart];
+  }
+
+  dynamic _createNewMapInList(
+    dynamic currentValue,
+    List<String> keyParts,
+    int currentIndex,
+  ) {
+    var newMap = {keyParts[currentIndex]: {}};
+    (currentValue as Map)[keyParts[currentIndex - 1]] = newMap;
+    return newMap;
+  }
+
+  void _ensureListSize(List list, int index) {
+    while (list.length <= index) {
+      list.add(null);
+    }
+  }
+
+  bool _isArrayIndex(String keyPart) {
+    return keyPart.contains(RegExp(r'^\d+$'));
+  }
+
+  bool _isNextPartArrayIndex(List<String> keyParts, int currentIndex) {
+    return currentIndex + 1 < keyParts.length &&
+        _isArrayIndex(keyParts[currentIndex + 1]);
   }
 }
