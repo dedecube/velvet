@@ -1,3 +1,7 @@
+## 0.0.1-dev.4
+
+ - **FEAT**: add install command. ([e9363f96](https://github.com/dedecube/velvet/commit/e9363f96710575758c83946e61614f162d5eaff2))
+
 ## 0.0.1-dev.3
 
  - **FIX**: make:route now create a StatelessWidget page. ([1074c541](https://github.com/dedecube/velvet/commit/1074c54111e6557f7de0691ea2a22cc1954316cf))

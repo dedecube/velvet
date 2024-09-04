@@ -3,6 +3,49 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-09-04
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`velvet_cli` - `v0.0.1-dev.4`](#velvet_cli---v001-dev4)
+ - [`velvet_support` - `v0.0.1-dev.9`](#velvet_support---v001-dev9)
+ - [`velvet_framework` - `v0.0.1-dev.51`](#velvet_framework---v001-dev51)
+ - [`velvet_generator` - `v0.0.1-dev.17`](#velvet_generator---v001-dev17)
+ - [`splash_velvet_plugin` - `v0.0.1-dev.15`](#splash_velvet_plugin---v001-dev15)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `velvet_framework` - `v0.0.1-dev.51`
+ - `velvet_generator` - `v0.0.1-dev.17`
+ - `splash_velvet_plugin` - `v0.0.1-dev.15`
+
+---
+
+#### `velvet_cli` - `v0.0.1-dev.4`
+
+ - **FEAT**: add install command. ([e9363f96](https://github.com/dedecube/velvet/commit/e9363f96710575758c83946e61614f162d5eaff2))
+
+#### `velvet_support` - `v0.0.1-dev.9`
+
+ - **REVERT**: remove excerpt extension. ([71b54157](https://github.com/dedecube/velvet/commit/71b54157fae4071cd57694d08c0e268f13cc95c5))
+ - **REFACTOR**: split DotNotationOnMapExtension in multiple private methods. ([6cbf57e6](https://github.com/dedecube/velvet/commit/6cbf57e6c14a27589ce190c2f586d24c6eee98e9))
+ - **FIX**: delimiter is now a named argument instead of positional. ([535a9d2f](https://github.com/dedecube/velvet/commit/535a9d2f6d3985c7b0fe41c3b73ae9e24f1bcbfd))
+ - **FEAT**: add doesStartsWith and doesStartsWithAny methods and add ignoreCase to some check and ensure methods. ([ea2a190b](https://github.com/dedecube/velvet/commit/ea2a190bd9863cca9ee03740f545caa13a3f13e5))
+ - **FEAT**: add ensure extension on string. ([a8d6d76c](https://github.com/dedecube/velvet/commit/a8d6d76ce645eb42ddf24cacdee03149ed4dbbb3))
+ - **FEAT**: add wrap extension on string. ([5123749e](https://github.com/dedecube/velvet/commit/5123749e2808fda8a1dd940f5094388bc40c3130))
+ - **DOCS**: update README.md. ([73f45ae1](https://github.com/dedecube/velvet/commit/73f45ae15c70871c54f3f37437b0a30168e931a6))
+
+
 ## 2024-09-03
 
 ### Changes

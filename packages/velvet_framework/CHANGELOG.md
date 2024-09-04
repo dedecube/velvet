@@ -1,3 +1,7 @@
+## 0.0.1-dev.51
+
+ - Update a dependency to the latest release.
+
 ## 0.0.1-dev.50
 
  - **FIX**: update exports. ([eddd3270](https://github.com/dedecube/velvet/commit/eddd32700428c3c70e086a2ed5ba274e94e9cff6))
