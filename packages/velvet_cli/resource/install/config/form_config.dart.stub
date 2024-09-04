@@ -1,0 +1,5 @@
+import 'package:velvet_framework/velvet_framework.dart';
+
+class FormConfig extends DefaultFormConfig {
+  // Override config as you need
+}

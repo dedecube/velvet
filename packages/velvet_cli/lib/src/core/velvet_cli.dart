@@ -1,3 +1,4 @@
+import 'package:velvet_cli/src/commands/install/install_command.dart';
 import 'package:velvet_cli/src/commands/list/list_command.dart';
 import 'package:velvet_cli/src/commands/make_route/make_route_command.dart';
 import 'package:velvet_cli/src/commands/update_cli/update_cli_command.dart';
@@ -14,6 +15,7 @@ class VelvetCli {
   void _init() {
     container.registerSingleton(Pubspec());
     container.registerSingleton(VelvetCommandHandler(commands: [
+      InstallCommand(),
       ListCommand(),
       MakeRouteCommand(),
       UpdateCliCommand(),

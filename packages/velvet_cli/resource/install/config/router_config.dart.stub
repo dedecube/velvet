@@ -1,0 +1,13 @@
+import 'package:{{ projectName }}/presentation/routes.dart';
+import 'package:velvet_framework/velvet_framework.dart';
+
+class RouterConfig extends DefaultVelvetRouterConfig {
+  @override
+  String get initialPath => '/';
+
+  @override
+  List<VelvetMiddleware> get globalMiddlewares => [];
+
+  @override
+  List<RouteBase> get routes => $routes.routes;
+}

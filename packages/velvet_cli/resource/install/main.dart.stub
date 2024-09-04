@@ -1,0 +1,17 @@
+import 'package:velvet_framework/velvet_framework.dart';
+import 'package:{{ projectName }}/config/form_config.dart';
+import 'package:{{ projectName }}/config/router_config.dart';
+import 'package:{{ projectName }}/config/translation_config.dart';
+import 'package:{{ projectName }}/config/theme_config.dart';
+
+void main() {
+  createVelvetApp()
+    ..withConfig((configManager) {
+      configManager
+        ..register<FormConfigContract>(FormConfig())
+        ..register<TranslationConfigContract>(TranslationConfig())
+        ..register<ThemeConfigContract>(ThemeConfig())
+        ..register<VelvetRouterConfigContract>(RouterConfig());
+    })
+    ..run();
+}
