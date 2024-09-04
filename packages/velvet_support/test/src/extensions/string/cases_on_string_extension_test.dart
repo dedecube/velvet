@@ -29,17 +29,23 @@ void main() {
 
     test('snake', () {
       expect('VelvetFlutterFramework'.snake(), 'velvet_flutter_framework');
-      expect('VelvetFlutterFramework'.snake(' '), 'velvet flutter framework');
+      expect(
+        'VelvetFlutterFramework'.snake(delimiter: ' '),
+        'velvet flutter framework',
+      );
       expect('Velvet Flutter Framework'.snake(), 'velvet_flutter_framework');
       expect(
         'Velvet    Flutter      Framework   '.snake(),
         'velvet_flutter_framework',
       );
       expect(
-        'VelvetFlutterFramework'.snake('__'),
+        'VelvetFlutterFramework'.snake(delimiter: '__'),
         'velvet__flutter__framework',
       );
-      expect('VelvetFlutterFramework_'.snake('_'), 'velvet_flutter_framework_');
+      expect(
+        'VelvetFlutterFramework_'.snake(delimiter: '_'),
+        'velvet_flutter_framework_',
+      );
       expect('velvet flutter Framework'.snake(), 'velvet_flutter_framework');
       expect('velvet flutter FrameWork'.snake(), 'velvet_flutter_frame_work');
       expect('foo-bar'.snake(), 'foo-bar');

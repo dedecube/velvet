@@ -90,7 +90,7 @@ extension CasesOnStringExtension on String {
   ///
   /// Returns the kebab case representation of the string.
   String kebab() {
-    return snake('-');
+    return snake(delimiter: '-');
   }
 
   /// Converts a string to snake case.
@@ -107,7 +107,7 @@ extension CasesOnStringExtension on String {
   /// String name = 'helloWorld';
   /// String snakeCase = name.snake(); // Output: 'hello_world'
   /// ```
-  String snake([String delimiter = '_']) {
+  String snake({String delimiter = '_'}) {
     var value = this;
 
     if (!isLower()) {
@@ -151,7 +151,7 @@ extension CasesOnStringExtension on String {
   /// print('hello world'.upperWords()); // Hello World
   /// print('hello_world'.upperWords('_')); // Hello World
   /// ```
-  String upperWords([String separator = ' \t\r\n\f\v']) {
+  String upperWords({String separator = ' \t\r\n\f\v'}) {
     List<String> words = split(RegExp('[$separator]'));
     StringBuffer result = StringBuffer();
 
