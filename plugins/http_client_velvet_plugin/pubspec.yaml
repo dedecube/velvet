@@ -1,8 +1,7 @@
 name: http_client_velvet_plugin
 description: A plugin that provide a simple way to manage a http client in a velvet applications.
-version: 0.0.1-dev.0
+version: 0.0.1-dev.1
 homepage: https://github.com/dedecube/velvet/tree/main/plugins/http_client_velvet_plugin
-publish_to: none
 
 environment:
   sdk: ">=3.2.6 <4.0.0"
@@ -12,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   velvet_annotation: ^0.0.1-dev.9
-  velvet_framework: ^0.0.1-dev.51
+  velvet_framework: ^0.0.1-dev.52
 
 dev_dependencies:
   build_runner: ^2.4.9

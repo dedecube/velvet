@@ -1,3 +1,7 @@
+## 0.0.1-dev.52
+
+ - **FEAT**: add instanceName to requireRegistrationOf. ([0d006f78](https://github.com/dedecube/velvet/commit/0d006f783d6d8e5947abd06322d4dd6e86b358ad))
+
 ## 0.0.1-dev.51
 
  - Update a dependency to the latest release.

@@ -15,6 +15,41 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`http_client_velvet_plugin` - `v0.0.1-dev.1`](#http_client_velvet_plugin---v001-dev1)
+ - [`velvet_framework` - `v0.0.1-dev.52`](#velvet_framework---v001-dev52)
+ - [`splash_velvet_plugin` - `v0.0.1-dev.16`](#splash_velvet_plugin---v001-dev16)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `splash_velvet_plugin` - `v0.0.1-dev.16`
+
+---
+
+#### `http_client_velvet_plugin` - `v0.0.1-dev.1`
+
+ - **FIX**: disable velvet generators in plugins. ([8da6df4d](https://github.com/dedecube/velvet/commit/8da6df4db3dffc597b55c40ca56c9c3ea8f15e33))
+ - **FEAT**: convert from riverpod providers to container. ([41192597](https://github.com/dedecube/velvet/commit/411925972b5aa969372af60375e102123a8558ab))
+ - **FEAT**: setup http_client plugin. ([8f2d2abf](https://github.com/dedecube/velvet/commit/8f2d2abf5492a28cd645b5d434916d1f7876c3d3))
+
+#### `velvet_framework` - `v0.0.1-dev.52`
+
+ - **FEAT**: add instanceName to requireRegistrationOf. ([0d006f78](https://github.com/dedecube/velvet/commit/0d006f783d6d8e5947abd06322d4dd6e86b358ad))
+
+
+## 2024-09-04
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`velvet_cli` - `v0.0.1-dev.4`](#velvet_cli---v001-dev4)
  - [`velvet_support` - `v0.0.1-dev.9`](#velvet_support---v001-dev9)
  - [`velvet_framework` - `v0.0.1-dev.51`](#velvet_framework---v001-dev51)
