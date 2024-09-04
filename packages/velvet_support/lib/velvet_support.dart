@@ -5,5 +5,6 @@ export './src/extensions/map/dot_notation_on_map_extension.dart';
 export './src/extensions/string/bounds_on_string_extension.dart';
 export './src/extensions/string/cases_on_string_extension.dart';
 export './src/extensions/string/check_on_string_extension.dart';
-export './src/extensions/string/excerpt_on_string_extension.dart';
+export './src/extensions/string/ensure_on_string_extension.dart';
+export './src/extensions/string/wrap_on_string_extension.dart';
 // @endindex
