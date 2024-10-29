@@ -1,28 +1,10 @@
+![Velvet Banner](https://raw.githubusercontent.com/dedecube/velvet/main/art/velvet-header.png "Velvet Banner")
+
 # Splash Velvet Plugin
 
-## Installation
+## Documentation
 
-To install the Velvet plugin, you need to add the following dependency to your `pubspec.yaml`:
-
-```yaml
-flutter pub add splash_velvet_plugin
-```
-
-## Usage
-
-To use the Velvet plugin, you need to import the package and add the plugin to the Kernel:
-
-```dart
-import 'package:velvet_framework/velvet_framework.dart';
-import 'package:splash_velvet_plugin/splash_velvet_plugin.dart';
-
-void main() {
-  Kernel()
-    // other stuff
-   ..installPlugin(SplashVelvetPlugin())
-   ..run();
-}
-```
+Find the documentation for the `splash_velvet_plugin` package at [https://velvet.dedecube.com/plugins/splash-plugin/](https://velvet.dedecube.com/plugins/splash-plugin/).
 
 ## Contributing
 
