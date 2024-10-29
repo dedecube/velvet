@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:go_router/go_router.dart';
 import 'package:velvet_framework/src/core/plugin/velvet_plugin.dart';
 import 'package:velvet_framework/src/core/utils/config.dart';
@@ -7,8 +8,9 @@ import 'package:velvet_framework/src/router/contracts/velvet_router_config_contr
 import 'package:velvet_framework/src/router/contracts/velvet_router_contract.dart';
 import 'package:velvet_framework/src/router/middleware/velvet_middleware_pipeline.dart';
 import 'package:velvet_framework/src/router/observers/hide_loading_widget_observer.dart';
+import 'package:velvet_framework/src/router/observers/velvet_proxy_router_observer.dart';
 
-class RouterPlugin extends VelvetPlugin {
+class VelvetRouterPlugin extends VelvetPlugin {
   @override
   void register() {
     container.registerLazySingleton<VelvetRouterContract>(() {
@@ -18,11 +20,13 @@ class RouterPlugin extends VelvetPlugin {
         errorBuilder: routingConfig.routerErrorBuilder,
         initialLocation: routingConfig.initialPath,
         navigatorKey: navigatorKey(),
-        redirect:
-            VelvetMiddlewarePipeline(routingConfig.globalMiddlewares).handle,
+        redirect: VelvetMiddlewarePipeline(
+          routingConfig.globalMiddlewares,
+        ).handle,
         routes: routingConfig.routes,
         observers: [
           HideLoadingWidgetObserver(),
+          VelvetProxyRouterObserver(),
         ],
       );
     });
@@ -30,6 +34,9 @@ class RouterPlugin extends VelvetPlugin {
 
   @override
   void boot() {
-    container.requireRegistrationOf<VelvetRouterConfigContract>();
+    if (kDebugMode) {
+      container.requireRegistrationOf<VelvetRouterConfigContract>();
+      container.requireRegistrationOf<VelvetRouterContract>();
+    }
   }
 }
