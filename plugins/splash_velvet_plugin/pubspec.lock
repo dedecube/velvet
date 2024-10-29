@@ -600,6 +600,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.5"
+  mockito:
+    dependency: transitive
+    description:
+      name: mockito
+      sha256: "6841eed20a7befac0ce07df8116c8b8233ed1f4486a7647c7fc5a02ae6163917"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.4.4"
   package_config:
     dependency: transitive
     description:
@@ -1083,7 +1091,7 @@ packages:
       path: "../../packages/velvet_annotation"
       relative: true
     source: path
-    version: "0.0.1-dev.8"
+    version: "0.0.1-dev.9"
   velvet_custom_lints:
     dependency: "direct dev"
     description:
@@ -1097,21 +1105,21 @@ packages:
       path: "../../packages/velvet_framework"
       relative: true
     source: path
-    version: "0.0.1-dev.45"
+    version: "0.0.1-dev.52"
   velvet_generator:
     dependency: "direct dev"
     description:
       path: "../../packages/velvet_generator"
       relative: true
     source: path
-    version: "0.0.1-dev.15"
+    version: "0.0.1-dev.17"
   velvet_support:
     dependency: "direct overridden"
     description:
       path: "../../packages/velvet_support"
       relative: true
     source: path
-    version: "0.0.1-dev.8"
+    version: "0.0.1-dev.9"
   vm_service:
     dependency: transitive
     description:
