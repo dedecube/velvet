@@ -1,25 +1,10 @@
+![Velvet Banner](https://raw.githubusercontent.com/dedecube/velvet/main/art/velvet-header.png "Velvet Banner")
+
 # Http Client Velvet Plugin
 
-## Installation
+## Documentation
 
-To use this plugin, add `http_client_velvet_plugin` as a [dependency in your pubspec.yaml file](https://flutter.dev/docs/development/packages-and-plugins/using-packages).
-
-```dart
-import 'package:http_client_velvet_plugin/http_client_velvet_plugin.dart';
-
-void main() {
-  createVelvetApp()
-    ..withPlugins((pluginManager) {
-      // Add the HttpClientVelvetPlugin to the plugin manager
-      pluginManager.add(HttpClientVelvetPlugin());
-    })
-    ..withConfigs((configManager) {
-      // Add the HttpClientConfig to the config manager
-      configManager.add(HttpClientConfig()); // This is your own implementation that extends HttpClientConfigContract
-    })
-    ..run();
-}
-```
+Find the documentation for the `http_client_velvet_plugin` package at [https://velvet.dedecube.com/plugins/http-client-plugin/](https://velvet.dedecube.com/plugins/http-client-plugin/).
 
 ## Contributing
 
