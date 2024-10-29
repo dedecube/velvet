@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-10-29
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - [`velvet_framework` - `v0.0.1-dev.53`](#velvet_framework---v001-dev53)
+
+Packages with other changes:
+
+ - [`http_client_velvet_plugin` - `v0.0.1-dev.2`](#http_client_velvet_plugin---v001-dev2)
+ - [`splash_velvet_plugin` - `v0.0.1-dev.17`](#splash_velvet_plugin---v001-dev17)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `http_client_velvet_plugin` - `v0.0.1-dev.2`
+ - `splash_velvet_plugin` - `v0.0.1-dev.17`
+
+---
+
+#### `velvet_framework` - `v0.0.1-dev.53`
+
+ - **FEAT**(routing): add a NavigatorObserver that proxy events to Velvet bus. ([b7b192ec](https://github.com/dedecube/velvet/commit/b7b192ec8ac02d30e70e644d57d8537e5825eddd))
+ - **FEAT**(routing): add events for velvet route lifecycle. ([b71d6a0c](https://github.com/dedecube/velvet/commit/b71d6a0c6080748edf8f3cbbe73b9be16bd48d93))
+ - **BREAKING** **FEAT**(routing): add VelvetProxyRouterObserver in VelvetRouterPlugin. ([18437283](https://github.com/dedecube/velvet/commit/18437283c45a8399b9cf3c311ee1b085b189a937))
+
+
 ## 2024-09-04
 
 ### Changes

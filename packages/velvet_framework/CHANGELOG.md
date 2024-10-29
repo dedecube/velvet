@@ -1,3 +1,11 @@
+## 0.0.1-dev.53
+
+> Note: This release has breaking changes.
+
+ - **FEAT**(routing): add a NavigatorObserver that proxy events to Velvet bus. ([b7b192ec](https://github.com/dedecube/velvet/commit/b7b192ec8ac02d30e70e644d57d8537e5825eddd))
+ - **FEAT**(routing): add events for velvet route lifecycle. ([b71d6a0c](https://github.com/dedecube/velvet/commit/b71d6a0c6080748edf8f3cbbe73b9be16bd48d93))
+ - **BREAKING** **FEAT**(routing): add VelvetProxyRouterObserver in VelvetRouterPlugin. ([18437283](https://github.com/dedecube/velvet/commit/18437283c45a8399b9cf3c311ee1b085b189a937))
+
 ## 0.0.1-dev.52
 
  - **FEAT**: add instanceName to requireRegistrationOf. ([0d006f78](https://github.com/dedecube/velvet/commit/0d006f783d6d8e5947abd06322d4dd6e86b358ad))
