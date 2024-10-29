@@ -1,9 +1,0 @@
-targets:
-  $default:
-    builders:
-      velvet_generator|config_autoloader_builder:
-        generate_for:
-          - none
-      velvet_generator|bootstrap_autoloader_builder:
-        generate_for:
-          - none
