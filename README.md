@@ -32,6 +32,15 @@ Velvet is composed of several packages, each of which provides a specific set of
 | [velvet_lints](packages/velvet_lints)               | [![pub package](https://img.shields.io/pub/v/velvet_lints.svg)](https://pub.dev/packages/velvet_lints)               | A set of lints that can be used to enforce best practices in Velvet applications.        |
 | [velvet_support](packages/velvet_support)           | [![pub package](https://img.shields.io/pub/v/velvet_support.svg)](https://pub.dev/packages/velvet_support)           | A set of utilities and helpers that can be used to build Velvet applications.            |
 
+## Plugins
+
+Velvet also provides a set of plugins that can be used to extend the functionality of the framework.
+
+| Plugin                                                         | Version                                                                                                                          | Description                                                                               |
+| -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| [http_client_velvet_plugin](plugins/http_client_velvet_plugin) | [![pub package](https://img.shields.io/pub/v/http_client_velvet_plugin.svg)](https://pub.dev/packages/http_client_velvet_plugin) | A plugin that provides an HTTP client for making network requests in Velvet applications. |
+| [splash_velvet_plugin](plugins/splash_velvet_plugin)           | [![pub package](https://img.shields.io/pub/v/splash_velvet_plugin.svg)](https://pub.dev/packages/splash_velvet_plugin)           | A plugin that provides a splash screen for Velvet applications.                           |
+
 ## Contributing
 
 If you would like to contribute to Velvet, please read the [contributing guidelines](CONTRIBUTING.md) before submitting a pull request.
