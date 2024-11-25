@@ -6,8 +6,16 @@ part 'connectivity_notifier.g.dart';
 class ConnectivityNotifier extends _$ConnectivityNotifier {
   ConnectivityNotifier();
 
+  void online() {
+    state = true;
+  }
+
+  void offline() {
+    state = false;
+  }
+
   @override
-  build() {
-    return null;
+  bool build() {
+    return true;
   }
 }
