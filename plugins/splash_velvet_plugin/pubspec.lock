@@ -1105,7 +1105,7 @@ packages:
       path: "../../packages/velvet_framework"
       relative: true
     source: path
-    version: "0.0.1-dev.52"
+    version: "0.0.1-dev.53"
   velvet_generator:
     dependency: "direct dev"
     description:
