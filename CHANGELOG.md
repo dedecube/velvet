@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`connectivity_velvet_plugin` - `v0.0.1-dev.2`](#connectivity_velvet_plugin---v001-dev2)
+
+---
+
+#### `connectivity_velvet_plugin` - `v0.0.1-dev.2`
+
+ - **FEAT**: add isOnline and isOffline utils. ([abea7316](https://github.com/dedecube/velvet/commit/abea731682212eb231c208366592b56f3e2c9e6e))
+
+
+## 2024-11-25
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`connectivity_velvet_plugin` - `v0.0.1-dev.1`](#connectivity_velvet_plugin---v001-dev1)
 
 ---

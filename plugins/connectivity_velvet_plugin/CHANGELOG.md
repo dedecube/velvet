@@ -1,3 +1,7 @@
+## 0.0.1-dev.2
+
+ - **FEAT**: add isOnline and isOffline utils. ([abea7316](https://github.com/dedecube/velvet/commit/abea731682212eb231c208366592b56f3e2c9e6e))
+
 ## 0.0.1-dev.1
 
  - **FIX**: remove from ignore connectivity_notifier. ([4eece4e4](https://github.com/dedecube/velvet/commit/4eece4e430c1311dafdb6980380a6d2a0d30a794))
