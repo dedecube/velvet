@@ -1,8 +1,7 @@
 name: connectivity_velvet_plugin
 description: A plugin that provide elements to manage connectivity status of the device.
-version: 0.0.1-dev.0
+version: 0.0.1-dev.1
 homepage: https://github.com/dedecube/velvet/tree/main/plugins/http_client_velvet_plugin
-publish_to: none
 
 environment:
   sdk: ">=3.2.6 <4.0.0"

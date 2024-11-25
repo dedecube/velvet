@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   velvet_annotation: ^0.0.1-dev.9
-  connectivity_velvet_plugin: ^0.0.1-dev.0
+  connectivity_velvet_plugin: ^0.0.1-dev.1
   velvet_cli: ^0.0.1-dev.4
   velvet_framework: ^0.0.1-dev.53
 
