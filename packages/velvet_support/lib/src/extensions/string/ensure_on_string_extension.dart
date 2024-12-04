@@ -30,7 +30,7 @@ extension EnsureOnStringExtension on String {
   /// Ensures that the string does not start with the specified [prefix].
   /// If the string starts with the [prefix], it is removed from the string.
   /// Otherwise, the original string is returned.
-  String ensureDoNotStartWith(String prefix, {bool ignoreCase = false}) {
+  String ensureDoesNotStartWith(String prefix, {bool ignoreCase = false}) {
     if (doesStartsWith(prefix, ignoreCase: ignoreCase)) {
       return substring(prefix.length);
     }
@@ -41,7 +41,7 @@ extension EnsureOnStringExtension on String {
   /// Ensures that the string does not end with the specified [suffix].
   /// If the string ends with the [suffix], it is removed from the string.
   /// Otherwise, the original string is returned.
-  String ensureDoNotEndWith(String suffix, {bool ignoreCase = false}) {
+  String ensureDoesNotEndWith(String suffix, {bool ignoreCase = false}) {
     if (doesEndsWith(suffix, ignoreCase: ignoreCase)) {
       return substring(0, length - suffix.length);
     }
@@ -62,7 +62,6 @@ extension EnsureOnStringExtension on String {
   /// Ensures that the string is wrapped with single quotes.
   ///
   /// Returns the modified string.
-
   String ensureWrappedWithSingleQuotes() {
     return ensureStartsWith("'").ensureEndsWith("'");
   }
@@ -113,5 +112,10 @@ extension EnsureOnStringExtension on String {
   /// Returns the modified string that starts with '“' and ends with '”'.
   String ensureWrappedWithCurlyQuotes() {
     return ensureStartsWith('“').ensureEndsWith('”');
+  }
+
+  String ensureNotWrappedWith(String wrapper, {bool ignoreCase = false}) {
+    return ensureDoesNotStartWith(wrapper, ignoreCase: ignoreCase)
+        .ensureDoesNotEndWith(wrapper, ignoreCase: ignoreCase);
   }
 }

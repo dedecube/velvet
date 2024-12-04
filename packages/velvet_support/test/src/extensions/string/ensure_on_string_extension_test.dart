@@ -13,14 +13,14 @@ void main() {
       expect('api/example/'.ensureEndsWith('/'), 'api/example/');
     });
 
-    test('ensureDoNotStartWith', () {
-      expect('/api/example'.ensureDoNotStartWith('/'), 'api/example');
-      expect('api/example'.ensureDoNotStartWith('/'), 'api/example');
+    test('ensureDoesNotStartWith', () {
+      expect('/api/example'.ensureDoesNotStartWith('/'), 'api/example');
+      expect('api/example'.ensureDoesNotStartWith('/'), 'api/example');
     });
 
-    test('ensureDoNotEndWith', () {
-      expect('api/example/'.ensureDoNotEndWith('/'), 'api/example');
-      expect('api/example'.ensureDoNotEndWith('/'), 'api/example');
+    test('ensureDoesNotEndWith', () {
+      expect('api/example/'.ensureDoesNotEndWith('/'), 'api/example');
+      expect('api/example'.ensureDoesNotEndWith('/'), 'api/example');
     });
 
     test('ensureWrappedWith', () {

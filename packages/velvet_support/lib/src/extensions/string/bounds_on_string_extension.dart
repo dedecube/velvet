@@ -92,7 +92,7 @@ extension BoundsOnStringExtension on String {
   ///
   /// Example:
   /// ```dart
-  /// String text = "Hello [World]!";
+  /// String text = "Hello [World], [Daniele]!";
   /// String result = text.betweenFirst("[", "]");
   /// print(result); // Output: "World"
   /// ```
