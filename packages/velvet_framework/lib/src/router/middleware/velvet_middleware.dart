@@ -1,6 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+/// Handles the middleware operation.
+///
+/// This method is called when a route is being navigated to. It receives the
+/// [context] of the current route, the [state] of the router, and a [next]
+/// function that represents the next middleware in the chain.
+///
+/// The method should return a [Future] that resolves to a [String] route name or `null`,
+/// indicating the desired behavior of the middleware.
+typedef MiddlewareCallback = Future<String?> Function(
+  BuildContext context,
+  GoRouterState state,
+);
+
 /// A contract for defining routing middleware.
 ///
 /// Middleware is a mechanism for intercepting and modifying the behavior of
@@ -13,7 +26,7 @@ abstract class VelvetMiddleware {
   /// [context] of the current route, the [state] of the router, and a [next]
   /// function that represents the next middleware in the chain.
   ///
-  /// The method should return a [Future] that resolves to a [MiddlewareOperation]
+  /// The method should return a [Future] that resolves to a [String] route name or `null`,
   /// indicating the desired behavior of the middleware.
   Future<String?> handle(
     BuildContext context,
