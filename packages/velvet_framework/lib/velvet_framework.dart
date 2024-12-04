@@ -184,6 +184,7 @@ export './src/router/events/velvet_route_did_remove_event.dart';
 export './src/router/events/velvet_route_did_replace_event.dart';
 export './src/router/events/velvet_route_did_start_user_gesture_event.dart';
 export './src/router/events/velvet_route_did_stop_user_gesture_event.dart';
+export './src/router/middleware/anonymous_velvet_middleware.dart';
 export './src/router/middleware/velvet_middleware_pipeline.dart';
 export './src/router/middleware/velvet_middleware.dart';
 export './src/router/mixins/velvet_route_page_builder_mixin.dart';
