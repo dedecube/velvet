@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:velvet_framework/src/http/enums/http_request_method_enum.dart';
+import 'package:velvet_support/velvet_support.dart';
 
 abstract class VelvetHttpRequest<Parsed, Raw> {
   /// The path parameters for current request.
@@ -28,7 +29,7 @@ abstract class VelvetHttpRequest<Parsed, Raw> {
 
         return value.toString();
       },
-    );
+    ).ensureStartsWith('/');
   }
 
   /// The additional headers for current request.

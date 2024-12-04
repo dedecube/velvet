@@ -7,12 +7,13 @@ import 'package:velvet_framework/src/http/request/velvet_http_request.dart';
 import 'package:velvet_framework/src/http/velvet_http_config.dart';
 import 'package:velvet_framework/src/http/velvet_http_exception_handler.dart';
 import 'package:velvet_framework/src/http/velvet_http_response.dart';
+import 'package:velvet_support/velvet_support.dart';
 
 class VelvetHttp {
   VelvetHttp(VelvetHttpConfig config)
       : _dioInstance = Dio(
           BaseOptions(
-            baseUrl: config.baseURL,
+            baseUrl: config.baseURL.ensureDoesNotEndWith('/'),
             headers: {
               'Content-Type': 'application/json',
               'Accept': 'application/json',
