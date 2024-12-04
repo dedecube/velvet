@@ -1,3 +1,9 @@
+## 0.0.1-dev.10
+
+> Note: This release has breaking changes.
+
+ - **BREAKING** **REFACTOR**: renaming of *DoNot* to *DoesNot*. ([4d17ddfd](https://github.com/dedecube/velvet/commit/4d17ddfda3efcdf24baf0cb3e04d0ce1c34676ac))
+
 ## 0.0.1-dev.9
 
  - **REVERT**: remove excerpt extension. ([71b54157](https://github.com/dedecube/velvet/commit/71b54157fae4071cd57694d08c0e268f13cc95c5))

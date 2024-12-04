@@ -1,3 +1,7 @@
+## 0.0.1-dev.3
+
+ - Update a dependency to the latest release.
+
 ## 0.0.1-dev.2
 
  - **FEAT**: add isOnline and isOffline utils. ([abea7316](https://github.com/dedecube/velvet/commit/abea731682212eb231c208366592b56f3e2c9e6e))

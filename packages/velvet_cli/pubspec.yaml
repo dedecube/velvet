@@ -1,6 +1,6 @@
 name: velvet_cli
 description: The CLI tool for the Velvet projects. It will help to speed up the development process.
-version: 0.0.1-dev.4
+version: 0.0.1-dev.5
 homepage: https://github.com/dedecube/velvet/tree/main/packages/velvet_cli
 
 environment:
@@ -9,7 +9,7 @@ environment:
 dependencies:
   path: ^1.8.0
   yaml: ^3.1.0
-  velvet_support: ^0.0.1-dev.9
+  velvet_support: ^0.0.1-dev.10
   get_it: ^7.7.0
   dcli: ^6.0.5
 

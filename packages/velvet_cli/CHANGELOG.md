@@ -1,3 +1,7 @@
+## 0.0.1-dev.5
+
+ - Update a dependency to the latest release.
+
 ## 0.0.1-dev.4
 
  - **FEAT**: add install command. ([e9363f96](https://github.com/dedecube/velvet/commit/e9363f96710575758c83946e61614f162d5eaff2))

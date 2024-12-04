@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-12-04
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - [`velvet_support` - `v0.0.1-dev.10`](#velvet_support---v001-dev10)
+
+Packages with other changes:
+
+ - [`velvet_framework` - `v0.0.1-dev.54`](#velvet_framework---v001-dev54)
+ - [`http_client_velvet_plugin` - `v0.0.1-dev.3`](#http_client_velvet_plugin---v001-dev3)
+ - [`connectivity_velvet_plugin` - `v0.0.1-dev.3`](#connectivity_velvet_plugin---v001-dev3)
+ - [`splash_velvet_plugin` - `v0.0.1-dev.18`](#splash_velvet_plugin---v001-dev18)
+ - [`velvet_cli` - `v0.0.1-dev.5`](#velvet_cli---v001-dev5)
+ - [`velvet_generator` - `v0.0.1-dev.18`](#velvet_generator---v001-dev18)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `http_client_velvet_plugin` - `v0.0.1-dev.3`
+ - `connectivity_velvet_plugin` - `v0.0.1-dev.3`
+ - `splash_velvet_plugin` - `v0.0.1-dev.18`
+ - `velvet_cli` - `v0.0.1-dev.5`
+ - `velvet_generator` - `v0.0.1-dev.18`
+
+---
+
+#### `velvet_support` - `v0.0.1-dev.10`
+
+ - **BREAKING** **REFACTOR**: renaming of *DoNot* to *DoesNot*. ([4d17ddfd](https://github.com/dedecube/velvet/commit/4d17ddfda3efcdf24baf0cb3e04d0ce1c34676ac))
+
+#### `velvet_framework` - `v0.0.1-dev.54`
+
+ - **FIX**(http): VelvetHttp and VelvetHttpRequest are now coordinated to built a safe url joining baseUrl and path. ([56a33410](https://github.com/dedecube/velvet/commit/56a33410a786b6455c0bfa69923e8ffcd47d90fa))
+ - **FEAT**: add AnonymousVelvetMiddleware. ([65129932](https://github.com/dedecube/velvet/commit/651299321dd32f6ca6ba637696d44f5226b647eb))
+
+
 ## 2024-11-25
 
 ### Changes
