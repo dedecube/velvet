@@ -4,7 +4,7 @@ class KernelLoadingWidget extends StatelessWidget {
   const KernelLoadingWidget({super.key});
 
   @override
-  ColoredBox build(BuildContext context) {
+  Widget build(BuildContext context) {
     return const ColoredBox(
       color: Colors.white,
       child: Center(
